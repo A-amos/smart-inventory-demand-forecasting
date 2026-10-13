@@ -1,0 +1,61 @@
+{
+  "executed_at_utc": "2026-10-13T11:55:56.880008+00:00",
+  "passed": true,
+  "repository": {
+    "defaultBranchRef": {
+      "name": "main"
+    },
+    "isPrivate": true,
+    "nameWithOwner": "A-amos/smart-inventory-demand-forecasting",
+    "url": "https://github.com/A-amos/smart-inventory-demand-forecasting"
+  },
+  "verified_initial_commit": "33b2fbc33a234de20698214ee8e5fe1042ab6a3a",
+  "verified_tree": "2bb4552159136a7706b9254e0f85ed208bd0f14d",
+  "files": 395,
+  "checks": [
+    {
+      "area": "private repository / main",
+      "passed": true
+    },
+    {
+      "area": "remote tree equals committed tree, all395files",
+      "passed": true
+    },
+    {
+      "area": "remote README bytes equal local first commit",
+      "passed": true
+    },
+    {
+      "area": "actual Chrome rendered README/title/features/limits/table/Mermaid",
+      "passed": true
+    },
+    {
+      "area": "fresh clone all395file bytes match initial commit",
+      "passed": true
+    },
+    {
+      "area": "fresh clone31protected hashes and actual historical inference",
+      "passed": true
+    },
+    {
+      "area": "bounded staged credential/path scan",
+      "passed": true
+    }
+  ],
+  "clone": {
+    "path": ".local/publication-clone (ignored)",
+    "all_committed_files_match": true,
+    "protected_hashes": 31,
+    "inference": "Historical20728/origin2011-11-10/28days; no fitting or frozen report writes",
+    "cold_cache_clone_startup_executed": false
+  },
+  "evidence": [
+    "publication-repository-staged.json",
+    "publication-clone-preservation.json",
+    "../screenshots/publication/github-repository.jpg",
+    "../screenshots/publication/github-readme.jpg"
+  ],
+  "browser_note": "One initial indexed GitHub scroll failed with detached node; refreshed screenshot-backed scrolling succeeded. README and Mermaid render were actually observed.",
+  "limits": "Receipt verifies initial publication. The subsequent documentation-only commit records this receipt; its final SHA is checked against remote main after push and returned separately. Bounded credential scan is not a universal guarantee; no credentials, cookies or authorization codes retained.",
+  "api_response_sha": "33b2fbc33a234de20698214ee8e5fe1042ab6a3a"
+}

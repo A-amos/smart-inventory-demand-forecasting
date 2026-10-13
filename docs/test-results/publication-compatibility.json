@@ -24,7 +24,7 @@
         {
           "area": "movement history",
           "passed": true,
-          "actual": "Opening, adjustment and operational sale100;20→17, no historical import movement"
+          "actual": "Opening, adjustment and operational sale100;20\u219217, no historical import movement"
         },
         {
           "area": "sales form",
@@ -145,8 +145,11 @@
     {
       "browser": "Firefox",
       "installed_version": "157.0.1",
-      "status": "NOT EXECUTED",
-      "reason": "Not exposed by current browser connector; prior native Firefox selection stopped Computer Use due unsupported URL-policy enforcement; no compatibility claim"
+      "status": "NOT EXECUTED: policy-blocked before application testing",
+      "reason": "Current follow-up launched Firefox and found one target window. Selecting it stopped Computer Use because Windows browser URL-policy enforcement is unsupported. No subsequent UI input was attempted. No Firefox compatibility pass is claimed.",
+      "tool_failures": [
+        "First immediate window inventory had no Firefox window; later refresh found it. One JS variable assignment lacked declaration, corrected before selection."
+      ]
     }
   ],
   "participants": 0

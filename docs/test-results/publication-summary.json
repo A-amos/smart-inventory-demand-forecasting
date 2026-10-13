@@ -1,5 +1,5 @@
 {
-  "executed_at_utc": "2026-10-13T11:34:29.762803+00:00",
+  "executed_at_utc": "2026-10-13T11:55:57.600601+00:00",
   "automated_suites": [
     {
       "name": "backend",
@@ -187,8 +187,11 @@
     {
       "browser": "Firefox",
       "installed_version": "157.0.1",
-      "status": "NOT EXECUTED",
-      "reason": "Not exposed by current browser connector; prior native Firefox selection stopped Computer Use due unsupported URL-policy enforcement; no compatibility claim"
+      "status": "NOT EXECUTED: policy-blocked before application testing",
+      "reason": "Current follow-up launched Firefox and found one target window. Selecting it stopped Computer Use because Windows browser URL-policy enforcement is unsupported. No subsequent UI input was attempted. No Firefox compatibility pass is claimed.",
+      "tool_failures": [
+        "First immediate window inventory had no Firefox window; later refresh found it. One JS variable assignment lacked declaration, corrected before selection."
+      ]
     }
   ],
   "proposal_cases": {
@@ -198,7 +201,7 @@
   },
   "participants": 0,
   "responses": 0,
-  "publication": "Prepared; actual remote verification is recorded separately after push",
+  "publication": "Published privately; initial push/clone/browser verification recorded in publication-github.json",
   "limitations": [
     "Historical UK2009\u20132011 data does not validate current Kenyan accuracy",
     "No commercial effectiveness/automatic procurement",
