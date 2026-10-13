@@ -1,0 +1,75 @@
+{
+  "source": "Actual localhost application screenshots; no generated mockups or credentials",
+  "screenshots": [
+    {
+      "path": "docs/screenshots/final/categories.jpg",
+      "bytes": 48325,
+      "sha256": "63ad0c60f9fc768a6eb6a77e232258ac2e8ac0685ef2f453b4145c08a694fe37"
+    },
+    {
+      "path": "docs/screenshots/final/compatibility-edge-chart.jpg",
+      "bytes": 58104,
+      "sha256": "995edcef396cb6c3de55f3012cd8293b7d01be36fc1868ad2c6add723ff574ab"
+    },
+    {
+      "path": "docs/screenshots/final/csv-import-preview.jpg",
+      "bytes": 129906,
+      "sha256": "4479ec279f2f12fa8ad0313376960ce9ec95e557b1000ef0506dcbda97825916"
+    },
+    {
+      "path": "docs/screenshots/final/dashboard.jpg",
+      "bytes": 169463,
+      "sha256": "4792c8ff1f5ff6da610a6608caca0ae0f0c5856e4758c278d126a5365611936c"
+    },
+    {
+      "path": "docs/screenshots/final/forecast.jpg",
+      "bytes": 455757,
+      "sha256": "276816489279cce3290ec75b6bd541208725cff0e2a2f354241c6dfc28d5b040"
+    },
+    {
+      "path": "docs/screenshots/final/inventory-history.jpg",
+      "bytes": 75221,
+      "sha256": "7ea985ff6b620df0c404849469273d51648257ae034fa3f3f675f7c7980346c2"
+    },
+    {
+      "path": "docs/screenshots/final/inventory.jpg",
+      "bytes": 45575,
+      "sha256": "fef06ba0dd5089307d8c488bc52dd6d19c505d21f104fde99774b399be2b2d91"
+    },
+    {
+      "path": "docs/screenshots/final/login.jpg",
+      "bytes": 24147,
+      "sha256": "f02830adbfa5d7c697af48b30eb7e708a1f26773536b0aacba6853467287fd41"
+    },
+    {
+      "path": "docs/screenshots/final/model-comparison.jpg",
+      "bytes": 42536,
+      "sha256": "3a847d9bee3f8311abb71a8b7a0f3a2c304bbfb9f6bda41ec5dcb3443a4d1334"
+    },
+    {
+      "path": "docs/screenshots/final/products.jpg",
+      "bytes": 78466,
+      "sha256": "37cf93c8929ef7ff29eecc1bb9ba4223ccebda8db108ffefbeb4ccc5c164f663"
+    },
+    {
+      "path": "docs/screenshots/final/recommendation-detail.jpg",
+      "bytes": 30156,
+      "sha256": "dfc39bcca1a707e621383cbd6d74cfb295e546570f8d9170568dc42b13054b84"
+    },
+    {
+      "path": "docs/screenshots/final/recommendation.jpg",
+      "bytes": 369069,
+      "sha256": "c101fd5b2ee186b25ff72520d2799a6fe7f03b4da750545a924f631ba71afb1f"
+    },
+    {
+      "path": "docs/screenshots/final/sales-entry.jpg",
+      "bytes": 68348,
+      "sha256": "766cd949c43fe71400a80d66610bf8b2845eacf0f5319e6aa611e1fd5c74e557"
+    },
+    {
+      "path": "docs/screenshots/final/sales-history.jpg",
+      "bytes": 80165,
+      "sha256": "039d896827c6a508fe46e865e02d00ccf3f28e7e2ce9c6cf70cae70d23b590dc"
+    }
+  ]
+}

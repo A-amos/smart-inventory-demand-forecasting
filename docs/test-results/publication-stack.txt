@@ -1,0 +1,1 @@
+Final Compose, migration head/check, host/container dependencies and live readiness/frontend checks passed.

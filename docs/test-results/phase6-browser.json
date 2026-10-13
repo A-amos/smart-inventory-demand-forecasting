@@ -1,0 +1,68 @@
+{
+  "executed_at_utc": "2026-10-01T10:59:46.410Z",
+  "browser": "Codex in-app Chromium browser",
+  "sku": "P6-BROWSER-20261001",
+  "checks": [
+    {
+      "check": "Login, category and product creation",
+      "passed": true,
+      "actual": "Actual manager forms created Phase 6 demonstration / P6-BROWSER-20261001 stock20, safety4, lead3, multiplier2"
+    },
+    {
+      "check": "TC23 script-like text safely rendered",
+      "passed": true,
+      "actual": "Literal <script> text visible, injected script nodes0; restored normal product label"
+    },
+    {
+      "check": "Operational sale recorded",
+      "passed": true,
+      "actual": "Sale100; quantity3; KES120.50; on-hand20 ->17"
+    },
+    {
+      "check": "Historical import preview and confirmation",
+      "passed": true,
+      "actual": "1 accepted quantity50; duplicate+invalid rows retained; no stock adjustment"
+    },
+    {
+      "check": "Stock/audit after import",
+      "passed": true,
+      "actual": "17 on-hand,3 incoming,2 allocated; exactly opening, adjustment and sale audit rows"
+    },
+    {
+      "check": "TC21 updated dashboard after sale",
+      "passed": true,
+      "actual": "17+3−2=18 position; operational UNASSESSED, historical restriction visible"
+    },
+    {
+      "check": "Frozen historical inference",
+      "passed": true,
+      "actual": "Mapped20728; unchanged origin2011-11-10; 28 daily points"
+    },
+    {
+      "check": "Explainable historical recommendation",
+      "passed": true,
+      "actual": "position18, lead demand83.571428571, target87.571428571, reorder69.571428571; immutable human-review snapshot"
+    },
+    {
+      "check": "Actual charts and comparison",
+      "passed": true,
+      "actual": "3 Recharts SVG surfaces and2 line curves; six validation configurations and4 final-test models visible"
+    },
+    {
+      "check": "Chronological filtered history",
+      "passed": true,
+      "actual": "Two rows: operational100 quantity3 in2026; historical101 quantity50 in2011"
+    },
+    {
+      "check": "Browser logout",
+      "passed": true,
+      "actual": "Login screen restored; no workspace navigation"
+    }
+  ],
+  "participants": 0,
+  "failures": [
+    "Chrome screenshot CDP timeout",
+    "Category saved feedback locator had no match; saved list verified",
+    "CUA kernel timeout recovered existing tab"
+  ]
+}

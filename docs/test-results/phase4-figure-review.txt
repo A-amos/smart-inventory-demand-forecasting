@@ -1,0 +1,1 @@
+Actual representative forecast figure rendered with non-overlapping date labels

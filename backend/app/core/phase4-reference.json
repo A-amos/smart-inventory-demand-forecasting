@@ -1,0 +1,20 @@
+{
+  "docs/research/results/cohort.csv": "898557c055a7e542a225a34171a1730010319f66bfaccdb014176708deb806a1",
+  "docs/research/results/example-forecast.json": "182bb61ec0a5dfd2115e129cff309f246623950d205968605666df32f16e329c",
+  "docs/research/results/features.json": "78539d445b0be2a20e826826ae3a6e007a40c8d16d3864ead87d2b11f15331f8",
+  "docs/research/results/final-test-access.json": "9f79558377493d316c78fb57a18037425fed9a5e1990b4b514e5c863fda89dfb",
+  "docs/research/results/final-test-by-sku.csv": "912d358cfa0c242c7fceb756a887b3c3e9205861ce49d7dec096f75314d80592",
+  "docs/research/results/final-test-predictions.csv": "23f7500943a16b26a1caeda33ac5a949f64e3619abbc2da7b2e91d55c5447946",
+  "docs/research/results/final-test.json": "8aa0969e51ecbca59a6ca0048917534a8d637bd7774a96912db318ec73758776",
+  "docs/research/results/forecast-schema.json": "e624ddf8830b5ef5e4ca51e78802d61f65e58c962dd97d80b793b870ad430bdc",
+  "docs/research/results/frozen-selection.json": "0cc2a83c3e405f006c172c5082fa7a249f7ccbc0fc1a0a64f5f187ec56971bf6",
+  "docs/research/results/last-inference.json": "6140eb4c5b469b92a00e46654c79c9fe49f2cce7ebd6e9438a8563fa473fde3c",
+  "docs/research/results/model-registry.json": "f27b5b9563d48922e8460abb87dbebb934109c072775dc8bfdfa312f95f2a25e",
+  "docs/research/results/preprocessing.json": "25813bae6c03dce4d38c4c655a34076f133046b94205c5e3ba5342c3f118aae2",
+  "docs/research/results/report-generation.json": "52953c01a62ee7072bd024614853e472b27cdcdf27cfa4b97aca4e8e852372da",
+  "docs/research/results/reproduction.json": "cf5874e613049b5817d0120575bfff5abf1bba8bc56f9bbeff25960cfe6a9387",
+  "docs/research/results/selected-worst-10-skus.csv": "04857c28c55ae9132f2b5d0a69983e0b9815d87ab8e032a0f39748c4786db033",
+  "docs/research/results/validation-predictions.csv": "786f2ad2c1c2db493b933f59a124d2282318d7f4effa2aa0d6301472452cf4e1",
+  "docs/research/results/validation.json": "5d7268843b0e10c4148213154d2ac1efc15ee6014e87643441eb9b8844cf9bcd",
+  "ml/artifacts/uci-retail-v1-0cc2a83c3e40/selected.joblib": "840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031"
+}

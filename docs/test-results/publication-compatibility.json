@@ -1,0 +1,153 @@
+{
+  "executed_at_utc": "2026-10-13T11:02:12.388Z",
+  "browsers": [
+    {
+      "browser": "Chrome",
+      "version": "154.0.8037.59",
+      "status": "PASS: bounded compatibility smoke",
+      "checks": [
+        {
+          "area": "login",
+          "passed": true,
+          "actual": "Authorized manager workspace visible"
+        },
+        {
+          "area": "products",
+          "passed": true,
+          "actual": "Existing labelled product, on-hand17, lead3, safety4 and multiplier2 visible"
+        },
+        {
+          "area": "inventory",
+          "passed": true,
+          "actual": "Current inventory table shows17 on-hand,3 confirmed incoming,2 allocated"
+        },
+        {
+          "area": "movement history",
+          "passed": true,
+          "actual": "Opening, adjustment and operational sale100;20→17, no historical import movement"
+        },
+        {
+          "area": "sales form",
+          "passed": true,
+          "actual": "Product/SKU, quantity, Nairobi date/time, optional KES price and disabled-until-valid submit controls rendered; no new sale in this compatibility smoke"
+        },
+        {
+          "area": "CSV import page",
+          "passed": true,
+          "actual": "Historical-only/no-stock policy, required/optional columns,1MiB/5000row bound, file chooser and Preview CSV rendered; import persistence verified separately by live suite"
+        },
+        {
+          "area": "dashboard/current date",
+          "passed": true,
+          "actual": "2026-10-13 inventory position18;1active/1UNASSESSED; UK/current restriction and genuine six-validation/four-final comparison displayed"
+        },
+        {
+          "area": "stored forecast and chart",
+          "passed": true,
+          "actual": "Explicit20728mapping, origin2011-11-10,28days, historical/stored chart axes and legends rendered"
+        },
+        {
+          "area": "stored recommendation",
+          "passed": true,
+          "actual": "Immutable version3 REPLENISH, position18,target87.571428571,reorder69.571428571; current nonapplicability/human review visible"
+        },
+        {
+          "area": "sales history",
+          "passed": true,
+          "actual": "Paginated newest-first history, actor/date/source/product filter controls and original operational sale100 quantity3 visible"
+        },
+        {
+          "area": "logout",
+          "passed": true,
+          "actual": "Sign-in form restored; workspace navigation absent"
+        }
+      ],
+      "evidence": [
+        "publication-chrome-dashboard.txt",
+        "../screenshots/publication/chrome-dashboard.jpg"
+      ],
+      "scope": "Actual login/navigation/read/render/logout; new sale/import/generation persistence verified separately by live API suite",
+      "tool_failures": [
+        "Initial request-header-policy inventory failure; retry recovered",
+        "Playwright selectOption helper Runtime.evaluate timeout; documented native keyboard selection succeeded",
+        "First full-page screenshot captured axes before visible plotted lines; retained initial capture, verified two nonempty opacity1 SVG paths and recaptured after bringing chart into view. Exact-label selector included nested options; combobox role succeeded. No application code change."
+      ],
+      "chart_paths": [
+        {
+          "dLength": 873,
+          "opacity": "1",
+          "stroke": "rgb(100, 116, 139)",
+          "width": 585.7781982421875
+        },
+        {
+          "dLength": 442,
+          "opacity": "1",
+          "stroke": "rgb(2, 132, 199)",
+          "width": 287.5635986328125
+        }
+      ]
+    },
+    {
+      "browser": "Microsoft Edge",
+      "version": "155.0.4283.45",
+      "status": "PASS: bounded compatibility smoke",
+      "checks": [
+        {
+          "area": "login/products",
+          "passed": true,
+          "actual": "Manager welcome and product listing visible"
+        },
+        {
+          "area": "inventory",
+          "passed": true,
+          "actual": "Current on-hand17,incoming3,allocated2 visible"
+        },
+        {
+          "area": "sales form",
+          "passed": true,
+          "actual": "Active product selector,quantity,Nairobi date/time,optional KES price and submit controls rendered; no new operational write in this smoke"
+        },
+        {
+          "area": "CSV import page",
+          "passed": true,
+          "actual": "Historical-only policy, validation/duplicate/size guidance, file input and Preview CSV rendered"
+        },
+        {
+          "area": "dashboard/model comparison",
+          "passed": true,
+          "actual": "Current2026-10-13position18/UNASSESSED and actual validation/final table displayed"
+        },
+        {
+          "area": "historical forecast/recommendation",
+          "passed": true,
+          "actual": "Explicit20728,28day origin2011-11-10, historical chart and original version3 recommendation69.571428571 with assumptions/current-nonapplicability visible"
+        },
+        {
+          "area": "visible chart",
+          "passed": true,
+          "actual": "Historical demand spikes and blue flat mean_28 forecast27.857142857 visibly rendered with dates/legends and real tooltip"
+        },
+        {
+          "area": "logout",
+          "passed": true,
+          "actual": "After Sign out, visible sign-in form replaced authenticated workspace; immediate accessibility tree lagged but screenshot/document text show sign-in"
+        }
+      ],
+      "evidence": [
+        "publication-edge-dashboard.txt",
+        "../screenshots/publication/edge-chart.jpg"
+      ],
+      "scope": "Actual login/navigation/read/render/logout; persistence verified separately by actual API/MySQL suite",
+      "tool_failures": [
+        "Fresh screenshot geometry/maximization required. Low-battery modal interrupted input; after it disappeared, selected target window was activated/refreshed and visible chart/logout completed. No app code change."
+      ]
+    },
+    {
+      "browser": "Firefox",
+      "installed_version": "157.0.1",
+      "status": "NOT EXECUTED",
+      "reason": "Not exposed by current browser connector; prior native Firefox selection stopped Computer Use due unsupported URL-policy enforcement; no compatibility claim"
+    }
+  ],
+  "participants": 0
+}

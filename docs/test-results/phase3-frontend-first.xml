@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="20" failures="3" errors="0" time="11.4101583">
+    <testsuite name="src/App.test.jsx" timestamp="2026-09-30T21:34:43.615Z" hostname="DESKTOP-P2IJE3C" tests="2" failures="0" errors="0" skipped="0" time="1.6128554">
+        <testcase classname="src/App.test.jsx" name="signs in and revokes the server session when signing out" time="1.4800051">
+        </testcase>
+        <testcase classname="src/App.test.jsx" name="shows failed sign-in and keeps protected content hidden" time="0.1274542">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/SalesPages.test.jsx" timestamp="2026-09-30T21:34:43.633Z" hostname="DESKTOP-P2IJE3C" tests="11" failures="3" errors="0" skipped="0" time="5.7879802">
+        <testcase classname="src/SalesPages.test.jsx" name="sale sends version, timezone, optional price and request key; reloads inventory" time="1.27757">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="stale inventory error preserves form and unchanged retry key" time="0.271406">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="researcher sees no sale or CSV mutation form" time="0.0221266">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="archived products are excluded from sales selection" time="0.097812">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="sales session expiration invokes the auth callback" time="0.2401943">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="history filters and pagination send product, user, source and UTC dates" time="0.5987736">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="empty history displays meaningful feedback" time="0.0543518">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="CSV preview shows all rejected rows and requires acceptance before confirmation" time="1.0741258">
+            <failure message="Unable to find role=&quot;region&quot; and name &quot;Rejected import rows&quot;
+
+Ignored nodes: comments, script, style
+[36m&lt;body&gt;[39m
+  [36m&lt;div&gt;[39m
+    [36m&lt;section&gt;[39m
+      [36m&lt;h3[39m
+        [33mclass[39m=[32m&quot;text-lg font-semibold mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mHistorical sales CSV import[0m
+      [36m&lt;/h3&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;notice mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mHistorical imports never change current stock or create stock movements. Maximum 1 MiB / 5,000 data rows; UTF-8 CSV. Preview expires after 30 minutes.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;text-sm mb-3&quot;[39m
+      [36m&gt;[39m
+        [0mRequired columns: [0m
+        [36m&lt;code&gt;[39m
+          [0msku,sale_date,quantity[0m
+        [36m&lt;/code&gt;[39m
+        [0m. Optional: [0m
+        [36m&lt;code&gt;[39m
+          [0munit_price,external_id[0m
+        [36m&lt;/code&gt;[39m
+        [0m. Use positive quantities, optional nonnegative KES prices and ISO timestamps with timezone, such as [0m
+        [36m&lt;code&gt;[39m
+          [0m2026-09-01T10:00:00+03:00[0m
+        [36m&lt;/code&gt;[39m
+        [0m.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;text-sm mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mDuplicates use product + external ID when supplied, otherwise product + timestamp + quantity + price. Supply distinct external IDs for separate identical transactions. Repeated files are imported once. Rejected rows remain visible below.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;form[39m
+        [33maria-label[39m=[32m&quot;CSV preview form&quot;[39m
+      [36m&gt;[39m
+        [36m&lt;fieldset[39m
+          [33mclass[39m=[32m&quot;space-y-4&quot;[39m
+        [36m&gt;[39m
+          [36m&lt;label[39m
+            [33mclass[39m=[32m&quot;block text-sm font-medium&quot;[39m
+          [36m&gt;[39m
+            [0mHistorical CSV file[0m
+            [36m&lt;input[39m
+              [33maccept[39m=[32m&quot;.csv,text/csv&quot;[39m
+              [33mclass[39m=[32m&quot;field&quot;[39m
+              [33mrequired[39m=[32m&quot;&quot;[39m
+              [33mtype[39m=[32m&quot;file&quot;[39m
+            [36m/&gt;[39m
+          [36m&lt;/label&gt;[39m
+          [36m&lt;button[39m
+            [33mclass[39m=[32m&quot;button&quot;[39m
+          [36m&gt;[39m
+            [0mPreview CSV[0m
+          [36m&lt;/button&gt;[39m
+        [36m&lt;/fieldset&gt;[39m
+      [36m&lt;/form&gt;[39m
+    [36m&lt;/section&gt;[39m
+  [36m&lt;/div&gt;[39m
+[36m&lt;/body&gt;[39m
+
+Ignored nodes: comments, script, style
+[36m&lt;body&gt;[39m
+  [36m&lt;div&gt;[39m
+    [36m&lt;section&gt;[39m
+      [36m&lt;h3[39m
+        [33mclass[39m=[32m&quot;text-lg font-semibold mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mHistorical sales CSV import[0m
+      [36m&lt;/h3&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;notice mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mHistorical imports never change current stock or create stock movements. Maximum 1 MiB / 5,000 data rows; UTF-8 CSV. Preview expires after 30 minutes.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;text-sm mb-3&quot;[39m
+      [36m&gt;[39m
+        [0mRequired columns: [0m
+        [36m&lt;code&gt;[39m
+          [0msku,sale_date,quantity[0m
+        [36m&lt;/code&gt;[39m
+        [0m. Optional: [0m
+        [36m&lt;code&gt;[39m
+          [0munit_price,external_id[0m
+        [36m&lt;/code&gt;[39m
+        [0m. Use positive quantities, optional nonnegative KES prices and ISO timestamps with timezone, such as [0m
+        [36m&lt;code&gt;[39m
+          [0m2026-09-01T10:00:00+03:00[0m
+        [36m&lt;/code&gt;[39m
+        [0m.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;text-sm mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mDuplicates use product + external ID when supplied, otherwise product + timestamp + quantity + price. Supply distinct external IDs for separate identical transactions. Repeated files are imported once. Rejected rows remain visible below.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;form[39m
+        [33maria-label[39m=[32m&quot;CSV preview form&quot;[39m
+      [36m&gt;[39m
+        [36m&lt;fieldset[39m
+          [33mclass[39m=[32m&quot;space-y-4&quot;[39m
+        [36m&gt;[39m
+          [36m&lt;label[39m
+            [33mclass[39m=[32m&quot;block text-sm font-medium&quot;[39m
+          [36m&gt;[39m
+            [0mHistorical CSV file[0m
+            [36m&lt;input[39m
+              [33maccept[39m=[32m&quot;.csv,text/csv&quot;[39m
+              [33mclass[39m=[32m&quot;field&quot;[39m
+              [33mrequired[39m=[32m&quot;&quot;[39m
+              [33mtype[39m=[32m&quot;file&quot;[39m
+            [36m/&gt;[39m
+          [36m&lt;/label&gt;[39m
+          [36m&lt;button[39m
+            [33mclass[39m=[32m&quot;button&quot;[39m
+          [36m&gt;[39m
+            [0mPreview CSV[0m
+          [36m&lt;/button&gt;[39m
+        [36m&lt;/fieldset&gt;[39m
+      [36m&lt;/form&gt;[39m
+    [36m&lt;/section&gt;[39m
+  [36m&lt;/div&gt;[39m
+[36m&lt;/body&gt;[39m" type="TestingLibraryElementError">
+TestingLibraryElementError: Unable to find role=&quot;region&quot; and name &quot;Rejected import rows&quot;
+
+Ignored nodes: comments, script, style
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;section&gt;
+      &lt;h3
+        class=&quot;text-lg font-semibold mb-4&quot;
+      &gt;
+        Historical sales CSV import
+      &lt;/h3&gt;
+      &lt;p
+        class=&quot;notice mb-4&quot;
+      &gt;
+        Historical imports never change current stock or create stock movements. Maximum 1 MiB / 5,000 data rows; UTF-8 CSV. Preview expires after 30 minutes.
+      &lt;/p&gt;
+      &lt;p
+        class=&quot;text-sm mb-3&quot;
+      &gt;
+        Required columns: 
+        &lt;code&gt;
+          sku,sale_date,quantity
+        &lt;/code&gt;
+        . Optional: 
+        &lt;code&gt;
+          unit_price,external_id
+        &lt;/code&gt;
+        . Use positive quantities, optional nonnegative KES prices and ISO timestamps with timezone, such as 
+        &lt;code&gt;
+          2026-09-01T10:00:00+03:00
+        &lt;/code&gt;
+        .
+      &lt;/p&gt;
+      &lt;p
+        class=&quot;text-sm mb-4&quot;
+      &gt;
+        Duplicates use product + external ID when supplied, otherwise product + timestamp + quantity + price. Supply distinct external IDs for separate identical transactions. Repeated files are imported once. Rejected rows remain visible below.
+      &lt;/p&gt;
+      &lt;form
+        aria-label=&quot;CSV preview form&quot;
+      &gt;
+        &lt;fieldset
+          class=&quot;space-y-4&quot;
+        &gt;
+          &lt;label
+            class=&quot;block text-sm font-medium&quot;
+          &gt;
+            Historical CSV file
+            &lt;input
+              accept=&quot;.csv,text/csv&quot;
+              class=&quot;field&quot;
+              required=&quot;&quot;
+              type=&quot;file&quot;
+            /&gt;
+          &lt;/label&gt;
+          &lt;button
+            class=&quot;button&quot;
+          &gt;
+            Preview CSV
+          &lt;/button&gt;
+        &lt;/fieldset&gt;
+      &lt;/form&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+
+Ignored nodes: comments, script, style
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;section&gt;
+      &lt;h3
+        class=&quot;text-lg font-semibold mb-4&quot;
+      &gt;
+        Historical sales CSV import
+      &lt;/h3&gt;
+      &lt;p
+        class=&quot;notice mb-4&quot;
+      &gt;
+        Historical imports never change current stock or create stock movements. Maximum 1 MiB / 5,000 data rows; UTF-8 CSV. Preview expires after 30 minutes.
+      &lt;/p&gt;
+      &lt;p
+        class=&quot;text-sm mb-3&quot;
+      &gt;
+        Required columns: 
+        &lt;code&gt;
+          sku,sale_date,quantity
+        &lt;/code&gt;
+        . Optional: 
+        &lt;code&gt;
+          unit_price,external_id
+        &lt;/code&gt;
+        . Use positive quantities, optional nonnegative KES prices and ISO timestamps with timezone, such as 
+        &lt;code&gt;
+          2026-09-01T10:00:00+03:00
+        &lt;/code&gt;
+        .
+      &lt;/p&gt;
+      &lt;p
+        class=&quot;text-sm mb-4&quot;
+      &gt;
+        Duplicates use product + external ID when supplied, otherwise product + timestamp + quantity + price. Supply distinct external IDs for separate identical transactions. Repeated files are imported once. Rejected rows remain visible below.
+      &lt;/p&gt;
+      &lt;form
+        aria-label=&quot;CSV preview form&quot;
+      &gt;
+        &lt;fieldset
+          class=&quot;space-y-4&quot;
+        &gt;
+          &lt;label
+            class=&quot;block text-sm font-medium&quot;
+          &gt;
+            Historical CSV file
+            &lt;input
+              accept=&quot;.csv,text/csv&quot;
+              class=&quot;field&quot;
+              required=&quot;&quot;
+              type=&quot;file&quot;
+            /&gt;
+          &lt;/label&gt;
+          &lt;button
+            class=&quot;button&quot;
+          &gt;
+            Preview CSV
+          &lt;/button&gt;
+        &lt;/fieldset&gt;
+      &lt;/form&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+ ❯ waitForWrapper node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/SalesPages.test.jsx:101:23
+            </failure>
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="repeat-file preview reports previously imported and offers no second confirmation" time="1.049902">
+            <failure message="Unable to find an element with the text: /previously imported; no additional rows saved/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m&lt;body&gt;[39m
+  [36m&lt;div&gt;[39m
+    [36m&lt;section&gt;[39m
+      [36m&lt;h3[39m
+        [33mclass[39m=[32m&quot;text-lg font-semibold mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mHistorical sales CSV import[0m
+      [36m&lt;/h3&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;notice mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mHistorical imports never change current stock or create stock movements. Maximum 1 MiB / 5,000 data rows; UTF-8 CSV. Preview expires after 30 minutes.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;text-sm mb-3&quot;[39m
+      [36m&gt;[39m
+        [0mRequired columns: [0m
+        [36m&lt;code&gt;[39m
+          [0msku,sale_date,quantity[0m
+        [36m&lt;/code&gt;[39m
+        [0m. Optional: [0m
+        [36m&lt;code&gt;[39m
+          [0munit_price,external_id[0m
+        [36m&lt;/code&gt;[39m
+        [0m. Use positive quantities, optional nonnegative KES prices and ISO timestamps with timezone, such as [0m
+        [36m&lt;code&gt;[39m
+          [0m2026-09-01T10:00:00+03:00[0m
+        [36m&lt;/code&gt;[39m
+        [0m.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;text-sm mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mDuplicates use product + external ID when supplied, otherwise product + timestamp + quantity + price. Supply distinct external IDs for separate identical transactions. Repeated files are imported once. Rejected rows remain visible below.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;form[39m
+        [33maria-label[39m=[32m&quot;CSV preview form&quot;[39m
+      [36m&gt;[39m
+        [36m&lt;fieldset[39m
+          [33mclass[39m=[32m&quot;space-y-4&quot;[39m
+        [36m&gt;[39m
+          [36m&lt;label[39m
+            [33mclass[39m=[32m&quot;block text-sm font-medium&quot;[39m
+          [36m&gt;[39m
+            [0mHistorical CSV file[0m
+            [36m&lt;input[39m
+              [33maccept[39m=[32m&quot;.csv,text/csv&quot;[39m
+              [33mclass[39m=[32m&quot;field&quot;[39m
+              [33mrequired[39m=[32m&quot;&quot;[39m
+              [33mtype[39m=[32m&quot;file&quot;[39m
+            [36m/&gt;[39m
+          [36m&lt;/label&gt;[39m
+          [36m&lt;button[39m
+            [33mclass[39m=[32m&quot;button&quot;[39m
+          [36m&gt;[39m
+            [0mPreview CSV[0m
+          [36m&lt;/button&gt;[39m
+        [36m&lt;/fieldset&gt;[39m
+      [36m&lt;/form&gt;[39m
+    [36m&lt;/section&gt;[39m
+  [36m&lt;/div&gt;[39m
+[36m&lt;/body&gt;[39m
+
+Ignored nodes: comments, script, style
+[36m&lt;body&gt;[39m
+  [36m&lt;div&gt;[39m
+    [36m&lt;section&gt;[39m
+      [36m&lt;h3[39m
+        [33mclass[39m=[32m&quot;text-lg font-semibold mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mHistorical sales CSV import[0m
+      [36m&lt;/h3&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;notice mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mHistorical imports never change current stock or create stock movements. Maximum 1 MiB / 5,000 data rows; UTF-8 CSV. Preview expires after 30 minutes.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;text-sm mb-3&quot;[39m
+      [36m&gt;[39m
+        [0mRequired columns: [0m
+        [36m&lt;code&gt;[39m
+          [0msku,sale_date,quantity[0m
+        [36m&lt;/code&gt;[39m
+        [0m. Optional: [0m
+        [36m&lt;code&gt;[39m
+          [0munit_price,external_id[0m
+        [36m&lt;/code&gt;[39m
+        [0m. Use positive quantities, optional nonnegative KES prices and ISO timestamps with timezone, such as [0m
+        [36m&lt;code&gt;[39m
+          [0m2026-09-01T10:00:00+03:00[0m
+        [36m&lt;/code&gt;[39m
+        [0m.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;text-sm mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mDuplicates use product + external ID when supplied, otherwise product + timestamp + quantity + price. Supply distinct external IDs for separate identical transactions. Repeated files are imported once. Rejected rows remain visible below.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;form[39m
+        [33maria-label[39m=[32m&quot;CSV preview form&quot;[39m
+      [36m&gt;[39m
+        [36m&lt;fieldset[39m
+          [33mclass[39m=[32m&quot;space-y-4&quot;[39m
+        [36m&gt;[39m
+          [36m&lt;label[39m
+            [33mclass[39m=[32m&quot;block text-sm font-medium&quot;[39m
+          [36m&gt;[39m
+            [0mHistorical CSV file[0m
+            [36m&lt;input[39m
+              [33maccept[39m=[32m&quot;.csv,text/csv&quot;[39m
+              [33mclass[39m=[32m&quot;field&quot;[39m
+              [33mrequired[39m=[32m&quot;&quot;[39m
+              [33mtype[39m=[32m&quot;file&quot;[39m
+            [36m/&gt;[39m
+          [36m&lt;/label&gt;[39m
+          [36m&lt;button[39m
+            [33mclass[39m=[32m&quot;button&quot;[39m
+          [36m&gt;[39m
+            [0mPreview CSV[0m
+          [36m&lt;/button&gt;[39m
+        [36m&lt;/fieldset&gt;[39m
+      [36m&lt;/form&gt;[39m
+    [36m&lt;/section&gt;[39m
+  [36m&lt;/div&gt;[39m
+[36m&lt;/body&gt;[39m" type="TestingLibraryElementError">
+TestingLibraryElementError: Unable to find an element with the text: /previously imported; no additional rows saved/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;section&gt;
+      &lt;h3
+        class=&quot;text-lg font-semibold mb-4&quot;
+      &gt;
+        Historical sales CSV import
+      &lt;/h3&gt;
+      &lt;p
+        class=&quot;notice mb-4&quot;
+      &gt;
+        Historical imports never change current stock or create stock movements. Maximum 1 MiB / 5,000 data rows; UTF-8 CSV. Preview expires after 30 minutes.
+      &lt;/p&gt;
+      &lt;p
+        class=&quot;text-sm mb-3&quot;
+      &gt;
+        Required columns: 
+        &lt;code&gt;
+          sku,sale_date,quantity
+        &lt;/code&gt;
+        . Optional: 
+        &lt;code&gt;
+          unit_price,external_id
+        &lt;/code&gt;
+        . Use positive quantities, optional nonnegative KES prices and ISO timestamps with timezone, such as 
+        &lt;code&gt;
+          2026-09-01T10:00:00+03:00
+        &lt;/code&gt;
+        .
+      &lt;/p&gt;
+      &lt;p
+        class=&quot;text-sm mb-4&quot;
+      &gt;
+        Duplicates use product + external ID when supplied, otherwise product + timestamp + quantity + price. Supply distinct external IDs for separate identical transactions. Repeated files are imported once. Rejected rows remain visible below.
+      &lt;/p&gt;
+      &lt;form
+        aria-label=&quot;CSV preview form&quot;
+      &gt;
+        &lt;fieldset
+          class=&quot;space-y-4&quot;
+        &gt;
+          &lt;label
+            class=&quot;block text-sm font-medium&quot;
+          &gt;
+            Historical CSV file
+            &lt;input
+              accept=&quot;.csv,text/csv&quot;
+              class=&quot;field&quot;
+              required=&quot;&quot;
+              type=&quot;file&quot;
+            /&gt;
+          &lt;/label&gt;
+          &lt;button
+            class=&quot;button&quot;
+          &gt;
+            Preview CSV
+          &lt;/button&gt;
+        &lt;/fieldset&gt;
+      &lt;/form&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+
+Ignored nodes: comments, script, style
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;section&gt;
+      &lt;h3
+        class=&quot;text-lg font-semibold mb-4&quot;
+      &gt;
+        Historical sales CSV import
+      &lt;/h3&gt;
+      &lt;p
+        class=&quot;notice mb-4&quot;
+      &gt;
+        Historical imports never change current stock or create stock movements. Maximum 1 MiB / 5,000 data rows; UTF-8 CSV. Preview expires after 30 minutes.
+      &lt;/p&gt;
+      &lt;p
+        class=&quot;text-sm mb-3&quot;
+      &gt;
+        Required columns: 
+        &lt;code&gt;
+          sku,sale_date,quantity
+        &lt;/code&gt;
+        . Optional: 
+        &lt;code&gt;
+          unit_price,external_id
+        &lt;/code&gt;
+        . Use positive quantities, optional nonnegative KES prices and ISO timestamps with timezone, such as 
+        &lt;code&gt;
+          2026-09-01T10:00:00+03:00
+        &lt;/code&gt;
+        .
+      &lt;/p&gt;
+      &lt;p
+        class=&quot;text-sm mb-4&quot;
+      &gt;
+        Duplicates use product + external ID when supplied, otherwise product + timestamp + quantity + price. Supply distinct external IDs for separate identical transactions. Repeated files are imported once. Rejected rows remain visible below.
+      &lt;/p&gt;
+      &lt;form
+        aria-label=&quot;CSV preview form&quot;
+      &gt;
+        &lt;fieldset
+          class=&quot;space-y-4&quot;
+        &gt;
+          &lt;label
+            class=&quot;block text-sm font-medium&quot;
+          &gt;
+            Historical CSV file
+            &lt;input
+              accept=&quot;.csv,text/csv&quot;
+              class=&quot;field&quot;
+              required=&quot;&quot;
+              type=&quot;file&quot;
+            /&gt;
+          &lt;/label&gt;
+          &lt;button
+            class=&quot;button&quot;
+          &gt;
+            Preview CSV
+          &lt;/button&gt;
+        &lt;/fieldset&gt;
+      &lt;/form&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+ ❯ waitForWrapper node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/SalesPages.test.jsx:117:23
+            </failure>
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="oversized CSV rejected locally without a request" time="0.0545302">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="import conflict is visible and preserves rejected-row report" time="1.0357898">
+            <failure message="Unable to find role=&quot;region&quot; and name &quot;Import preview&quot;
+
+Ignored nodes: comments, script, style
+[36m&lt;body&gt;[39m
+  [36m&lt;div&gt;[39m
+    [36m&lt;section&gt;[39m
+      [36m&lt;h3[39m
+        [33mclass[39m=[32m&quot;text-lg font-semibold mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mHistorical sales CSV import[0m
+      [36m&lt;/h3&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;notice mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mHistorical imports never change current stock or create stock movements. Maximum 1 MiB / 5,000 data rows; UTF-8 CSV. Preview expires after 30 minutes.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;text-sm mb-3&quot;[39m
+      [36m&gt;[39m
+        [0mRequired columns: [0m
+        [36m&lt;code&gt;[39m
+          [0msku,sale_date,quantity[0m
+        [36m&lt;/code&gt;[39m
+        [0m. Optional: [0m
+        [36m&lt;code&gt;[39m
+          [0munit_price,external_id[0m
+        [36m&lt;/code&gt;[39m
+        [0m. Use positive quantities, optional nonnegative KES prices and ISO timestamps with timezone, such as [0m
+        [36m&lt;code&gt;[39m
+          [0m2026-09-01T10:00:00+03:00[0m
+        [36m&lt;/code&gt;[39m
+        [0m.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;text-sm mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mDuplicates use product + external ID when supplied, otherwise product + timestamp + quantity + price. Supply distinct external IDs for separate identical transactions. Repeated files are imported once. Rejected rows remain visible below.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;form[39m
+        [33maria-label[39m=[32m&quot;CSV preview form&quot;[39m
+      [36m&gt;[39m
+        [36m&lt;fieldset[39m
+          [33mclass[39m=[32m&quot;space-y-4&quot;[39m
+        [36m&gt;[39m
+          [36m&lt;label[39m
+            [33mclass[39m=[32m&quot;block text-sm font-medium&quot;[39m
+          [36m&gt;[39m
+            [0mHistorical CSV file[0m
+            [36m&lt;input[39m
+              [33maccept[39m=[32m&quot;.csv,text/csv&quot;[39m
+              [33mclass[39m=[32m&quot;field&quot;[39m
+              [33mrequired[39m=[32m&quot;&quot;[39m
+              [33mtype[39m=[32m&quot;file&quot;[39m
+            [36m/&gt;[39m
+          [36m&lt;/label&gt;[39m
+          [36m&lt;button[39m
+            [33mclass[39m=[32m&quot;button&quot;[39m
+          [36m&gt;[39m
+            [0mPreview CSV[0m
+          [36m&lt;/button&gt;[39m
+        [36m&lt;/fieldset&gt;[39m
+      [36m&lt;/form&gt;[39m
+    [36m&lt;/section&gt;[39m
+  [36m&lt;/div&gt;[39m
+[36m&lt;/body&gt;[39m
+
+Ignored nodes: comments, script, style
+[36m&lt;body&gt;[39m
+  [36m&lt;div&gt;[39m
+    [36m&lt;section&gt;[39m
+      [36m&lt;h3[39m
+        [33mclass[39m=[32m&quot;text-lg font-semibold mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mHistorical sales CSV import[0m
+      [36m&lt;/h3&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;notice mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mHistorical imports never change current stock or create stock movements. Maximum 1 MiB / 5,000 data rows; UTF-8 CSV. Preview expires after 30 minutes.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;text-sm mb-3&quot;[39m
+      [36m&gt;[39m
+        [0mRequired columns: [0m
+        [36m&lt;code&gt;[39m
+          [0msku,sale_date,quantity[0m
+        [36m&lt;/code&gt;[39m
+        [0m. Optional: [0m
+        [36m&lt;code&gt;[39m
+          [0munit_price,external_id[0m
+        [36m&lt;/code&gt;[39m
+        [0m. Use positive quantities, optional nonnegative KES prices and ISO timestamps with timezone, such as [0m
+        [36m&lt;code&gt;[39m
+          [0m2026-09-01T10:00:00+03:00[0m
+        [36m&lt;/code&gt;[39m
+        [0m.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;p[39m
+        [33mclass[39m=[32m&quot;text-sm mb-4&quot;[39m
+      [36m&gt;[39m
+        [0mDuplicates use product + external ID when supplied, otherwise product + timestamp + quantity + price. Supply distinct external IDs for separate identical transactions. Repeated files are imported once. Rejected rows remain visible below.[0m
+      [36m&lt;/p&gt;[39m
+      [36m&lt;form[39m
+        [33maria-label[39m=[32m&quot;CSV preview form&quot;[39m
+      [36m&gt;[39m
+        [36m&lt;fieldset[39m
+          [33mclass[39m=[32m&quot;space-y-4&quot;[39m
+        [36m&gt;[39m
+          [36m&lt;label[39m
+            [33mclass[39m=[32m&quot;block text-sm font-medium&quot;[39m
+          [36m&gt;[39m
+            [0mHistorical CSV file[0m
+            [36m&lt;input[39m
+              [33maccept[39m=[32m&quot;.csv,text/csv&quot;[39m
+              [33mclass[39m=[32m&quot;field&quot;[39m
+              [33mrequired[39m=[32m&quot;&quot;[39m
+              [33mtype[39m=[32m&quot;file&quot;[39m
+            [36m/&gt;[39m
+          [36m&lt;/label&gt;[39m
+          [36m&lt;button[39m
+            [33mclass[39m=[32m&quot;button&quot;[39m
+          [36m&gt;[39m
+            [0mPreview CSV[0m
+          [36m&lt;/button&gt;[39m
+        [36m&lt;/fieldset&gt;[39m
+      [36m&lt;/form&gt;[39m
+    [36m&lt;/section&gt;[39m
+  [36m&lt;/div&gt;[39m
+[36m&lt;/body&gt;[39m" type="TestingLibraryElementError">
+TestingLibraryElementError: Unable to find role=&quot;region&quot; and name &quot;Import preview&quot;
+
+Ignored nodes: comments, script, style
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;section&gt;
+      &lt;h3
+        class=&quot;text-lg font-semibold mb-4&quot;
+      &gt;
+        Historical sales CSV import
+      &lt;/h3&gt;
+      &lt;p
+        class=&quot;notice mb-4&quot;
+      &gt;
+        Historical imports never change current stock or create stock movements. Maximum 1 MiB / 5,000 data rows; UTF-8 CSV. Preview expires after 30 minutes.
+      &lt;/p&gt;
+      &lt;p
+        class=&quot;text-sm mb-3&quot;
+      &gt;
+        Required columns: 
+        &lt;code&gt;
+          sku,sale_date,quantity
+        &lt;/code&gt;
+        . Optional: 
+        &lt;code&gt;
+          unit_price,external_id
+        &lt;/code&gt;
+        . Use positive quantities, optional nonnegative KES prices and ISO timestamps with timezone, such as 
+        &lt;code&gt;
+          2026-09-01T10:00:00+03:00
+        &lt;/code&gt;
+        .
+      &lt;/p&gt;
+      &lt;p
+        class=&quot;text-sm mb-4&quot;
+      &gt;
+        Duplicates use product + external ID when supplied, otherwise product + timestamp + quantity + price. Supply distinct external IDs for separate identical transactions. Repeated files are imported once. Rejected rows remain visible below.
+      &lt;/p&gt;
+      &lt;form
+        aria-label=&quot;CSV preview form&quot;
+      &gt;
+        &lt;fieldset
+          class=&quot;space-y-4&quot;
+        &gt;
+          &lt;label
+            class=&quot;block text-sm font-medium&quot;
+          &gt;
+            Historical CSV file
+            &lt;input
+              accept=&quot;.csv,text/csv&quot;
+              class=&quot;field&quot;
+              required=&quot;&quot;
+              type=&quot;file&quot;
+            /&gt;
+          &lt;/label&gt;
+          &lt;button
+            class=&quot;button&quot;
+          &gt;
+            Preview CSV
+          &lt;/button&gt;
+        &lt;/fieldset&gt;
+      &lt;/form&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+
+Ignored nodes: comments, script, style
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;section&gt;
+      &lt;h3
+        class=&quot;text-lg font-semibold mb-4&quot;
+      &gt;
+        Historical sales CSV import
+      &lt;/h3&gt;
+      &lt;p
+        class=&quot;notice mb-4&quot;
+      &gt;
+        Historical imports never change current stock or create stock movements. Maximum 1 MiB / 5,000 data rows; UTF-8 CSV. Preview expires after 30 minutes.
+      &lt;/p&gt;
+      &lt;p
+        class=&quot;text-sm mb-3&quot;
+      &gt;
+        Required columns: 
+        &lt;code&gt;
+          sku,sale_date,quantity
+        &lt;/code&gt;
+        . Optional: 
+        &lt;code&gt;
+          unit_price,external_id
+        &lt;/code&gt;
+        . Use positive quantities, optional nonnegative KES prices and ISO timestamps with timezone, such as 
+        &lt;code&gt;
+          2026-09-01T10:00:00+03:00
+        &lt;/code&gt;
+        .
+      &lt;/p&gt;
+      &lt;p
+        class=&quot;text-sm mb-4&quot;
+      &gt;
+        Duplicates use product + external ID when supplied, otherwise product + timestamp + quantity + price. Supply distinct external IDs for separate identical transactions. Repeated files are imported once. Rejected rows remain visible below.
+      &lt;/p&gt;
+      &lt;form
+        aria-label=&quot;CSV preview form&quot;
+      &gt;
+        &lt;fieldset
+          class=&quot;space-y-4&quot;
+        &gt;
+          &lt;label
+            class=&quot;block text-sm font-medium&quot;
+          &gt;
+            Historical CSV file
+            &lt;input
+              accept=&quot;.csv,text/csv&quot;
+              class=&quot;field&quot;
+              required=&quot;&quot;
+              type=&quot;file&quot;
+            /&gt;
+          &lt;/label&gt;
+          &lt;button
+            class=&quot;button&quot;
+          &gt;
+            Preview CSV
+          &lt;/button&gt;
+        &lt;/fieldset&gt;
+      &lt;/form&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+ ❯ waitForWrapper node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/SalesPages.test.jsx:133:16
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/Workspace.test.jsx" timestamp="2026-09-30T21:34:43.709Z" hostname="DESKTOP-P2IJE3C" tests="7" failures="0" errors="0" skipped="0" time="4.0093227">
+        <testcase classname="src/Workspace.test.jsx" name="manager creates a category and sees refreshed data" time="1.5408786">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="manager creates a product with stock and replenishment configuration" time="0.8779442">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="duplicate SKU error preserves entered form" time="0.2130936">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="inventory adjustment sends quantities, reason and loaded version" time="0.7167288">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="researcher sees records and history without mutation controls" time="0.2385662">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="archive hides product and show-archived exposes edit for restoration" time="0.3481712">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="expired session clears authenticated workspace through callback" time="0.0696309">
+        </testcase>
+    </testsuite>
+</testsuites>

@@ -1,0 +1,22 @@
+{
+  "version": "retail-demand-v1",
+  "seed": 20261001,
+  "horizon": 28,
+  "minimum_history": 365,
+  "minimum_positive_days": 60,
+  "series_count": 60,
+  "train_start": "2009-12-01",
+  "train_end": "2011-09-15",
+  "validation_origins": ["2011-09-15", "2011-10-13"],
+  "validation_end": "2011-11-10",
+  "test_origin": "2011-11-10",
+  "test_end": "2011-12-08",
+  "candidates": {
+    "seasonal_naive": {"kind": "seasonal_naive"},
+    "mean_28": {"kind": "mean_28"},
+    "rf_leaf5": {"kind": "random_forest", "n_estimators": 80, "max_depth": 12, "min_samples_leaf": 5},
+    "rf_leaf15": {"kind": "random_forest", "n_estimators": 80, "max_depth": 12, "min_samples_leaf": 15},
+    "xgb_depth3": {"kind": "xgboost", "n_estimators": 200, "max_depth": 3, "learning_rate": 0.05, "min_child_weight": 10},
+    "xgb_depth5": {"kind": "xgboost", "n_estimators": 150, "max_depth": 5, "learning_rate": 0.05, "min_child_weight": 10}
+  }
+}

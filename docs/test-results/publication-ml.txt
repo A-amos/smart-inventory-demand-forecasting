@@ -1,0 +1,13 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.14, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\user\Projects\SmartInventory\ml
+configfile: pytest.ini
+plugins: anyio-4.15.1
+collected 59 items
+
+ml\tests\test_reproduction_setup.py ..                                   [  3%]
+ml\tests\test_research.py .............................................. [ 81%]
+...........                                                              [100%]
+
+- generated xml file: C:\Users\user\Projects\SmartInventory\docs\test-results\publication-ml.xml -
+============================= 59 passed in 27.87s =============================

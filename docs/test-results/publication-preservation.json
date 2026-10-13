@@ -1,0 +1,162 @@
+{
+  "executed_at_utc": "2026-10-13T11:34:36.728004+00:00",
+  "unchanged": true,
+  "protected_files": [
+    {
+      "path": "docs/research/results/cohort.csv",
+      "expected": "898557c055a7e542a225a34171a1730010319f66bfaccdb014176708deb806a1",
+      "actual": "898557c055a7e542a225a34171a1730010319f66bfaccdb014176708deb806a1"
+    },
+    {
+      "path": "docs/research/results/example-forecast.json",
+      "expected": "182bb61ec0a5dfd2115e129cff309f246623950d205968605666df32f16e329c",
+      "actual": "182bb61ec0a5dfd2115e129cff309f246623950d205968605666df32f16e329c"
+    },
+    {
+      "path": "docs/research/results/features.json",
+      "expected": "78539d445b0be2a20e826826ae3a6e007a40c8d16d3864ead87d2b11f15331f8",
+      "actual": "78539d445b0be2a20e826826ae3a6e007a40c8d16d3864ead87d2b11f15331f8"
+    },
+    {
+      "path": "docs/research/results/final-test-access.json",
+      "expected": "9f79558377493d316c78fb57a18037425fed9a5e1990b4b514e5c863fda89dfb",
+      "actual": "9f79558377493d316c78fb57a18037425fed9a5e1990b4b514e5c863fda89dfb"
+    },
+    {
+      "path": "docs/research/results/final-test-by-sku.csv",
+      "expected": "912d358cfa0c242c7fceb756a887b3c3e9205861ce49d7dec096f75314d80592",
+      "actual": "912d358cfa0c242c7fceb756a887b3c3e9205861ce49d7dec096f75314d80592"
+    },
+    {
+      "path": "docs/research/results/final-test-predictions.csv",
+      "expected": "23f7500943a16b26a1caeda33ac5a949f64e3619abbc2da7b2e91d55c5447946",
+      "actual": "23f7500943a16b26a1caeda33ac5a949f64e3619abbc2da7b2e91d55c5447946"
+    },
+    {
+      "path": "docs/research/results/final-test.json",
+      "expected": "8aa0969e51ecbca59a6ca0048917534a8d637bd7774a96912db318ec73758776",
+      "actual": "8aa0969e51ecbca59a6ca0048917534a8d637bd7774a96912db318ec73758776"
+    },
+    {
+      "path": "docs/research/results/forecast-schema.json",
+      "expected": "e624ddf8830b5ef5e4ca51e78802d61f65e58c962dd97d80b793b870ad430bdc",
+      "actual": "e624ddf8830b5ef5e4ca51e78802d61f65e58c962dd97d80b793b870ad430bdc"
+    },
+    {
+      "path": "docs/research/results/frozen-selection.json",
+      "expected": "0cc2a83c3e405f006c172c5082fa7a249f7ccbc0fc1a0a64f5f187ec56971bf6",
+      "actual": "0cc2a83c3e405f006c172c5082fa7a249f7ccbc0fc1a0a64f5f187ec56971bf6"
+    },
+    {
+      "path": "docs/research/results/last-inference.json",
+      "expected": "6140eb4c5b469b92a00e46654c79c9fe49f2cce7ebd6e9438a8563fa473fde3c",
+      "actual": "6140eb4c5b469b92a00e46654c79c9fe49f2cce7ebd6e9438a8563fa473fde3c"
+    },
+    {
+      "path": "docs/research/results/model-registry.json",
+      "expected": "f27b5b9563d48922e8460abb87dbebb934109c072775dc8bfdfa312f95f2a25e",
+      "actual": "f27b5b9563d48922e8460abb87dbebb934109c072775dc8bfdfa312f95f2a25e"
+    },
+    {
+      "path": "docs/research/results/preprocessing.json",
+      "expected": "25813bae6c03dce4d38c4c655a34076f133046b94205c5e3ba5342c3f118aae2",
+      "actual": "25813bae6c03dce4d38c4c655a34076f133046b94205c5e3ba5342c3f118aae2"
+    },
+    {
+      "path": "docs/research/results/report-generation.json",
+      "expected": "52953c01a62ee7072bd024614853e472b27cdcdf27cfa4b97aca4e8e852372da",
+      "actual": "52953c01a62ee7072bd024614853e472b27cdcdf27cfa4b97aca4e8e852372da"
+    },
+    {
+      "path": "docs/research/results/reproduction.json",
+      "expected": "cf5874e613049b5817d0120575bfff5abf1bba8bc56f9bbeff25960cfe6a9387",
+      "actual": "cf5874e613049b5817d0120575bfff5abf1bba8bc56f9bbeff25960cfe6a9387"
+    },
+    {
+      "path": "docs/research/results/selected-worst-10-skus.csv",
+      "expected": "04857c28c55ae9132f2b5d0a69983e0b9815d87ab8e032a0f39748c4786db033",
+      "actual": "04857c28c55ae9132f2b5d0a69983e0b9815d87ab8e032a0f39748c4786db033"
+    },
+    {
+      "path": "docs/research/results/validation-predictions.csv",
+      "expected": "786f2ad2c1c2db493b933f59a124d2282318d7f4effa2aa0d6301472452cf4e1",
+      "actual": "786f2ad2c1c2db493b933f59a124d2282318d7f4effa2aa0d6301472452cf4e1"
+    },
+    {
+      "path": "docs/research/results/validation.json",
+      "expected": "5d7268843b0e10c4148213154d2ac1efc15ee6014e87643441eb9b8844cf9bcd",
+      "actual": "5d7268843b0e10c4148213154d2ac1efc15ee6014e87643441eb9b8844cf9bcd"
+    },
+    {
+      "path": "ml/artifacts/uci-retail-v1-0cc2a83c3e40/selected.joblib",
+      "expected": "840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031",
+      "actual": "840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031"
+    },
+    {
+      "path": "ml/__init__.py",
+      "expected": "e42d41b96b219e5f699364ccc46025e66331c472f0bc7839cf9ff40252d90dcc",
+      "actual": "e42d41b96b219e5f699364ccc46025e66331c472f0bc7839cf9ff40252d90dcc"
+    },
+    {
+      "path": "ml/artifacts.py",
+      "expected": "db88d2930cf40ec0029a4eb7e0365474fd99601284743eadeb8972efcbf87a36",
+      "actual": "db88d2930cf40ec0029a4eb7e0365474fd99601284743eadeb8972efcbf87a36"
+    },
+    {
+      "path": "ml/cli.py",
+      "expected": "25dda3c8ad6885fcd5b1ddb6f6be1ed481f34a3effdac9e8f7d1433b924951b5",
+      "actual": "25dda3c8ad6885fcd5b1ddb6f6be1ed481f34a3effdac9e8f7d1433b924951b5"
+    },
+    {
+      "path": "ml/common.py",
+      "expected": "b25968a442a0586573661ad8823cc218a18a75c9c0e061e488b8025942ae875a",
+      "actual": "b25968a442a0586573661ad8823cc218a18a75c9c0e061e488b8025942ae875a"
+    },
+    {
+      "path": "ml/contracts.py",
+      "expected": "50b39f8a03713dce4764ed8c9fadba2122fad032561203bdcf76c62fec63579d",
+      "actual": "50b39f8a03713dce4764ed8c9fadba2122fad032561203bdcf76c62fec63579d"
+    },
+    {
+      "path": "ml/data.py",
+      "expected": "3543588f27c1fe2de625d786e9907ef065c513c001d1a459d29507fcbbe748ac",
+      "actual": "3543588f27c1fe2de625d786e9907ef065c513c001d1a459d29507fcbbe748ac"
+    },
+    {
+      "path": "ml/eda.py",
+      "expected": "7e133843c6a004060836339acfabeefd3060cbc05b298ab4b34b2e303773a833",
+      "actual": "7e133843c6a004060836339acfabeefd3060cbc05b298ab4b34b2e303773a833"
+    },
+    {
+      "path": "ml/experiment.py",
+      "expected": "021ee5ce03615f9723f8130f1b08b93b3e66cda636fb8191209934d2df5b49f2",
+      "actual": "021ee5ce03615f9723f8130f1b08b93b3e66cda636fb8191209934d2df5b49f2"
+    },
+    {
+      "path": "ml/features.py",
+      "expected": "0ef7b41db9b377a0f972a404d03f1a8c66531b324730bed268a1498de5e7f13c",
+      "actual": "0ef7b41db9b377a0f972a404d03f1a8c66531b324730bed268a1498de5e7f13c"
+    },
+    {
+      "path": "ml/forecasting.py",
+      "expected": "eaa6bfc5fd3dab7ac1d24a1d9691420d4ec673765294d5e369137324ea8339bd",
+      "actual": "eaa6bfc5fd3dab7ac1d24a1d9691420d4ec673765294d5e369137324ea8339bd"
+    },
+    {
+      "path": "ml/protocol.json",
+      "expected": "2ba2bb38160b7366feb12dded326450fcf5058affdeccb86743a31c092b0b2d5",
+      "actual": "2ba2bb38160b7366feb12dded326450fcf5058affdeccb86743a31c092b0b2d5"
+    },
+    {
+      "path": "ml/reporting.py",
+      "expected": "398a7797782ef159a7aaa16bb7edaef3a4bf5246a8cbe36d45627db25de85552",
+      "actual": "398a7797782ef159a7aaa16bb7edaef3a4bf5246a8cbe36d45627db25de85552"
+    },
+    {
+      "path": "ml/requirements.txt",
+      "expected": "205cfccddf4b8edaf23eaf5911dd820939119cce4a012241542322fd14169997",
+      "actual": "205cfccddf4b8edaf23eaf5911dd820939119cce4a012241542322fd14169997"
+    }
+  ],
+  "inference": "Historical20728/origin2011-11-10/28days; no fitting or frozen report writes"
+}

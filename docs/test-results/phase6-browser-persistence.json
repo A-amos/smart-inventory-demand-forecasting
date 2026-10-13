@@ -1,0 +1,123 @@
+{
+  "executed_at_utc": "2026-10-01T11:16:25.704895+00:00",
+  "synthetic_stock": true,
+  "checks": [
+    {
+      "check": "Exact labelled browser demonstration product persisted",
+      "passed": true,
+      "actual": 17
+    },
+    {
+      "check": "Current stock and version match browser after sale/import",
+      "passed": true,
+      "actual": {
+        "on_hand": "17.000",
+        "incoming": "3.000",
+        "allocated": "2.000",
+        "version": 3
+      }
+    },
+    {
+      "check": "One operational and one historical sale persisted",
+      "passed": true,
+      "actual": [
+        {
+          "id": 100,
+          "source": "operational",
+          "quantity": "3.000",
+          "actor_id": 1,
+          "sale_date": "2026-10-01T10:44:00"
+        },
+        {
+          "id": 101,
+          "source": "historical",
+          "quantity": "50.000",
+          "actor_id": 1,
+          "sale_date": "2011-10-01T10:00:00"
+        }
+      ]
+    },
+    {
+      "check": "Historical import generated no stock movement",
+      "passed": true,
+      "actual": [
+        {
+          "kind": "opening",
+          "sale_id": null,
+          "on_hand_after": "20.000"
+        },
+        {
+          "kind": "adjustment",
+          "sale_id": null,
+          "on_hand_after": "20.000"
+        },
+        {
+          "kind": "sale",
+          "sale_id": 100,
+          "on_hand_after": "17.000"
+        }
+      ]
+    },
+    {
+      "check": "Explicit historical UK mapping persisted",
+      "passed": true,
+      "actual": "Synthetic Phase 6 stock paired explicitly with UK series 20728; historical research only"
+    },
+    {
+      "check": "Real historical frozen forecast and 28 points persisted",
+      "passed": true,
+      "actual": {
+        "id": "4a1f9161-32f8-4559-b724-62f80907e944",
+        "context": "research_demo",
+        "origin": "2011-11-10",
+        "points": 28
+      }
+    },
+    {
+      "check": "Explainable original recommendation persisted",
+      "passed": true,
+      "actual": {
+        "unit": "unit",
+        "context": "research_demo",
+        "on_hand": "17.000",
+        "model_id": "uci-retail-v1-0cc2a83c3e40",
+        "shortage": "69.571428571",
+        "allocated": "2.000",
+        "mapping_id": "036b68c5-7a68-44b3-a5b3-75f93b4a0587",
+        "product_id": 17,
+        "series_sku": "20728",
+        "assumptions": [
+          "All confirmed incoming stock assumed to arrive during lead time; no ETA is recorded.",
+          "Allocated stock is excluded from usable inventory.",
+          "Forecast dates must cover every lead-time day.",
+          "No pack-size or procurement rounding; raw shortage equals suggested quantity.",
+          "Stored daily predictions use nine decimal places; original forecast-v1 values are preserved.",
+          "Deterministic stock-risk rule, not a calibrated probability. Human review; no purchase execution.",
+          "UK historical forecasts and present test stock form a research scenario, not measured 2011 inventory or Kenyan performance."
+        ],
+        "forecast_id": "4a1f9161-32f8-4559-b724-62f80907e944",
+        "product_sku": "P6-BROWSER-20261001",
+        "risk_status": "REPLENISH",
+        "safety_stock": "4.000",
+        "target_stock": "87.571428571",
+        "model_version": "retail-demand-v1",
+        "decision_as_of": "2011-11-11",
+        "lead_time_days": 3,
+        "feature_version": "features-v1",
+        "forecast_origin": "2011-11-10",
+        "artifact_version": "sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031",
+        "forecast_horizon": 28,
+        "source_namespace": "uci-online-retail-ii",
+        "inventory_version": 3,
+        "suggested_reorder": "69.571428571",
+        "inventory_position": "18.000",
+        "assumptions_version": "inventory-rules-v1",
+        "overstock_threshold": "175.142857142000",
+        "confirmed_in_transit": "3.000",
+        "overstock_multiplier": "2.000",
+        "suggested_reorder_raw": "69.571428571",
+        "predicted_lead_time_demand": "83.571428571"
+      }
+    }
+  ]
+}

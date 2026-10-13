@@ -1,0 +1,145 @@
+{
+  "executed_at_utc": "2026-10-13T11:34:38.860359+00:00",
+  "mode": "candidate",
+  "passed": true,
+  "files": 395,
+  "bytes": 12123901,
+  "denied_paths": [],
+  "credential_findings": [],
+  "large_files": [],
+  "ignored_checks": [
+    ".env",
+    "backend/.env",
+    ".local/verification-account.json",
+    ".venv",
+    "frontend/node_modules",
+    "data/raw/online_retail_II.xlsx"
+  ],
+  "protected_hash_checks": [
+    {
+      "path": "docs/research/results/cohort.csv",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/example-forecast.json",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/features.json",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/final-test-access.json",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/final-test-by-sku.csv",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/final-test-predictions.csv",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/final-test.json",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/forecast-schema.json",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/frozen-selection.json",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/last-inference.json",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/model-registry.json",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/preprocessing.json",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/report-generation.json",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/reproduction.json",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/selected-worst-10-skus.csv",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/validation-predictions.csv",
+      "matches": true
+    },
+    {
+      "path": "docs/research/results/validation.json",
+      "matches": true
+    },
+    {
+      "path": "ml/artifacts/uci-retail-v1-0cc2a83c3e40/selected.joblib",
+      "matches": true
+    },
+    {
+      "path": "ml/__init__.py",
+      "matches": true
+    },
+    {
+      "path": "ml/artifacts.py",
+      "matches": true
+    },
+    {
+      "path": "ml/cli.py",
+      "matches": true
+    },
+    {
+      "path": "ml/common.py",
+      "matches": true
+    },
+    {
+      "path": "ml/contracts.py",
+      "matches": true
+    },
+    {
+      "path": "ml/data.py",
+      "matches": true
+    },
+    {
+      "path": "ml/eda.py",
+      "matches": true
+    },
+    {
+      "path": "ml/experiment.py",
+      "matches": true
+    },
+    {
+      "path": "ml/features.py",
+      "matches": true
+    },
+    {
+      "path": "ml/forecasting.py",
+      "matches": true
+    },
+    {
+      "path": "ml/protocol.json",
+      "matches": true
+    },
+    {
+      "path": "ml/reporting.py",
+      "matches": true
+    },
+    {
+      "path": "ml/requirements.txt",
+      "matches": true
+    }
+  ],
+  "limits": "Exact known local secret values and common token/key signatures; not a universal secret-detection guarantee. Source tests use synthetic dummy passwords only. No secret values printed."
+}

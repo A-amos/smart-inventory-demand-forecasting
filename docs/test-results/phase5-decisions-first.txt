@@ -1,0 +1,120 @@
+...............................F........F..                              [100%]
+================================== FAILURES ===================================
+_____ test_snapshot_history_immutable_and_new_stock_requires_new_request ______
+
+environment = (<starlette.testclient.TestClient object at 0x00000223ACE7E4B0>, sessionmaker(class_='Session', bind=Engine(sqlite://), autoflush=True, expire_on_commit=False))
+login = {'Authorization': 'Bearer -3WjSzGv9H7aTthFuM2UnQT1xxR7V5sYSfeyScyIQVs'}
+
+    def test_snapshot_history_immutable_and_new_stock_requires_new_request(environment, login):
+        client, factory = environment; item = mapped_product(client, login)
+        generated, _ = generate(client, login, item)
+        response, payload = recommend(client, login, item, generated.json()['id'])
+        assert response.status_code == 201, response.text
+        original = response.json(); snapshot = original['snapshot']
+        assert snapshot['risk_status'] == 'REPLENISH' and snapshot['lead_time_days'] == 3
+        assert D(snapshot['target_stock']) == D(snapshot['predicted_lead_time_demand']) + 4
+        assert client.put(f'/api/v1/products/{item["id"]}/inventory', headers=login,
+                          json=dict(on_hand='999', allocated='2', confirmed_in_transit='3', version=1, reason='Synthetic stock change')).status_code == 200
+        assert client.post(f'/api/v1/recommendations/{item["id"]}/generate', headers=login, json=payload).json() == original
+        new, _ = recommend(client, login, item, generated.json()['id'])
+        assert new.json()['snapshot']['risk_status'] == 'OVERSTOCK' and new.json()['id'] != original['id']
+        assert client.get(f'/api/v1/recommendations/{item["id"]}', headers=login).json()[1] == original
+        with factory() as db:
+            row = db.get(Recommendation, original['id']); row.snapshot = {'corrupted': True}
+            with pytest.raises(ValueError, match='append-only'): db.commit()
+            db.rollback(); db.delete(db.get(Forecast, generated.json()['id']))
+>           with pytest.raises(ValueError, match='append-only'): db.commit()
+
+backend\tests\test_decisions.py:128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv\Lib\site-packages\sqlalchemy\orm\session.py:2032: in commit
+    trans.commit(_to_root=True)
+<string>:2: in commit
+    ???
+.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py:139: in _go
+    ret_value = fn(self, *arg, **kw)
+.venv\Lib\site-packages\sqlalchemy\orm\session.py:1313: in commit
+    self._prepare_impl()
+<string>:2: in _prepare_impl
+    ???
+.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py:139: in _go
+    ret_value = fn(self, *arg, **kw)
+.venv\Lib\site-packages\sqlalchemy\orm\session.py:1288: in _prepare_impl
+    self.session.flush()
+.venv\Lib\site-packages\sqlalchemy\orm\session.py:4353: in flush
+    self._flush(objects)
+.venv\Lib\site-packages\sqlalchemy\orm\session.py:4488: in _flush
+    with util.safe_reraise():
+.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py:146: in __exit__
+    raise exc_value.with_traceback(exc_tb)
+.venv\Lib\site-packages\sqlalchemy\orm\session.py:4449: in _flush
+    flush_context.execute()
+.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py:466: in execute
+    rec.execute(self)
+.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py:589: in execute
+    self.dependency_processor.process_deletes(uow, states)
+.venv\Lib\site-packages\sqlalchemy\orm\dependency.py:567: in process_deletes
+    self._synchronize(
+.venv\Lib\site-packages\sqlalchemy\orm\dependency.py:625: in _synchronize
+    sync.clear(dest, self.mapper, self.prop.synchronize_pairs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dest = <sqlalchemy.orm.state.InstanceState object at 0x00000223ACDEB410>
+dest_mapper = <Mapper at 0x2238ba11880; ForecastPointRecord>
+synchronize_pairs = [(Column('id', String(length=36), table=<forecasts>, primary_key=True, nullable=False), Column('forecast_id', String(length=36), ForeignKey('forecasts.id'), table=<forecast_points>, primary_key=True, nullable=False))]
+
+    def clear(dest, dest_mapper, synchronize_pairs):
+        for l, r in synchronize_pairs:
+            if (
+                r.primary_key
+                and dest_mapper._get_state_attr_by_column(dest, dest.dict, r)
+                not in orm_util._none_set
+            ):
+>               raise AssertionError(
+                    f"Dependency rule on column '{l}' "
+                    "tried to blank-out primary key "
+                    f"column '{r}' on instance '{orm_util.state_str(dest)}'"
+                )
+E               AssertionError: Dependency rule on column 'forecasts.id' tried to blank-out primary key column 'forecast_points.forecast_id' on instance '<ForecastPointRecord at 0x223acdf8260>'
+
+.venv\Lib\site-packages\sqlalchemy\orm\sync.py:88: AssertionError
+____________ test_stale_missing_mismatched_and_short_forecast_api _____________
+
+environment = (<starlette.testclient.TestClient object at 0x00000223ACFA1760>, sessionmaker(class_='Session', bind=Engine(sqlite://), autoflush=True, expire_on_commit=False))
+login = {'Authorization': 'Bearer DnZ_rUsGJXO24ZK6NrW6cQZ7ysjCeM2tc2B1HIfs6yY'}
+
+    def test_stale_missing_mismatched_and_short_forecast_api(environment, login):
+        client, _ = environment; item = mapped_product(client, login)
+        short, _ = generate(client, login, item, horizon=2)
+        assert recommend(client, login, item, short.json()['id'])[0].status_code == 409
+        assert recommend(client, login, item, str(uuid4()))[0].status_code == 404
+        full, _ = generate(client, login, item)
+        assert recommend(client, login, item, full.json()['id'], decision_as_of='2011-11-12')[0].status_code == 409
+>       other, _ = create_product(client, login, sku='OTHER-DEMO', unit='unit')
+
+backend\tests\test_decisions.py:166: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <starlette.testclient.TestClient object at 0x00000223ACFA1760>
+headers = {'Authorization': 'Bearer DnZ_rUsGJXO24ZK6NrW6cQZ7ysjCeM2tc2B1HIfs6yY'}
+overrides = {'sku': 'OTHER-DEMO', 'unit': 'unit'}
+category = {'detail': 'Category name already exists, including archived categories'}
+
+    def create_product(client, headers, **overrides):
+        category = client.post('/api/v1/categories', headers=headers, json={'name': 'Groceries'}).json()
+>       payload = {'sku': 'rice-1', 'name': 'Rice', 'category_id': category['id'], 'initial_stock': '12.500',
+                   'safety_stock': '3', 'lead_time_days': 5, 'overstock_multiplier': '2.5'} | overrides
+E       KeyError: 'id'
+
+backend\tests\test_catalog.py:17: KeyError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\starlette\testclient.py:37
+  C:\Users\user\Projects\SmartInventory\.venv\Lib\site-packages\starlette\testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: C:\Users\user\Projects\SmartInventory\docs\test-results\phase5-decisions-first.xml -
+=========================== short test summary info ===========================
+FAILED backend\tests\test_decisions.py::test_snapshot_history_immutable_and_new_stock_requires_new_request
+FAILED backend\tests\test_decisions.py::test_stale_missing_mismatched_and_short_forecast_api
+2 failed, 41 passed, 1 warning in 12.15s

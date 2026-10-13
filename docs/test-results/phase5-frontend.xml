@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="29" failures="0" errors="0" time="4.4573751">
+    <testsuite name="src/App.test.jsx" timestamp="2026-10-01T07:49:03.816Z" hostname="DESKTOP-P2IJE3C" tests="2" failures="0" errors="0" skipped="0" time="0.4367136">
+        <testcase classname="src/App.test.jsx" name="signs in and revokes the server session when signing out" time="0.3664905">
+        </testcase>
+        <testcase classname="src/App.test.jsx" name="shows failed sign-in and keeps protected content hidden" time="0.0684953">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/Dashboard.test.jsx" timestamp="2026-10-01T07:49:03.819Z" hostname="DESKTOP-P2IJE3C" tests="9" failures="0" errors="0" skipped="0" time="1.4624453">
+        <testcase classname="src/Dashboard.test.jsx" name="empty dashboard shows limitation and genuine separately labelled validation/final metrics" time="0.3785357">
+        </testcase>
+        <testcase classname="src/Dashboard.test.jsx" name="unsupported product cannot generate or implicitly map" time="0.2112396">
+        </testcase>
+        <testcase classname="src/Dashboard.test.jsx" name="researcher reads evidence and cannot see mutation forms" time="0.1651798">
+        </testcase>
+        <testcase classname="src/Dashboard.test.jsx" name="stored snapshot displays all formula components and immutable provenance" time="0.0682316">
+        </testcase>
+        <testcase classname="src/Dashboard.test.jsx" name="manager mapping requires acknowledgement and sends supported series/reason" time="0.1263191">
+        </testcase>
+        <testcase classname="src/Dashboard.test.jsx" name="failed forecast retry preserves UUID and displays actual server error" time="0.2018169">
+        </testcase>
+        <testcase classname="src/Dashboard.test.jsx" name="unavailable artifact preserves inventory overview and disables writes" time="0.080468">
+        </testcase>
+        <testcase classname="src/Dashboard.test.jsx" name="manager recommendation uses selected immutable forecast and explicit historical date" time="0.1353928">
+        </testcase>
+        <testcase classname="src/Dashboard.test.jsx" name="authentication expiry returns control to sign-in" time="0.0930339">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/SalesPages.test.jsx" timestamp="2026-10-01T07:49:03.822Z" hostname="DESKTOP-P2IJE3C" tests="11" failures="0" errors="0" skipped="0" time="1.0836566">
+        <testcase classname="src/SalesPages.test.jsx" name="sale sends version, timezone, optional price and request key; reloads inventory" time="0.3466213">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="stale inventory error preserves form and unchanged retry key" time="0.0834144">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="researcher sees no sale or CSV mutation form" time="0.0152537">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="archived products are excluded from sales selection" time="0.0286806">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="sales session expiration invokes the auth callback" time="0.0522087">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="history filters and pagination send product, user, source and UTC dates" time="0.1751796">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="empty history displays meaningful feedback" time="0.0319284">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="CSV preview shows all rejected rows and requires acceptance before confirmation" time="0.1153227">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="repeat-file preview reports previously imported and offers no second confirmation" time="0.0380159">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="oversized CSV rejected locally without a request" time="0.0412961">
+        </testcase>
+        <testcase classname="src/SalesPages.test.jsx" name="import conflict is visible and preserves rejected-row report" time="0.153592">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/Workspace.test.jsx" timestamp="2026-10-01T07:49:03.826Z" hostname="DESKTOP-P2IJE3C" tests="7" failures="0" errors="0" skipped="0" time="1.4745596">
+        <testcase classname="src/Workspace.test.jsx" name="manager creates a category and sees refreshed data" time="0.3875547">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="manager creates a product with stock and replenishment configuration" time="0.2967554">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="duplicate SKU error preserves entered form" time="0.0744944">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="inventory adjustment sends quantities, reason and loaded version" time="0.2277937">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="researcher sees records and history without mutation controls" time="0.2479728">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="archive hides product and show-archived exposes edit for restoration" time="0.1758078">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="expired session clears authenticated workspace through callback" time="0.0623036">
+        </testcase>
+    </testsuite>
+</testsuites>

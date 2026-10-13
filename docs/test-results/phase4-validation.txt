@@ -1,0 +1,13 @@
+Validation: fitting seasonal_naive through 2011-09-15
+Validation: fitting seasonal_naive through 2011-10-13
+Validation: fitting mean_28 through 2011-09-15
+Validation: fitting mean_28 through 2011-10-13
+Validation: fitting rf_leaf5 through 2011-09-15
+Validation: fitting rf_leaf5 through 2011-10-13
+Validation: fitting rf_leaf15 through 2011-09-15
+Validation: fitting rf_leaf15 through 2011-10-13
+Validation: fitting xgb_depth3 through 2011-09-15
+Validation: fitting xgb_depth3 through 2011-10-13
+Validation: fitting xgb_depth5 through 2011-09-15
+Validation: fitting xgb_depth5 through 2011-10-13
+Frozen validation-only winner: mean_28. Final test still unevaluated.

@@ -1,0 +1,5 @@
+
+Algorithm : SHA256
+Hash      : EA8CAC1808C5462A4CA3150C16936806EAEAC82EC7E695E8B1320021DD9AC5BF
+Path      : C:\Users\user\Projects\SmartInventory\docs\research\results\validation-predictions.csv
+

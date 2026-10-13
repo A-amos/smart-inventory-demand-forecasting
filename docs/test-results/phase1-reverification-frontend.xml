@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="2" failures="0" errors="0" time="0.4022447">
+    <testsuite name="src/App.test.jsx" timestamp="2026-09-30T20:44:20.347Z" hostname="DESKTOP-P2IJE3C" tests="2" failures="0" errors="0" skipped="0" time="0.4022447">
+        <testcase classname="src/App.test.jsx" name="signs in and revokes the server session when signing out" time="0.3369465">
+        </testcase>
+        <testcase classname="src/App.test.jsx" name="shows failed sign-in and keeps protected content hidden" time="0.0631348">
+        </testcase>
+    </testsuite>
+</testsuites>

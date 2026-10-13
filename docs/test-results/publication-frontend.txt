@@ -1,0 +1,33 @@
+$ vitest run "--reporter=default" "--reporter=junit" "--outputFile.junit=../docs/test-results/publication-frontend.xml"
+
+ RUN  v4.1.11 C:/Users/user/Projects/SmartInventory/frontend
+
+ ✓ src/App.test.jsx (2 tests) 1327ms
+   ✓ signs in and revokes the server session when signing out  1149ms
+ ✓ src/SalesPages.test.jsx (11 tests) 3103ms
+   ✓ sale sends version, timezone, optional price and request key; reloads inventory  1140ms
+   ✓ history filters and pagination send product, user, source and UTC dates  478ms
+   ✓ CSV preview shows all rejected rows and requires acceptance before confirmation  367ms
+ ✓ src/Workspace.test.jsx (7 tests) 3969ms
+   ✓ manager creates a category and sees refreshed data  1161ms
+   ✓ manager creates a product with stock and replenishment configuration  731ms
+   ✓ duplicate SKU error preserves entered form  388ms
+   ✓ inventory adjustment sends quantities, reason and loaded version  554ms
+   ✓ researcher sees records and history without mutation controls  374ms
+   ✓ archive hides product and show-archived exposes edit for restoration  639ms
+ ✓ src/Dashboard.test.jsx (9 tests) 5380ms
+   ✓ empty dashboard shows limitation and genuine separately labelled validation/final metrics  614ms
+   ✓ unsupported product cannot generate or implicitly map  1179ms
+   ✓ researcher reads evidence and cannot see mutation forms  652ms
+   ✓ manager mapping requires acknowledgement and sends supported series/reason  578ms
+   ✓ failed forecast retry preserves UUID and displays actual server error  599ms
+   ✓ unavailable artifact preserves inventory overview and disables writes  326ms
+   ✓ manager recommendation uses selected immutable forecast and explicit historical date  664ms
+   ✓ authentication expiry returns control to sign-in  478ms
+
+ Test Files  4 passed (4)
+      Tests  29 passed (29)
+   Start at  13:35:13
+   Duration  16.17s (transform 3.01s, setup 3.92s, import 10.33s, tests 13.78s, environment 14.87s)
+
+JUNIT report written to C:/Users/user/Projects/SmartInventory/docs/test-results/publication-frontend.xml

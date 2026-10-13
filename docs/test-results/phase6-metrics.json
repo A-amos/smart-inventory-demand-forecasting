@@ -1,0 +1,106 @@
+{
+  "executed_at_utc": "2026-10-01T11:16:20.532019+00:00",
+  "method": "Read-only recomputation from frozen saved predictions; no fitting or model selection",
+  "checks": [
+    {
+      "phase": "validation",
+      "model": "mean_28",
+      "passed": true,
+      "observations": 3360,
+      "mae": 4.7536352040816325,
+      "rmse": 36.36001573222458,
+      "mape": null,
+      "zero_actual_count": 2530
+    },
+    {
+      "phase": "validation",
+      "model": "rf_leaf15",
+      "passed": true,
+      "observations": 3360,
+      "mae": 10.093937739419557,
+      "rmse": 39.32070680636592,
+      "mape": null,
+      "zero_actual_count": 2530
+    },
+    {
+      "phase": "validation",
+      "model": "rf_leaf5",
+      "passed": true,
+      "observations": 3360,
+      "mae": 10.080747407811776,
+      "rmse": 42.76173988169547,
+      "mape": null,
+      "zero_actual_count": 2530
+    },
+    {
+      "phase": "validation",
+      "model": "seasonal_naive",
+      "passed": true,
+      "observations": 3360,
+      "mae": 6.078273809523809,
+      "rmse": 43.35290194603883,
+      "mape": null,
+      "zero_actual_count": 2530
+    },
+    {
+      "phase": "validation",
+      "model": "xgb_depth3",
+      "passed": true,
+      "observations": 3360,
+      "mae": 9.32739080278469,
+      "rmse": 43.94253515584441,
+      "mape": null,
+      "zero_actual_count": 2530
+    },
+    {
+      "phase": "validation",
+      "model": "xgb_depth5",
+      "passed": true,
+      "observations": 3360,
+      "mae": 9.193967756283625,
+      "rmse": 46.835324639338566,
+      "mape": null,
+      "zero_actual_count": 2530
+    },
+    {
+      "phase": "final-test",
+      "model": "mean_28",
+      "passed": true,
+      "observations": 1680,
+      "mae": 5.3350340136054415,
+      "rmse": 17.944563987477665,
+      "mape": null,
+      "zero_actual_count": 1169
+    },
+    {
+      "phase": "final-test",
+      "model": "rf_leaf5",
+      "passed": true,
+      "observations": 1680,
+      "mae": 6.545168748927346,
+      "rmse": 18.516364750269418,
+      "mape": null,
+      "zero_actual_count": 1169
+    },
+    {
+      "phase": "final-test",
+      "model": "seasonal_naive",
+      "passed": true,
+      "observations": 1680,
+      "mae": 4.939880952380952,
+      "rmse": 17.00852377346079,
+      "mape": null,
+      "zero_actual_count": 1169
+    },
+    {
+      "phase": "final-test",
+      "model": "xgb_depth5",
+      "passed": true,
+      "observations": 1680,
+      "mae": 5.6156688673585275,
+      "rmse": 18.84631666771529,
+      "mape": null,
+      "zero_actual_count": 1169
+    }
+  ]
+}

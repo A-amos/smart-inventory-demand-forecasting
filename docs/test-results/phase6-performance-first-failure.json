@@ -1,0 +1,2136 @@
+{
+  "executed_at_utc": "2026-10-01T10:34:30.287564+00:00",
+  "environment": {
+    "os": "Windows-11-10.0.26300-SP0",
+    "python": "3.12.14",
+    "logical_processors": 8,
+    "deployment": "Docker Desktop WSL2; MySQL8.4.11; localhost HTTP; native Windows client"
+  },
+  "tool": "httpx + perf_counter; ThreadPoolExecutor; NumPy percentiles",
+  "duration_seconds": 99.884057700001,
+  "warmup": "One 28-day real frozen inference per worker before measured samples",
+  "scope": "Four simulated workers, one authorized manager identity; worker-specific stock for writes; no capacity/SLA certification",
+  "measurement_boundary": "Request round trip only; prerequisite inventory GET and login logout excluded; setup/archive excluded",
+  "results": [
+    {
+      "mode": "normal",
+      "operation": "liveness",
+      "concurrent_workers": 1,
+      "requests": 8,
+      "duration_seconds": 0.05379199999879347,
+      "mean_ms": 6.3677875014036545,
+      "p50_ms": 6.213550001120893,
+      "p95_ms": 7.64173999959894,
+      "max_ms": 7.647899998119101,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 6.000400004268158,
+          "status": 200
+        },
+        {
+          "milliseconds": 5.1045000000158325,
+          "status": 200
+        },
+        {
+          "milliseconds": 5.216700003074948,
+          "status": 200
+        },
+        {
+          "milliseconds": 5.346500001905952,
+          "status": 200
+        },
+        {
+          "milliseconds": 7.647899998119101,
+          "status": 200
+        },
+        {
+          "milliseconds": 6.426699997973628,
+          "status": 200
+        },
+        {
+          "milliseconds": 7.630300002347212,
+          "status": 200
+        },
+        {
+          "milliseconds": 7.569300003524404,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "operation": "readiness",
+      "concurrent_workers": 1,
+      "requests": 8,
+      "duration_seconds": 0.07295100000192178,
+      "mean_ms": 8.969112500381016,
+      "p50_ms": 8.770099997491343,
+      "p95_ms": 10.776740003711893,
+      "max_ms": 11.265200002526399,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 9.708400000818074,
+          "status": 200
+        },
+        {
+          "milliseconds": 11.265200002526399,
+          "status": 200
+        },
+        {
+          "milliseconds": 9.869600005913526,
+          "status": 200
+        },
+        {
+          "milliseconds": 8.78769999690121,
+          "status": 200
+        },
+        {
+          "milliseconds": 7.528499998443294,
+          "status": 200
+        },
+        {
+          "milliseconds": 7.378800000878982,
+          "status": 200
+        },
+        {
+          "milliseconds": 8.462199999485165,
+          "status": 200
+        },
+        {
+          "milliseconds": 8.752499998081475,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "operation": "login",
+      "concurrent_workers": 1,
+      "requests": 8,
+      "duration_seconds": 2.1949635000055423,
+      "mean_ms": 248.57506249918515,
+      "p50_ms": 240.70820000270032,
+      "p95_ms": 359.76689999624796,
+      "max_ms": 368.074499994691,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 180.66150000231573,
+          "status": 200
+        },
+        {
+          "milliseconds": 178.58929999783868,
+          "status": 200
+        },
+        {
+          "milliseconds": 188.6737999957404,
+          "status": 200
+        },
+        {
+          "milliseconds": 236.1934000000474,
+          "status": 200
+        },
+        {
+          "milliseconds": 246.84649999835528,
+          "status": 200
+        },
+        {
+          "milliseconds": 245.22300000535324,
+          "status": 200
+        },
+        {
+          "milliseconds": 368.074499994691,
+          "status": 200
+        },
+        {
+          "milliseconds": 344.33849999913946,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "operation": "products",
+      "concurrent_workers": 1,
+      "requests": 8,
+      "duration_seconds": 0.18475100000068778,
+      "mean_ms": 22.952000001168926,
+      "p50_ms": 23.404250001476612,
+      "p95_ms": 25.6846000047517,
+      "max_ms": 25.925400004780386,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 22.719400003552437,
+          "status": 200
+        },
+        {
+          "milliseconds": 25.925400004780386,
+          "status": 200
+        },
+        {
+          "milliseconds": 25.23740000469843,
+          "status": 200
+        },
+        {
+          "milliseconds": 21.728200001234654,
+          "status": 200
+        },
+        {
+          "milliseconds": 24.089099999400787,
+          "status": 200
+        },
+        {
+          "milliseconds": 20.933899999363348,
+          "status": 200
+        },
+        {
+          "milliseconds": 18.028999998932704,
+          "status": 200
+        },
+        {
+          "milliseconds": 24.953599997388665,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "operation": "sales",
+      "concurrent_workers": 1,
+      "requests": 8,
+      "duration_seconds": 0.19915199999377364,
+      "mean_ms": 24.73707500121236,
+      "p50_ms": 24.891350003599655,
+      "p95_ms": 27.18893499877595,
+      "max_ms": 27.66699999483535,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 27.66699999483535,
+          "status": 200
+        },
+        {
+          "milliseconds": 25.74319999985164,
+          "status": 200
+        },
+        {
+          "milliseconds": 24.446800001896918,
+          "status": 200
+        },
+        {
+          "milliseconds": 22.789900001953356,
+          "status": 200
+        },
+        {
+          "milliseconds": 25.335900005302392,
+          "status": 200
+        },
+        {
+          "milliseconds": 22.80400000017835,
+          "status": 200
+        },
+        {
+          "milliseconds": 22.80869999958668,
+          "status": 200
+        },
+        {
+          "milliseconds": 26.301100006094202,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "operation": "inventory_update",
+      "concurrent_workers": 1,
+      "requests": 8,
+      "duration_seconds": 0.6173645000017132,
+      "mean_ms": 49.4905875002587,
+      "p50_ms": 39.52140000183135,
+      "p95_ms": 93.01408500214163,
+      "max_ms": 116.29990000074031,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 48.60499999631429,
+          "status": 200
+        },
+        {
+          "milliseconds": 39.695200001006015,
+          "status": 200
+        },
+        {
+          "milliseconds": 39.34760000265669,
+          "status": 200
+        },
+        {
+          "milliseconds": 38.29480000422336,
+          "status": 200
+        },
+        {
+          "milliseconds": 116.29990000074031,
+          "status": 200
+        },
+        {
+          "milliseconds": 49.76900000474416,
+          "status": 200
+        },
+        {
+          "milliseconds": 31.318499997723848,
+          "status": 200
+        },
+        {
+          "milliseconds": 32.594699994660914,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "operation": "operational_sale",
+      "concurrent_workers": 1,
+      "requests": 8,
+      "duration_seconds": 0.5347918999977992,
+      "mean_ms": 43.06740000083664,
+      "p50_ms": 42.43474999748287,
+      "p95_ms": 51.49569499808422,
+      "max_ms": 51.63019999599783,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 38.30040000320878,
+          "status": 201
+        },
+        {
+          "milliseconds": 42.66720000305213,
+          "status": 201
+        },
+        {
+          "milliseconds": 39.50330000225222,
+          "status": 201
+        },
+        {
+          "milliseconds": 36.3227000052575,
+          "status": 201
+        },
+        {
+          "milliseconds": 42.32100000081118,
+          "status": 201
+        },
+        {
+          "milliseconds": 42.548499994154554,
+          "status": 201
+        },
+        {
+          "milliseconds": 51.63019999599783,
+          "status": 201
+        },
+        {
+          "milliseconds": 51.245900001958944,
+          "status": 201
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "operation": "forecast_retrieval",
+      "concurrent_workers": 1,
+      "requests": 8,
+      "duration_seconds": 0.31676810000499245,
+      "mean_ms": 39.38108750026004,
+      "p50_ms": 39.93360000094981,
+      "p95_ms": 59.178155003246495,
+      "max_ms": 64.14490000315709,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 43.60810000071069,
+          "status": 200
+        },
+        {
+          "milliseconds": 41.35340000357246,
+          "status": 200
+        },
+        {
+          "milliseconds": 28.548800000862684,
+          "status": 200
+        },
+        {
+          "milliseconds": 38.51379999832716,
+          "status": 200
+        },
+        {
+          "milliseconds": 64.14490000315709,
+          "status": 200
+        },
+        {
+          "milliseconds": 49.95420000341255,
+          "status": 200
+        },
+        {
+          "milliseconds": 25.703699997393414,
+          "status": 200
+        },
+        {
+          "milliseconds": 23.221799994644243,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "operation": "forecast_inference",
+      "concurrent_workers": 1,
+      "requests": 8,
+      "duration_seconds": 9.320548000003328,
+      "mean_ms": 1164.9035750006078,
+      "p50_ms": 1156.670150001446,
+      "p95_ms": 1362.5539350025065,
+      "max_ms": 1400.9979000038584,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 1184.9634000027436,
+          "status": 201
+        },
+        {
+          "milliseconds": 1234.6275000018068,
+          "status": 201
+        },
+        {
+          "milliseconds": 1113.7244999990799,
+          "status": 201
+        },
+        {
+          "milliseconds": 1291.1579999999958,
+          "status": 201
+        },
+        {
+          "milliseconds": 1400.9979000038584,
+          "status": 201
+        },
+        {
+          "milliseconds": 1128.3769000001485,
+          "status": 201
+        },
+        {
+          "milliseconds": 1064.0691999942646,
+          "status": 201
+        },
+        {
+          "milliseconds": 901.311200002965,
+          "status": 201
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "operation": "recommendation",
+      "concurrent_workers": 1,
+      "requests": 8,
+      "duration_seconds": 0.7689887000015005,
+      "mean_ms": 95.94270000070537,
+      "p50_ms": 84.38030000252184,
+      "p95_ms": 139.3702750025113,
+      "max_ms": 152.86400000331923,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 76.3544000001275,
+          "status": 201
+        },
+        {
+          "milliseconds": 83.32050000171876,
+          "status": 201
+        },
+        {
+          "milliseconds": 77.31629999761935,
+          "status": 201
+        },
+        {
+          "milliseconds": 85.44010000332491,
+          "status": 201
+        },
+        {
+          "milliseconds": 114.31050000101095,
+          "status": 201
+        },
+        {
+          "milliseconds": 152.86400000331923,
+          "status": 201
+        },
+        {
+          "milliseconds": 105.16959999949904,
+          "status": 201
+        },
+        {
+          "milliseconds": 72.76619999902323,
+          "status": 201
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "operation": "dashboard",
+      "concurrent_workers": 1,
+      "requests": 8,
+      "duration_seconds": 0.31535149999399437,
+      "mean_ms": 39.187512498756405,
+      "p50_ms": 38.078049998148344,
+      "p95_ms": 53.47035499980848,
+      "max_ms": 55.33119999745395,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 40.215499997430015,
+          "status": 200
+        },
+        {
+          "milliseconds": 35.940599998866674,
+          "status": 200
+        },
+        {
+          "milliseconds": 50.01450000418117,
+          "status": 200
+        },
+        {
+          "milliseconds": 55.33119999745395,
+          "status": 200
+        },
+        {
+          "milliseconds": 41.64669999590842,
+          "status": 200
+        },
+        {
+          "milliseconds": 27.846900004078634,
+          "status": 200
+        },
+        {
+          "milliseconds": 31.252199994924013,
+          "status": 200
+        },
+        {
+          "milliseconds": 31.25249999720836,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "mode": "modest_concurrent",
+      "operation": "liveness",
+      "concurrent_workers": 4,
+      "requests": 32,
+      "duration_seconds": 2.1744897999960813,
+      "mean_ms": 204.92923124993467,
+      "p50_ms": 9.19620000422583,
+      "p95_ms": 2056.6261150001083,
+      "max_ms": 2073.8558000011835,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 9.790299998712726,
+          "status": 200
+        },
+        {
+          "milliseconds": 6.536400003824383,
+          "status": 200
+        },
+        {
+          "milliseconds": 6.773000000976026,
+          "status": 200
+        },
+        {
+          "milliseconds": 7.46209999488201,
+          "status": 200
+        },
+        {
+          "milliseconds": 7.014500006334856,
+          "status": 200
+        },
+        {
+          "milliseconds": 7.260499995027203,
+          "status": 200
+        },
+        {
+          "milliseconds": 6.969199996092357,
+          "status": 200
+        },
+        {
+          "milliseconds": 5.655400003888644,
+          "status": 200
+        },
+        {
+          "milliseconds": 2073.8558000011835,
+          "status": 200
+        },
+        {
+          "milliseconds": 29.423899999528658,
+          "status": 200
+        },
+        {
+          "milliseconds": 19.862799999827985,
+          "status": 200
+        },
+        {
+          "milliseconds": 8.992100003524683,
+          "status": 200
+        },
+        {
+          "milliseconds": 13.17890000063926,
+          "status": 200
+        },
+        {
+          "milliseconds": 10.90190000104485,
+          "status": 200
+        },
+        {
+          "milliseconds": 8.55069999670377,
+          "status": 200
+        },
+        {
+          "milliseconds": 6.236799999896903,
+          "status": 200
+        },
+        {
+          "milliseconds": 2061.4312999969115,
+          "status": 200
+        },
+        {
+          "milliseconds": 34.159000002546236,
+          "status": 200
+        },
+        {
+          "milliseconds": 20.57280000008177,
+          "status": 200
+        },
+        {
+          "milliseconds": 9.24450000457,
+          "status": 200
+        },
+        {
+          "milliseconds": 8.225799996580463,
+          "status": 200
+        },
+        {
+          "milliseconds": 11.213999998290092,
+          "status": 200
+        },
+        {
+          "milliseconds": 9.14790000388166,
+          "status": 200
+        },
+        {
+          "milliseconds": 11.28459999745246,
+          "status": 200
+        },
+        {
+          "milliseconds": 2052.6946000027237,
+          "status": 200
+        },
+        {
+          "milliseconds": 35.65189999790164,
+          "status": 200
+        },
+        {
+          "milliseconds": 29.283700001542456,
+          "status": 200
+        },
+        {
+          "milliseconds": 12.815099995350465,
+          "status": 200
+        },
+        {
+          "milliseconds": 8.660200001031626,
+          "status": 200
+        },
+        {
+          "milliseconds": 7.227400004921947,
+          "status": 200
+        },
+        {
+          "milliseconds": 9.118499998294283,
+          "status": 200
+        },
+        {
+          "milliseconds": 8.539799993741326,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "mode": "modest_concurrent",
+      "operation": "readiness",
+      "concurrent_workers": 4,
+      "requests": 32,
+      "duration_seconds": 0.21394750000035856,
+      "mean_ms": 25.40782812479847,
+      "p50_ms": 25.532650000968715,
+      "p95_ms": 35.98675500143145,
+      "max_ms": 40.418700002192054,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 34.3566000010469,
+          "status": 200
+        },
+        {
+          "milliseconds": 37.60039999906439,
+          "status": 200
+        },
+        {
+          "milliseconds": 20.744199995533563,
+          "status": 200
+        },
+        {
+          "milliseconds": 27.167699998244643,
+          "status": 200
+        },
+        {
+          "milliseconds": 31.535299996903632,
+          "status": 200
+        },
+        {
+          "milliseconds": 25.95899999869289,
+          "status": 200
+        },
+        {
+          "milliseconds": 21.911399999225978,
+          "status": 200
+        },
+        {
+          "milliseconds": 13.346899999305606,
+          "status": 200
+        },
+        {
+          "milliseconds": 34.08759999729227,
+          "status": 200
+        },
+        {
+          "milliseconds": 40.418700002192054,
+          "status": 200
+        },
+        {
+          "milliseconds": 24.626399994303938,
+          "status": 200
+        },
+        {
+          "milliseconds": 22.356300003593788,
+          "status": 200
+        },
+        {
+          "milliseconds": 24.037199997110292,
+          "status": 200
+        },
+        {
+          "milliseconds": 22.055599998566322,
+          "status": 200
+        },
+        {
+          "milliseconds": 26.419100002385676,
+          "status": 200
+        },
+        {
+          "milliseconds": 9.090800005651545,
+          "status": 200
+        },
+        {
+          "milliseconds": 34.66650000336813,
+          "status": 200
+        },
+        {
+          "milliseconds": 30.379700001503807,
+          "status": 200
+        },
+        {
+          "milliseconds": 28.17289999802597,
+          "status": 200
+        },
+        {
+          "milliseconds": 30.706700003065635,
+          "status": 200
+        },
+        {
+          "milliseconds": 27.641399996355176,
+          "status": 200
+        },
+        {
+          "milliseconds": 25.10630000324454,
+          "status": 200
+        },
+        {
+          "milliseconds": 19.52549999987241,
+          "status": 200
+        },
+        {
+          "milliseconds": 12.198299998999573,
+          "status": 200
+        },
+        {
+          "milliseconds": 24.933699998655356,
+          "status": 200
+        },
+        {
+          "milliseconds": 13.177799999539275,
+          "status": 200
+        },
+        {
+          "milliseconds": 31.477900003665127,
+          "status": 200
+        },
+        {
+          "milliseconds": 24.021500001254026,
+          "status": 200
+        },
+        {
+          "milliseconds": 30.41829999710899,
+          "status": 200
+        },
+        {
+          "milliseconds": 29.111300005752128,
+          "status": 200
+        },
+        {
+          "milliseconds": 16.790899993793573,
+          "status": 200
+        },
+        {
+          "milliseconds": 19.008600000233855,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "mode": "modest_concurrent",
+      "operation": "login",
+      "concurrent_workers": 4,
+      "requests": 32,
+      "duration_seconds": 5.839756999994279,
+      "mean_ms": 671.0564843747306,
+      "p50_ms": 626.7796499996621,
+      "p95_ms": 868.836615001419,
+      "max_ms": 879.6402999942075,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 217.31680000084452,
+          "status": 200
+        },
+        {
+          "milliseconds": 837.7533999955631,
+          "status": 200
+        },
+        {
+          "milliseconds": 802.2324999983539,
+          "status": 200
+        },
+        {
+          "milliseconds": 838.8169000027119,
+          "status": 200
+        },
+        {
+          "milliseconds": 592.6934000017354,
+          "status": 200
+        },
+        {
+          "milliseconds": 641.3911999989068,
+          "status": 200
+        },
+        {
+          "milliseconds": 592.0783000037773,
+          "status": 200
+        },
+        {
+          "milliseconds": 609.8746999996365,
+          "status": 200
+        },
+        {
+          "milliseconds": 462.0063999973354,
+          "status": 200
+        },
+        {
+          "milliseconds": 876.6546999977436,
+          "status": 200
+        },
+        {
+          "milliseconds": 831.2000000005355,
+          "status": 200
+        },
+        {
+          "milliseconds": 697.5388999999268,
+          "status": 200
+        },
+        {
+          "milliseconds": 590.6212999980198,
+          "status": 200
+        },
+        {
+          "milliseconds": 638.8525000002119,
+          "status": 200
+        },
+        {
+          "milliseconds": 601.4756000004127,
+          "status": 200
+        },
+        {
+          "milliseconds": 595.8697000023676,
+          "status": 200
+        },
+        {
+          "milliseconds": 862.4400000044261,
+          "status": 200
+        },
+        {
+          "milliseconds": 845.1448999985587,
+          "status": 200
+        },
+        {
+          "milliseconds": 823.3879999970668,
+          "status": 200
+        },
+        {
+          "milliseconds": 625.0923999978113,
+          "status": 200
+        },
+        {
+          "milliseconds": 628.4669000015128,
+          "status": 200
+        },
+        {
+          "milliseconds": 604.653700000199,
+          "status": 200
+        },
+        {
+          "milliseconds": 610.5822000026819,
+          "status": 200
+        },
+        {
+          "milliseconds": 586.7896999989171,
+          "status": 200
+        },
+        {
+          "milliseconds": 632.4345000030007,
+          "status": 200
+        },
+        {
+          "milliseconds": 879.6402999942075,
+          "status": 200
+        },
+        {
+          "milliseconds": 814.4381000020076,
+          "status": 200
+        },
+        {
+          "milliseconds": 689.0634999945178,
+          "status": 200
+        },
+        {
+          "milliseconds": 616.8233999997028,
+          "status": 200
+        },
+        {
+          "milliseconds": 620.203099999344,
+          "status": 200
+        },
+        {
+          "milliseconds": 604.8760000048787,
+          "status": 200
+        },
+        {
+          "milliseconds": 603.3944999944651,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "mode": "modest_concurrent",
+      "operation": "products",
+      "concurrent_workers": 4,
+      "requests": 32,
+      "duration_seconds": 0.8775725000014063,
+      "mean_ms": 107.4948218749796,
+      "p50_ms": 106.61154999979772,
+      "p95_ms": 126.91159499809146,
+      "max_ms": 133.98930000403197,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 107.27780000161147,
+          "status": 200
+        },
+        {
+          "milliseconds": 120.28750000172295,
+          "status": 200
+        },
+        {
+          "milliseconds": 133.98930000403197,
+          "status": 200
+        },
+        {
+          "milliseconds": 116.39339999965159,
+          "status": 200
+        },
+        {
+          "milliseconds": 96.09759999875678,
+          "status": 200
+        },
+        {
+          "milliseconds": 111.28780000581173,
+          "status": 200
+        },
+        {
+          "milliseconds": 117.5539999967441,
+          "status": 200
+        },
+        {
+          "milliseconds": 72.63509999756934,
+          "status": 200
+        },
+        {
+          "milliseconds": 108.40029999963008,
+          "status": 200
+        },
+        {
+          "milliseconds": 97.50190000340808,
+          "status": 200
+        },
+        {
+          "milliseconds": 96.53319999779342,
+          "status": 200
+        },
+        {
+          "milliseconds": 96.84890000062296,
+          "status": 200
+        },
+        {
+          "milliseconds": 111.48249999678228,
+          "status": 200
+        },
+        {
+          "milliseconds": 127.07170000066981,
+          "status": 200
+        },
+        {
+          "milliseconds": 116.90049999742769,
+          "status": 200
+        },
+        {
+          "milliseconds": 105.68849999981467,
+          "status": 200
+        },
+        {
+          "milliseconds": 126.7805999959819,
+          "status": 200
+        },
+        {
+          "milliseconds": 115.0703999956022,
+          "status": 200
+        },
+        {
+          "milliseconds": 119.01200000284007,
+          "status": 200
+        },
+        {
+          "milliseconds": 105.28060000069672,
+          "status": 200
+        },
+        {
+          "milliseconds": 102.20500000286847,
+          "status": 200
+        },
+        {
+          "milliseconds": 102.05019999557408,
+          "status": 200
+        },
+        {
+          "milliseconds": 106.25609999988228,
+          "status": 200
+        },
+        {
+          "milliseconds": 94.75290000409586,
+          "status": 200
+        },
+        {
+          "milliseconds": 126.07130000105826,
+          "status": 200
+        },
+        {
+          "milliseconds": 98.81920000043465,
+          "status": 200
+        },
+        {
+          "milliseconds": 111.77049999969313,
+          "status": 200
+        },
+        {
+          "milliseconds": 106.96699999971315,
+          "status": 200
+        },
+        {
+          "milliseconds": 90.43879999808269,
+          "status": 200
+        },
+        {
+          "milliseconds": 96.70470000128262,
+          "status": 200
+        },
+        {
+          "milliseconds": 100.74669999448815,
+          "status": 200
+        },
+        {
+          "milliseconds": 100.95830000500428,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "mode": "modest_concurrent",
+      "operation": "sales",
+      "concurrent_workers": 4,
+      "requests": 32,
+      "duration_seconds": 1.0321833999987575,
+      "mean_ms": 125.76494687527884,
+      "p50_ms": 124.26795000283164,
+      "p95_ms": 168.13373000222782,
+      "max_ms": 200.10629999887897,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 102.42489999654936,
+          "status": 200
+        },
+        {
+          "milliseconds": 115.96189999545459,
+          "status": 200
+        },
+        {
+          "milliseconds": 122.96000000060303,
+          "status": 200
+        },
+        {
+          "milliseconds": 115.53580000327202,
+          "status": 200
+        },
+        {
+          "milliseconds": 130.21840000146767,
+          "status": 200
+        },
+        {
+          "milliseconds": 138.59969999612076,
+          "status": 200
+        },
+        {
+          "milliseconds": 136.7504000008921,
+          "status": 200
+        },
+        {
+          "milliseconds": 117.06000000413042,
+          "status": 200
+        },
+        {
+          "milliseconds": 122.95880000601755,
+          "status": 200
+        },
+        {
+          "milliseconds": 124.11050000082469,
+          "status": 200
+        },
+        {
+          "milliseconds": 200.10629999887897,
+          "status": 200
+        },
+        {
+          "milliseconds": 145.99040000030072,
+          "status": 200
+        },
+        {
+          "milliseconds": 121.69709999579936,
+          "status": 200
+        },
+        {
+          "milliseconds": 141.1002999957418,
+          "status": 200
+        },
+        {
+          "milliseconds": 125.50509999709902,
+          "status": 200
+        },
+        {
+          "milliseconds": 47.45589999947697,
+          "status": 200
+        },
+        {
+          "milliseconds": 126.78129999403609,
+          "status": 200
+        },
+        {
+          "milliseconds": 146.62059999682242,
+          "status": 200
+        },
+        {
+          "milliseconds": 132.8785000005155,
+          "status": 200
+        },
+        {
+          "milliseconds": 153.49230000720127,
+          "status": 200
+        },
+        {
+          "milliseconds": 132.65949999913573,
+          "status": 200
+        },
+        {
+          "milliseconds": 102.98850000253879,
+          "status": 200
+        },
+        {
+          "milliseconds": 107.44910000357777,
+          "status": 200
+        },
+        {
+          "milliseconds": 93.96969999943394,
+          "status": 200
+        },
+        {
+          "milliseconds": 121.49799999315292,
+          "status": 200
+        },
+        {
+          "milliseconds": 124.4254000048386,
+          "status": 200
+        },
+        {
+          "milliseconds": 163.48819999984698,
+          "status": 200
+        },
+        {
+          "milliseconds": 131.9952000048943,
+          "status": 200
+        },
+        {
+          "milliseconds": 118.23480000020936,
+          "status": 200
+        },
+        {
+          "milliseconds": 173.81160000513773,
+          "status": 200
+        },
+        {
+          "milliseconds": 110.46550000173738,
+          "status": 200
+        },
+        {
+          "milliseconds": 75.28460000321502,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "mode": "modest_concurrent",
+      "operation": "inventory_update",
+      "concurrent_workers": 4,
+      "requests": 32,
+      "duration_seconds": 1.9418636999980663,
+      "mean_ms": 137.1642874992176,
+      "p50_ms": 138.5010499980126,
+      "p95_ms": 166.43718000013905,
+      "max_ms": 191.7879000029643,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 139.01310000073863,
+          "status": 200
+        },
+        {
+          "milliseconds": 153.82490000047255,
+          "status": 200
+        },
+        {
+          "milliseconds": 141.7347000024165,
+          "status": 200
+        },
+        {
+          "milliseconds": 138.50039999670116,
+          "status": 200
+        },
+        {
+          "milliseconds": 125.62489999982063,
+          "status": 200
+        },
+        {
+          "milliseconds": 191.7879000029643,
+          "status": 200
+        },
+        {
+          "milliseconds": 141.63790000020526,
+          "status": 200
+        },
+        {
+          "milliseconds": 56.345800003327895,
+          "status": 200
+        },
+        {
+          "milliseconds": 133.35539999388857,
+          "status": 200
+        },
+        {
+          "milliseconds": 169.81439999653958,
+          "status": 200
+        },
+        {
+          "milliseconds": 130.21719999960624,
+          "status": 200
+        },
+        {
+          "milliseconds": 149.90509999915957,
+          "status": 200
+        },
+        {
+          "milliseconds": 146.77419999497943,
+          "status": 200
+        },
+        {
+          "milliseconds": 163.67400000308407,
+          "status": 200
+        },
+        {
+          "milliseconds": 109.6666000012192,
+          "status": 200
+        },
+        {
+          "milliseconds": 100.90370000398252,
+          "status": 200
+        },
+        {
+          "milliseconds": 146.41049999772804,
+          "status": 200
+        },
+        {
+          "milliseconds": 133.42589999956544,
+          "status": 200
+        },
+        {
+          "milliseconds": 120.66199999389937,
+          "status": 200
+        },
+        {
+          "milliseconds": 160.01259999757167,
+          "status": 200
+        },
+        {
+          "milliseconds": 124.02689999726135,
+          "status": 200
+        },
+        {
+          "milliseconds": 142.71619999635732,
+          "status": 200
+        },
+        {
+          "milliseconds": 133.23859999945853,
+          "status": 200
+        },
+        {
+          "milliseconds": 135.80730000103358,
+          "status": 200
+        },
+        {
+          "milliseconds": 115.9884999942733,
+          "status": 200
+        },
+        {
+          "milliseconds": 151.04319999954896,
+          "status": 200
+        },
+        {
+          "milliseconds": 130.28990000020713,
+          "status": 200
+        },
+        {
+          "milliseconds": 150.5743000016082,
+          "status": 200
+        },
+        {
+          "milliseconds": 138.50169999932405,
+          "status": 200
+        },
+        {
+          "milliseconds": 132.47119999869028,
+          "status": 200
+        },
+        {
+          "milliseconds": 144.47130000189645,
+          "status": 200
+        },
+        {
+          "milliseconds": 136.83689999743365,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "mode": "modest_concurrent",
+      "operation": "operational_sale",
+      "concurrent_workers": 4,
+      "requests": 32,
+      "duration_seconds": 2.1191360999946482,
+      "mean_ms": 159.83963437429338,
+      "p50_ms": 157.30414999779896,
+      "p95_ms": 196.58728999747836,
+      "max_ms": 215.81960000185063,
+      "errors": 4,
+      "error_rate": 0.125,
+      "samples": [
+        {
+          "milliseconds": 144.88810000329977,
+          "status": 201
+        },
+        {
+          "milliseconds": 215.81960000185063,
+          "status": 201
+        },
+        {
+          "milliseconds": 158.37079999619164,
+          "status": 201
+        },
+        {
+          "milliseconds": 150.20560000266414,
+          "status": 201
+        },
+        {
+          "milliseconds": 150.97960000275634,
+          "status": 201
+        },
+        {
+          "milliseconds": 154.00469999440247,
+          "status": 503
+        },
+        {
+          "milliseconds": 146.06270000513177,
+          "status": 201
+        },
+        {
+          "milliseconds": 168.81149999971967,
+          "status": 201
+        },
+        {
+          "milliseconds": 160.82099999766797,
+          "status": 201
+        },
+        {
+          "milliseconds": 160.95800000039162,
+          "status": 201
+        },
+        {
+          "milliseconds": 151.1183999973582,
+          "status": 201
+        },
+        {
+          "milliseconds": 190.59489999926882,
+          "status": 201
+        },
+        {
+          "milliseconds": 130.93889999436215,
+          "status": 503
+        },
+        {
+          "milliseconds": 192.03559999732533,
+          "status": 201
+        },
+        {
+          "milliseconds": 136.30189999821596,
+          "status": 201
+        },
+        {
+          "milliseconds": 165.3124000004027,
+          "status": 201
+        },
+        {
+          "milliseconds": 156.23749999940628,
+          "status": 201
+        },
+        {
+          "milliseconds": 193.92049999441952,
+          "status": 201
+        },
+        {
+          "milliseconds": 147.50809999532066,
+          "status": 201
+        },
+        {
+          "milliseconds": 133.39390000328422,
+          "status": 503
+        },
+        {
+          "milliseconds": 145.41099999769358,
+          "status": 201
+        },
+        {
+          "milliseconds": 143.88529999996535,
+          "status": 201
+        },
+        {
+          "milliseconds": 166.42400000273483,
+          "status": 201
+        },
+        {
+          "milliseconds": 199.84670000121696,
+          "status": 201
+        },
+        {
+          "milliseconds": 170.28840000421042,
+          "status": 201
+        },
+        {
+          "milliseconds": 168.38159999315394,
+          "status": 201
+        },
+        {
+          "milliseconds": 160.5928999997559,
+          "status": 201
+        },
+        {
+          "milliseconds": 128.91839999792865,
+          "status": 503
+        },
+        {
+          "milliseconds": 160.65229999367148,
+          "status": 201
+        },
+        {
+          "milliseconds": 152.262099996733,
+          "status": 201
+        },
+        {
+          "milliseconds": 144.26970000204165,
+          "status": 201
+        },
+        {
+          "milliseconds": 165.6522000048426,
+          "status": 201
+        }
+      ]
+    },
+    {
+      "mode": "modest_concurrent",
+      "operation": "forecast_retrieval",
+      "concurrent_workers": 4,
+      "requests": 32,
+      "duration_seconds": 1.9911419999989448,
+      "mean_ms": 218.7902906250656,
+      "p50_ms": 211.54830000159563,
+      "p95_ms": 468.16382999822963,
+      "max_ms": 508.1027000051108,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 487.0955999940634,
+          "status": 200
+        },
+        {
+          "milliseconds": 452.6742000016384,
+          "status": 200
+        },
+        {
+          "milliseconds": 508.1027000051108,
+          "status": 200
+        },
+        {
+          "milliseconds": 274.3025999952806,
+          "status": 200
+        },
+        {
+          "milliseconds": 74.59830000152579,
+          "status": 200
+        },
+        {
+          "milliseconds": 71.60220000514528,
+          "status": 200
+        },
+        {
+          "milliseconds": 64.98350000038045,
+          "status": 200
+        },
+        {
+          "milliseconds": 56.01759999990463,
+          "status": 200
+        },
+        {
+          "milliseconds": 217.5400999985868,
+          "status": 200
+        },
+        {
+          "milliseconds": 163.52040000492707,
+          "status": 200
+        },
+        {
+          "milliseconds": 220.11630000633886,
+          "status": 200
+        },
+        {
+          "milliseconds": 222.28390000236686,
+          "status": 200
+        },
+        {
+          "milliseconds": 238.72449999907985,
+          "status": 200
+        },
+        {
+          "milliseconds": 183.87920000532176,
+          "status": 200
+        },
+        {
+          "milliseconds": 219.01570000045467,
+          "status": 200
+        },
+        {
+          "milliseconds": 198.88219999847934,
+          "status": 200
+        },
+        {
+          "milliseconds": 213.15789999789558,
+          "status": 200
+        },
+        {
+          "milliseconds": 201.39709999784827,
+          "status": 200
+        },
+        {
+          "milliseconds": 240.2723999985028,
+          "status": 200
+        },
+        {
+          "milliseconds": 235.53779999929247,
+          "status": 200
+        },
+        {
+          "milliseconds": 212.84759999980452,
+          "status": 200
+        },
+        {
+          "milliseconds": 183.93810000270605,
+          "status": 200
+        },
+        {
+          "milliseconds": 179.1903999983333,
+          "status": 200
+        },
+        {
+          "milliseconds": 218.96150000247872,
+          "status": 200
+        },
+        {
+          "milliseconds": 218.78949999518227,
+          "status": 200
+        },
+        {
+          "milliseconds": 198.46639999741456,
+          "status": 200
+        },
+        {
+          "milliseconds": 207.2550000011688,
+          "status": 200
+        },
+        {
+          "milliseconds": 208.25669999612728,
+          "status": 200
+        },
+        {
+          "milliseconds": 193.61559999379097,
+          "status": 200
+        },
+        {
+          "milliseconds": 210.24900000338675,
+          "status": 200
+        },
+        {
+          "milliseconds": 220.0537999960943,
+          "status": 200
+        },
+        {
+          "milliseconds": 205.96150000346825,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "mode": "modest_concurrent",
+      "operation": "forecast_inference",
+      "concurrent_workers": 4,
+      "requests": 32,
+      "duration_seconds": 54.412066699995194,
+      "mean_ms": 6763.879853124763,
+      "p50_ms": 6774.599300002592,
+      "p95_ms": 7271.17753999737,
+      "max_ms": 7350.458799999615,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 6969.365600001765,
+          "status": 201
+        },
+        {
+          "milliseconds": 6528.506499998912,
+          "status": 201
+        },
+        {
+          "milliseconds": 6148.19179999904,
+          "status": 201
+        },
+        {
+          "milliseconds": 6763.084500002151,
+          "status": 201
+        },
+        {
+          "milliseconds": 7089.063199993689,
+          "status": 201
+        },
+        {
+          "milliseconds": 6454.517800004396,
+          "status": 201
+        },
+        {
+          "milliseconds": 6942.885699994804,
+          "status": 201
+        },
+        {
+          "milliseconds": 6468.021499997121,
+          "status": 201
+        },
+        {
+          "milliseconds": 6888.520900000003,
+          "status": 201
+        },
+        {
+          "milliseconds": 6633.355000005395,
+          "status": 201
+        },
+        {
+          "milliseconds": 6400.71120000357,
+          "status": 201
+        },
+        {
+          "milliseconds": 6735.629000002518,
+          "status": 201
+        },
+        {
+          "milliseconds": 7350.458799999615,
+          "status": 201
+        },
+        {
+          "milliseconds": 6519.008700000995,
+          "status": 201
+        },
+        {
+          "milliseconds": 6786.114100003033,
+          "status": 201
+        },
+        {
+          "milliseconds": 6979.558200000611,
+          "status": 201
+        },
+        {
+          "milliseconds": 7163.204500000575,
+          "status": 201
+        },
+        {
+          "milliseconds": 6644.612600000983,
+          "status": 201
+        },
+        {
+          "milliseconds": 6344.86779999861,
+          "status": 201
+        },
+        {
+          "milliseconds": 6633.841199996823,
+          "status": 201
+        },
+        {
+          "milliseconds": 7259.26459999755,
+          "status": 201
+        },
+        {
+          "milliseconds": 6359.30499999813,
+          "status": 201
+        },
+        {
+          "milliseconds": 7001.037399997585,
+          "status": 201
+        },
+        {
+          "milliseconds": 6979.792399994039,
+          "status": 201
+        },
+        {
+          "milliseconds": 7175.572699998156,
+          "status": 201
+        },
+        {
+          "milliseconds": 6603.245600002992,
+          "status": 201
+        },
+        {
+          "milliseconds": 6076.699899997038,
+          "status": 201
+        },
+        {
+          "milliseconds": 6820.682800003851,
+          "status": 201
+        },
+        {
+          "milliseconds": 7186.287100004847,
+          "status": 201
+        },
+        {
+          "milliseconds": 6319.819799995457,
+          "status": 201
+        },
+        {
+          "milliseconds": 7285.73779999715,
+          "status": 201
+        },
+        {
+          "milliseconds": 6933.19160000101,
+          "status": 201
+        }
+      ]
+    },
+    {
+      "mode": "modest_concurrent",
+      "operation": "recommendation",
+      "concurrent_workers": 4,
+      "requests": 32,
+      "duration_seconds": 4.67391370000405,
+      "mean_ms": 579.4459343740073,
+      "p50_ms": 569.2765999992844,
+      "p95_ms": 670.4295949984953,
+      "max_ms": 676.0699999940698,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 564.7888999956194,
+          "status": 201
+        },
+        {
+          "milliseconds": 672.6577000008547,
+          "status": 201
+        },
+        {
+          "milliseconds": 626.7745000004652,
+          "status": 201
+        },
+        {
+          "milliseconds": 514.3363999959547,
+          "status": 201
+        },
+        {
+          "milliseconds": 569.6790000001783,
+          "status": 201
+        },
+        {
+          "milliseconds": 529.9191999947652,
+          "status": 201
+        },
+        {
+          "milliseconds": 613.739300002635,
+          "status": 201
+        },
+        {
+          "milliseconds": 534.2066999946837,
+          "status": 201
+        },
+        {
+          "milliseconds": 568.8741999983904,
+          "status": 201
+        },
+        {
+          "milliseconds": 657.7217999947607,
+          "status": 201
+        },
+        {
+          "milliseconds": 646.34020000085,
+          "status": 201
+        },
+        {
+          "milliseconds": 520.2917999995407,
+          "status": 201
+        },
+        {
+          "milliseconds": 583.510299999034,
+          "status": 201
+        },
+        {
+          "milliseconds": 521.0032000031788,
+          "status": 201
+        },
+        {
+          "milliseconds": 534.0396000028704,
+          "status": 201
+        },
+        {
+          "milliseconds": 576.2703000000329,
+          "status": 201
+        },
+        {
+          "milliseconds": 561.8245000005118,
+          "status": 201
+        },
+        {
+          "milliseconds": 635.2364999984275,
+          "status": 201
+        },
+        {
+          "milliseconds": 650.4949000009219,
+          "status": 201
+        },
+        {
+          "milliseconds": 594.7703999991063,
+          "status": 201
+        },
+        {
+          "milliseconds": 547.1125000040047,
+          "status": 201
+        },
+        {
+          "milliseconds": 553.4119000003557,
+          "status": 201
+        },
+        {
+          "milliseconds": 559.4058999995468,
+          "status": 201
+        },
+        {
+          "milliseconds": 541.2943999981508,
+          "status": 201
+        },
+        {
+          "milliseconds": 565.5616000003647,
+          "status": 201
+        },
+        {
+          "milliseconds": 668.6065999965649,
+          "status": 201
+        },
+        {
+          "milliseconds": 676.0699999940698,
+          "status": 201
+        },
+        {
+          "milliseconds": 571.745599998394,
+          "status": 201
+        },
+        {
+          "milliseconds": 562.1889999965788,
+          "status": 201
+        },
+        {
+          "milliseconds": 606.9322000039392,
+          "status": 201
+        },
+        {
+          "milliseconds": 578.4889999995357,
+          "status": 201
+        },
+        {
+          "milliseconds": 434.97179999394575,
+          "status": 201
+        }
+      ]
+    },
+    {
+      "mode": "modest_concurrent",
+      "operation": "dashboard",
+      "concurrent_workers": 4,
+      "requests": 32,
+      "duration_seconds": 2.2565675000005285,
+      "mean_ms": 278.16920937493705,
+      "p50_ms": 278.64224999575526,
+      "p95_ms": 315.8328449979308,
+      "max_ms": 324.279899999965,
+      "errors": 0,
+      "error_rate": 0.0,
+      "samples": [
+        {
+          "milliseconds": 264.8884000009275,
+          "status": 200
+        },
+        {
+          "milliseconds": 267.53540000208886,
+          "status": 200
+        },
+        {
+          "milliseconds": 241.1154000001261,
+          "status": 200
+        },
+        {
+          "milliseconds": 244.2418999999063,
+          "status": 200
+        },
+        {
+          "milliseconds": 273.47310000186553,
+          "status": 200
+        },
+        {
+          "milliseconds": 291.69009999895934,
+          "status": 200
+        },
+        {
+          "milliseconds": 318.31119999696966,
+          "status": 200
+        },
+        {
+          "milliseconds": 267.9626000026474,
+          "status": 200
+        },
+        {
+          "milliseconds": 270.5982999978005,
+          "status": 200
+        },
+        {
+          "milliseconds": 282.33329999784473,
+          "status": 200
+        },
+        {
+          "milliseconds": 283.49960000196006,
+          "status": 200
+        },
+        {
+          "milliseconds": 280.0939999942784,
+          "status": 200
+        },
+        {
+          "milliseconds": 288.0390999998781,
+          "status": 200
+        },
+        {
+          "milliseconds": 305.6997000021511,
+          "status": 200
+        },
+        {
+          "milliseconds": 324.279899999965,
+          "status": 200
+        },
+        {
+          "milliseconds": 218.55720000166912,
+          "status": 200
+        },
+        {
+          "milliseconds": 283.03690000029746,
+          "status": 200
+        },
+        {
+          "milliseconds": 277.8630999964662,
+          "status": 200
+        },
+        {
+          "milliseconds": 313.8050999987172,
+          "status": 200
+        },
+        {
+          "milliseconds": 312.29090000124415,
+          "status": 200
+        },
+        {
+          "milliseconds": 258.73480000154814,
+          "status": 200
+        },
+        {
+          "milliseconds": 276.81509999820264,
+          "status": 200
+        },
+        {
+          "milliseconds": 306.64660000184085,
+          "status": 200
+        },
+        {
+          "milliseconds": 220.88060000533005,
+          "status": 200
+        },
+        {
+          "milliseconds": 269.7176999936346,
+          "status": 200
+        },
+        {
+          "milliseconds": 251.84140000055777,
+          "status": 200
+        },
+        {
+          "milliseconds": 270.60539999365574,
+          "status": 200
+        },
+        {
+          "milliseconds": 300.2126999999746,
+          "status": 200
+        },
+        {
+          "milliseconds": 279.42139999504434,
+          "status": 200
+        },
+        {
+          "milliseconds": 293.9992000028724,
+          "status": 200
+        },
+        {
+          "milliseconds": 303.1518000061624,
+          "status": 200
+        },
+        {
+          "milliseconds": 260.0728000033996,
+          "status": 200
+        }
+      ]
+    }
+  ],
+  "inventory_integrity": [
+    {
+      "product_id": 13,
+      "on_hand": "985.000",
+      "sale_count": 15,
+      "expected_on_hand": 984,
+      "passed": false
+    },
+    {
+      "product_id": 14,
+      "on_hand": "993.000",
+      "sale_count": 7,
+      "expected_on_hand": 992,
+      "passed": false
+    },
+    {
+      "product_id": 15,
+      "on_hand": "993.000",
+      "sale_count": 7,
+      "expected_on_hand": 992,
+      "passed": false
+    },
+    {
+      "product_id": 16,
+      "on_hand": "993.000",
+      "sale_count": 7,
+      "expected_on_hand": 992,
+      "passed": false
+    }
+  ]
+}

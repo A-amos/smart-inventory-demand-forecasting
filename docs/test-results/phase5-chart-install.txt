@@ -1,0 +1,23 @@
+✓ Lockfile passes supply-chain policies (verified 11h ago)
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 79, reused 73, downloaded 0, added 0
+Progress: resolved 82, reused 74, downloaded 2, added 0
+Progress: resolved 83, reused 74, downloaded 6, added 0
+Progress: resolved 84, reused 74, downloaded 6, added 0
+Progress: resolved 84, reused 74, downloaded 7, added 0
+Progress: resolved 216, reused 114, downloaded 9, added 0
+[WARN] 1 deprecated subdependencies found: whatwg-encoding@3.1.1
+Packages: +15 -14
++++++++++++++++--------------
+Progress: resolved 281, reused 196, downloaded 14, added 0
+Progress: resolved 281, reused 196, downloaded 14, added 14
+Progress: resolved 281, reused 196, downloaded 15, added 14
+Progress: resolved 281, reused 196, downloaded 15, added 15
+Progress: resolved 281, reused 196, downloaded 15, added 15, done
+
+dependencies:
++ react-is 19.1.0 (19.3.0 is available)
+- recharts 2.15.3
++ recharts 3.10.1
+
+Done in 14.1s using pnpm v11.19.0

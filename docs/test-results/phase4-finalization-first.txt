@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\user\Projects\SmartInventory\scripts\finalize_phase4.py", line 177, in <module>
+    main()
+  File "C:\Users\user\Projects\SmartInventory\scripts\finalize_phase4.py", line 42, in main
+    assert 'verified against existing manifest' in reacquisition
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

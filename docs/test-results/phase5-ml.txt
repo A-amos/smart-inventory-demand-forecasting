@@ -1,0 +1,3 @@
+...........................................................              [100%]
+- generated xml file: C:\Users\user\Projects\SmartInventory\docs\test-results\phase5-ml.xml -
+59 passed in 8.82s

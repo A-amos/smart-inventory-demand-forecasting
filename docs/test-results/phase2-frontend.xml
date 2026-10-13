@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="9" failures="0" errors="0" time="2.4448441">
+    <testsuite name="src/App.test.jsx" timestamp="2026-09-30T21:04:16.938Z" hostname="DESKTOP-P2IJE3C" tests="2" failures="0" errors="0" skipped="0" time="0.7994142">
+        <testcase classname="src/App.test.jsx" name="signs in and revokes the server session when signing out" time="0.7440212">
+        </testcase>
+        <testcase classname="src/App.test.jsx" name="shows failed sign-in and keeps protected content hidden" time="0.053101">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/Workspace.test.jsx" timestamp="2026-09-30T21:04:16.942Z" hostname="DESKTOP-P2IJE3C" tests="7" failures="0" errors="0" skipped="0" time="1.6454299">
+        <testcase classname="src/Workspace.test.jsx" name="manager creates a category and sees refreshed data" time="0.7810657">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="manager creates a product with stock and replenishment configuration" time="0.2628347">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="duplicate SKU error preserves entered form" time="0.103152">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="inventory adjustment sends quantities, reason and loaded version" time="0.1982387">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="researcher sees records and history without mutation controls" time="0.1113314">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="archive hides product and show-archived exposes edit for restoration" time="0.1273014">
+        </testcase>
+        <testcase classname="src/Workspace.test.jsx" name="expired session clears authenticated workspace through callback" time="0.0574479">
+        </testcase>
+    </testsuite>
+</testsuites>

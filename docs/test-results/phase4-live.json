@@ -1,0 +1,80 @@
+{
+  "executed_at_utc": "2026-09-30T22:41:42.757618+00:00",
+  "checks": [
+    {
+      "check": "MySQL connectivity",
+      "passed": true,
+      "actual": "8.4.11"
+    },
+    {
+      "check": "Database at current migration head",
+      "passed": true,
+      "actual": "7cf0674f24d9"
+    },
+    {
+      "check": "Authorized account stored",
+      "passed": true,
+      "actual": "active manager; password omitted"
+    },
+    {
+      "check": "Password hashed",
+      "passed": true,
+      "actual": "Argon2id"
+    },
+    {
+      "check": "Health live",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Health ready",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Anonymous protected access",
+      "passed": true,
+      "actual": 401
+    },
+    {
+      "check": "Wrong password",
+      "passed": true,
+      "actual": 401
+    },
+    {
+      "check": "Login",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Protected authenticated access",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Logout",
+      "passed": true,
+      "actual": 204
+    },
+    {
+      "check": "Revoked token rejected",
+      "passed": true,
+      "actual": 401
+    },
+    {
+      "check": "Expired token rejected",
+      "passed": true,
+      "actual": 401
+    },
+    {
+      "check": "Frontend service responds",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Frontend API proxy reaches MySQL readiness",
+      "passed": true,
+      "actual": 200
+    }
+  ]
+}

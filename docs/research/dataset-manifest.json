@@ -1,0 +1,27 @@
+{
+  "dataset": "UCI Online Retail II",
+  "repository_id": 502,
+  "doi": "10.24432/C5CG6D",
+  "citation": "Chen, D. (2012). Online Retail II [Dataset]. UCI Machine Learning Repository.",
+  "source_page": "https://archive.ics.uci.edu/dataset/502/online%2Bretail%2Bii",
+  "download_url": "https://archive.ics.uci.edu/static/public/502/online%2Bretail%2Bii.zip",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "obtained_at_utc": "2026-09-30T22:14:04.092443+00:00",
+  "source_donation_date": "2019-09-20",
+  "geographic_context": "UK-based non-store online gift retailer with international customers",
+  "version_policy": "No upstream semantic version; exact archive/workbook SHA-256 identifies the source snapshot",
+  "modifications": "None in raw files. Later preprocessing and aggregation are recorded separately.",
+  "files": [
+    {
+      "path": "data/raw/online-retail-ii/online-retail-ii.zip",
+      "bytes": 45622418,
+      "sha256": "572e36277c2390fbfde10664750731e0a86f55e33470d91919085f0408e67bfb"
+    },
+    {
+      "path": "data/raw/online-retail-ii/online_retail_II.xlsx",
+      "bytes": 45622278,
+      "sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980"
+    }
+  ]
+}

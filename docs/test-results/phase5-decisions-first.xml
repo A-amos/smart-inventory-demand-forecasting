@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="43" time="12.096" timestamp="2026-10-01T10:16:19.078609+03:00" hostname="DESKTOP-P2IJE3C"><testcase classname="tests.test_decisions" name="test_inventory_position_multi_day_target_and_safety_stock" time="0.010" /><testcase classname="tests.test_decisions" name="test_risk_boundaries_allocation_and_incoming[10-0-0-ADEQUATE-0]" time="0.001" /><testcase classname="tests.test_decisions" name="test_risk_boundaries_allocation_and_incoming[20-0-0-ADEQUATE-0]" time="0.001" /><testcase classname="tests.test_decisions" name="test_risk_boundaries_allocation_and_incoming[21-0-0-OVERSTOCK-0]" time="0.001" /><testcase classname="tests.test_decisions" name="test_risk_boundaries_allocation_and_incoming[0-0-0-REPLENISH-10]" time="0.001" /><testcase classname="tests.test_decisions" name="test_risk_boundaries_allocation_and_incoming[10-0-10-REPLENISH-10]" time="0.001" /><testcase classname="tests.test_decisions" name="test_risk_boundaries_allocation_and_incoming[0-10-0-ADEQUATE-0]" time="0.001" /><testcase classname="tests.test_decisions" name="test_risk_boundaries_allocation_and_incoming[5-3-2-REPLENISH-4]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[stale]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[product]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[sku]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[unit]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[mapping]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[series]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[namespace]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[model]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[version]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[artifact]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[feature]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[horizon_short]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[horizon_count]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[step]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[gap]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[negative]" time="0.001" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_rejected[context]" time="0.001" /><testcase classname="tests.test_decisions" name="test_missing_or_invalid_replenishment_parameters[safety_stock-None]" time="0.001" /><testcase classname="tests.test_decisions" name="test_missing_or_invalid_replenishment_parameters[safety_stock-value1]" time="0.001" /><testcase classname="tests.test_decisions" name="test_missing_or_invalid_replenishment_parameters[overstock_multiplier-value2]" time="0.001" /><testcase classname="tests.test_decisions" name="test_missing_or_invalid_replenishment_parameters[lead_time_days-0]" time="0.001" /><testcase classname="tests.test_decisions" name="test_missing_or_invalid_replenishment_parameters[lead_time_days-True]" time="0.001" /><testcase classname="tests.test_decisions" name="test_actual_artifact_inference_schema_persistence_and_retry" time="3.739" /><testcase classname="tests.test_decisions" name="test_snapshot_history_immutable_and_new_stock_requires_new_request" time="0.836"><failure message="AssertionError: Dependency rule on column 'forecasts.id' tried to blank-out primary key column 'forecast_points.forecast_id' on instance '&lt;ForecastPointRecord at 0x223acdf8260&gt;'">environment = (&lt;starlette.testclient.TestClient object at 0x00000223ACE7E4B0&gt;, sessionmaker(class_='Session', bind=Engine(sqlite://), autoflush=True, expire_on_commit=False))
+login = {'Authorization': 'Bearer -3WjSzGv9H7aTthFuM2UnQT1xxR7V5sYSfeyScyIQVs'}
+
+    def test_snapshot_history_immutable_and_new_stock_requires_new_request(environment, login):
+        client, factory = environment; item = mapped_product(client, login)
+        generated, _ = generate(client, login, item)
+        response, payload = recommend(client, login, item, generated.json()['id'])
+        assert response.status_code == 201, response.text
+        original = response.json(); snapshot = original['snapshot']
+        assert snapshot['risk_status'] == 'REPLENISH' and snapshot['lead_time_days'] == 3
+        assert D(snapshot['target_stock']) == D(snapshot['predicted_lead_time_demand']) + 4
+        assert client.put(f'/api/v1/products/{item["id"]}/inventory', headers=login,
+                          json=dict(on_hand='999', allocated='2', confirmed_in_transit='3', version=1, reason='Synthetic stock change')).status_code == 200
+        assert client.post(f'/api/v1/recommendations/{item["id"]}/generate', headers=login, json=payload).json() == original
+        new, _ = recommend(client, login, item, generated.json()['id'])
+        assert new.json()['snapshot']['risk_status'] == 'OVERSTOCK' and new.json()['id'] != original['id']
+        assert client.get(f'/api/v1/recommendations/{item["id"]}', headers=login).json()[1] == original
+        with factory() as db:
+            row = db.get(Recommendation, original['id']); row.snapshot = {'corrupted': True}
+            with pytest.raises(ValueError, match='append-only'): db.commit()
+            db.rollback(); db.delete(db.get(Forecast, generated.json()['id']))
+&gt;           with pytest.raises(ValueError, match='append-only'): db.commit()
+
+backend\tests\test_decisions.py:128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv\Lib\site-packages\sqlalchemy\orm\session.py:2032: in commit
+    trans.commit(_to_root=True)
+&lt;string&gt;:2: in commit
+    ???
+.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py:139: in _go
+    ret_value = fn(self, *arg, **kw)
+.venv\Lib\site-packages\sqlalchemy\orm\session.py:1313: in commit
+    self._prepare_impl()
+&lt;string&gt;:2: in _prepare_impl
+    ???
+.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py:139: in _go
+    ret_value = fn(self, *arg, **kw)
+.venv\Lib\site-packages\sqlalchemy\orm\session.py:1288: in _prepare_impl
+    self.session.flush()
+.venv\Lib\site-packages\sqlalchemy\orm\session.py:4353: in flush
+    self._flush(objects)
+.venv\Lib\site-packages\sqlalchemy\orm\session.py:4488: in _flush
+    with util.safe_reraise():
+.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py:146: in __exit__
+    raise exc_value.with_traceback(exc_tb)
+.venv\Lib\site-packages\sqlalchemy\orm\session.py:4449: in _flush
+    flush_context.execute()
+.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py:466: in execute
+    rec.execute(self)
+.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py:589: in execute
+    self.dependency_processor.process_deletes(uow, states)
+.venv\Lib\site-packages\sqlalchemy\orm\dependency.py:567: in process_deletes
+    self._synchronize(
+.venv\Lib\site-packages\sqlalchemy\orm\dependency.py:625: in _synchronize
+    sync.clear(dest, self.mapper, self.prop.synchronize_pairs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dest = &lt;sqlalchemy.orm.state.InstanceState object at 0x00000223ACDEB410&gt;
+dest_mapper = &lt;Mapper at 0x2238ba11880; ForecastPointRecord&gt;
+synchronize_pairs = [(Column('id', String(length=36), table=&lt;forecasts&gt;, primary_key=True, nullable=False), Column('forecast_id', String(length=36), ForeignKey('forecasts.id'), table=&lt;forecast_points&gt;, primary_key=True, nullable=False))]
+
+    def clear(dest, dest_mapper, synchronize_pairs):
+        for l, r in synchronize_pairs:
+            if (
+                r.primary_key
+                and dest_mapper._get_state_attr_by_column(dest, dest.dict, r)
+                not in orm_util._none_set
+            ):
+&gt;               raise AssertionError(
+                    f"Dependency rule on column '{l}' "
+                    "tried to blank-out primary key "
+                    f"column '{r}' on instance '{orm_util.state_str(dest)}'"
+                )
+E               AssertionError: Dependency rule on column 'forecasts.id' tried to blank-out primary key column 'forecast_points.forecast_id' on instance '&lt;ForecastPointRecord at 0x223acdf8260&gt;'
+
+.venv\Lib\site-packages\sqlalchemy\orm\sync.py:88: AssertionError</failure></testcase><testcase classname="tests.test_decisions" name="test_unsupported_sku_even_if_application_sku_matches" time="0.261" /><testcase classname="tests.test_decisions" name="test_failure_isolation_preserves_operational_records[missing]" time="0.296" /><testcase classname="tests.test_decisions" name="test_failure_isolation_preserves_operational_records[incompatible]" time="0.326" /><testcase classname="tests.test_decisions" name="test_failure_isolation_preserves_operational_records[corrupt]" time="0.327" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_origin_horizon_and_context[change0-409]" time="0.532" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_origin_horizon_and_context[change1-422]" time="0.347" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_origin_horizon_and_context[change2-422]" time="0.321" /><testcase classname="tests.test_decisions" name="test_invalid_forecast_origin_horizon_and_context[change3-409]" time="0.368" /><testcase classname="tests.test_decisions" name="test_stale_missing_mismatched_and_short_forecast_api" time="1.863"><failure message="KeyError: 'id'">environment = (&lt;starlette.testclient.TestClient object at 0x00000223ACFA1760&gt;, sessionmaker(class_='Session', bind=Engine(sqlite://), autoflush=True, expire_on_commit=False))
+login = {'Authorization': 'Bearer DnZ_rUsGJXO24ZK6NrW6cQZ7ysjCeM2tc2B1HIfs6yY'}
+
+    def test_stale_missing_mismatched_and_short_forecast_api(environment, login):
+        client, _ = environment; item = mapped_product(client, login)
+        short, _ = generate(client, login, item, horizon=2)
+        assert recommend(client, login, item, short.json()['id'])[0].status_code == 409
+        assert recommend(client, login, item, str(uuid4()))[0].status_code == 404
+        full, _ = generate(client, login, item)
+        assert recommend(client, login, item, full.json()['id'], decision_as_of='2011-11-12')[0].status_code == 409
+&gt;       other, _ = create_product(client, login, sku='OTHER-DEMO', unit='unit')
+
+backend\tests\test_decisions.py:166: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = &lt;starlette.testclient.TestClient object at 0x00000223ACFA1760&gt;
+headers = {'Authorization': 'Bearer DnZ_rUsGJXO24ZK6NrW6cQZ7ysjCeM2tc2B1HIfs6yY'}
+overrides = {'sku': 'OTHER-DEMO', 'unit': 'unit'}
+category = {'detail': 'Category name already exists, including archived categories'}
+
+    def create_product(client, headers, **overrides):
+        category = client.post('/api/v1/categories', headers=headers, json={'name': 'Groceries'}).json()
+&gt;       payload = {'sku': 'rice-1', 'name': 'Rice', 'category_id': category['id'], 'initial_stock': '12.500',
+                   'safety_stock': '3', 'lead_time_days': 5, 'overstock_multiplier': '2.5'} | overrides
+E       KeyError: 'id'
+
+backend\tests\test_catalog.py:17: KeyError</failure></testcase><testcase classname="tests.test_decisions" name="test_read_roles_write_roles_and_authentication" time="0.689" /><testcase classname="tests.test_decisions" name="test_dashboard_empty_real_comparison_and_stock_refresh" time="1.154" /></testsuite></testsuites>

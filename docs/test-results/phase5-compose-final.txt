@@ -1,0 +1,164 @@
+ Image smartinventory-migrate Building 
+ Image smartinventory-backend Building 
+ Image smartinventory-frontend Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.53kB done
+#1 DONE 0.0s
+
+#2 [frontend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 276B 0.0s done
+#2 DONE 0.0s
+
+#3 [migrate internal] load build definition from Dockerfile
+#3 transferring dockerfile: 872B 0.0s done
+#3 DONE 0.0s
+
+#4 [migrate internal] load metadata for docker.io/library/python:3.12-slim
+#4 ...
+
+#5 [auth] library/python:pull token for registry-1.docker.io
+#5 DONE 0.0s
+
+#6 [frontend internal] load metadata for docker.io/library/node:22-alpine
+#6 ...
+
+#4 [migrate internal] load metadata for docker.io/library/python:3.12-slim
+#4 DONE 2.0s
+
+#7 [backend internal] load .dockerignore
+#7 transferring context: 361B done
+#7 DONE 0.0s
+
+#8 [migrate  1/12] FROM docker.io/library/python:3.12-slim@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f
+#8 resolve docker.io/library/python:3.12-slim@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f 0.0s done
+#8 DONE 0.0s
+
+#9 [migrate internal] load build context
+#9 transferring context: 4.54kB 0.0s done
+#9 DONE 0.0s
+
+#10 [migrate 11/12] COPY data/processed/phase4/development.csv ./data/processed/phase4/development.csv
+#10 CACHED
+
+#11 [migrate  5/12] COPY ml/requirements.txt /tmp/ml/requirements.txt
+#11 CACHED
+
+#12 [migrate  6/12] RUN pip install --no-cache-dir -r /tmp/backend/requirements.txt -r /tmp/ml/requirements.txt
+#12 CACHED
+
+#13 [migrate  7/12] COPY backend ./backend
+#13 CACHED
+
+#14 [migrate  8/12] COPY ml/*.py ml/protocol.json ml/requirements.txt ./ml/
+#14 CACHED
+
+#15 [migrate  2/12] WORKDIR /opt/project
+#15 CACHED
+
+#16 [migrate  4/12] COPY backend/requirements.txt backend/requirements-lock.txt /tmp/backend/
+#16 CACHED
+
+#17 [migrate  9/12] COPY ml/artifacts/uci-retail-v1-0cc2a83c3e40 ./ml/artifacts/uci-retail-v1-0cc2a83c3e40
+#17 CACHED
+
+#18 [migrate 10/12] COPY docs/research/results/*.json ./docs/research/results/
+#18 CACHED
+
+#19 [migrate  3/12] RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 && rm -rf /var/lib/apt/lists/*
+#19 CACHED
+
+#20 [migrate 12/12] WORKDIR /opt/project/backend
+#20 CACHED
+
+#21 [migrate] exporting to image
+#21 exporting layers done
+#21 exporting manifest sha256:27c211d6e60cf18157689775a6f11f842f5c2d712f1119a4e24336182104a726 done
+#21 exporting config sha256:c861d2cbf8819c6feb37c958690fd777cf2d5c0f2541f1c6c9ddaf02ee00d55c done
+#21 exporting attestation manifest sha256:ae40ec4bec7205c501a289f054dfe761303b6f42360a5fa44f419fda399bf5c3 0.0s done
+#21 exporting manifest list sha256:426249a76214b279867e20160194ce66618d8fa7a0a9a1620651f4e81a595289 0.0s done
+#21 naming to docker.io/library/smartinventory-migrate:latest done
+#21 unpacking to docker.io/library/smartinventory-migrate:latest 0.0s done
+#21 DONE 0.2s
+
+#22 [backend] exporting to image
+#22 exporting layers done
+#22 exporting manifest sha256:cc519082cc99df17ad0d7a007a46c6eb1adc05d6bc10db9f91ef2593b2cb08ec done
+#22 exporting config sha256:41739828b68f637fd82a4610e76e59dd88ba22f2ad8c52a9f12973a9bd2dc88f done
+#22 exporting attestation manifest sha256:a93ba86364e9ee6117532f608cca754882c1c3d3ea4c9d17df1d88f5918e7ed2 0.0s done
+#22 exporting manifest list sha256:7fe5b554b2aa87d2555ae04c2a16d90ed6d3bb99521fa0cc64625594dfadff99 0.0s done
+#22 naming to docker.io/library/smartinventory-backend:latest done
+#22 unpacking to docker.io/library/smartinventory-backend:latest 0.0s done
+#22 DONE 0.2s
+
+#6 [frontend internal] load metadata for docker.io/library/node:22-alpine
+#6 ...
+
+#23 [migrate] resolving provenance for metadata file
+#23 DONE 0.0s
+
+#24 [backend] resolving provenance for metadata file
+#24 DONE 0.0s
+
+#6 [frontend internal] load metadata for docker.io/library/node:22-alpine
+#6 ...
+
+#25 [auth] library/node:pull token for registry-1.docker.io
+#25 DONE 0.0s
+
+#6 [frontend internal] load metadata for docker.io/library/node:22-alpine
+#6 DONE 5.0s
+
+#26 [frontend internal] load .dockerignore
+#26 transferring context: 63B done
+#26 DONE 0.0s
+
+#27 [frontend internal] load build context
+#27 transferring context: 30.56kB 0.0s done
+#27 DONE 0.0s
+
+#28 [frontend 1/6] FROM docker.io/library/node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402
+#28 resolve docker.io/library/node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402 0.0s done
+#28 DONE 0.0s
+
+#29 [frontend 3/6] COPY package*.json ./
+#29 CACHED
+
+#30 [frontend 2/6] WORKDIR /app
+#30 CACHED
+
+#31 [frontend 4/6] COPY pnpm-lock.yaml pnpm-workspace.yaml ./
+#31 CACHED
+
+#32 [frontend 5/6] RUN corepack enable && corepack prepare pnpm@11.19.0 --activate && pnpm install --frozen-lockfile
+#32 CACHED
+
+#33 [frontend 6/6] COPY . .
+#33 DONE 0.0s
+
+#34 [frontend] exporting to image
+#34 exporting layers 0.1s done
+#34 exporting manifest sha256:a0c7005d661adaa78bf14d886f8b43946f8f92376ba1a583c8ae7234bc03c030 0.0s done
+#34 exporting config sha256:ec19509b0ab29a37362417577beb7ea0367fef5075689805fd265aac0d716416 0.0s done
+#34 exporting attestation manifest sha256:7272e72f7a8734ea6c63ca8f800d66be19896ea0baf12605f8e38f64c82b8b4d 0.0s done
+#34 exporting manifest list sha256:410777af52a70b420d819d0f5b6896c2879b7189ee442990baa1548d8c738ac8 0.0s done
+#34 naming to docker.io/library/smartinventory-frontend:latest done
+#34 unpacking to docker.io/library/smartinventory-frontend:latest 0.0s done
+#34 DONE 0.2s
+
+#35 [frontend] resolving provenance for metadata file
+#35 DONE 0.0s
+ Image smartinventory-backend Built 
+ Image smartinventory-frontend Built 
+ Image smartinventory-migrate Built 
+ Container smartinventory-backend-1 Running 
+ Container smartinventory-db-1 Running 
+ Container smartinventory-frontend-1 Recreate 
+ Container smartinventory-frontend-1 Recreated 
+ Container smartinventory-db-1 Waiting 
+ Container smartinventory-db-1 Healthy 
+ Container smartinventory-migrate-1 Starting 
+ Container smartinventory-migrate-1 Started 
+ Container smartinventory-migrate-1 Waiting 
+ Container smartinventory-migrate-1 Exited 
+ Container smartinventory-frontend-1 Starting 
+ Container smartinventory-frontend-1 Started 

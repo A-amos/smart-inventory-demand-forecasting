@@ -1,0 +1,1 @@
+staged: 395files, 12124025bytes; denied_paths=0, credential_findings=0, large_files=0, protected_hashes=31; passed=True

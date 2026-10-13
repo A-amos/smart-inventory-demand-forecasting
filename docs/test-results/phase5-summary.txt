@@ -1,0 +1,1 @@
+Phase 5 exit gate verified from actual reports, running-stack evidence and preserved source/artifact hashes.

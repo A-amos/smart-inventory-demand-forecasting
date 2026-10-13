@@ -1,0 +1,1 @@
+EDA complete: 37753 initial-training SKU-days; 26891 observed zeros; no held-out label analysis

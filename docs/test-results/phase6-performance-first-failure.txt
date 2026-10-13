@@ -1,0 +1,30 @@
+normal liveness: 8 requests; p95=7.6ms; errors=0
+normal readiness: 8 requests; p95=10.8ms; errors=0
+normal login: 8 requests; p95=359.8ms; errors=0
+normal products: 8 requests; p95=25.7ms; errors=0
+normal sales: 8 requests; p95=27.2ms; errors=0
+normal inventory_update: 8 requests; p95=93.0ms; errors=0
+normal operational_sale: 8 requests; p95=51.5ms; errors=0
+normal forecast_retrieval: 8 requests; p95=59.2ms; errors=0
+normal forecast_inference: 8 requests; p95=1362.6ms; errors=0
+normal recommendation: 8 requests; p95=139.4ms; errors=0
+normal dashboard: 8 requests; p95=53.5ms; errors=0
+modest_concurrent liveness: 32 requests; p95=2056.6ms; errors=0
+modest_concurrent readiness: 32 requests; p95=36.0ms; errors=0
+modest_concurrent login: 32 requests; p95=868.8ms; errors=0
+modest_concurrent products: 32 requests; p95=126.9ms; errors=0
+modest_concurrent sales: 32 requests; p95=168.1ms; errors=0
+modest_concurrent inventory_update: 32 requests; p95=166.4ms; errors=0
+modest_concurrent operational_sale: 32 requests; p95=196.6ms; errors=4
+modest_concurrent forecast_retrieval: 32 requests; p95=468.2ms; errors=0
+modest_concurrent forecast_inference: 32 requests; p95=7271.2ms; errors=0
+modest_concurrent recommendation: 32 requests; p95=670.4ms; errors=0
+modest_concurrent dashboard: 32 requests; p95=315.8ms; errors=0
+Traceback (most recent call last):
+  File "C:\Users\user\Projects\SmartInventory\scripts\phase6_performance.py", line 82, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\user\Projects\SmartInventory\scripts\phase6_performance.py", line 79, in main
+    assert all(r['errors']==0 for r in rows) and all(r['passed'] for r in integrity)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

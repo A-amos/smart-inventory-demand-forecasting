@@ -1,0 +1,78 @@
+{
+  "executed_at_utc": "2026-10-01T11:17:24.037599+00:00",
+  "commands": [
+    {
+      "command": "C:\\Users\\user\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe compose ps --all --format json",
+      "exit_code": 0,
+      "stdout": "{\"Command\":\"\\\"uvicorn app.main:ap\u2026\\\"\",\"CreatedAt\":\"2026-10-01 13:38:26 +0300 EAT\",\"Engine\":\"\",\"ExitCode\":0,\"Health\":\"\",\"ID\":\"51009956bd39\",\"Image\":\"smartinventory-backend\",\"Labels\":\"com.docker.compose.image=sha256:b9b4f2d682002b66404c6e4d5a3bdb90b494343f751a1d38bb44b80d2dd25091,com.docker.compose.project=smartinventory,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/8000/tcp=127.0.0.1:8000,com.docker.compose.container-number=1,com.docker.compose.depends_on=migrate:service_completed_successfully:false,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=C:\\\\Users\\\\user\\\\Projects\\\\SmartInventory\\\\compose.yaml,com.docker.compose.project.working_dir=C:\\\\Users\\\\user\\\\Projects\\\\SmartInventory,com.docker.compose.replace=backend-1,com.docker.compose.service=backend,com.docker.compose.version=5.5.1,com.docker.compose.config-hash=588e0daaad22d3fbf08d5cb9b9831b6481fe8f842fa94d37f1330df342ee93a7\",\"LocalVolumes\":\"0\",\"Mounts\":\"\",\"Name\":\"smartinventory-backend-1\",\"Names\":\"smartinventory-backend-1\",\"Networks\":\"smartinventory_default\",\"Ports\":\"127.0.0.1:8000-\\u003e8000/tcp\",\"Project\":\"smartinventory\",\"Publishers\":[{\"URL\":\"127.0.0.1\",\"TargetPort\":8000,\"PublishedPort\":8000,\"Protocol\":\"tcp\"}],\"RunningFor\":\"38 minutes ago\",\"Service\":\"backend\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 38 minutes\"}\n{\"Command\":\"\\\"docker-entrypoint.s\u2026\\\"\",\"CreatedAt\":\"2026-10-01 10:33:29 +0300 EAT\",\"Engine\":\"\",\"ExitCode\":0,\"Health\":\"healthy\",\"ID\":\"dd97ed7fd4a7\",\"Image\":\"mysql:8.4\",\"Labels\":\"com.docker.compose.image=sha256:80f4933e3835f9dc4d35a28ec500d7986cb4414e6c6821c5461239cb7beb8995,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=C:\\\\Users\\\\user\\\\Projects\\\\SmartInventory\\\\compose.yaml,com.docker.compose.project.working_dir=C:\\\\Users\\\\user\\\\Projects\\\\SmartInventory,desktop.docker.io/ports/3306/tcp=127.0.0.1:3306,com.docker.compose.project=smartinventory,com.docker.compose.replace=db-1,com.docker.compose.service=db,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2,com.docker.compose.config-hash=9b567553159177eb61181bee067c6f2979f56eb1b54c600fc124f7db112dc970,com.docker.compose.container-number=1,com.docker.compose.depends_on=\",\"LocalVolumes\":\"1\",\"Mounts\":\"smartinventory\u2026\",\"Name\":\"smartinventory-db-1\",\"Names\":\"smartinventory-db-1\",\"Networks\":\"smartinventory_default\",\"Ports\":\"127.0.0.1:3306-\\u003e3306/tcp\",\"Project\":\"smartinventory\",\"Publishers\":[{\"URL\":\"127.0.0.1\",\"TargetPort\":3306,\"PublishedPort\":3306,\"Protocol\":\"tcp\"}],\"RunningFor\":\"4 hours ago\",\"Service\":\"db\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 4 hours (healthy)\"}\n{\"Command\":\"\\\"docker-entrypoint.s\u2026\\\"\",\"CreatedAt\":\"2026-10-01 10:49:38 +0300 EAT\",\"Engine\":\"\",\"ExitCode\":0,\"Health\":\"\",\"ID\":\"6b9d3adf0ca3\",\"Image\":\"sha256:410777af52a70b420d819d0f5b6896c2879b7189ee442990baa1548d8c738ac8\",\"Labels\":\"com.docker.compose.version=5.5.1,com.docker.compose.depends_on=backend:service_started:false,com.docker.compose.oneoff=False,com.docker.compose.service=frontend,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/5173/tcp=127.0.0.1:5173,com.docker.compose.config-hash=c3ca2a1cf52d3a24a32999dbbfddb9e02da4ad58c9b24099611d04c67a0f4f82,com.docker.compose.container-number=1,com.docker.compose.image=sha256:a0c7005d661adaa78bf14d886f8b43946f8f92376ba1a583c8ae7234bc03c030,com.docker.compose.project=smartinventory,com.docker.compose.project.config_files=C:\\\\Users\\\\user\\\\Projects\\\\SmartInventory\\\\compose.yaml,com.docker.compose.project.working_dir=C:\\\\Users\\\\user\\\\Projects\\\\SmartInventory,com.docker.compose.replace=frontend-1\",\"LocalVolumes\":\"0\",\"Mounts\":\"\",\"Name\":\"smartinventory-frontend-1\",\"Names\":\"smartinventory-frontend-1\",\"Networks\":\"smartinventory_default\",\"Ports\":\"127.0.0.1:5173-\\u003e5173/tcp\",\"Project\":\"smartinventory\",\"Publishers\":[{\"URL\":\"127.0.0.1\",\"TargetPort\":5173,\"PublishedPort\":5173,\"Protocol\":\"tcp\"}],\"RunningFor\":\"3 hours ago\",\"Service\":\"frontend\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 3 hours\"}\n{\"Command\":\"\\\"alembic upgrade head\\\"\",\"CreatedAt\":\"2026-10-01 13:38:26 +0300 EAT\",\"Engine\":\"\",\"ExitCode\":0,\"Health\":\"\",\"ID\":\"80332bf36e1f\",\"Image\":\"smartinventory-migrate\",\"Labels\":\"com.docker.compose.depends_on=db:service_healthy:false,com.docker.compose.image=sha256:ecc630ce2fb86f47911d88189b8b1474ed1ff78c6ace8d2f05f38c89cc08df8a,com.docker.compose.project=smartinventory,com.docker.compose.project.working_dir=C:\\\\Users\\\\user\\\\Projects\\\\SmartInventory,com.docker.compose.config-hash=6d302038dad5e4d62bab5276dd4308909c760666de284459f7a3e912a6fc4f20,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=C:\\\\Users\\\\user\\\\Projects\\\\SmartInventory\\\\compose.yaml,com.docker.compose.replace=migrate-1,com.docker.compose.service=migrate,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2,com.docker.compose.container-number=1\",\"LocalVolumes\":\"0\",\"Mounts\":\"\",\"Name\":\"smartinventory-migrate-1\",\"Names\":\"smartinventory-migrate-1\",\"Networks\":\"smartinventory_default\",\"Ports\":\"\",\"Project\":\"smartinventory\",\"Publishers\":[],\"RunningFor\":\"38 minutes ago\",\"Service\":\"migrate\",\"Size\":\"0B\",\"State\":\"exited\",\"Status\":\"Exited (0) 38 minutes ago\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": "C:\\Users\\user\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe compose exec -T backend alembic current",
+      "exit_code": 0,
+      "stdout": "e52ad70491b2 (head)\n",
+      "stderr": ""
+    },
+    {
+      "command": "C:\\Users\\user\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe compose exec -T backend alembic check",
+      "exit_code": 0,
+      "stdout": "No new upgrade operations detected.\n",
+      "stderr": ""
+    },
+    {
+      "command": "C:\\Users\\user\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe compose exec -T backend python -m pip check",
+      "exit_code": 0,
+      "stdout": "No broken requirements found.\n",
+      "stderr": ""
+    },
+    {
+      "command": "C:\\Users\\user\\Projects\\SmartInventory\\.venv\\Scripts\\python.exe -m pip check",
+      "exit_code": 0,
+      "stdout": "No broken requirements found.\n",
+      "stderr": ""
+    }
+  ],
+  "checks": [
+    {
+      "check": "Compose services and migration completion",
+      "passed": true,
+      "actual": {
+        "backend": {
+          "state": "running",
+          "health": "",
+          "exit_code": 0
+        },
+        "db": {
+          "state": "running",
+          "health": "healthy",
+          "exit_code": 0
+        },
+        "frontend": {
+          "state": "running",
+          "health": "",
+          "exit_code": 0
+        },
+        "migrate": {
+          "state": "exited",
+          "health": "",
+          "exit_code": 0
+        }
+      }
+    },
+    {
+      "check": "http://localhost:8000/api/v1/health/live",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "http://localhost:8000/api/v1/health/ready",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "http://localhost:5173",
+      "passed": true,
+      "actual": 200
+    }
+  ]
+}

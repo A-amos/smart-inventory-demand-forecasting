@@ -1,0 +1,272 @@
+{
+  "advisories": {
+    "1107324": {
+      "findings": [
+        {
+          "version": "6.3.5",
+          "paths": [
+            ".>@tailwindcss/vite>vite",
+            ".>@vitejs/plugin-react>vite",
+            ".>vite",
+            ".>vitest>@vitest/mocker>vite",
+            ".>vitest>vite",
+            ".>vitest>vite-node>vite"
+          ],
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1107324,
+      "title": "Vite middleware may serve files starting with the same name with the public directory",
+      "module_name": "vite",
+      "vulnerable_versions": ">=6.0.0 <=6.3.5",
+      "patched_versions": ">=6.3.6",
+      "severity": "low",
+      "cwe": "CWE-22, CWE-200, CWE-284",
+      "github_advisory_id": "GHSA-g4jq-h2w9-997c",
+      "url": "https://github.com/advisories/GHSA-g4jq-h2w9-997c"
+    },
+    "1107328": {
+      "findings": [
+        {
+          "version": "6.3.5",
+          "paths": [
+            ".>@tailwindcss/vite>vite",
+            ".>@vitejs/plugin-react>vite",
+            ".>vite",
+            ".>vitest>@vitest/mocker>vite",
+            ".>vitest>vite",
+            ".>vitest>vite-node>vite"
+          ],
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1107328,
+      "title": "Vite's `server.fs` settings were not applied to HTML files",
+      "module_name": "vite",
+      "vulnerable_versions": ">=6.0.0 <=6.3.5",
+      "patched_versions": ">=6.3.6",
+      "severity": "low",
+      "cwe": "CWE-23, CWE-200, CWE-284",
+      "github_advisory_id": "GHSA-jqfw-vq24-v9c3",
+      "url": "https://github.com/advisories/GHSA-jqfw-vq24-v9c3"
+    },
+    "1109135": {
+      "findings": [
+        {
+          "version": "6.3.5",
+          "paths": [
+            ".>@tailwindcss/vite>vite",
+            ".>@vitejs/plugin-react>vite",
+            ".>vite",
+            ".>vitest>@vitest/mocker>vite",
+            ".>vitest>vite",
+            ".>vitest>vite-node>vite"
+          ],
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1109135,
+      "title": "vite allows server.fs.deny bypass via backslash on Windows",
+      "module_name": "vite",
+      "vulnerable_versions": ">=6.0.0 <=6.4.0",
+      "patched_versions": ">=6.4.1",
+      "severity": "moderate",
+      "cwe": "CWE-22",
+      "github_advisory_id": "GHSA-93m4-6634-74q7",
+      "url": "https://github.com/advisories/GHSA-93m4-6634-74q7"
+    },
+    "1116229": {
+      "findings": [
+        {
+          "version": "6.3.5",
+          "paths": [
+            ".>@tailwindcss/vite>vite",
+            ".>@vitejs/plugin-react>vite",
+            ".>vite",
+            ".>vitest>@vitest/mocker>vite",
+            ".>vitest>vite",
+            ".>vitest>vite-node>vite"
+          ],
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1116229,
+      "title": "Vite Vulnerable to Path Traversal in Optimized Deps `.map` Handling",
+      "module_name": "vite",
+      "vulnerable_versions": "<=6.4.1",
+      "patched_versions": ">=6.4.2",
+      "severity": "moderate",
+      "cwe": "CWE-22, CWE-200",
+      "github_advisory_id": "GHSA-4w7w-66w2-5vf9",
+      "url": "https://github.com/advisories/GHSA-4w7w-66w2-5vf9"
+    },
+    "1116234": {
+      "findings": [
+        {
+          "version": "6.3.5",
+          "paths": [
+            ".>@tailwindcss/vite>vite",
+            ".>@vitejs/plugin-react>vite",
+            ".>vite",
+            ".>vitest>@vitest/mocker>vite",
+            ".>vitest>vite",
+            ".>vitest>vite-node>vite"
+          ],
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1116234,
+      "title": "Vite Vulnerable to Arbitrary File Read via Vite Dev Server WebSocket",
+      "module_name": "vite",
+      "vulnerable_versions": ">=6.0.0 <=6.4.1",
+      "patched_versions": ">=6.4.2",
+      "severity": "high",
+      "cwe": "CWE-200, CWE-306",
+      "github_advisory_id": "GHSA-p9ff-h696-f583",
+      "url": "https://github.com/advisories/GHSA-p9ff-h696-f583"
+    },
+    "1120784": {
+      "findings": [
+        {
+          "version": "6.3.5",
+          "paths": [
+            ".>@tailwindcss/vite>vite",
+            ".>@vitejs/plugin-react>vite",
+            ".>vite",
+            ".>vitest>@vitest/mocker>vite",
+            ".>vitest>vite",
+            ".>vitest>vite-node>vite"
+          ],
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1120784,
+      "title": "launch-editor: NTLMv2 hash disclosure via UNC path handling on Windows",
+      "module_name": "vite",
+      "vulnerable_versions": "<=6.4.2",
+      "patched_versions": ">=6.4.3",
+      "severity": "moderate",
+      "cwe": "CWE-73, CWE-522",
+      "github_advisory_id": "GHSA-v6wh-96g9-6wx3",
+      "url": "https://github.com/advisories/GHSA-v6wh-96g9-6wx3"
+    },
+    "1123525": {
+      "findings": [
+        {
+          "version": "6.3.5",
+          "paths": [
+            ".>@tailwindcss/vite>vite",
+            ".>@vitejs/plugin-react>vite",
+            ".>vite",
+            ".>vitest>@vitest/mocker>vite",
+            ".>vitest>vite",
+            ".>vitest>vite-node>vite"
+          ],
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1123525,
+      "title": "vite: `server.fs.deny` bypass on Windows alternate paths",
+      "module_name": "vite",
+      "vulnerable_versions": "<=6.4.2",
+      "patched_versions": ">=6.4.3",
+      "severity": "high",
+      "cwe": "CWE-22, CWE-200",
+      "github_advisory_id": "GHSA-fx2h-pf6j-xcff",
+      "url": "https://github.com/advisories/GHSA-fx2h-pf6j-xcff"
+    },
+    "1139528": {
+      "findings": [
+        {
+          "version": "3.1.3",
+          "paths": [
+            ".>vitest"
+          ],
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1139528,
+      "title": "When Vitest UI server is listening, arbitrary file can be read and executed",
+      "module_name": "vitest",
+      "vulnerable_versions": "<3.2.6",
+      "patched_versions": ">=3.2.6",
+      "severity": "critical",
+      "cwe": "CWE-22, CWE-862",
+      "github_advisory_id": "GHSA-5xrq-8626-4rwp",
+      "url": "https://github.com/advisories/GHSA-5xrq-8626-4rwp"
+    },
+    "1193683": {
+      "findings": [
+        {
+          "version": "3.1.3",
+          "paths": [
+            ".>vitest"
+          ],
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1193683,
+      "title": "Vitest: Path Traversal / Arbitrary File Read via @vitest/mocker Redirect Mock",
+      "module_name": "vitest",
+      "vulnerable_versions": ">=2.1.0 <4.1.11",
+      "patched_versions": ">=4.1.11",
+      "severity": "moderate",
+      "cwe": "CWE-22",
+      "github_advisory_id": "GHSA-82fw-gwwq-j7x9",
+      "url": "https://github.com/advisories/GHSA-82fw-gwwq-j7x9"
+    },
+    "1193684": {
+      "findings": [
+        {
+          "version": "3.1.3",
+          "paths": [
+            ".>vitest>@vitest/mocker"
+          ],
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1193684,
+      "title": "Vitest: Path Traversal / Arbitrary File Read via @vitest/mocker Redirect Mock",
+      "module_name": "@vitest/mocker",
+      "vulnerable_versions": ">=2.1.0 <4.1.11",
+      "patched_versions": ">=4.1.11",
+      "severity": "moderate",
+      "cwe": "CWE-22",
+      "github_advisory_id": "GHSA-82fw-gwwq-j7x9",
+      "url": "https://github.com/advisories/GHSA-82fw-gwwq-j7x9"
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 2,
+      "moderate": 5,
+      "high": 2,
+      "critical": 1
+    },
+    "dependencies": 42,
+    "devDependencies": 239,
+    "optionalDependencies": 75,
+    "totalDependencies": 281
+  }
+}

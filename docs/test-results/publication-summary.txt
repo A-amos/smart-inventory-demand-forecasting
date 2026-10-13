@@ -1,0 +1,1 @@
+Publication verification summary written:251tests;114business/security live checks;31frozen hashes;0current audit findings; participant/browser limits explicit.

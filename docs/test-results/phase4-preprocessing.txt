@@ -1,0 +1,2 @@
+Reading both actual UCI workbook sheets; this can take several minutes
+Verified 1,067,371 actual transactions; selected 60 SKUs; sealed 1680 final labels

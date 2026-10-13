@@ -1,0 +1,352 @@
+{
+  "proposal_source": "Table4.1, docs/Smart_Inventory_Consolidated_Five_Chapter_Proposal.docx",
+  "proposal_sha256": "9b0d71f1e00b9e8fb979e577c8e48cacda0051388f0745dfe740ed170e1d24a2",
+  "executed_at_utc": "2026-10-01T11:42:34.968288+00:00",
+  "passed": 23,
+  "failed": 0,
+  "pending": 1,
+  "cases": [
+    {
+      "id": "TC01",
+      "module": "Authentication",
+      "objective": "Valid account and password",
+      "preconditions": "Authorized local manager; running API/UI",
+      "input_action": "Sign in; navigate Dashboard",
+      "expected_result": "User reaches authorized dashboard",
+      "actual_result": "Manager welcome and authenticated dashboard displayed; live session HTTP200",
+      "status": "PASS",
+      "evidence": [
+        "phase6-security.json#/checks/0 (Login returns a non-cacheable authorized manager session)",
+        "phase6-browser.json#/checks/0 (Login, category and product creation)",
+        "phase6-browser.json#/checks/5 (TC21 updated dashboard after sale)"
+      ]
+    },
+    {
+      "id": "TC02",
+      "module": "Authentication",
+      "objective": "Incorrect password",
+      "preconditions": "Active isolated researcher test account",
+      "input_action": "Submit five incorrect passwords",
+      "expected_result": "Access denied with safe message",
+      "actual_result": "Incorrect passwords returned generic401; persistent lockout followed",
+      "status": "PASS",
+      "evidence": [
+        "phase6-security.json#/checks/12 (Five failed logins trigger persistent lockout)"
+      ]
+    },
+    {
+      "id": "TC03",
+      "module": "Authentication",
+      "objective": "Unauthenticated request to protected page",
+      "preconditions": "No bearer session",
+      "input_action": "GET dashboard; POST protected sales",
+      "expected_result": "Request rejected or redirected",
+      "actual_result": "Anonymous dashboard and sale writes HTTP401",
+      "status": "PASS",
+      "evidence": [
+        "phase6-security.json#/checks/3 (Anonymous dashboard denied)",
+        "phase6-sales-live.json#/checks/35 (Anonymous cannot record sales)"
+      ]
+    },
+    {
+      "id": "TC04",
+      "module": "Authentication",
+      "objective": "Sign out of active session",
+      "preconditions": "Authenticated session",
+      "input_action": "Sign out; reuse same bearer",
+      "expected_result": "Protected session ends",
+      "actual_result": "HTTP204 logout; protected access401; actual browser sign-in screen restored",
+      "status": "PASS",
+      "evidence": [
+        "phase6-security.json#/checks/19 (Manager logout revokes protected access)",
+        "phase6-browser.json#/checks/10 (Browser logout)"
+      ]
+    },
+    {
+      "id": "TC05",
+      "module": "Products",
+      "objective": "Add valid product",
+      "preconditions": "Manager; active category",
+      "input_action": "Create P6-BROWSER-20261001 with stock20",
+      "expected_result": "Product saved and visible",
+      "actual_result": "Saved product visible in browser and independently read from MySQL",
+      "status": "PASS",
+      "evidence": [
+        "phase6-browser.json#/checks/0 (Login, category and product creation)",
+        "phase6-browser-persistence.json#/checks/0"
+      ]
+    },
+    {
+      "id": "TC06",
+      "module": "Products",
+      "objective": "Submit product with missing required field",
+      "preconditions": "Manager session",
+      "input_action": "POST product lacking required field",
+      "expected_result": "Validation prevents save",
+      "actual_result": "HTTP422",
+      "status": "PASS",
+      "evidence": [
+        "phase6-security.json#/checks/6 (Missing required product field rejected)"
+      ]
+    },
+    {
+      "id": "TC07",
+      "module": "Products",
+      "objective": "Update existing product",
+      "preconditions": "Existing manager-owned demonstration fixture",
+      "input_action": "Update product name; read/list; restore normal label",
+      "expected_result": "Updated values displayed",
+      "actual_result": "Manager update persisted; actual browser displayed edited literal name and restored label",
+      "status": "PASS",
+      "evidence": [
+        "phase6-security.json#/checks/8 (Manager product update persisted)",
+        "phase6-browser.json#/checks/1 (TC23 script-like text safely rendered)"
+      ]
+    },
+    {
+      "id": "TC08",
+      "module": "Products",
+      "objective": "Attempt duplicate disallowed product identifier",
+      "preconditions": "Existing SKU",
+      "input_action": "POST product with same SKU",
+      "expected_result": "Duplicate rejected",
+      "actual_result": "HTTP409",
+      "status": "PASS",
+      "evidence": [
+        "phase6-security.json#/checks/7 (Duplicate SKU rejected)"
+      ]
+    },
+    {
+      "id": "TC09",
+      "module": "Sales/Inventory",
+      "objective": "Record valid product sale",
+      "preconditions": "Stock20; allocated2; current version2",
+      "input_action": "Record quantity3 at KES120.50",
+      "expected_result": "Sale stored and stock adjusted according to defined rules",
+      "actual_result": "Browser sale100 persisted; stock17/version3; one linked movement",
+      "status": "PASS",
+      "evidence": [
+        "phase6-browser.json#/checks/2 (Operational sale recorded)",
+        "phase6-browser-persistence.json#/checks/1",
+        "phase6-browser-persistence.json#/checks/2",
+        "phase6-browser-persistence.json#/checks/3",
+        "phase6-sales-live.json#/checks/4 (Two concurrent sales serialized safely)"
+      ]
+    },
+    {
+      "id": "TC10",
+      "module": "Sales/Inventory",
+      "objective": "Record sale for nonexistent product",
+      "preconditions": "Manager; baseline ledger captured",
+      "input_action": "POST nonexistent product",
+      "expected_result": "Invalid product reference rejected",
+      "actual_result": "HTTP404 and unchanged ledger",
+      "status": "PASS",
+      "evidence": [
+        "phase6-sales-live.json#/checks/13 (Invalid product rejected without ledger changes)"
+      ]
+    },
+    {
+      "id": "TC11",
+      "module": "Sales/Inventory",
+      "objective": "Enter invalid negative sale quantity",
+      "preconditions": "Manager; baseline ledger",
+      "input_action": "POST negative quantity",
+      "expected_result": "Input rejected",
+      "actual_result": "HTTP422 and unchanged ledger; CSV reports negative row",
+      "status": "PASS",
+      "evidence": [
+        "phase6-sales-live.json#/checks/11 (Invalid quantity rejected without ledger changes)",
+        "phase6-sales-live.json#/checks/17 (Preview reports duplicate/invalid quantity/date/SKU rows)"
+      ]
+    },
+    {
+      "id": "TC12",
+      "module": "Sales/Inventory",
+      "objective": "Import correctly formatted sales file",
+      "preconditions": "Manager; active known SKU",
+      "input_action": "Preview UTF-8 CSV; explicitly confirm valid rows",
+      "expected_result": "Valid records imported and counted",
+      "actual_result": "Live2 accepted/4 rejected retained; browser1 accepted/2 rejected, sale101 quantity50; current stock17 unchanged",
+      "status": "PASS",
+      "evidence": [
+        "phase6-sales-live.json#/checks/20 (Historical confirmation persists valid rows only)",
+        "phase6-sales-live.json#/checks/21 (Historical quantity exceeding current stock still leaves inventory/audit unchanged)",
+        "phase6-browser.json#/checks/3 (Historical import preview and confirmation)",
+        "phase6-browser-persistence.json#/checks/3"
+      ]
+    },
+    {
+      "id": "TC13",
+      "module": "Forecasting",
+      "objective": "Forecast product with sufficient valid history",
+      "preconditions": "Explicit20728 mapping; compatible365+days; acknowledged UK demo",
+      "input_action": "Origin2011-11-10 horizon28",
+      "expected_result": "Forecast returned with product and horizon",
+      "actual_result": "Real frozen mean_28 inference matched independent last28day mean;28 points persisted",
+      "status": "PASS",
+      "evidence": [
+        "phase6-decisions-live.json#/checks/12 (Actual frozen inference matches independently calculated last-28-day mean)",
+        "phase6-browser.json#/checks/6 (Frozen historical inference)",
+        "phase6-browser-persistence.json#/checks/5"
+      ]
+    },
+    {
+      "id": "TC14",
+      "module": "Forecasting",
+      "objective": "Forecast product with inadequate history",
+      "preconditions": "Unmapped/unsupported product; isolated shortened-history ML fixture",
+      "input_action": "Request forecast; exercise insufficient/gapped-history contract",
+      "expected_result": "Useful error or fallback shown",
+      "actual_result": "API422 unsupported/unmapped; UI explicit unavailable message; executed ML test rejects insufficient history, never fabricates fallback",
+      "status": "PASS",
+      "evidence": [
+        "phase6-decisions-live.json#/checks/7 (Unsupported/unmapped product rejected safely)",
+        "phase6-ml.xml: test_unknown_sku_insufficient_history_and_early_origin; test_invalid_daily_data_rejected"
+      ]
+    },
+    {
+      "id": "TC15",
+      "module": "Forecasting",
+      "objective": "Malformed forecasting request",
+      "preconditions": "Manager; supported product",
+      "input_action": "Request horizon beyond28",
+      "expected_result": "Validation error returned",
+      "actual_result": "HTTP422",
+      "status": "PASS",
+      "evidence": [
+        "phase6-decisions-live.json#/checks/10 (Horizon above contract)"
+      ]
+    },
+    {
+      "id": "TC16",
+      "module": "Forecasting",
+      "objective": "Compare predictions with held-out observed sales",
+      "preconditions": "Frozen predictions and evaluation records",
+      "input_action": "Read-only recalculate MAE/RMSE for identical targets",
+      "expected_result": "Error metrics calculated and documented",
+      "actual_result": "All6 validation and4 final candidates matched saved metrics within1e-10; selected final MAE5.335034014 RMSE17.944563987; MAPE omitted",
+      "status": "PASS",
+      "evidence": [
+        "phase6-metrics.json",
+        "../research/results/final-test.json",
+        "../research/results/frozen-selection.json"
+      ]
+    },
+    {
+      "id": "TC17",
+      "module": "Risks/Replenishment",
+      "objective": "Projected demand exceeds available stock",
+      "preconditions": "Historical research context; on-hand17/incoming3/allocated2",
+      "input_action": "Generate decision with lead3/safety4",
+      "expected_result": "Stockout risk indicated",
+      "actual_result": "Position18 < target87.571428571 -> REPLENISH; deterministic indicator",
+      "status": "PASS",
+      "evidence": [
+        "phase6-browser.json#/checks/7 (Explainable historical recommendation)",
+        "phase6-browser-persistence.json#/checks/6"
+      ]
+    },
+    {
+      "id": "TC18",
+      "module": "Risks/Replenishment",
+      "objective": "Stock exceeds defined excess-stock threshold",
+      "preconditions": "Same valid forecast; illustrative stock999",
+      "input_action": "Generate new decision",
+      "expected_result": "Overstock condition indicated",
+      "actual_result": "Actual OVERSTOCK when position > target×multiplier",
+      "status": "PASS",
+      "evidence": [
+        "phase6-decisions-live.json#/checks/33 (Overstock uses strict configured threshold and zero reorder)"
+      ]
+    },
+    {
+      "id": "TC19",
+      "module": "Risks/Replenishment",
+      "objective": "Demand and inventory imply a positive order",
+      "preconditions": "Valid lead-time coverage and snapshot",
+      "input_action": "Compute max(0,target-position)",
+      "expected_result": "Nonnegative reorder quantity displayed",
+      "actual_result": "Browser suggested69.571428571 with every formula component",
+      "status": "PASS",
+      "evidence": [
+        "phase6-browser.json#/checks/7 (Explainable historical recommendation)",
+        "phase6-browser-persistence.json#/checks/6"
+      ]
+    },
+    {
+      "id": "TC20",
+      "module": "Risks/Replenishment",
+      "objective": "Inputs imply no additional stock required",
+      "preconditions": "High stock; valid historic forecast",
+      "input_action": "Generate/read overstock snapshot",
+      "expected_result": "Zero order displayed with explanation",
+      "actual_result": "Suggested0; original formula, stock/configuration/forecast and assumptions preserved",
+      "status": "PASS",
+      "evidence": [
+        "phase6-decisions-live.json#/checks/33 (Overstock uses strict configured threshold and zero reorder)",
+        "phase6-decisions-live.json#/checks/34 (Recommendation history remains immutable and chronologically ordered)"
+      ]
+    },
+    {
+      "id": "TC21",
+      "module": "Dashboard/Integration",
+      "objective": "Request dashboard after recording a sale",
+      "preconditions": "Active supported fixture and current stock version",
+      "input_action": "Sale then refresh dashboard",
+      "expected_result": "Updated stock and visual summaries displayed",
+      "actual_result": "Actual browser on-hand17 position18; chart renders; API sale invalidates old snapshot -> UNASSESSED without rewriting",
+      "status": "PASS",
+      "evidence": [
+        "phase6-browser.json#/checks/5 (TC21 updated dashboard after sale)",
+        "phase6-browser.json#/checks/8 (Actual charts and comparison)",
+        "phase6-decisions-live.json#/checks/30 (Existing operational sale updates dashboard stock and invalidates old decision)"
+      ]
+    },
+    {
+      "id": "TC22",
+      "module": "Dashboard/Integration",
+      "objective": "Prediction service is temporarily unavailable",
+      "preconditions": "Container artifact copied from trusted host; ledger digest baseline",
+      "input_action": "Temporarily hide container artifact; request generation; restore finally",
+      "expected_result": "System handles failure without corrupting records",
+      "actual_result": "HTTP503; inventory/readiness200; entire operational ledger digests unchanged; artifact restored",
+      "status": "PASS",
+      "evidence": [
+        "phase6-decisions-live.json#/checks/27 (Actual missing artifact returns clear 503 without ledger corruption)",
+        "phase6-decisions-live.json#/checks/28 (Inventory API remains usable during real artifact failure)",
+        "phase6-decisions-live.json#/checks/29 (Artifact restored and verified after failure test)"
+      ]
+    },
+    {
+      "id": "TC23",
+      "module": "Security",
+      "objective": "User attempts SQL/script injection in input",
+      "preconditions": "Bound ORM queries; actual React browser",
+      "input_action": "SQL-like login; store/render script-like product label",
+      "expected_result": "Input safely handled without unauthorized execution",
+      "actual_result": "Generic401 SQL-like login; literal script text displayed; zero injected script nodes; no unauthorized access observed",
+      "status": "PASS",
+      "evidence": [
+        "phase6-security.json#/checks/4 (SQL-like login denied with generic error)",
+        "phase6-security.json#/checks/5 (Script/SQL-like product text round-trips as data)",
+        "phase6-browser.json#/checks/1 (TC23 script-like text safely rendered)"
+      ]
+    },
+    {
+      "id": "TC24",
+      "module": "Usability/Performance",
+      "objective": "Representative user completes key workflow",
+      "preconditions": "Supervisor approval and consenting representative participants required",
+      "input_action": "Conduct instrument tasks; time completion; collect actual Likert responses",
+      "expected_result": "Task completion and response time documented",
+      "actual_result": "No participants available (user confirmed). Technical workflow11checks and440request performance run executed, but representative-user task completion/feedback not measured",
+      "status": "PENDING EXTERNAL ACTION",
+      "evidence": [
+        "../USABILITY_EVALUATION.md",
+        "phase6-browser.json",
+        "phase6-performance.json"
+      ]
+    }
+  ]
+}

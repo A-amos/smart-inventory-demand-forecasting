@@ -1,0 +1,70 @@
+{
+  "executed_at_utc": "2026-10-01T07:54:08.337Z",
+  "synthetic_inventory": true,
+  "sku": "P5-BROWSER-20261001-01",
+  "forecast_id": "a5e166b2-3527-47d0-b70a-7d27d8644623",
+  "original_recommendation_id": "7ea3fb58-00c9-4357-9660-a2ee9698eccb",
+  "checks": [
+    {
+      "check": "Unsupported browser product has explicit unavailable status",
+      "passed": true,
+      "actual": "Visible unavailable status, no implicit mapping"
+    },
+    {
+      "check": "Forecast generation disabled before mapping/acknowledgement",
+      "passed": true,
+      "actual": "Disabled"
+    },
+    {
+      "check": "Browser decision displays actual formula and provenance",
+      "passed": true,
+      "actual": "Replenishment risk · immutable decision snapshot\n\nP5-BROWSER-20261001-01 · unit · as of 2011-11-11 · inventory version 2. Created 01/10/2026, 10:41:53 (Nairobi).\n\nPredicted lead-time demand\n83.571428571\nLead time (days)\n3\nSafety stock\n4\nOn hand\n5\nConfirmed incoming\n3\nAllocated\n2\nInventory position\n6\nTarget stock\n87.571428571\nShortage / raw reorder\n81.571428571\nSuggested reorder\n81.571428571\nOverstock multiplier\n2\nOverstock threshold\n175.142857142\n\nPosition = on hand + confirmed incoming − allocated. Target = sum of daily demand over lead time + safety stock. Reorder = max(0, target − position). Overstock only if position > target × multiplier.\n\nForecast a5e166b2-3527-47d0-b70a-7d27d8644623 · origin 2011-11-10 · 28 days · uci-retail-v1-0cc2a83c3e40 / retail-demand-v1 · sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031 · inventory-rules-v1. Snapshot 7ea3fb58-00c9-4357-9660-a2ee9698eccb.\n\nAll confirmed incoming stock assumed to arrive during lead time; no ETA is recorded.\nAllocated stock is excluded from usable inventory.\nForecast dates must cover every lead-time day.\nNo pack-size or procurement rounding; raw shortage equals suggested quantity.\nStored daily predictions use nine decimal places; original forecast-v1 values are preserved.\nDeterministic stock-risk rule, not a calibrated probability. Human review; no purchase execution.\nUK historical forecasts and present test stock form a research scenario, not measured 2011 inventory or Kenyan performance.\n\nHuman review required. These are deterministic risk rules, not probabilities. Recommendations do not execute purchases. Old snapshots retain the stock and configuration used when created."
+    },
+    {
+      "check": "Actual Recharts SVG historical and forecast curves render",
+      "passed": true,
+      "actual": "Two rendered series"
+    },
+    {
+      "check": "Stock change preserves old browser decision text",
+      "passed": true,
+      "actual": "7ea3fb58-00c9-4357-9660-a2ee9698eccb"
+    },
+    {
+      "check": "New stock creates separate overstock snapshot",
+      "passed": true,
+      "actual": "Two immutable recommendations; new stock 999"
+    },
+    {
+      "check": "Previous browser decision remains unchanged in history",
+      "passed": true,
+      "actual": "7ea3fb58-00c9-4357-9660-a2ee9698eccb"
+    },
+    {
+      "check": "Rebuilt dashboard labels nonapplicable historical snapshots",
+      "passed": true,
+      "actual": "Explicit historical applicability notice"
+    },
+    {
+      "check": "Browser renders genuine validation/final results with mean selected",
+      "passed": true,
+      "actual": "Preserved metrics and visible UK limitation"
+    },
+    {
+      "check": "Archived browser product retains readable immutable history",
+      "passed": true,
+      "actual": "Two decisions retained; generation controls absent"
+    },
+    {
+      "check": "Browser logout clears protected workspace",
+      "passed": true,
+      "actual": "Sign-in page only"
+    }
+  ],
+  "screenshots": [
+    "phase5-browser-replenish.png",
+    "phase5-browser-overstock.png",
+    "phase5-browser-decision.png",
+    "phase5-browser-chart.png"
+  ]
+}

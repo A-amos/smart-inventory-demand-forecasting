@@ -1,0 +1,1 @@
+15 live checks passed; local credentials saved in ignored .local/verification-account.json

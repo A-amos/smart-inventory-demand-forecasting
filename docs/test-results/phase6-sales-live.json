@@ -1,0 +1,270 @@
+{
+  "executed_at_utc": "2026-10-01T11:17:22.591117+00:00",
+  "checks": [
+    {
+      "check": "Actual MySQL version",
+      "passed": true,
+      "actual": "8.4.11"
+    },
+    {
+      "check": "Phase 6 sales regression schema applied",
+      "passed": true,
+      "actual": "e52ad70491b2"
+    },
+    {
+      "check": "/health/live",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "/health/ready",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Two concurrent sales serialized safely",
+      "passed": true,
+      "actual": [
+        201,
+        409
+      ]
+    },
+    {
+      "check": "Only accepted sale reduces stock and increments version",
+      "passed": true,
+      "actual": {
+        "on_hand": "3.000",
+        "version": 2,
+        "allocated": "0.000",
+        "incoming": "0.000",
+        "sales": 1,
+        "movements": 2
+      }
+    },
+    {
+      "check": "Actor and original SKU persisted",
+      "passed": true,
+      "actual": {
+        "actor_id": 1,
+        "sku": "SALES-89C6FAE6"
+      }
+    },
+    {
+      "check": "Sale linked to exactly one audit movement",
+      "passed": true,
+      "actual": "10 -> 3, linked sale"
+    },
+    {
+      "check": "Operational request retry idempotent",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Stale version rejected without ledger changes",
+      "passed": true,
+      "actual": 409
+    },
+    {
+      "check": "Insufficient stock rejected without ledger changes",
+      "passed": true,
+      "actual": 409
+    },
+    {
+      "check": "Invalid quantity rejected without ledger changes",
+      "passed": true,
+      "actual": 422
+    },
+    {
+      "check": "Invalid date rejected without ledger changes",
+      "passed": true,
+      "actual": 422
+    },
+    {
+      "check": "Invalid product rejected without ledger changes",
+      "passed": true,
+      "actual": 404
+    },
+    {
+      "check": "Forged actor rejected without ledger changes",
+      "passed": true,
+      "actual": 422
+    },
+    {
+      "check": "MySQL sale/audit failure rolls back all writes",
+      "passed": true,
+      "actual": {
+        "on_hand": "3.000",
+        "version": 2,
+        "allocated": "0.000",
+        "incoming": "0.000",
+        "sales": 1,
+        "movements": 2
+      }
+    },
+    {
+      "check": "CSV preview created",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Preview reports duplicate/invalid quantity/date/SKU rows",
+      "passed": true,
+      "actual": {
+        "valid": 2,
+        "rejected": 4,
+        "reasons": [
+          "Duplicate identity within this file",
+          "quantity: Input should be greater than 0",
+          "sale_date: Value error, Use an ISO 8601 date/time with a timezone, e.g. 2026-09-01T10:00:00+03:00",
+          "Unknown or archived product SKU"
+        ]
+      }
+    },
+    {
+      "check": "Preview saves no sales and changes no stock",
+      "passed": true,
+      "actual": {
+        "on_hand": "3.000",
+        "version": 2,
+        "allocated": "0.000",
+        "incoming": "0.000",
+        "sales": 1,
+        "movements": 2
+      }
+    },
+    {
+      "check": "Explicit confirmation required",
+      "passed": true,
+      "actual": 422
+    },
+    {
+      "check": "Historical confirmation persists valid rows only",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Historical quantity exceeding current stock still leaves inventory/audit unchanged",
+      "passed": true,
+      "actual": {
+        "on_hand": "3.000",
+        "version": 2,
+        "allocated": "0.000",
+        "incoming": "0.000",
+        "sales": 3,
+        "movements": 2
+      }
+    },
+    {
+      "check": "Repeat confirmation idempotent",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Repeat exact file recognized",
+      "passed": true,
+      "actual": "committed"
+    },
+    {
+      "check": "Competing overlapping import rolls back entire batch",
+      "passed": true,
+      "actual": 409
+    },
+    {
+      "check": "Failed import remains uncommitted",
+      "passed": true,
+      "actual": "preview"
+    },
+    {
+      "check": "Cross-file duplicate explicitly rejected on fresh preview",
+      "passed": true,
+      "actual": {
+        "valid": 1,
+        "rejected": 1
+      }
+    },
+    {
+      "check": "Old preview version cannot confirm",
+      "passed": true,
+      "actual": 409
+    },
+    {
+      "check": "History persisted and paginated chronologically",
+      "passed": true,
+      "actual": [
+        "2026-09-01T07:00:00Z",
+        "2026-08-02T00:00:00Z",
+        "2026-08-01T07:00:00Z"
+      ]
+    },
+    {
+      "check": "Date/source history filters",
+      "passed": true,
+      "actual": 1
+    },
+    {
+      "check": "Server upload size limit",
+      "passed": true,
+      "actual": 413
+    },
+    {
+      "check": "Researcher reads sales",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Researcher cannot record sales",
+      "passed": true,
+      "actual": 403
+    },
+    {
+      "check": "Researcher cannot preview imports",
+      "passed": true,
+      "actual": 403
+    },
+    {
+      "check": "Researcher cannot confirm imports",
+      "passed": true,
+      "actual": 403
+    },
+    {
+      "check": "Anonymous cannot record sales",
+      "passed": true,
+      "actual": 401
+    },
+    {
+      "check": "Anonymous cannot preview imports",
+      "passed": true,
+      "actual": 401
+    },
+    {
+      "check": "Anonymous cannot confirm imports",
+      "passed": true,
+      "actual": 401
+    },
+    {
+      "check": "Archived product rejects operational sales",
+      "passed": true,
+      "actual": 404
+    },
+    {
+      "check": "Archived-after-preview import rejected",
+      "passed": true,
+      "actual": 409
+    },
+    {
+      "check": "Archive preserves sales history",
+      "passed": true,
+      "actual": 3
+    },
+    {
+      "check": "Vite proxy exposes real sales API",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Manager logout revokes sales access",
+      "passed": true,
+      "actual": "204 then 401"
+    }
+  ]
+}

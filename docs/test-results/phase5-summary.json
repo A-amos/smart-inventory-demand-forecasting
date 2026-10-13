@@ -1,0 +1,57 @@
+{
+  "verified_at_utc": "2026-10-01T10:01:16.462799+00:00",
+  "phase5_exit_gate": "passed",
+  "phase6_started": false,
+  "suites": {
+    "backend": {
+      "executed": 160,
+      "failures": 0,
+      "junit": "phase5-backend.xml"
+    },
+    "ml": {
+      "executed": 59,
+      "failures": 0,
+      "junit": "phase5-ml.xml"
+    },
+    "frontend": {
+      "executed": 29,
+      "failures": 0,
+      "junit": "phase5-frontend.xml"
+    }
+  },
+  "actual_workflows": {
+    "live": {
+      "passed": 50,
+      "executed_at_utc": "2026-10-01T07:56:49.249632+00:00"
+    },
+    "browser": {
+      "passed": 11,
+      "executed_at_utc": "2026-10-01T07:54:08.337Z"
+    },
+    "browser-persistence": {
+      "passed": 8,
+      "executed_at_utc": "2026-10-01T07:54:30.378436+00:00"
+    }
+  },
+  "migration_head": "e52ad70491b2",
+  "production_build": "passed",
+  "compose_rebuild": "passed",
+  "mysql_migration_check": "passed",
+  "protected_phase4_evidence_files_unchanged": 18,
+  "ML_source_files_unchanged": 13,
+  "proposal_sha256": "9b0d71f1e00b9e8fb979e577c8e48cacda0051388f0745dfe740ed170e1d24a2",
+  "selected_model": "mean_28",
+  "limitation": "UK history ends 2011-11-10; current forecasts unavailable. Acknowledged 2011-11-11 scenario uses illustrative stock. No Kenyan validation.",
+  "initial_failures": [
+    "two new-test fixture/ORM failures corrected",
+    "esbuild filesystem sandbox restriction",
+    "MySQL trigger binary-log privilege error 1419 corrected without resetting data",
+    "Docker subprocess sandbox restriction"
+  ],
+  "remaining": [
+    "Phase 6 full evaluation requires new instruction",
+    "fresh compatible operational history unavailable",
+    "participant/performance/cross-browser/deployment review not performed",
+    "upstream Starlette/AnyIO deprecation warning"
+  ]
+}

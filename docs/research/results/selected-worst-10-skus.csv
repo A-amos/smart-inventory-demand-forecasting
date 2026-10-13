@@ -1,0 +1,11 @@
+observations,mae,rmse,zero_actual_count,mape,mape_policy,model,sku
+28,80.0,83.56282006944946,7,,omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset,mean_28,22595
+28,50.132653061224495,86.90333739863163,7,,omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset,mean_28,71477
+28,22.387755102040817,42.71524126977037,4,,omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset,mean_28,20728
+28,15.535714285714286,22.122542524653493,5,,omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset,mean_28,20982
+28,12.908163265306124,18.871342056685,5,,omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset,mean_28,85048
+28,11.071428571428571,19.96425376946077,15,,omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset,mean_28,22440
+28,10.321428571428571,14.864867497367264,8,,omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset,mean_28,22082
+28,10.19642857142857,12.43693273755098,16,,omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset,mean_28,22529
+28,9.566326530612246,10.99605680715239,12,,omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset,mean_28,85061W
+28,9.285714285714288,10.197038385567383,13,,omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset,mean_28,22716

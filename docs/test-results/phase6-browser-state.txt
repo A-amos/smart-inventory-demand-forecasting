@@ -1,0 +1,284 @@
+- main:
+  - paragraph: Retail decision support
+  - heading "Smart Inventory" [level=1]
+  - paragraph: Demand forecasting and replenishment planning
+  - heading "Welcome, Local Verification Manager" [level=2]
+  - button "Sign out"
+  - navigation "Workspace pages":
+    - button "Dashboard"
+    - button "Products"
+    - button "Categories"
+    - button "Inventory"
+    - button "Sales entry"
+    - button "Sales history"
+    - button "CSV import"
+  - checkbox "Show archived records"
+  - text: Show archived records
+  - button "Reload records"
+  - heading "Inventory decision dashboard" [level=3]
+  - paragraph: UCI Online Retail II forecasts use UK retail data and have not been validated for Kenyan businesses. The frozen 28-day mean baseline is selected on validation. Compatible research history ends 2011-11-10; current forecasts are unavailable.
+  - text: Decision context
+  - combobox "Decision context":
+    - option "Current inventory"
+    - option "UK historical research scenario (2011-11-11)" [selected]
+  - button "Refresh dashboard"
+  - status: Recommendation snapshot saved.
+  - region "Inventory overview":
+    - paragraph: "Historical UK forecast + current illustrative stock scenario; not Kenyan operational validation. Decision date: 2011-11-11."
+    - generic: Active products
+    - strong: "1"
+    - generic: Adequate
+    - strong: "0"
+    - generic: Replenishment risk
+    - strong: "1"
+    - generic: Overstock
+    - strong: "0"
+    - generic: Unassessed
+    - strong: "0"
+    - table:
+      - rowgroup:
+        - row "Product On hand Incoming Allocated Position Current scenario status":
+          - columnheader "Product"
+          - columnheader "On hand"
+          - columnheader "Incoming"
+          - columnheader "Allocated"
+          - columnheader "Position"
+          - columnheader "Current scenario status"
+      - rowgroup:
+        - row "Phase 6 demonstration product P6-BROWSER-20261001 · unit 17 3 2 18 Replenishment risk Mapped UK research series":
+          - cell "Phase 6 demonstration product P6-BROWSER-20261001 · unit":
+            - text: Phase 6 demonstration product
+            - generic: P6-BROWSER-20261001 · unit
+          - cell "17"
+          - cell "3"
+          - cell "2"
+          - cell "18"
+          - cell "Replenishment risk Mapped UK research series":
+            - text: Replenishment risk
+            - generic: Mapped UK research series
+    - paragraph: Unassessed means no valid snapshot for this context and stock/configuration version. It does not mean adequate stock.
+  - region "Product forecasts and decisions":
+    - text: Decision product
+    - combobox "Decision product":
+      - option "Select product"
+      - option "Browser demo rice · BROWSER-20261001 (archived; history only)"
+      - option "Browser sales rice MUOMQKPA · BROWSER-MUOMQKPA (archived; history only)"
+      - option "Phase 3 stock 55929D6B · SALES-55929D6B (archived; history only)"
+      - option "Phase 3 stock EADD8C96 · SALES-EADD8C96 (archived; history only)"
+      - option "Phase 5 synthetic browser inventory 20261001-01 · P5-BROWSER-20261001-01 (archived; history only)"
+      - option "Phase 5 synthetic stock 1B422DAA · P5-1B422DAA (archived; history only)"
+      - option "Phase 5 synthetic stock 41BB72A0 · P5-41BB72A0 (archived; history only)"
+      - option "Phase 5 synthetic stock 9C6D86DE · P5-9C6D86DE (archived; history only)"
+      - option "Phase 6 decision regression synthetic stock F21B7E43 · P5-F21B7E43 (archived; history only)"
+      - option "Phase 6 demonstration product · P6-BROWSER-20261001" [selected]
+      - option "Phase 6 sales regression stock 0BCAA4C0 · SALES-0BCAA4C0 (archived; history only)"
+      - option "Phase6 synthetic load worker 0 · P6-LOAD-C9B36F18 (archived; history only)"
+      - option "Phase6 synthetic load worker 0 · P6-LOAD-469D1E9C (archived; history only)"
+      - option "Phase6 synthetic load worker 1 · P6-LOAD-9315B211 (archived; history only)"
+      - option "Phase6 synthetic load worker 1 · P6-LOAD-53913349 (archived; history only)"
+      - option "Phase6 synthetic load worker 2 · P6-LOAD-FC4D1F27 (archived; history only)"
+      - option "Phase6 synthetic load worker 2 · P6-LOAD-3E6B39CD (archived; history only)"
+      - option "Phase6 synthetic load worker 3 · P6-LOAD-87BBDB36 (archived; history only)"
+      - option "Phase6 synthetic load worker 3 · P6-LOAD-E7004CDC (archived; history only)"
+      - option "Phase6 updated text 59ed31b1 · P6-TEXT-59ED31B1 (archived; history only)"
+      - option "Verification stock 7B945E2C · VERIFY-7B945E2C (archived; history only)"
+    - paragraph: "Documented UK research series: 20728. Reason: Synthetic Phase 6 stock paired explicitly with UK series 20728; historical research only"
+    - group "Historical research demonstration":
+      - generic: Historical research demonstration
+      - paragraph: Current illustrative inventory is applied to a historical 2011-11-11 scenario. It is not measured 2011 stock or a present-day purchasing recommendation. Use synthetic test inventory.
+      - checkbox "I acknowledge the UK historical research scenario and illustrative stock." [checked]
+      - text: I acknowledge the UK historical research scenario and illustrative stock.
+      - form "Forecast mapping form":
+        - text: Supported UK series
+        - combobox "Supported UK series":
+          - option "20700"
+          - option "20728" [selected]
+          - option "20803"
+          - option "20897"
+          - option "20982"
+          - option "20990"
+          - option "21004"
+          - option "21077"
+          - option "21096"
+          - option "21217"
+          - option "21329"
+          - option "21360"
+          - option "21378"
+          - option "21539"
+          - option "21541"
+          - option "21610"
+          - option "21765"
+          - option "21794"
+          - option "21870"
+          - option "21900"
+          - option "21972"
+          - option "21989"
+          - option "22061"
+          - option "22082"
+          - option "22115"
+          - option "22135"
+          - option "22190"
+          - option "22241"
+          - option "22270"
+          - option "22285"
+          - option "22308"
+          - option "22313"
+          - option "22316"
+          - option "22358"
+          - option "22440"
+          - option "22487"
+          - option "22529"
+          - option "22533"
+          - option "22595"
+          - option "22604"
+          - option "22690"
+          - option "22716"
+          - option "37327"
+          - option "40016"
+          - option "48188"
+          - option "71477"
+          - option "84031B"
+          - option "84581"
+          - option "84795B"
+          - option "84849A"
+          - option "84901"
+          - option "84913B"
+          - option "84944"
+          - option "85040B"
+          - option "85048"
+          - option "85061W"
+          - option "85065"
+          - option "85132A"
+          - option "85213"
+          - option "90214J"
+        - text: Mapping reason
+        - textbox "Mapping reason"
+        - text: Mapping state
+        - combobox "Mapping state":
+          - option "Enabled" [selected]
+          - option "Disabled"
+        - button "Save research mapping"
+      - form "Forecast generation form":
+        - text: Forecast horizon (days)
+        - spinbutton "Forecast horizon (days)": "28"
+        - button "Generate forecast snapshot"
+      - paragraph: Origin 2011-11-10, unchanged historical dates. Lead time 3 days must fit inside the forecast horizon (maximum 28).
+    - heading "Stored forecasts" [level=4]
+    - text: Forecast snapshot
+    - combobox "Forecast snapshot":
+      - option "01/10/2026, 13:49:18 · origin 2011-11-10 · 28 days · 4a1f9161-32f8-4559-b724-62f80907e944" [selected]
+    - button "Previous forecasts" [disabled]
+    - button "Next forecasts" [disabled]
+    - paragraph: research_demo · UK series 20728 · uci-retail-v1-0cc2a83c3e40 / retail-demand-v1 · sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031.
+    - generic "Historical UK demand and stored forecast chart":
+      - list:
+        - img "Historical UK demand (units) legend icon"
+        - text: Historical UK demand (units)
+        - img "Stored mean_28 forecast (units) legend icon"
+        - text: Stored mean_28 forecast (units)
+      - application:
+        - generic: 2011-09-27
+        - generic: 2011-10-30
+        - generic: 2011-12-08
+        - generic: "0"
+        - generic: "35"
+        - generic: "70"
+        - generic: "105"
+        - generic: "140"
+    - generic "Daily forecast quantities (accessible table)"
+    - button "Generate recommendation snapshot"
+    - heading "Stored recommendations" [level=4]
+    - text: Recommendation snapshot
+    - combobox "Recommendation snapshot":
+      - option "01/10/2026, 13:50:34 · Replenishment risk · af82e6f7-3339-4455-bc8b-45d51b85c509" [selected]
+    - button "Previous recommendations" [disabled]
+    - button "Next recommendations" [disabled]
+    - region "Decision snapshot":
+      - heading "Replenishment risk · immutable decision snapshot" [level=4]
+      - paragraph: P6-BROWSER-20261001 · unit · as of 2011-11-11 · inventory version 3. Created 01/10/2026, 13:50:34 (Nairobi).
+      - term: Predicted lead-time demand
+      - definition: "83.571428571"
+      - term: Lead time (days)
+      - definition: "3"
+      - term: Safety stock
+      - definition: "4"
+      - term: On hand
+      - definition: "17"
+      - term: Confirmed incoming
+      - definition: "3"
+      - term: Allocated
+      - definition: "2"
+      - term: Inventory position
+      - definition: "18"
+      - term: Target stock
+      - definition: "87.571428571"
+      - term: Shortage / raw reorder
+      - definition: "69.571428571"
+      - term: Suggested reorder
+      - definition: "69.571428571"
+      - term: Overstock multiplier
+      - definition: "2"
+      - term: Overstock threshold
+      - definition: "175.142857142"
+      - paragraph: Position = on hand + confirmed incoming − allocated. Target = sum of daily demand over lead time + safety stock. Reorder = max(0, target − position). Overstock only if position > target × multiplier.
+      - paragraph: Forecast 4a1f9161-32f8-4559-b724-62f80907e944 · origin 2011-11-10 · 28 days · uci-retail-v1-0cc2a83c3e40 / retail-demand-v1 · sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031 · inventory-rules-v1. Snapshot af82e6f7-3339-4455-bc8b-45d51b85c509.
+      - list:
+        - listitem: All confirmed incoming stock assumed to arrive during lead time; no ETA is recorded.
+        - listitem: Allocated stock is excluded from usable inventory.
+        - listitem: Forecast dates must cover every lead-time day.
+        - listitem: No pack-size or procurement rounding; raw shortage equals suggested quantity.
+        - listitem: Stored daily predictions use nine decimal places; original forecast-v1 values are preserved.
+        - listitem: Deterministic stock-risk rule, not a calibrated probability. Human review; no purchase execution.
+        - listitem: UK historical forecasts and present test stock form a research scenario, not measured 2011 inventory or Kenyan performance.
+      - paragraph: Human review required. These are deterministic risk rules, not probabilities. Recommendations do not execute purchases. Old snapshots retain the stock and configuration used when created.
+  - region "Research model comparison":
+    - heading "Research model comparison" [level=3]
+    - paragraph: 28-day mean baseline (mean_28) selected on validation. Final-test results do not change that selection. UK retail research demonstration; not validated for Kenyan retail businesses.
+    - paragraph: "Validation: 2011-09-16 to 2011-10-13; 2011-10-14 to 2011-11-10. Final test: 2011-11-11 to 2011-12-08. MAE and RMSE are quantities in units. Omitted for zero/intermittent demand."
+    - table:
+      - rowgroup:
+        - row "Model Validation MAE Validation RMSE Final-test MAE Final-test RMSE":
+          - columnheader "Model"
+          - columnheader "Validation MAE"
+          - columnheader "Validation RMSE"
+          - columnheader "Final-test MAE"
+          - columnheader "Final-test RMSE"
+      - rowgroup:
+        - row "mean_28Selected on validation 4.753635204 36.360015732 5.335034014 17.944563987":
+          - cell "mean_28Selected on validation"
+          - cell "4.753635204"
+          - cell "36.360015732"
+          - cell "5.335034014"
+          - cell "17.944563987"
+        - row "seasonal_naive 6.07827381 43.352901946 4.939880952 17.008523773":
+          - cell "seasonal_naive"
+          - cell "6.07827381"
+          - cell "43.352901946"
+          - cell "4.939880952"
+          - cell "17.008523773"
+        - row "xgb_depth5 9.193967756 46.835324639 5.615668867 18.846316668":
+          - cell "xgb_depth5"
+          - cell "9.193967756"
+          - cell "46.835324639"
+          - cell "5.615668867"
+          - cell "18.846316668"
+        - row "xgb_depth3 9.327390803 43.942535156 Not final-tested Not final-tested":
+          - cell "xgb_depth3"
+          - cell "9.327390803"
+          - cell "43.942535156"
+          - cell "Not final-tested"
+          - cell "Not final-tested"
+        - row "rf_leaf5 10.080747408 42.761739882 6.545168749 18.51636475":
+          - cell "rf_leaf5"
+          - cell "10.080747408"
+          - cell "42.761739882"
+          - cell "6.545168749"
+          - cell "18.51636475"
+        - row "rf_leaf15 10.093937739 39.320706806 Not final-tested Not final-tested":
+          - cell "rf_leaf15"
+          - cell "10.093937739"
+          - cell "39.320706806"
+          - cell "Not final-tested"
+          - cell "Not final-tested"
+  - generic: Maseno University · Computer Science research prototype
+- generic: 2011-09-23

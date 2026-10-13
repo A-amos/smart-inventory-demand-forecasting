@@ -1,0 +1,1 @@
+Fresh environment, isolated MySQL migrations, authorized-user CLI, login/logout, frontend/readiness, pip check and frozen inference passed. Development volume untouched.

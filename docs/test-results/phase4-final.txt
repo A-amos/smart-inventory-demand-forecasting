@@ -1,0 +1,5 @@
+Final frozen fit/evaluation: mean_28
+Final frozen fit/evaluation: rf_leaf5
+Final frozen fit/evaluation: seasonal_naive
+Final frozen fit/evaluation: xgb_depth5
+Final test saved once; validation-selected model remains mean_28.

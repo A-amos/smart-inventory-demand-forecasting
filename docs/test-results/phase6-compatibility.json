@@ -1,0 +1,119 @@
+{
+  "executed_at_utc": "2026-10-01T11:13:24.040Z",
+  "browsers": [
+    {
+      "browser": "Microsoft Edge",
+      "version": "154.0.4258.48",
+      "status": "PASS (bounded navigation/render/logout smoke)",
+      "checks": [
+        {
+          "area": "login",
+          "actual": "Authorized manager welcome displayed"
+        },
+        {
+          "area": "navigation",
+          "actual": "Products, Inventory, Sales entry, CSV import and Dashboard visited"
+        },
+        {
+          "area": "product/inventory",
+          "actual": "P6-BROWSER-20261001 visible; on-hand17 incoming3 allocated2"
+        },
+        {
+          "area": "sales form",
+          "actual": "Product, quantity, unit-price and sale-time controls displayed"
+        },
+        {
+          "area": "import page",
+          "actual": "Historical-only policy, CSV file input and preview button displayed"
+        },
+        {
+          "area": "dashboard/charts",
+          "actual": "Current UNASSESSED position18; stored historical forecast, plotted lines and real hover tooltip27.857142857 rendered; immutable recommendation69.571428571"
+        },
+        {
+          "area": "logout",
+          "actual": "Actual post-click screenshot displayed Sign in to your workspace; immediate AX text was stale",
+          "evidence": "Native Computer Use post-click screenshot observed on 2026-10-01; no saved logout image"
+        }
+      ],
+      "evidence": [
+        "phase6-edge-dashboard.txt",
+        "../screenshots/final/compatibility-edge-chart.jpg"
+      ]
+    },
+    {
+      "browser": "Google Chrome",
+      "version": "154.0.8037.59",
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "area": "login",
+          "actual": "Actual authorized manager login succeeded"
+        },
+        {
+          "area": "navigation",
+          "actual": "Products, Categories, Inventory, Sales entry, CSV import and Dashboard visited"
+        },
+        {
+          "area": "product/inventory",
+          "actual": "Pages opened; initial catalog request was still loading; final quantities not independently verified"
+        },
+        {
+          "area": "sales form",
+          "actual": "Form opened"
+        },
+        {
+          "area": "import page",
+          "actual": "Page opened"
+        },
+        {
+          "area": "dashboard/charts",
+          "actual": "Initial dashboard loading observed; final chart rendering NOT VERIFIED"
+        },
+        {
+          "area": "logout",
+          "actual": "NOT EXECUTED"
+        }
+      ],
+      "limitation": "CDP screenshot timeout, CUA kernel timeouts and request-header policy load failure; browser automation subsequently stopped by Windows browser URL-policy enforcement. No browser fallback after stop."
+    },
+    {
+      "browser": "Mozilla Firefox",
+      "version": "156.0.1",
+      "status": "NOT EXECUTED",
+      "checks": [
+        {
+          "area": "login",
+          "actual": "NOT EXECUTED"
+        },
+        {
+          "area": "navigation",
+          "actual": "NOT EXECUTED"
+        },
+        {
+          "area": "product/inventory",
+          "actual": "NOT EXECUTED"
+        },
+        {
+          "area": "sales form",
+          "actual": "NOT EXECUTED"
+        },
+        {
+          "area": "import page",
+          "actual": "NOT EXECUTED"
+        },
+        {
+          "area": "dashboard/charts",
+          "actual": "NOT EXECUTED"
+        },
+        {
+          "area": "logout",
+          "actual": "NOT EXECUTED"
+        }
+      ],
+      "limitation": "Installed browser launched; selecting its window stopped Computer Use because URL-policy enforcement is unsupported. No application behavior asserted."
+    }
+  ],
+  "version_source": "Installed executable ProductVersion file properties; not guessed from another browser.",
+  "scope": "Localhost desktop smoke; no mobile, accessibility certification or universal cross-browser guarantee."
+}

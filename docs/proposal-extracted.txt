@@ -1,0 +1,664 @@
+
+
+
+MASENO UNIVERSITY
+SCHOOL OF COMPUTING AND INFORMATICS
+DEPARTMENT OF COMPUTER SCIENCE
+
+
+
+SMART INVENTORY DEMAND FORECASTING AND OPTIMIZATION SYSTEM USING MACHINE LEARNING FOR RETAIL STOCK MANAGEMENT
+
+
+ODHIAMBO AMOS OCHIENG
+CCS/00030/023
+
+A project proposal submitted to the Department of Computer Science in the School of Computing and Informatics in partial fulfillment of the requirements for the award of the degree of Bachelor of Science in Computer Science of Maseno University.
+
+
+2026
+
+DECLARATION
+I declare that this project proposal is my original work and has not been presented for the award of a degree in any other university. All sources of information used in developing the proposal have been acknowledged through appropriate citation and referencing.
+Student name:  Odhiambo Amos Ochieng
+Registration number:  CCS/00030/023
+Signature: ____________________________________     Date: ____________________
+This project proposal has been submitted with my approval as the University Supervisor.
+Supervisor’s name: __________________________________________________________
+Signature: ____________________________________     Date: ____________________
+Maseno, Kenya
+
+ACKNOWLEDGEMENTS
+I thank the Almighty God for the strength and determination to undertake this project. I sincerely appreciate my project supervisor for the guidance, constructive criticism and academic support that have helped refine the research problem, methodology and proposed system. I also acknowledge the lecturers in the Department of Computer Science, School of Computing and Informatics, Maseno University, whose teaching has provided a foundation in software development, databases, data analysis and artificial intelligence. I recognize that the supervisor will review the instruments and development methodology before the next stage. I will incorporate the resulting guidance into the final project report.
+I am grateful to fellow students for their discussions and suggestions, and to my family and friends for their encouragement throughout my studies. I also appreciate the retail personnel and other individuals who may contribute information or feedback during the project. Their assistance will be acknowledged in the final report in accordance with university requirements. Their comments will be considered during requirements clarification and prototype evaluation. I also recognize the contribution of publicly available academic research to the foundation of this proposed study.
+
+ABSTRACT
+Retailers must maintain enough stock to satisfy demand without accumulating unnecessary inventory. Demand variability, seasonality, promotions and incomplete information can contribute to stockouts, excess stock and inefficient use of working capital. This project proposes a Smart Inventory Demand Forecasting and Optimization System that uses historical retail sales data to forecast product demand and support replenishment decisions. The general objective is to develop a machine-learning-based system that improves retail stock decision support. The specific objectives are to analyze historical sales patterns, compare selected forecasting models, develop an inventory decision rule for identifying stock risks and recommending replenishment quantities, and evaluate the resulting approach.
+The study will use an applied research design combining requirements elicitation from retail personnel with experimental evaluation using secondary historical sales data. Purposive sampling will be used to recruit approximately 20–30 personnel with direct inventory, sales or procurement responsibilities, subject to supervisor approval and access. A structured questionnaire and a short semi-structured interview guide will support requirements analysis. The forecasting experiment will clean and transform the dataset, construct time-safe features, and compare a baseline with selected machine-learning models using chronological train and holdout periods. MAE and RMSE will be reported, with MAPE used only where actual demand is non-zero and interpretation is meaningful. Forecasts will be combined with current and in-transit stock and explicit replenishment assumptions to produce explainable stock-risk indicators and suggested order quantities. The expected output is a web-based decision-support prototype; it will not automatically place purchase orders. Actual findings will be reported only after implementation and evaluation.
+Keywords: retail inventory, demand forecasting, machine learning, replenishment, stockout risk, decision support.
+
+TABLE OF CONTENTS
+DECLARATIONi
+ACKNOWLEDGEMENTSii
+ABSTRACTiii
+TABLE OF CONTENTSiv
+LIST OF TABLESv
+LIST OF FIGURESvi
+ACRONYMS AND ABBREVIATIONSvii
+DEFINITION OF TERMSvii
+CHAPTER 1: INTRODUCTION1
+1.1 Statement of the Problem1
+1.2 Proposed Solution1
+1.3 Objectives1
+1.4 Research Questions2
+1.5 Justification2
+1.6 Scope and Delimitations2
+1.7 Organization of the Proposal3
+CHAPTER 2: LITERATURE REVIEW4
+2.1 Introduction4
+2.2 Theoretical Review and Conceptual Framework4
+2.3 Critique of Existing Literature10
+2.4 Summary11
+2.5 Research Gaps12
+CHAPTER 3: SYSTEM ANALYSIS AND DESIGN13
+3.1 Introduction13
+3.2 Research and Development Design13
+3.3 Systems Development Methodology13
+3.4 Feasibility Study13
+3.5 Requirements Elicitation14
+3.6 Data Sources and Analysis14
+3.7 System Specification14
+3.8 Functional Requirements15
+3.9 Non-Functional Requirements15
+3.10 System Architecture16
+3.11 System Context and Data Flows16
+3.12 Use Cases and Database Design18
+3.13 Forecasting and Replenishment Logic20
+3.14 Technology and Resource Requirements22
+CHAPTER 4: SYSTEM CODE GENERATION AND TESTING23
+CHAPTER 5: PROPOSED CONCLUSIONS AND RECOMMENDATIONS FRAMEWORK27
+REFERENCES29
+APPENDICES31
+
+LIST OF TABLES
+Table 2.1: Selected Related Studies and Their Relevance8
+Table 3.1: Functional Requirements15
+Table 3.2: Non-Functional Requirements15
+Table 3.3: Proposed Hardware and Software Requirements22
+Table 4.1: Planned Test Cases (24 Cases)25
+Appendix III: Proposed Work Plan32
+Appendix IV: Proposed Budget32
+
+LIST OF FIGURES
+Figure 2.1: Conceptual Framework10
+Figure 3.1: Proposed N-Tier System Architecture16
+Figure 3.2: System Context Diagram17
+Figure 3.3: Level 1 Data-Flow Diagram18
+Figure 3.4: Use-Case Diagram19
+Figure 3.5: Core Entity-Relationship Diagram19
+Figure 3.6: Forecasting and Replenishment Workflow21
+
+ACRONYMS AND ABBREVIATIONS
+Acronym
+Meaning
+AI
+Artificial intelligence
+API
+Application programming interface
+DBMS
+Database management system
+DFD
+Data-flow diagram
+ERD
+Entity-relationship diagram
+KSh
+Kenyan shilling
+MAE
+Mean Absolute Error
+MAPE
+Mean Absolute Percentage Error
+ML
+Machine learning
+RMSE
+Root Mean Square Error
+SKU
+Stock keeping unit
+UML
+Unified Modeling Language
+DEFINITION OF TERMS
+Demand forecasting: Estimating the quantity of a product likely to be demanded over a future period using historical and other relevant information.
+Inventory position: A decision-support quantity defined for this study as on-hand stock plus confirmed in-transit stock, less allocated stock where allocation data are available.
+Inventory optimization: Selecting replenishment quantities or stock targets that balance product availability against unnecessary stock, subject to available data and stated assumptions.
+Machine learning: Computational methods that learn patterns from data and use those patterns to generate predictions or support decisions.
+Overstock: Stock materially above a defined target or expected requirement for the selected horizon; the threshold will be configured and disclosed.
+Replenishment: Restoring inventory by ordering or transferring stock to meet expected requirements.
+Stockout: A condition in which available inventory is insufficient to satisfy demand.
+Time-aware evaluation: A model-evaluation approach that preserves chronological order so that future observations do not leak into training.
+
+CHAPTER 1: INTRODUCTION
+1.1 Statement of the Problem
+Retail inventory decisions require a balance between product availability and the cost of holding unnecessary stock. Product demand can change with trends, seasonality, promotions and other market conditions. Underestimating demand may leave a product unavailable when customers need it; overestimating demand may tie up working capital and increase storage or obsolescence exposure. The operational challenge is therefore not simply to record the stock on hand, but to anticipate demand and translate that estimate into a timely, defensible replenishment decision.
+Historical sales data can reveal recurring demand patterns, while current inventory and replenishment context determine whether forecast demand can be met. Liu et al. (2025), using data from a retailer with more than 1.6 million SKUs, report that current inventory, near-term forecast demand and recent sales were influential in stockout prediction. Their study illustrates why prediction should incorporate inventory context rather than treating future demand in isolation. Bergsma, de Ruijt and Bhulai (2025) review 122 studies and distinguish approaches that estimate demand before a separate optimization step from more integrated or dynamic methods. Their review notes that important operating conditions and real-world validation remain unevenly addressed.
+The research problem addressed by this project is the difficulty of predicting changing product demand and converting predicted demand into practical replenishment support. A conventional stock record describes present quantities but does not estimate future requirements. Conversely, a demand model may generate forecasts without determining whether available stock is adequate or what quantity should be considered for replenishment. The proposed study will investigate selected forecasting models and connect the chosen forecast to a transparent inventory decision rule, evaluated as a decision-support prototype.
+1.2 Proposed solution
+The project will analyze historical retail sales, construct time-safe forecasting features, and empirically compare a simple baseline with selected machine-learning models. The final model will be selected on the basis of held-out forecasting evidence and practical feasibility, not assumed in advance. Forecasts will then be combined with product-level inventory position and configurable assumptions such as lead time and safety stock. The system will present the forecast horizon, stock-risk status and suggested replenishment quantity with its underlying assumptions so that an authorized inventory user retains the final decision.
+1.3 Objectives
+1.3.1 General objective
+To develop a machine-learning-based inventory demand forecasting and optimization system for improving retail stock replenishment decisions.
+1.3.2 Specific objectives
+1. Analyze historical retail sales data and identify patterns and factors associated with product demand.
+2. Evaluate selected machine-learning models for forecasting future retail product demand.
+3. Develop an inventory decision approach that uses forecast demand to identify stockout and overstock risks and recommend replenishment quantities.
+4. Evaluate the forecasting accuracy and decision-support effectiveness of the proposed system.
+1.4 Research questions
+1. What patterns and factors in historical retail sales data are associated with product demand?
+2. How do selected machine-learning models compare in forecasting future retail product demand?
+3. How can forecast demand be combined with inventory information to identify stockout and overstock risks and determine replenishment quantities?
+4. To what extent does the proposed approach provide accurate forecasts and support retail replenishment decisions?
+1.5 Justification and significance
+The project is academically justified by the continuing need to connect predictive performance with inventory decisions. Comparing a baseline and selected forecasting models will provide empirical evidence on a defined dataset, while the integrated decision logic will demonstrate how forecasts can inform stock-risk assessment. The project is practically relevant because inventory personnel may benefit from seeing expected demand alongside current stock and a transparent replenishment suggestion. The application will support—not replace—human judgement. It also provides an applied integration of data analysis, machine learning, relational databases and web application development. Because the planned experimental data may be international, the results will not be represented as proof of performance across Kenyan retailers.
+1.6 Scope and Delimitations
+The study covers product-level historical demand analysis, comparison of a limited set of forecasting models, a prototype for inventory and sales records, forecast-driven stock-risk indicators, replenishment suggestions, and software and usability evaluation. Requirements will be elicited from selected retail personnel where access and permission are obtained. Machine-learning evaluation will use a public secondary retail dataset unless a suitable authorized dataset becomes available. The study will not build a full enterprise resource-planning platform, optimize supplier networks, make automatic purchases, or claim live commercial deployment. For this project, “optimization” is operationalized as a transparent forecast-driven target-stock and reorder rule, not a claim of globally optimal supply-chain decisions. The final dataset, forecast horizon, model candidates and system stack will be documented after confirmation during implementation.
+1.7 Organization of the Proposal
+Chapter One introduces the problem, objectives, research questions, significance and scope. Chapter Two reviews related literature and presents the conceptual framework and research gap. Chapter Three presents the research and system-development methodology, requirements, design models and evaluation plan. Chapter Four specifies planned implementation, integration and testing. Chapter Five defines the anticipated contribution, limitations and evidence-based conclusion and recommendation framework. References and proposed data-collection instruments follow the chapters.
+
+CHAPTER 2: LITERATURE REVIEW
+2.1 Introduction
+This chapter reviews theoretical and empirical literature related to machine learning demand forecasting and inventory optimization in retail environments. The review focuses on retail inventory management, demand forecasting, machine learning approaches for predicting product demand, stockout and overstock risk, and inventory replenishment optimization. Recent studies are examined to establish the techniques that have been applied by other researchers, the methodologies adopted, their findings and the limitations that remain. Particular attention is given to the relationship between forecasting accuracy and inventory decision-making because accurate prediction alone may not necessarily result in effective inventory management. The chapter further presents the conceptual framework, provides a critique and summary of the reviewed literature, and identifies the research gap that the proposed study intends to address.
+2.2 Theoretical Review and Conceptual Framework
+2.2.1 Retail Inventory Management
+Inventory management involves planning and controlling the quantities of goods maintained by an organization to ensure that products are available when required while avoiding unnecessary accumulation of stock. Within retail businesses, inventory decisions are particularly important because retailers manage numerous products whose demand may change over time. Insufficient inventory can result in stockouts and lost sales, while excessive inventory can increase holding requirements and tie up financial resources. Effective inventory management therefore requires decisions concerning which products should be replenished, when replenishment should occur and the quantities that should be ordered. These decisions depend significantly on information concerning current inventory, historical sales, expected future demand and other operational factors.
+Bergsma, de Ruijt and Bhulai (2025) reviewed 122 studies involving machine learning in inventory control and identified different approaches through which predictive techniques have been connected to inventory optimization. Their review demonstrates that machine learning can support inventory management by estimating uncertain variables such as demand before those estimates are incorporated into inventory decisions. Liu et al. (2025) similarly demonstrate the importance of current inventory, recent sales and short-term demand forecasts in predicting retail stockouts. Seyedan, Mafakheri and Wang (2023) combine time-series demand forecasting with an order-up-to-level inventory policy and show how forecast distributions can be translated into safety stock and replenishment levels. Together, these studies indicate that inventory decisions can benefit from combining historical information, current inventory conditions and predictions of future demand.
+The relevance of improved inventory management is also evident within the Kenyan retail environment. Mwove and Kithandi (2026a) examine AI-based inventory management among large supermarkets in Nairobi City County and identify stockouts, overstocking, unpredictable demand and increasing operational costs among supermarket supply-chain challenges. Mwove and Kithandi (2026b) separately examine AI demand forecasting and supply-chain performance among large supermarkets in Nairobi City County, demonstrating local interest in predictive inventory technologies. Muteti and Makhamara (2026) examine digital inventory management at Naivas Supermarkets and report a positive relationship between digital inventory practices and supermarket performance. These studies provide regional evidence supporting continued investigation of data-driven inventory-management approaches, although their emphasis is organizational rather than the technical development and experimental evaluation of forecasting models.
+2.2.2 Retail Demand Forecasting
+Demand forecasting refers to the process of estimating the quantity of a product that customers are expected to demand during a future period. Within retail environments, demand forecasting supports decisions concerning purchasing, inventory replenishment, resource planning and product availability. Historical sales data provide an important source of forecasting information because they can reveal trends, seasonal variations and other recurring demand patterns. However, retail forecasting is challenging because products can exhibit substantially different sales behaviours, including stable, seasonal, irregular and intermittent demand. Consequently, the forecasting technique used for a particular retail problem should be evaluated empirically rather than assuming that a single technique will perform equally well across all products.
+Makridakis, Spiliotis and Assimakopoulos (2022) demonstrate the scale and complexity of retail forecasting through the M5 forecasting competition, which used Walmart retail sales information and required forecasting across multiple hierarchical levels. The competition involved thousands of products and a large number of related retail time series, providing an important benchmark for evaluating statistical and machine learning forecasting techniques. The results demonstrate the importance of evaluating forecasting methods on realistic retail data rather than relying exclusively on theoretical assumptions. The M5 data also contain historical sales, calendar characteristics and price information that can be used in feature-based forecasting experiments. The dataset is therefore suitable as a secondary experimental dataset for the proposed research, while its United States retail origin will be acknowledged as a limitation when interpreting results for Kenyan retail settings.
+Mejía and Aguilar (2024) address the diversity of product-demand behaviour by proposing a retail demand forecasting approach combining time-series feature engineering, product characterization and ensemble learning. Andrade and Cunha (2023) similarly investigate disaggregated retail demand forecasting using gradient boosting and demonstrate that machine learning can model complex store-SKU demand while maintaining a high level of automation. Ma (2024) extend the problem by considering cross-SKU promotional interactions through an attributed-space graph recurrent neural network for store-SKU replenishment planning. These studies show that forecasting performance may depend on the structure of the data, available explanatory features and relationships among products. The proposed research therefore begins with exploratory analysis and feature engineering before comparing selected models.
+2.2.3 Machine Learning for Demand Forecasting
+Machine learning provides computational techniques that can identify relationships within historical data and use the identified patterns to generate predictions for previously unseen observations. In retail demand forecasting, machine learning can process historical sales together with other available variables to estimate future demand. Unlike simple fixed forecasting rules, machine learning models can capture nonlinear relationships when sufficient and appropriate data are available. However, model complexity alone does not guarantee better forecasts, making objective model evaluation necessary. The proposed research will therefore evaluate selected machine learning models rather than predetermining that a particular algorithm will provide the most suitable solution.
+Andrade and Cunha (2023) investigate gradient boosting for disaggregated retail forecasting, while Mejía and Aguilar (2024) combine feature engineering with ensemble learning for product-category demand forecasting. Ma (2024) use recurrent and graph neural-network components to capture demand history and cross-item promotional interactions. These approaches illustrate a progression from conventional supervised learning toward more complex architectures designed to capture temporal and relational information. Nevertheless, advanced models can introduce additional computational requirements and may be less interpretable. For the proposed project, model selection will therefore be based on empirical forecasting performance, computational practicality and suitability for the available data.
+Van der Haar et al. (2024) demonstrate a different integration strategy by using supervised learning with custom loss functions to directly predict inventory order sizes rather than first predicting demand. Their work considers feature information such as promotions and trends and shows that machine learning can be integrated more closely with inventory control. Bergsma, de Ruijt and Bhulai (2025) similarly classify machine-learning inventory research into separate estimation and optimization, static integrated optimization and dynamic approaches. The review also identifies challenges involving scalability, stochastic lead times, large action spaces, product interactions and multi-echelon systems. These findings support selecting an approach whose complexity corresponds to the research problem and available resources.
+2.2.4 Stockout and Overstock Risk
+A stockout occurs when available inventory is insufficient to satisfy product demand, whereas overstock occurs when inventory substantially exceeds expected requirements. Both situations are undesirable because stockouts can result in missed sales and reduced product availability, while overstocking can increase storage requirements and tie up financial resources. Demand uncertainty makes these conditions difficult to prevent because future product requirements are not known with complete certainty. Demand forecasts can reduce this uncertainty by providing an estimate of expected product requirements during future periods. Nevertheless, forecast information needs to be considered alongside available inventory before a potential stock problem can be identified.
+Liu et al. (2025) develop a machine learning approach for inventory stockout prediction using a retailer dataset containing more than 1.6 million SKUs. Their analysis identifies current inventory, short-term demand forecasts and recent sales as particularly influential variables in predicting stockouts. Ali et al. (2024) investigate machine learning for anticipating customer backorders and show that simplified models using a smaller number of high-impact predictors can substantially reduce computational cost with only limited reductions in predictive performance. These findings are important because they suggest that useful inventory-risk prediction does not necessarily require an excessively large number of variables. The proposed project will therefore focus on demand and inventory variables that are supported by literature and available within the selected data sources.
+The Kenyan retail context also provides evidence of the relevance of stockout reduction and improved inventory visibility. Mwove and Kithandi (2026a; 2026b) identify stockouts, overstocking and unpredictable demand as continuing supermarket supply-chain concerns while examining AI-based inventory and forecasting practices. Muteti and Makhamara (2026) similarly discuss digital inventory management in relation to supermarket performance. These studies establish contextual relevance but do not experimentally compare forecasting models or implement the stock-risk logic proposed in this project. The present study therefore uses their findings as contextual support rather than as substitutes for technical model evaluation.
+2.2.5 Inventory Optimization and Replenishment
+Inventory optimization involves determining inventory decisions that balance product availability with the costs and risks associated with holding stock. Replenishment represents an important component of inventory optimization because businesses need to determine when additional stock is required and how much should be obtained. Forecasted demand can support this decision by providing an estimate of the quantity likely to be required during a future period. However, replenishment decisions also depend on available stock and other inventory parameters and therefore cannot be based exclusively on predicted sales. An effective decision-support approach should consequently connect forecasting results with inventory conditions.
+Seyedan, Mafakheri and Wang (2023) propose an order-up-to-level inventory optimization model that combines ensemble deep learning demand forecasts with safety stock, reorder-point and order-quantity calculations. Van der Haar et al. (2024) present an integrated supervised-learning approach that predicts optimal order sizes directly for multi-period inventory problems. Ma (2024) connect store-SKU forecasting with replenishment planning and report improvements in both forecasting loss and inventory cost in their empirical experiments. These studies demonstrate that forecasting becomes more practically valuable when its outputs contribute directly to inventory decisions. They also demonstrate that there are different levels of complexity through which forecasting and replenishment can be integrated.
+For the proposed research, the separate forecasting and optimization approach is appropriate because it enables the forecasting model and inventory decision component to be evaluated independently. Forecasting performance can first be measured using quantitative prediction-error metrics, after which the selected forecasts can be incorporated into stock-risk assessment and replenishment calculations. This separation improves interpretability because forecasting errors can be distinguished from errors in inventory decision logic. It also reduces implementation complexity compared with reinforcement-learning or highly integrated deep-learning inventory policies while retaining a meaningful machine-learning research component. The final replenishment recommendation will serve as decision-support information rather than automatically replacing the judgement of inventory personnel.
+2.2.6 Machine Learning and Inventory Management in the Kenyan Retail Context
+Recent Kenyan research demonstrates increasing interest in artificial intelligence and digital inventory management within the retail sector. Mwove and Kithandi (2026b) investigate AI demand forecasting among large supermarkets in Nairobi City County and focus on the relationship between forecasting practices and supply-chain performance. Their work provides evidence that AI-based forecasting is relevant within the Kenyan supermarket environment, although its emphasis is organizational rather than experimental comparison of forecasting algorithms. Mwove and Kithandi (2026a) separately examine AI-based inventory management and identify inventory challenges including stockouts, overstocking and unpredictable demand. These studies provide important local justification for the proposed research while leaving room for a technical Computer Science contribution.
+Muteti and Makhamara (2026) investigate digital inventory management and performance at Naivas Supermarkets in Nairobi City County using employee responses and statistical analysis. Their study supports the importance of digital inventory practices but does not develop or experimentally evaluate a machine-learning forecasting component. The proposed project differs by using historical retail time-series data to compare forecasting models and by implementing the selected model within a web-based inventory decision-support system. Requirements data from retail personnel will be used to understand practical workflows and system needs, while the machine-learning experiment will use historical sales observations. This separation prevents organizational questionnaire responses from being treated as forecasting training data and provides a clearer methodological structure.
+2.2.7 Comparison of Selected Related Studies
+The studies below are compared in terms of methodological approach, contribution to the proposed project and limits of direct transfer. International experiments establish technical approaches to forecasting and replenishment, while Kenyan studies establish local operational relevance. The comparison shows why the present project combines a chronological model experiment with requirements elicitation rather than treating either method as sufficient on its own. The selected studies also demonstrate substantial differences in dataset scale, explanatory variables and evaluation objectives. These differences will be acknowledged when interpreting the model comparison conducted in this project.
+Table 2.1: Selected Related Studies and Their Relevance
+Study
+Approach / context
+Relevance to this project
+Limitation or distinction
+Makridakis et al. (2022)
+M5 retail sales forecasting competition
+Motivates realistic multi-product forecasting and time-based comparison
+US Walmart data; does not represent Kenyan retail conditions
+Andrade & Cunha (2023)
+Gradient boosting for disaggregated retail demand
+Supports feature-based model comparison at product/store level
+Method/data differ from the planned prototype
+Mejía & Aguilar (2024)
+Product time-series grouping, feature engineering and ensemble learning
+Motivates demand characterization before model selection
+More elaborate pipeline than required for a bounded undergraduate build
+Ma (2024)
+Graph recurrent model for store-SKU replenishment planning
+Highlights cross-SKU promotional interactions
+Higher complexity and data requirements
+Liu et al. (2025)
+ML stockout prediction on a retailer dataset exceeding 1.6 million SKUs
+Shows value of current stock and near-term demand information
+Large proprietary setting; not directly transferable
+Bergsma et al. (2025)
+Systematic review of 122 ML inventory-control studies
+Frames alternatives for integrating ML with inventory control
+Review identifies uneven applied evaluation across complex settings
+Mwove & Kithandi (2026a, 2026b)
+AI inventory management / demand forecasting in Nairobi supermarkets
+Provides Kenyan sector context
+Organizational focus; not a controlled model comparison in this project
+2.2.8 Conceptual Framework
+The conceptual framework describes the relationship between the main variables investigated by the proposed research. Historical retail sales data and relevant demand-related characteristics represent the principal inputs to the machine learning forecasting process. These inputs are subjected to preprocessing and feature engineering before selected machine learning models are trained and evaluated. The resulting forecasted product demand is subsequently considered together with relevant inventory information to determine potential stockout and overstock conditions. The ultimate outcome is inventory replenishment decision support through the identification of products requiring attention and the recommendation of appropriate replenishment quantities.
+
+Figure 2.1: Conceptual framework
+Source: Author’s synthesis of the reviewed literature.
+2.3 Critique of Existing Literature
+The reviewed literature demonstrates considerable progress in applying machine learning to demand forecasting and inventory management but also reveals differences in research objectives and levels of technical complexity. Studies such as Andrade and Cunha (2023) and Mejía and Aguilar (2024) concentrate primarily on improving demand forecasting through gradient boosting, feature engineering and ensemble methods. Such research provides useful evidence regarding forecasting techniques but does not necessarily establish whether improved prediction accuracy produces appropriate replenishment decisions. Conversely, approaches such as Ma (2024) and van der Haar et al. (2024) connect machine learning more closely to inventory decisions but introduce greater modelling and implementation complexity. This suggests a need to select an approach that balances forecasting performance, interpretability and implementation feasibility.
+Another limitation concerns the distinction between prediction accuracy and operational usefulness. Liu et al. (2025) demonstrate that stockout prediction benefits from combining inventory information, short-term demand forecasts and recent sales rather than relying on historical sales alone. Bergsma, de Ruijt and Bhulai (2025) similarly show that machine learning can contribute to inventory control at several stages and identify continuing challenges in applying advanced approaches to realistic inventory settings. These findings indicate that a forecasting model should not be evaluated solely as an isolated predictive algorithm when its intended purpose is inventory management. The proposed research addresses this concern by evaluating the forecasting component quantitatively and then examining how its outputs can be incorporated into stock-risk and replenishment decisions.
+The Kenyan studies reviewed provide contextual evidence but have a different emphasis from the proposed Computer Science research. Mwove and Kithandi (2026a; 2026b) and Muteti and Makhamara (2026) examine relationships between AI or digital inventory practices and organizational performance using survey-oriented methodologies. These studies demonstrate that intelligent inventory management is relevant within Kenya but do not experimentally compare machine learning forecasting models using historical retail time-series data. They also do not provide the type of integrated software implementation proposed in this study, where forecasts are translated into stock-risk information and replenishment recommendations. The proposed research therefore builds on their contextual findings from a computational and system-development perspective.
+2.4 Summary
+The literature reviewed in this chapter demonstrates that inventory management, demand forecasting and replenishment decisions are closely related. Historical retail sales data contain information that can be analyzed to identify demand patterns, while machine learning provides techniques capable of learning from these patterns and predicting future product requirements. Recent studies have investigated gradient boosting, ensemble learning, deep learning and integrated supervised learning for retail forecasting and inventory control. Consequently, model selection should be based on empirical evaluation using appropriate data and performance measures rather than assuming that a particular algorithm will provide the best solution. The reviewed evidence also supports combining forecasted demand with current inventory information when assessing stock risks and replenishment requirements.
+The literature further demonstrates that demand forecasts become more useful for inventory management when they are connected to operational information and inventory policies. Liu et al. (2025) show the importance of current inventory, recent sales and short-term forecasts in stockout prediction, while Bergsma, de Ruijt and Bhulai (2025) identify several approaches through which machine learning can be integrated with inventory optimization. Kenyan studies demonstrate the local relevance of AI demand forecasting and digital inventory management but primarily address organizational outcomes. The proposed study therefore adopts a technical perspective that experimentally evaluates selected forecasting models and integrates the selected model with inventory decision support. This approach provides a clear connection between the literature, research questions and proposed implementation.
+2.5 Research Gaps
+Existing literature provides substantial evidence concerning machine learning demand forecasting, stockout prediction and inventory optimization, but a gap remains in the practical connection between these areas within an accessible inventory decision-support system. Several forecasting studies concentrate on improving predictive accuracy through advanced models, feature engineering or ensemble methods, whereas inventory-oriented studies may use more complex integrated optimization and deep-learning approaches. Bergsma, de Ruijt and Bhulai (2025) identify continuing challenges in translating machine learning research into realistic inventory-control environments. These findings indicate that there remains value in investigating a transparent and measurable approach in which forecasting and inventory decision support can be independently evaluated and subsequently integrated. Such an approach is especially appropriate where implementation feasibility and interpretability are important.
+A second gap concerns the relationship between forecasting performance and inventory outcomes. An algorithm that produces a lower prediction error does not automatically demonstrate that its forecasts will produce useful inventory decisions. Liu et al. (2025) show that stockout prediction depends strongly on combining demand-related information with current inventory, while Seyedan, Mafakheri and Wang (2023) demonstrate how forecast distributions can be translated into replenishment variables. Consequently, there is a need to investigate how forecasts generated from historical retail sales can be translated into understandable stockout and overstock indicators and replenishment recommendations. The proposed research addresses this gap by extending model evaluation beyond prediction accuracy to the subsequent inventory decision-support process.
+A contextual and methodological gap is also evident within the Kenyan literature. Recent Kenyan studies establish relationships between AI demand forecasting, digital inventory management and supermarket performance, but their methodologies primarily rely on questionnaires and organizational statistical analysis. They provide important evidence concerning the relevance of intelligent inventory technologies but do not experimentally compare selected machine learning forecasting algorithms using historical retail sales time series and integrate the resulting model into an operational inventory decision-support application. The proposed research will therefore contribute a technical perspective by evaluating selected machine learning models and implementing a mechanism that translates forecasts into stockout, overstock and replenishment information. This represents a specific and defensible contribution without claiming that AI inventory management has not previously been researched in Kenya.
+
+CHAPTER 3: SYSTEM ANALYSIS AND DESIGN
+3.1 Introduction
+This chapter specifies how requirements will be elicited, how data will be analyzed, and how the web-based system and forecasting experiment will be designed. Requirements research and model training use distinct information sources: personnel responses inform user and workflow needs, while historical sales records support model development.
+3.2 Research and development design
+The study will use an applied research design with two complementary strands. First, requirements elicitation will use questionnaires and, where feasible, interviews with retail personnel. Second, an experimental strand will compare candidate forecasting methods on secondary historical retail data using chronological partitions. Findings from both strands will inform a prototype and its evaluation. The proposal will be updated if supervisor guidance or data access requires a material change.
+3.3 Systems development methodology
+An iterative Agile approach is proposed. Requirements and system models will be refined before development; implementation will then proceed through working increments: core data and authentication; product, sales and inventory functions; forecasting experiments and service; stock-risk and replenishment logic; dashboard integration; and final evaluation. Each increment will be reviewed against requirements and tested before integration. Iteration is appropriate because the final forecast model depends on empirical performance rather than a predetermined algorithm.
+3.4 Feasibility study
+3.4.1 Technical feasibility
+The project is technically feasible using common open-source tools. Python and its data-analysis and machine-learning ecosystem can support cleaning, feature engineering and experiments. A web framework, a relational DBMS and a browser interface can support the prototype. A standard development computer with approximately 8 GB RAM and 10 GB free storage is proposed; experiments will be limited to manageable data subsets if required. Deep-learning models will not be mandatory.
+3.4.2 Economic and operational feasibility
+Most proposed software is freely available for academic use. The anticipated budget is directed mainly to internet access, printing, stationery, local transport for requirements elicitation and final binding. Operationally, the application will reflect familiar activities such as checking stock, recording sales and reviewing reorders. Forecast assumptions will be visible, and a human user will retain authority over purchasing decisions.
+3.4.3 Schedule feasibility
+The proposed schedule spans eight months. Scope is controlled by limiting the model comparison to a baseline and a small number of candidate models, and by building a prototype rather than a production inventory platform.
+3.5 Requirements elicitation and sampling
+The target population comprises retail personnel who participate in stock, sales, procurement or store-management activities in selected retail businesses. Purposive sampling will recruit respondents with direct experience of inventory practices. A provisional planning target of 20–30 questionnaire participants is proposed, subject to accessible population, outlet permission and supervisor approval. A smaller subset may be interviewed to clarify workflows. The number approached, actual participation and usable responses will be documented in the final report; the planning target is not a claim about achieved sample size.
+The structured questionnaire will capture respondent role, existing stock-management methods, stockout and overstock frequency, information used in reorder decisions, perceived value of forecasts and desired system outputs. Interviews will explore current workflow, trust and usability requirements. The instruments in the appendices will be reviewed by the supervisor before use. Permission will be obtained from participating outlets; participation will be voluntary, and no customer payment credentials or personally sensitive customer data will be requested.
+3.6 Data sources and analysis
+Questionnaire responses will be summarized using frequencies and percentages; selected numerical summaries may be reported where appropriate. Open-ended answers and interview notes will be grouped into themes such as stock monitoring, forecast trust, replenishment and usability. Only information relevant to system requirements will be retained in the project report.
+The sales dataset will be inspected for schema, time coverage, missing values, duplicate rows, inconsistent identifiers, outliers and zero/intermittent demand. Preprocessing decisions will be documented. Candidate features may include lagged sales, rolling summaries, calendar indicators and price/promotional variables where available. All features will be computed from information available at the prediction point. Data will be split chronologically, with validation used for model tuning and a held-out period reserved for final comparison. Data leakage checks will be part of the experiment log.
+3.7 System specification
+The application will accept authorized user requests, product and stock information, sales transactions or imported historical records, and forecasting parameters. It will validate and store the information, generate a forecast for a defined product and horizon, combine forecast and inventory context, and return stock-risk indicators, suggested replenishment quantities, trends and reports. The application will show product, forecast date/horizon and assumptions with each recommendation.
+3.8 Functional requirements
+Table 3.1: Functional requirements
+ID
+Requirement
+Specification
+FR1
+Authentication
+Allow an authorized user to sign in and sign out; restrict protected functions.
+FR2
+Product management
+Add, view and update product and SKU information.
+FR3
+Sales management
+Record or import sales with product references, date and quantity validation.
+FR4
+Inventory monitoring
+Maintain and display current on-hand and, where available, in-transit quantities.
+FR5
+Demand forecasting
+Generate a forecast for a product and stated horizon using the selected model.
+FR6
+Stock-risk analysis
+Compare forecast requirements with inventory position and configured thresholds.
+FR7
+Replenishment support
+Display a non-negative suggested replenishment quantity and its assumptions.
+FR8
+Dashboard and reports
+Summarize sales, forecasts, inventory status, risks and recommendations.
+FR9
+Model evaluation
+Record model version, evaluation period and error metrics for research reporting.
+3.9 Non-functional requirements
+Table 3.2: Non-functional requirements
+ID
+Quality attribute
+Proposed requirement
+NFR1
+Usability
+Use familiar labels and readable views suitable for users with ordinary retail-computing experience.
+NFR2
+Performance
+Common prototype pages and operations should respond within practical interactive time under normal test conditions; measured results will be reported.
+NFR3
+Security
+Require authentication for protected functions and never store passwords in plain text.
+NFR4
+Reliability
+Validate inputs and preserve consistency across products, sales and inventory records.
+NFR5
+Maintainability
+Separate application, forecasting and decision-rule components so each can be updated and tested.
+NFR6
+Compatibility
+Test the web interface in current mainstream desktop browsers.
+NFR7
+Explainability
+Present product, period, forecast quantity and key inventory assumptions with risk and reorder outputs.
+3.10 System architecture
+The proposed N-tier architecture separates the browser-based presentation layer from application services, decision-support logic, the forecasting component and the relational data tier. Application services validate requests and enforce business rules; the forecasting component returns predictions tagged with product, horizon, origin date and model version; the decision-support component combines these predictions with inventory data. The relational database stores operational and analytical records. This separation supports modular testing and avoids coupling the user interface to a particular model implementation.
+
+Figure 3.1: Proposed N-tier system architecture
+3.11 System context and data flows
+At the system boundary, the inventory manager submits product, inventory and sales information and requests forecasts or reports. The system returns dashboards, demand forecasts, stock-risk indicators and replenishment suggestions. A public historical sales dataset is an external input for research and testing, distinct from the requirements data obtained from participants.
+
+Figure 3.2: System context diagram
+The Level 1 data-flow diagram decomposes the system into product/inventory management, sales capture or import, demand forecasting, stock-risk assessment, and replenishment recommendation. Data stores hold product and inventory records, sales transactions, and forecast/recommendation outputs. The flow makes the dependency explicit: risk assessment consumes both forecast and stock position; replenishment suggestions are then returned for human review.
+
+Figure 3.3: Level 1 data-flow diagram
+3.12 Use cases and database design
+The primary actor is an authorized inventory manager. The manager authenticates, maintains products, updates stock, records or imports sales, requests forecasts, reviews risks and suggested orders, and views reports. Research evaluation may compare model metrics. The diagram distinguishes system-supported recommendations from purchase execution, which remains outside scope.
+
+Figure 3.4: Use-case diagram
+A relational design will represent users, products, inventory, sales, forecasts and recommendations. Product is the common reference for sales, inventory and forecast records. Recommendation records link the product and forecast used in the decision. Primary and foreign keys, appropriate date/quantity types, uniqueness constraints and validation rules will be defined during implementation. The diagram is a conceptual model; exact cardinality and whether inventory is stored as a single current row or a history of snapshots will be finalized during schema design.
+
+Figure 3.5: Core entity-relationship diagram
+*The one-to-one inventory relationship represents the current-stock view; a historical implementation may use one-to-many inventory snapshots.
+3.13 Forecasting and replenishment logic
+A baseline forecast will be compared with selected supervised models. Training and evaluation windows will preserve time order. Final selection will consider held-out error and computational practicality. For a product i and lead-time horizon L, the proposed target stock is the sum of forecast demand over the horizon plus an explicit safety-stock buffer: targetᵢ = Σₕ₌₁ᴸ forecastᵢ,ₕ + safety_stockᵢ. Net available stock is defined as on_handᵢ + confirmed_in_transitᵢ − allocatedᵢ, where allocation data are available. Suggested order quantity is max(0, targetᵢ − net_availableᵢ). If pack-size constraints are known, rounding will be documented; otherwise, the prototype will report the unrounded quantity. Overstock flags will use a disclosed threshold or upper target rather than an unstated universal rule.
+The workflow shows how data validation, feature construction, chronological model comparison, forecast generation and inventory calculations connect. MAPE will be omitted or qualified for zero-demand observations. A forecast is not guaranteed future demand; the application will present it as an estimate for human review.
+
+Figure 3.6: Forecasting and replenishment workflow
+*MAPE will be used only where its denominator and interpretation are valid.
+3.13.1 Proposed Replenishment Calculation and Assumptions
+For product i, the target-stock quantity will be calculated as forecasted demand accumulated over the replenishment lead time, plus a configured safety-stock allowance. Net available inventory will be calculated from on-hand stock plus confirmed in-transit stock, less allocations where allocation data are available. The suggested replenishment quantity will be the non-negative difference between target stock and net available inventory, expressed as max(0, target stock − net available inventory). Where packaging constraints are known, the implementation may round the result to an available order pack and disclose the rounding rule. Overstock warnings will be generated against an explicitly configured upper target, and these rules will be evaluated using documented test scenarios rather than presented as universally optimal decisions.
+3.14 Proposed technology and resource requirements
+Table 3.3: Proposed hardware and software requirements
+Category
+Proposed specification
+Purpose
+Hardware
+64-bit dual-core processor or better; 8 GB RAM recommended; at least 10 GB free storage
+Development, manageable data preparation, local testing
+Operating system
+Windows or Linux
+Development environment
+Programming / data
+Python; Pandas; NumPy; scikit-learn and/or one gradient-boosting library
+Preparation, experimentation and backend logic
+Web application
+A suitable Python web framework; HTML/CSS/JavaScript or a suitable frontend framework
+User interface and application services
+Database
+MySQL or PostgreSQL
+Relational storage for prototype data
+Version control / access
+Git; current mainstream desktop browser
+Change tracking and usability/compatibility tests
+Connectivity
+Internet access; local network optional
+Dataset acquisition, research and testing
+3.15 Chapter summary
+This chapter has specified the proposed applied research design, requirements, system architecture, database entities and model workflow. Requirements data and forecasting data will be handled as separate streams. The key design choices are a modular web architecture, time-aware forecasting evaluation, explicit inventory assumptions, and human review of suggested actions. These specifications guide implementation and testing in Chapter Four.
+
+CHAPTER 4: SYSTEM CODE GENERATION AND TESTING
+4.1 Introduction
+This chapter presents the planned approach for generating, integrating and evaluating the code for the proposed Smart Inventory Demand Forecasting and Optimization System. It describes the development environment, the intended implementation of the major modules, the integration of the forecasting service with inventory decision logic, and the verification and validation procedures. As this document is a proposal, the activities described in this chapter are planned rather than completed, and no test result or system outcome is presented as an observed finding. Actual screenshots, implementation decisions, measured model performance, test execution records and defects will replace the corresponding plans in the final report. The testing plan is designed to demonstrate whether the system satisfies the functional and non-functional specifications established in Chapter Three.
+4.2 Planned System Code Generation
+The system will be implemented incrementally in accordance with the iterative development approach described in Chapter Three. Initial work will establish the project repository, application configuration, relational database schema and authentication features. Subsequent increments will implement product maintenance, sales recording or import, stock monitoring and reporting. The machine learning component will then be developed and evaluated separately before being exposed to the application through a controlled service interface. Finally, forecast outputs will be integrated with inventory calculations to produce alerts, replenishment quantities and dashboard visualizations.
+4.2.1 Proposed Development Environment
+The development environment will use Python for preprocessing, feature engineering, forecasting experiments and the backend forecasting service. A suitable web framework will expose application functions and enforce input validation and authentication, while HTML, CSS and JavaScript or a suitable frontend framework will provide the browser interface. A relational DBMS, such as PostgreSQL or MySQL, will store users, products, transactions, inventory records and analytical outputs in normalized structures. Pandas, NumPy and selected machine learning libraries will support experimental evaluation of forecasting models. Git will track source changes and enable rollback of unsuccessful modifications, and all selected dependencies and versions will be documented in the final report.
+4.2.2 Planned Application Modules
+The authentication module will control access to protected features and prevent unauthorized modification of inventory data. Product and sales modules will maintain information required to interpret sales history and current stock conditions, with validation for missing fields, negative quantities and inconsistent product references. The forecasting module will retrieve prepared historical observations and return a forecast for a clearly identified product and horizon. The stock-risk module will compare predicted demand over a relevant replenishment horizon against available inventory and configurable assumptions. The replenishment module will calculate suggested order quantities, while the reporting dashboard will communicate historical demand, predictions, inventory status and the assumptions underlying recommendations.
+4.2.3 Proposed Forecasting and Replenishment Logic
+The forecasting experiment will include a transparent baseline and a small selection of supervised machine learning models chosen according to the available dataset and computational capacity. Historical observations will be partitioned chronologically, with any lag or rolling features calculated without using future information. Performance will be assessed using MAE and RMSE, and MAPE will be considered only for observations where zero or near-zero demand does not undermine interpretation. After comparative evaluation, the selected model will be saved and integrated into the forecasting service. The decision-support component will use the forecast, current stock and configurable lead-time or safety-stock assumptions to produce an explainable recommendation rather than an automatically executed purchase order.
+4.3 Proposed Software Integration
+Individual modules will initially be tested separately and then connected through documented application interfaces. The frontend will communicate with application services, which will retrieve and validate database records before requesting predictions from the forecasting component. Forecast results will be associated with the correct product, prediction date and forecast horizon to avoid using stale or mismatched predictions in inventory calculations. The stock-risk and replenishment modules will then consume forecast outputs and return formatted decision information to the dashboard. Integration tests will focus on both normal workflows and failure conditions, including missing sales history, database disconnection, invalid requests and unavailable prediction services.
+4.4 Planned Testing Strategy
+Testing will combine verification of the implementation against the specifications with validation of its usefulness to intended users. Unit tests will assess individual functions such as input validation, inventory adjustments, feature generation and reorder calculations. Integration and functional tests will exercise complete interactions among the interface, application services, database and forecasting module, while regression tests will be repeated after significant changes. Usability feedback will be collected from available peers and, where permission is obtained, retail personnel using a brief evaluation form. Performance, security and compatibility tests will examine response times under representative load, protected-route access and operation in supported browsers.
+4.4.1 Forecasting Model Evaluation
+The forecasting component will be evaluated on chronologically held-out retail observations that are not used to train the selected models. A baseline forecast will be included so that more complex models must demonstrate measurable improvement rather than being presumed superior. MAE and RMSE will be calculated on the same forecast horizon and comparable observations, and results will be reported by model and where appropriate by product group. MAPE will be reported only where its interpretation is reasonable, because zero-demand observations can make percentage errors undefined. The final report will document dataset selection, preprocessing choices, time partitions, tested parameters, numerical results and observed limitations.
+4.4.2 Planned Verification and Validation Evidence
+Each executed test will record its identifier, relevant system module, test condition, expected result, actual result and pass or fail status. Screenshots or logs will be retained as evidence for selected end-to-end tests and identified defects will be documented together with corrective action and retest outcomes. At least twenty test cases have been planned across the principal application modules in line with the departmental guide. The proposed cases are a starting point and will be refined after requirements validation and implementation details are finalized. All actual outcomes will remain blank until tests have been run on the working system.
+Table 4.1: Planned Test Cases
+ID
+Module
+Test condition
+Expected result
+TC01
+Authentication
+Valid account and password
+User reaches authorized dashboard
+TC02
+Authentication
+Incorrect password
+Access denied with safe message
+TC03
+Authentication
+Unauthenticated request to protected page
+Request rejected or redirected
+TC04
+Authentication
+Sign out of active session
+Protected session ends
+TC05
+Products
+Add valid product
+Product saved and visible
+TC06
+Products
+Submit product with missing required field
+Validation prevents save
+TC07
+Products
+Update existing product
+Updated values displayed
+TC08
+Products
+Attempt duplicate disallowed product identifier
+Duplicate rejected
+TC09
+Sales/Inventory
+Record valid product sale
+Sale stored and stock adjusted according to defined rules
+TC10
+Sales/Inventory
+Record sale for nonexistent product
+Invalid product reference rejected
+TC11
+Sales/Inventory
+Enter invalid negative sale quantity
+Input rejected
+TC12
+Sales/Inventory
+Import correctly formatted sales file
+Valid records imported and counted
+TC13
+Forecasting
+Forecast product with sufficient valid history
+Forecast returned with product and horizon
+TC14
+Forecasting
+Forecast product with inadequate history
+Useful error or fallback shown
+TC15
+Forecasting
+Malformed forecasting request
+Validation error returned
+TC16
+Forecasting
+Compare predictions with held-out observed sales
+Error metrics calculated and documented
+TC17
+Risks/Replenishment
+Projected demand exceeds available stock
+Stockout risk indicated
+TC18
+Risks/Replenishment
+Stock exceeds defined excess-stock threshold
+Overstock condition indicated
+TC19
+Risks/Replenishment
+Demand and inventory imply a positive order
+Nonnegative reorder quantity displayed
+TC20
+Risks/Replenishment
+Inputs imply no additional stock required
+Zero order displayed with explanation
+TC21
+Dashboard/Integration
+Request dashboard after recording a sale
+Updated stock and visual summaries displayed
+TC22
+Dashboard/Integration
+Prediction service is temporarily unavailable
+System handles failure without corrupting records
+TC23
+Security
+User attempts SQL/script injection in input
+Input safely handled without unauthorized execution
+TC24
+Usability/Performance
+Representative user completes key workflow
+Task completion and response time documented
+4.5 Planned Performance, Security and Usability Evaluation
+Performance evaluation will record response times for selected operations under normal conditions and under a modest simulated concurrent workload representative of the project environment. Security checks will verify authentication, authorization, input handling and protected access to inventory data without claiming the completeness of a formal penetration test. Compatibility tests will confirm operation in the selected mainstream browsers and document any rendering or interaction problems. A simple usability exercise will ask test participants to perform common tasks and rate clarity, navigation and comprehensibility of forecasts and replenishment recommendations. The final report will present measured observations, relevant limitations and evidence of any corrections made after evaluation.
+4.6 Evaluation of Research Objectives
+The first research objective will be evaluated through the documented exploratory analysis and identification of demand-related features in historical retail sales data. The second objective will be assessed using model comparison tables and held-out forecasting error measurements. The third objective will be verified through functional and integration tests showing that forecast outputs lead to risk indicators and replenishment recommendations in expected scenarios. The fourth objective will be assessed through forecasting results, executed test cases and user feedback on the implemented decision-support workflow. These measures will allow the final report to distinguish completed development activities from observed effectiveness rather than inferring success from implementation alone.
+4.7 Chapter Summary
+This chapter has specified how the proposed application will be implemented, integrated and evaluated after design approval. The work will proceed in increments that separate routine inventory functions from machine learning experimentation before connecting forecasts to inventory decisions. The testing plan includes quantitative forecasting evaluation and software verification and validation, with at least twenty documented functional and integration scenarios. Because the system has not yet been developed, no implementation outcome, numerical metric or test-pass claim has been reported in this proposal. The final project report will replace this plan with actual code evidence, test results, evaluation findings and any deviations from the proposed design.
+
+CHAPTER 5: PROPOSED CONCLUSIONS AND RECOMMENDATIONS FRAMEWORK
+5.1 Introduction
+This proposal has not yet generated implementation or evaluation results. This chapter therefore defines how conclusions and recommendations will be grounded in evidence after the system is built and tested; it does not claim that the objectives have already been achieved.
+5.2 Anticipated contribution
+The project is expected to produce an evaluated comparison of selected demand-forecasting approaches on a defined retail dataset and a working prototype that links forecasts to transparent stock-risk and replenishment suggestions. The contribution will be judged by both forecasting performance and whether the integrated application satisfies its stated functional requirements. The prototype will make its assumptions visible and preserve human authority over procurement.
+5.3 Basis for conclusions
+Demand analysis conclusions will be supported by documented data quality checks, descriptive analysis and selected forecasting features.
+Forecasting conclusions will be supported by held-out chronological metrics compared with a baseline and interpreted in light of product-level variation.
+Inventory-decision conclusions will be supported by tested scenarios for stockout risk, excess stock, positive replenishment and zero-order conditions.
+System-effectiveness conclusions will use executed functional and integration tests, measured response observations and usability feedback.
+Claims about generalization or operational value will be limited by the dataset, evaluation horizon and absence of live deployment.
+5.4 Anticipated limitations
+A public international dataset may not capture the market conditions, customer behavior or operational practices of Kenyan retailers. Participating outlets may not provide transaction histories, leaving requirements elicitation and model experimentation dependent on different sources. Forecast performance may vary for intermittent-demand products, promotions or short histories. Replenishment outputs depend on lead time, in-transit stock, safety stock and allocation assumptions; these may not represent every real constraint. The final report will document which limitations materialized and how they affect interpretation.
+5.5 Recommendation framework
+Recommendations will follow observed results. If forecasting performance is promising on held-out data, subsequent work may validate it on locally collected sales records before operational adoption. If results are weak or uneven, the report will identify affected product groups and consider data or feature improvements rather than overstate performance. If inventory suggestions depend on uncertain lead times or safety-stock assumptions, additional supplier and service-level information should be obtained before real purchasing use. Usability changes will be linked to documented feedback and retest evidence. Future work may extend the model comparison, incorporate uncertainty estimates, test realistic lead times, or evaluate the application in a supervised pilot.
+5.6 Chapter summary
+The final conclusions will be based on documented data analysis, forecasting evidence, tested system behavior and user feedback. The recommendations will follow those findings and be qualified by the limits of the dataset and prototype setting. No unobserved result is asserted in this proposal.
+
+REFERENCES
+Ali, A., Jayaraman, R., Azar, E. and Maalouf, M. (2024) 'Maximizing supply chain performance leveraging machine learning to anticipate customer backorders', Computers & Industrial Engineering, 194, 110414. doi:10.1016/j.cie.2024.110414.
+Andrade, L.A.C.G. and Cunha, C.B. (2023) 'Disaggregated retail forecasting: A gradient boosting approach', Applied Soft Computing, 141, 110283. doi:10.1016/j.asoc.2023.110283.
+Bergsma, R., de Ruijt, C. and Bhulai, S. (2025) 'A systematic review of machine learning approaches in inventory control optimization', Operations Research Perspectives, 15, 100367. doi:10.1016/j.orp.2025.100367.
+Liu, Y., Kalaitzi, D., Wang, M. and Papanagnou, C. (2025) 'A machine learning approach to inventory stockout prediction', Journal of Digital Economy, 4, pp. 144–155. doi:10.1016/j.jdec.2025.06.002.
+Ma, S. (2024) 'Retail store-SKU level replenishment planning with attribute-space graph recurrent neural networks', Expert Systems with Applications, 249, 123727. doi:10.1016/j.eswa.2024.123727.
+Makridakis, S., Spiliotis, E. and Assimakopoulos, V. (2022) 'M5 accuracy competition: Results, findings, and conclusions', International Journal of Forecasting, 38(4), pp. 1346–1364. doi:10.1016/j.ijforecast.2021.11.013.
+Mejía, S. and Aguilar, J. (2024) 'A demand forecasting system of product categories defined by their time series using a hybrid approach of ensemble learning with feature engineering', Computing, 106, pp. 3945–3965. doi:10.1007/s00607-024-01320-y.
+Muteti, J.N. and Makhamara, F. (2026) 'Effect of digital inventory management strategy on performance of Naivas Supermarkets in Nairobi City County, Kenya', Journal of Business Systems Innovation and Management Science, 3(1), pp. 1–18. Available at: https://academicpubs.org/ojs33/index.php/JBSIMS/article/view/90.
+Mwove, R.M. and Kithandi, C.K. (2026a) 'Effect of AI-inventory management on supply chain performance of large supermarkets in Nairobi City County, Kenya', African Journal of Commercial Studies, 7(1), pp. 136–143. Available at: https://ijcsacademia.com/index.php/journal/article/view/428.
+Mwove, R.M. and Kithandi, C.K. (2026b) 'Artificial intelligence demand forecasting and supply chain performance of large supermarkets in Nairobi City County, Kenya', African Journal of Commercial Studies, 7(1), pp. 162–174. doi:10.59413/ajocs/v7.i1.19.
+Seyedan, M., Mafakheri, F. and Wang, C. (2023) 'Order-up-to-level inventory optimization model using time-series demand forecasting with ensemble deep learning', Supply Chain Analytics, 3, 100024. doi:10.1016/j.sca.2023.100024.
+van der Haar, J.F., Wellens, A.P., Boute, R.N. and Basten, R.J.I. (2024) 'Supervised learning for integrated forecasting and inventory control', European Journal of Operational Research, 319(2), pp. 573–586. doi:10.1016/j.ejor.2024.07.004.
+
+APPENDICES
+APPENDIX I: PROPOSED REQUIREMENTS-ELICITATION QUESTIONNAIRE
+Title: Requirements Elicitation Questionnaire for the Smart Inventory Demand Forecasting and Optimization System
+Purpose: This academic questionnaire seeks information about inventory practices and desired system functions. Participation is voluntary. Do not include customer-identifying, payment-card or other confidential personal information. Responses will be used for this project and summarized without unnecessary personal identifiers.
+Section A: Respondent profile
+1. Role/position: __________________________________________
+2. Experience in retail operations:  ☐ Less than 1 year   ☐ 1–3 years   ☐ 4–6 years   ☐ More than 6 years
+3. Main responsibility:  ☐ Stock   ☐ Sales   ☐ Procurement   ☐ Management   ☐ Other: __________
+Section B: Current inventory practice
+4. How is inventory monitored?  ☐ Manual records   ☐ Spreadsheet   ☐ POS/inventory software   ☐ Other: ______
+5. How often do stockouts occur?  ☐ Never   ☐ Rarely   ☐ Sometimes   ☐ Often   ☐ Very often
+6. How often does excess or slow-moving stock occur?  ☐ Never   ☐ Rarely   ☐ Sometimes   ☐ Often   ☐ Very often
+7. What information is used for reorder decisions?  ☐ Current stock   ☐ Recent sales   ☐ Supplier advice   ☐ Manager judgement   ☐ Forecasts   ☐ Other: ______
+8. Does the current process use historical sales to estimate future demand?  ☐ Yes   ☐ No   ☐ Not sure
+9. How useful would a future-demand forecast be?  ☐ Not useful   ☐ Slightly useful   ☐ Moderately useful   ☐ Useful   ☐ Very useful
+10. Which outputs would be most useful?  ☐ Low-stock alert   ☐ Overstock alert   ☐ Demand forecast   ☐ Suggested reorder quantity   ☐ Sales trends   ☐ Dashboard/report
+11. What is the main challenge you experience when managing stock?________________________________________________________________________
+12. What additional feature would you recommend?________________________________________________________________________
+APPENDIX II: PROPOSED SEMI-STRUCTURED INTERVIEW GUIDE
+1. Please describe how stock is monitored and replenishment decisions are made.
+2. What information is most important when deciding whether and how much to reorder?
+3. What are common causes and effects of stockouts in your retail environment?
+4. What are common causes and effects of overstocking or slow-moving stock?
+5. How is historical sales information used when planning inventory?
+6. What would make a demand forecast trustworthy and useful to you?
+7. Which alerts, reports or recommendations should a decision-support system provide?
+8. What usability, security or operational concerns should be considered?
+APPENDIX III: PROPOSED WORK PLAN
+Appendix III: Proposed Work Plan
+Activity
+Months 1–2
+Months 3–5
+Months 6–8
+Proposal refinement and literature review
+●
+
+
+Requirements elicitation and analysis
+●
+
+
+Dataset acquisition, cleaning and exploratory analysis
+●
+●
+
+System analysis and design
+
+●
+
+Model development and comparison
+
+●
+
+Core web application development
+
+●
+●
+Forecasting integration and replenishment module
+
+
+●
+System testing and evaluation
+
+
+●
+Report writing, revision and presentation
+●
+●
+●
+APPENDIX IV: PROPOSED BUDGET
+Appendix IV: Proposed Budget
+Item
+Estimated quantity
+Unit cost (KSh)
+Total (KSh)
+Internet/data bundles
+8 months
+1,000
+8,000
+Printing and photocopying
+1 lot
+3,000
+3,000
+Stationery
+1 lot
+1,500
+1,500
+Local transport for requirements elicitation
+5 visits
+800
+4,000
+Binding/final documentation
+3 copies
+500
+1,500
+Contingency
+1 lot
+2,000
+2,000
+TOTAL
+
+
+20,000
+APPENDIX V: PROPOSED MODEL-EVALUATION PLAN
+The forecasting experiment will compare a simple baseline and a small number of candidate models using chronologically separated training, validation and holdout data. Candidate models may include a historical-naïve or linear baseline, Random Forest and one gradient-boosting method such as XGBoost or LightGBM, subject to dataset characteristics, library availability and supervisor guidance. The same horizon and comparable observations will be used for model comparison. MAE and RMSE will be reported; MAPE will be limited to observations for which zero demand does not make it undefined or misleading. Final model selection will be based on measured results and practical considerations, then the selected model will be integrated with the inventory decision-support logic.
+Evaluation record to complete during implementation
+Item
+To be recorded
+Dataset and source
+Name, version, access date, product/date coverage, documented license or use conditions
+Forecast target and horizon
+Demand unit, aggregation level, forecast origin and horizon
+Preprocessing
+Missing values, duplicate handling, outlier policy and feature definitions
+Temporal split
+Training, validation and holdout date ranges
+Models
+Baseline and model names, versions and relevant parameters
+Measures
+MAE, RMSE, qualified MAPE and disaggregation level
+Decision assumptions
+Lead time, safety stock, in-transit stock and overstock threshold
+Results
+Actual values only after the experiment has been executed
+APPENDIX VI: ITEMS REQUIRING SUPERVISOR CONFIRMATION
+The university supervisor’s name and signature remain blank until confirmed. The participating retail outlets, accessible population, final sample size and approved requirements-elicitation instruments must be confirmed before fieldwork. The final dataset and forecast horizon will be recorded before experimentation, and no actual evaluation scores or successful test results are claimed in this proposal. The project supervisor should also confirm whether the five-chapter proposal structure is required at this stage, since the supplied departmental guide describes the completed project report. Any approved changes will be incorporated before formal submission.

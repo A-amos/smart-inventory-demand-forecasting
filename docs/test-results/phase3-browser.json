@@ -1,0 +1,46 @@
+{
+  "executed_at_utc": "2026-09-30T21:46:16.903Z",
+  "browser": "Codex in-app browser",
+  "url": "http://localhost:5173/",
+  "sku": "BROWSER-MUOMQKPA",
+  "checks": [
+    {
+      "check": "Manager sign-in",
+      "passed": true
+    },
+    {
+      "check": "Category/product created through React",
+      "passed": true
+    },
+    {
+      "check": "Operational sale persisted with success feedback",
+      "passed": true,
+      "actual": "Sale #6: 3 kg; 20 -> 17; stock version 2"
+    },
+    {
+      "check": "Product-filtered sales history",
+      "passed": true,
+      "actual": "1 operational sale before import"
+    },
+    {
+      "check": "Actual CSV file uploaded and previewed",
+      "passed": true,
+      "actual": "1 valid, 2 rejected; all rejection reasons visible"
+    },
+    {
+      "check": "Confirm valid historical row",
+      "passed": true,
+      "actual": "50 kg historical sale imported; 2 rejected rows retained"
+    },
+    {
+      "check": "Repeated file preview",
+      "passed": true,
+      "actual": "committed; no second confirmation offered"
+    },
+    {
+      "check": "Reloaded inventory unaffected by import",
+      "passed": true,
+      "actual": "17 kg, two movements: opening and operational sale"
+    }
+  ]
+}

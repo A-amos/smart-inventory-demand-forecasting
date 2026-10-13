@@ -1,0 +1,103 @@
+{
+  "$defs": {
+    "ForecastPoint": {
+      "additionalProperties": false,
+      "properties": {
+        "forecast_date": {
+          "format": "date",
+          "title": "Forecast Date",
+          "type": "string"
+        },
+        "horizon_day": {
+          "maximum": 28,
+          "minimum": 1,
+          "title": "Horizon Day",
+          "type": "integer"
+        },
+        "predicted_demand": {
+          "minimum": 0,
+          "title": "Predicted Demand",
+          "type": "number"
+        }
+      },
+      "required": [
+        "forecast_date",
+        "horizon_day",
+        "predicted_demand"
+      ],
+      "title": "ForecastPoint",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "forecast_origin": {
+      "format": "date",
+      "title": "Forecast Origin",
+      "type": "string"
+    },
+    "horizon_days": {
+      "maximum": 28,
+      "minimum": 1,
+      "title": "Horizon Days",
+      "type": "integer"
+    },
+    "model_id": {
+      "minLength": 1,
+      "title": "Model Id",
+      "type": "string"
+    },
+    "model_version": {
+      "const": "retail-demand-v1",
+      "default": "retail-demand-v1",
+      "title": "Model Version",
+      "type": "string"
+    },
+    "points": {
+      "items": {
+        "$ref": "#/$defs/ForecastPoint"
+      },
+      "title": "Points",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "forecast-v1",
+      "default": "forecast-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "sku": {
+      "maxLength": 64,
+      "minLength": 1,
+      "title": "Sku",
+      "type": "string"
+    },
+    "source_namespace": {
+      "const": "uci-online-retail-ii",
+      "default": "uci-online-retail-ii",
+      "title": "Source Namespace",
+      "type": "string"
+    },
+    "trained_through": {
+      "format": "date",
+      "title": "Trained Through",
+      "type": "string"
+    }
+  },
+  "required": [
+    "sku",
+    "forecast_origin",
+    "horizon_days",
+    "model_id",
+    "trained_through",
+    "created_at",
+    "points"
+  ],
+  "title": "ForecastOutput",
+  "type": "object"
+}

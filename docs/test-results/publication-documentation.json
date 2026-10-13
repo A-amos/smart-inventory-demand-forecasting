@@ -1,0 +1,489 @@
+{
+  "executed_at_utc": "2026-10-13T11:34:30.096270+00:00",
+  "checks": [
+    {
+      "check": "Document exists: README.md",
+      "passed": true,
+      "actual": 11377
+    },
+    {
+      "check": "Document exists: DEVELOPMENT_LOG.md",
+      "passed": true,
+      "actual": 82886
+    },
+    {
+      "check": "Document exists: docs/API.md",
+      "passed": true,
+      "actual": 13228
+    },
+    {
+      "check": "Document exists: docs/ARCHITECTURE.md",
+      "passed": true,
+      "actual": 5601
+    },
+    {
+      "check": "Document exists: docs/DATABASE.md",
+      "passed": true,
+      "actual": 9859
+    },
+    {
+      "check": "Document exists: docs/TESTING.md",
+      "passed": true,
+      "actual": 19945
+    },
+    {
+      "check": "Document exists: docs/DECISION_SUPPORT.md",
+      "passed": true,
+      "actual": 10918
+    },
+    {
+      "check": "Document exists: docs/INSTALLATION_GUIDE.md",
+      "passed": true,
+      "actual": 5922
+    },
+    {
+      "check": "Document exists: docs/USER_MANUAL.md",
+      "passed": true,
+      "actual": 5445
+    },
+    {
+      "check": "Document exists: docs/SYSTEM_LIMITATIONS.md",
+      "passed": true,
+      "actual": 4371
+    },
+    {
+      "check": "Document exists: docs/OBJECTIVE_TRACEABILITY.md",
+      "passed": true,
+      "actual": 4452
+    },
+    {
+      "check": "Document exists: docs/USABILITY_EVALUATION.md",
+      "passed": true,
+      "actual": 4809
+    },
+    {
+      "check": "Document exists: docs/research/PHASE6_REVIEW.md",
+      "passed": true,
+      "actual": 2194
+    },
+    {
+      "check": "Document exists: docs/academic/CHAPTER_4_EVIDENCE.md",
+      "passed": true,
+      "actual": 11076
+    },
+    {
+      "check": "Document exists: docs/academic/CHAPTER_5_EVIDENCE.md",
+      "passed": true,
+      "actual": 6344
+    },
+    {
+      "check": "Document exists: docs/test-results/final-24-test-cases.md",
+      "passed": true,
+      "actual": 10890
+    },
+    {
+      "check": "Document exists: docs/test-results/PERFORMANCE.md",
+      "passed": true,
+      "actual": 5213
+    },
+    {
+      "check": "Document exists: docs/test-results/SECURITY_REVIEW.md",
+      "passed": true,
+      "actual": 4721
+    },
+    {
+      "check": "Document exists: docs/test-results/COMPATIBILITY.md",
+      "passed": true,
+      "actual": 2684
+    },
+    {
+      "check": "Document exists: docs/screenshots/final/README.md",
+      "passed": true,
+      "actual": 1081
+    },
+    {
+      "check": "Document exists: docs/DEMO_GUIDE.md",
+      "passed": true,
+      "actual": 7542
+    },
+    {
+      "check": "Document exists: docs/HOW_THE_SYSTEM_WORKS.md",
+      "passed": true,
+      "actual": 14688
+    },
+    {
+      "check": "Document exists: docs/PROJECT_DEFENSE_GUIDE.md",
+      "passed": true,
+      "actual": 7979
+    },
+    {
+      "check": "Document exists: docs/PUBLICATION_REVIEW.md",
+      "passed": true,
+      "actual": 9210
+    },
+    {
+      "check": "Document exists: NOTICE.md",
+      "passed": true,
+      "actual": 1709
+    },
+    {
+      "check": "All local Markdown links resolve",
+      "passed": true,
+      "actual": {
+        "links_checked": 165,
+        "missing": []
+      }
+    },
+    {
+      "check": "Exactly original TC01 through TC24 recorded",
+      "passed": true,
+      "actual": 24
+    },
+    {
+      "check": "No representative-user result invented",
+      "passed": true,
+      "actual": {
+        "pass": 23,
+        "pending": 1
+      }
+    },
+    {
+      "check": "TC01 actual referenced check",
+      "passed": true,
+      "actual": "Login returns a non-cacheable authorized manager session"
+    },
+    {
+      "check": "TC01 actual referenced check",
+      "passed": true,
+      "actual": "Login, category and product creation"
+    },
+    {
+      "check": "TC01 actual referenced check",
+      "passed": true,
+      "actual": "TC21 updated dashboard after sale"
+    },
+    {
+      "check": "TC02 actual referenced check",
+      "passed": true,
+      "actual": "Five failed logins trigger persistent lockout"
+    },
+    {
+      "check": "TC03 actual referenced check",
+      "passed": true,
+      "actual": "Anonymous dashboard denied"
+    },
+    {
+      "check": "TC03 actual referenced check",
+      "passed": true,
+      "actual": "Anonymous cannot record sales"
+    },
+    {
+      "check": "TC04 actual referenced check",
+      "passed": true,
+      "actual": "Manager logout revokes protected access"
+    },
+    {
+      "check": "TC04 actual referenced check",
+      "passed": true,
+      "actual": "Browser logout"
+    },
+    {
+      "check": "TC05 actual referenced check",
+      "passed": true,
+      "actual": "Login, category and product creation"
+    },
+    {
+      "check": "TC05 actual referenced check",
+      "passed": true,
+      "actual": "Exact labelled browser demonstration product persisted"
+    },
+    {
+      "check": "TC06 actual referenced check",
+      "passed": true,
+      "actual": "Missing required product field rejected"
+    },
+    {
+      "check": "TC07 actual referenced check",
+      "passed": true,
+      "actual": "Manager product update persisted"
+    },
+    {
+      "check": "TC07 actual referenced check",
+      "passed": true,
+      "actual": "TC23 script-like text safely rendered"
+    },
+    {
+      "check": "TC08 actual referenced check",
+      "passed": true,
+      "actual": "Duplicate SKU rejected"
+    },
+    {
+      "check": "TC09 actual referenced check",
+      "passed": true,
+      "actual": "Operational sale recorded"
+    },
+    {
+      "check": "TC09 actual referenced check",
+      "passed": true,
+      "actual": "Current stock and version match browser after sale/import"
+    },
+    {
+      "check": "TC09 actual referenced check",
+      "passed": true,
+      "actual": "One operational and one historical sale persisted"
+    },
+    {
+      "check": "TC09 actual referenced check",
+      "passed": true,
+      "actual": "Historical import generated no stock movement"
+    },
+    {
+      "check": "TC09 actual referenced check",
+      "passed": true,
+      "actual": "Two concurrent sales serialized safely"
+    },
+    {
+      "check": "TC10 actual referenced check",
+      "passed": true,
+      "actual": "Invalid product rejected without ledger changes"
+    },
+    {
+      "check": "TC11 actual referenced check",
+      "passed": true,
+      "actual": "Invalid quantity rejected without ledger changes"
+    },
+    {
+      "check": "TC11 actual referenced check",
+      "passed": true,
+      "actual": "Preview reports duplicate/invalid quantity/date/SKU rows"
+    },
+    {
+      "check": "TC12 actual referenced check",
+      "passed": true,
+      "actual": "Historical confirmation persists valid rows only"
+    },
+    {
+      "check": "TC12 actual referenced check",
+      "passed": true,
+      "actual": "Historical quantity exceeding current stock still leaves inventory/audit unchanged"
+    },
+    {
+      "check": "TC12 actual referenced check",
+      "passed": true,
+      "actual": "Historical import preview and confirmation"
+    },
+    {
+      "check": "TC12 actual referenced check",
+      "passed": true,
+      "actual": "Historical import generated no stock movement"
+    },
+    {
+      "check": "TC13 actual referenced check",
+      "passed": true,
+      "actual": "Actual frozen inference matches independently calculated last-28-day mean"
+    },
+    {
+      "check": "TC13 actual referenced check",
+      "passed": true,
+      "actual": "Frozen historical inference"
+    },
+    {
+      "check": "TC13 actual referenced check",
+      "passed": true,
+      "actual": "Real historical frozen forecast and 28 points persisted"
+    },
+    {
+      "check": "TC14 actual referenced check",
+      "passed": true,
+      "actual": "Unsupported/unmapped product rejected safely"
+    },
+    {
+      "check": "TC15 actual referenced check",
+      "passed": true,
+      "actual": "Horizon above contract"
+    },
+    {
+      "check": "TC17 actual referenced check",
+      "passed": true,
+      "actual": "Explainable historical recommendation"
+    },
+    {
+      "check": "TC17 actual referenced check",
+      "passed": true,
+      "actual": "Explainable original recommendation persisted"
+    },
+    {
+      "check": "TC18 actual referenced check",
+      "passed": true,
+      "actual": "Overstock uses strict configured threshold and zero reorder"
+    },
+    {
+      "check": "TC19 actual referenced check",
+      "passed": true,
+      "actual": "Explainable historical recommendation"
+    },
+    {
+      "check": "TC19 actual referenced check",
+      "passed": true,
+      "actual": "Explainable original recommendation persisted"
+    },
+    {
+      "check": "TC20 actual referenced check",
+      "passed": true,
+      "actual": "Overstock uses strict configured threshold and zero reorder"
+    },
+    {
+      "check": "TC20 actual referenced check",
+      "passed": true,
+      "actual": "Recommendation history remains immutable and chronologically ordered"
+    },
+    {
+      "check": "TC21 actual referenced check",
+      "passed": true,
+      "actual": "TC21 updated dashboard after sale"
+    },
+    {
+      "check": "TC21 actual referenced check",
+      "passed": true,
+      "actual": "Actual charts and comparison"
+    },
+    {
+      "check": "TC21 actual referenced check",
+      "passed": true,
+      "actual": "Existing operational sale updates dashboard stock and invalidates old decision"
+    },
+    {
+      "check": "TC22 actual referenced check",
+      "passed": true,
+      "actual": "Actual missing artifact returns clear 503 without ledger corruption"
+    },
+    {
+      "check": "TC22 actual referenced check",
+      "passed": true,
+      "actual": "Inventory API remains usable during real artifact failure"
+    },
+    {
+      "check": "TC22 actual referenced check",
+      "passed": true,
+      "actual": "Artifact restored and verified after failure test"
+    },
+    {
+      "check": "TC23 actual referenced check",
+      "passed": true,
+      "actual": "SQL-like login denied with generic error"
+    },
+    {
+      "check": "TC23 actual referenced check",
+      "passed": true,
+      "actual": "Script/SQL-like product text round-trips as data"
+    },
+    {
+      "check": "TC23 actual referenced check",
+      "passed": true,
+      "actual": "TC23 script-like text safely rendered"
+    },
+    {
+      "check": "Original proposal preserved",
+      "passed": true,
+      "actual": "9b0d71f1e00b9e8fb979e577c8e48cacda0051388f0745dfe740ed170e1d24a2"
+    },
+    {
+      "check": "All requested actual views recorded",
+      "passed": true,
+      "actual": [
+        "login",
+        "dashboard",
+        "categories",
+        "products",
+        "inventory",
+        "inventory-history",
+        "sales-entry",
+        "sales-history",
+        "csv-import-preview",
+        "forecast",
+        "recommendation",
+        "model-comparison"
+      ]
+    },
+    {
+      "check": "Screenshot hash: docs/screenshots/final/categories.jpg",
+      "passed": true,
+      "actual": 48325
+    },
+    {
+      "check": "Screenshot hash: docs/screenshots/final/compatibility-edge-chart.jpg",
+      "passed": true,
+      "actual": 58104
+    },
+    {
+      "check": "Screenshot hash: docs/screenshots/final/csv-import-preview.jpg",
+      "passed": true,
+      "actual": 129906
+    },
+    {
+      "check": "Screenshot hash: docs/screenshots/final/dashboard.jpg",
+      "passed": true,
+      "actual": 169463
+    },
+    {
+      "check": "Screenshot hash: docs/screenshots/final/forecast.jpg",
+      "passed": true,
+      "actual": 455757
+    },
+    {
+      "check": "Screenshot hash: docs/screenshots/final/inventory-history.jpg",
+      "passed": true,
+      "actual": 75221
+    },
+    {
+      "check": "Screenshot hash: docs/screenshots/final/inventory.jpg",
+      "passed": true,
+      "actual": 45575
+    },
+    {
+      "check": "Screenshot hash: docs/screenshots/final/login.jpg",
+      "passed": true,
+      "actual": 24147
+    },
+    {
+      "check": "Screenshot hash: docs/screenshots/final/model-comparison.jpg",
+      "passed": true,
+      "actual": 42536
+    },
+    {
+      "check": "Screenshot hash: docs/screenshots/final/products.jpg",
+      "passed": true,
+      "actual": 78466
+    },
+    {
+      "check": "Screenshot hash: docs/screenshots/final/recommendation-detail.jpg",
+      "passed": true,
+      "actual": 30156
+    },
+    {
+      "check": "Screenshot hash: docs/screenshots/final/recommendation.jpg",
+      "passed": true,
+      "actual": 369069
+    },
+    {
+      "check": "Screenshot hash: docs/screenshots/final/sales-entry.jpg",
+      "passed": true,
+      "actual": 68348
+    },
+    {
+      "check": "Screenshot hash: docs/screenshots/final/sales-history.jpg",
+      "passed": true,
+      "actual": 80165
+    },
+    {
+      "check": "Summary matches executed suites",
+      "passed": true,
+      "actual": 251
+    },
+    {
+      "check": "Historical date/UK limitation in conclusions",
+      "passed": true,
+      "actual": "Current inference not claimed"
+    }
+  ]
+}

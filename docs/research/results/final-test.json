@@ -1,0 +1,164 @@
+{
+  "environment": {
+    "packages": {
+      "joblib": "1.5.1",
+      "matplotlib": "3.10.3",
+      "numpy": "2.2.6",
+      "openpyxl": "3.1.5",
+      "pandas": "2.2.3",
+      "pydantic": "2.11.4",
+      "scikit-learn": "1.6.1",
+      "scipy": "1.15.3",
+      "xgboost": "3.0.2"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.14"
+  },
+  "evaluated_at_utc": "2026-09-30T22:58:58.097159+00:00",
+  "frozen_selection_sha256": "0cc2a83c3e405f006c172c5082fa7a249f7ccbc0fc1a0a64f5f187ec56971bf6",
+  "phase": "final_test",
+  "prediction_sha256": "23f7500943a16b26a1caeda33ac5a949f64e3619abbc2da7b2e91d55c5447946",
+  "protocol_sha256": "2ba2bb38160b7366feb12dded326450fcf5058affdeccb86743a31c092b0b2d5",
+  "run_id": "uci-retail-v1-0cc2a83c3e40",
+  "scores": {
+    "mean_28": {
+      "mae": 5.3350340136054415,
+      "mape": null,
+      "mape_policy": "omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset",
+      "observations": 1680,
+      "rmse": 17.944563987477665,
+      "zero_actual_count": 1169
+    },
+    "rf_leaf5": {
+      "mae": 6.545168748927346,
+      "mape": null,
+      "mape_policy": "omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset",
+      "observations": 1680,
+      "rmse": 18.516364750269418,
+      "zero_actual_count": 1169
+    },
+    "seasonal_naive": {
+      "mae": 4.939880952380952,
+      "mape": null,
+      "mape_policy": "omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset",
+      "observations": 1680,
+      "rmse": 17.00852377346079,
+      "zero_actual_count": 1169
+    },
+    "xgb_depth5": {
+      "mae": 5.6156688673585275,
+      "mape": null,
+      "mape_policy": "omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset",
+      "observations": 1680,
+      "rmse": 18.84631666771529,
+      "zero_actual_count": 1169
+    }
+  },
+  "selected_by_validation_only": "mean_28",
+  "source_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+  "test_label_sha256": "02a13af4bef6323025d4a86d89380c4a60f29472255dbe48e171f9b0fd8060ba",
+  "timings": [
+    {
+      "candidate": "mean_28",
+      "effective_parameters": {
+        "kind": "mean_28"
+      },
+      "feature_training_rows": null,
+      "inference_seconds": 0.8970231000002968,
+      "origin": "2011-11-10",
+      "training_seconds": 1.7000002117129043e-06,
+      "warmup_rows_excluded": 0
+    },
+    {
+      "candidate": "rf_leaf5",
+      "effective_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": 12,
+        "max_features": 1.0,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 5,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 80,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 20261001,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "feature_training_rows": 39433,
+      "inference_seconds": 4.252881200000047,
+      "origin": "2011-11-10",
+      "training_seconds": 33.317627500000526,
+      "warmup_rows_excluded": 1680
+    },
+    {
+      "candidate": "seasonal_naive",
+      "effective_parameters": {
+        "kind": "seasonal_naive"
+      },
+      "feature_training_rows": null,
+      "inference_seconds": 1.4767573999997694,
+      "origin": "2011-11-10",
+      "training_seconds": 2.6999987312592566e-06,
+      "warmup_rows_excluded": 0
+    },
+    {
+      "candidate": "xgb_depth5",
+      "effective_parameters": {
+        "base_score": null,
+        "booster": null,
+        "callbacks": null,
+        "colsample_bylevel": null,
+        "colsample_bynode": null,
+        "colsample_bytree": 1,
+        "device": null,
+        "early_stopping_rounds": null,
+        "enable_categorical": false,
+        "eval_metric": null,
+        "feature_types": null,
+        "feature_weights": null,
+        "gamma": null,
+        "grow_policy": null,
+        "importance_type": null,
+        "interaction_constraints": null,
+        "learning_rate": 0.05,
+        "max_bin": null,
+        "max_cat_threshold": null,
+        "max_cat_to_onehot": null,
+        "max_delta_step": null,
+        "max_depth": 5,
+        "max_leaves": null,
+        "min_child_weight": 10,
+        "missing": {
+          "nonfinite_float": "nan"
+        },
+        "monotone_constraints": null,
+        "multi_strategy": null,
+        "n_estimators": 150,
+        "n_jobs": 2,
+        "num_parallel_tree": null,
+        "objective": "reg:squarederror",
+        "random_state": 20261001,
+        "reg_alpha": null,
+        "reg_lambda": 5,
+        "sampling_method": null,
+        "scale_pos_weight": null,
+        "subsample": 1,
+        "tree_method": "hist",
+        "validate_parameters": null,
+        "verbosity": null
+      },
+      "feature_training_rows": 39433,
+      "inference_seconds": 2.5741133999999875,
+      "origin": "2011-11-10",
+      "training_seconds": 4.283153500000481,
+      "warmup_rows_excluded": 1680
+    }
+  ]
+}

@@ -1,0 +1,587 @@
+ Image smartinventory-backend Building 
+ Image smartinventory-frontend Building 
+ Image smartinventory-migrate Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.53kB done
+#1 DONE 0.0s
+
+#2 [migrate internal] load build definition from Dockerfile
+#2 transferring dockerfile: 872B 0.1s done
+#2 DONE 0.3s
+
+#3 [frontend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 276B 0.1s done
+#3 DONE 0.3s
+
+#4 [backend internal] load metadata for docker.io/library/python:3.12-slim
+#4 ...
+
+#5 [auth] library/python:pull token for registry-1.docker.io
+#5 DONE 0.0s
+
+#6 [auth] library/node:pull token for registry-1.docker.io
+#6 DONE 0.0s
+
+#7 [frontend internal] load metadata for docker.io/library/node:22-alpine
+#7 DONE 2.5s
+
+#4 [migrate internal] load metadata for docker.io/library/python:3.12-slim
+#4 ...
+
+#8 [frontend internal] load .dockerignore
+#8 transferring context: 63B 0.0s done
+#8 DONE 0.1s
+
+#9 [frontend internal] load build context
+#9 transferring context: 166.12kB 0.1s done
+#9 DONE 0.1s
+
+#10 [frontend 1/6] FROM docker.io/library/node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402
+#10 resolve docker.io/library/node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402 0.1s done
+#10 DONE 0.1s
+
+#11 [frontend 2/6] WORKDIR /app
+#11 CACHED
+
+#12 [frontend 3/6] COPY package*.json ./
+#12 DONE 0.1s
+
+#4 [migrate internal] load metadata for docker.io/library/python:3.12-slim
+#4 ...
+
+#13 [frontend 4/6] COPY pnpm-lock.yaml pnpm-workspace.yaml ./
+#13 DONE 0.1s
+
+#14 [frontend 5/6] RUN corepack enable && corepack prepare pnpm@11.19.0 --activate && pnpm install --frozen-lockfile
+#14 ...
+
+#4 [migrate internal] load metadata for docker.io/library/python:3.12-slim
+#4 DONE 4.0s
+
+#15 [backend internal] load .dockerignore
+#15 transferring context: 361B 0.0s done
+#15 DONE 0.1s
+
+#16 [migrate internal] load build context
+#16 DONE 0.0s
+
+#17 [migrate  1/12] FROM docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+#17 resolve docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1 0.1s done
+#17 sha256:bbc5a12237474ec0b23b5051260d56d6436a24d70d9cad961adebe7a037ed813 0B / 249B 0.2s
+#17 sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 0B / 12.12MB 0.2s
+#17 sha256:75b6a36c64a1cf3520fc4b4aae4739d5caa8a6a05c27835a920a61784c9c32f8 0B / 1.29MB 0.2s
+#17 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 0B / 29.84MB 0.2s
+#17 ...
+
+#16 [migrate internal] load build context
+#16 transferring context: 1.59MB 1.3s done
+#16 DONE 1.4s
+
+#17 [migrate  1/12] FROM docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+#17 sha256:bbc5a12237474ec0b23b5051260d56d6436a24d70d9cad961adebe7a037ed813 249B / 249B 1.1s
+#17 sha256:bbc5a12237474ec0b23b5051260d56d6436a24d70d9cad961adebe7a037ed813 249B / 249B 1.1s done
+#17 sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 1.05MB / 12.12MB 1.1s
+#17 sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 2.10MB / 12.12MB 1.5s
+#17 sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 3.15MB / 12.12MB 1.8s
+#17 sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 4.19MB / 12.12MB 2.4s
+#17 sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 5.24MB / 12.12MB 3.2s
+#17 sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 6.29MB / 12.12MB 4.1s
+#17 sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 7.34MB / 12.12MB 5.0s
+#17 sha256:75b6a36c64a1cf3520fc4b4aae4739d5caa8a6a05c27835a920a61784c9c32f8 0B / 1.29MB 5.3s
+#17 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 1.05MB / 29.84MB 5.3s
+#17 sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 8.39MB / 12.12MB 5.7s
+#17 sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 9.44MB / 12.12MB 6.6s
+#17 sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 10.49MB / 12.12MB 7.5s
+#17 sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 11.53MB / 12.12MB 8.4s
+#17 sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 12.12MB / 12.12MB 9.3s done
+#17 sha256:75b6a36c64a1cf3520fc4b4aae4739d5caa8a6a05c27835a920a61784c9c32f8 1.05MB / 1.29MB 9.5s
+#17 sha256:75b6a36c64a1cf3520fc4b4aae4739d5caa8a6a05c27835a920a61784c9c32f8 1.29MB / 1.29MB 10.1s done
+#17 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 3.15MB / 29.84MB 10.2s
+#17 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 5.24MB / 29.84MB 12.8s
+#17 ...
+
+#14 [frontend 5/6] RUN corepack enable && corepack prepare pnpm@11.19.0 --activate && pnpm install --frozen-lockfile
+#14 4.525 Preparing pnpm@11.19.0 for immediate activation...
+#14 ...
+
+#17 [migrate  1/12] FROM docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+#17 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 7.34MB / 29.84MB 14.7s
+#17 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 9.44MB / 29.84MB 16.5s
+#17 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 11.53MB / 29.84MB 17.9s
+#17 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 13.63MB / 29.84MB 18.8s
+#17 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 15.73MB / 29.84MB 19.7s
+#17 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 17.83MB / 29.84MB 20.7s
+#17 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 19.92MB / 29.84MB 21.7s
+#17 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 22.02MB / 29.84MB 22.6s
+#17 ...
+
+#14 [frontend 5/6] RUN corepack enable && corepack prepare pnpm@11.19.0 --activate && pnpm install --frozen-lockfile
+#14 25.08 ? Verifying lockfile against supply-chain policies (275 entries)...
+#14 25.17 Lockfile is up to date, resolution step is skipped
+#14 26.39 Progress: resolved 1, reused 0, downloaded 0, added 0
+#14 27.12 Packages: +204
+#14 27.12 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#14 27.98 Progress: resolved 204, reused 0, downloaded 0, added 0
+#14 ...
+
+#17 [backend  1/12] FROM docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+#17 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 29.84MB / 29.84MB 26.9s done
+#17 extracting sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e
+#17 ...
+
+#14 [frontend 5/6] RUN corepack enable && corepack prepare pnpm@11.19.0 --activate && pnpm install --frozen-lockfile
+#14 31.19 Progress: resolved 204, reused 0, downloaded 1, added 0
+#14 31.73 Packages are hard linked from the content-addressable store to the virtual store.
+#14 31.73   Content-addressable store is at: /root/.local/share/pnpm/store/v11
+#14 31.73   Virtual store is at:             node_modules/.pnpm
+#14 32.26 Progress: resolved 204, reused 0, downloaded 17, added 4
+#14 32.67 [WARN] Tarball download average speed 38 KiB/s (size 80 KiB) is below 50 KiB/s: https://registry.npmjs.org/victory-vendor/-/victory-vendor-37.3.6.tgz (GET)
+#14 33.31 Progress: resolved 204, reused 0, downloaded 54, added 13
+#14 34.36 Progress: resolved 204, reused 0, downloaded 90, added 45
+#14 35.41 Progress: resolved 204, reused 0, downloaded 125, added 82
+#14 35.66 [WARN] Request took 10312ms: https://registry.npmjs.org/@babel%2Fhelper-module-transforms
+#14 35.67 [WARN] Request took 10035ms: https://registry.npmjs.org/@esbuild%2Flinux-arm64
+#14 35.74 [WARN] Request took 10143ms: https://registry.npmjs.org/@esbuild%2Ffreebsd-arm64
+#14 35.92 [WARN] Request took 10488ms: https://registry.npmjs.org/@babel%2Fhelpers
+#14 36.09 [WARN] Request took 10411ms: https://registry.npmjs.org/@esbuild%2Flinux-loong64
+#14 36.15 [WARN] Request took 10698ms: https://registry.npmjs.org/@babel%2Fruntime
+#14 36.25 [WARN] Request took 10762ms: https://registry.npmjs.org/@babel%2Ftypes
+#14 36.28 [WARN] Request took 11007ms: https://registry.npmjs.org/@babel%2Fgenerator
+#14 36.39 [WARN] Request took 10909ms: https://registry.npmjs.org/@babel%2Ftraverse
+#14 36.43 Progress: resolved 204, reused 0, downloaded 149, added 149
+#14 36.61 [WARN] Request took 11185ms: https://registry.npmjs.org/@babel%2Fparser
+#14 36.66 [WARN] Request took 11405ms: https://registry.npmjs.org/@babel%2Fcore
+#14 36.77 [WARN] Tarball download average speed 3 KiB/s (size 5 KiB) is below 50 KiB/s: https://registry.npmjs.org/@types/estree/-/estree-1.0.9.tgz (GET)
+#14 ...
+
+#17 [backend  1/12] FROM docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+#17 extracting sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 8.6s done
+#17 extracting sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 8.6s done
+#17 extracting sha256:75b6a36c64a1cf3520fc4b4aae4739d5caa8a6a05c27835a920a61784c9c32f8
+#17 extracting sha256:75b6a36c64a1cf3520fc4b4aae4739d5caa8a6a05c27835a920a61784c9c32f8 1.0s done
+#17 extracting sha256:75b6a36c64a1cf3520fc4b4aae4739d5caa8a6a05c27835a920a61784c9c32f8 1.0s done
+#17 extracting sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4
+#17 extracting sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 2.6s done
+#17 extracting sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 2.6s done
+#17 extracting sha256:bbc5a12237474ec0b23b5051260d56d6436a24d70d9cad961adebe7a037ed813 0.0s done
+#17 DONE 39.8s
+
+#18 [backend  2/12] WORKDIR /opt/project
+#18 DONE 2.0s
+
+#19 [backend  3/12] RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 && rm -rf /var/lib/apt/lists/*
+#19 1.540 Hit:1 http://deb.debian.org/debian trixie InRelease
+#19 1.674 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#19 3.051 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#19 ...
+
+#14 [frontend 5/6] RUN corepack enable && corepack prepare pnpm@11.19.0 --activate && pnpm install --frozen-lockfile
+#14 37.44 [WARN] Request took 12944ms: https://registry.npmjs.org/pnpm
+#14 37.49 
+#14 37.49    ╭───────────────────────────────────────────────╮
+#14 37.49    │                                               │
+#14 37.49    │     Update available! 11.19.0 → 12.11.2.      │
+#14 37.49    │     Changelog: https://pnpm.io/v/12.11.2      │
+#14 37.49    │   To update, run: corepack use pnpm@12.11.2   │
+#14 37.49    │                                               │
+#14 37.49    ╰───────────────────────────────────────────────╯
+#14 37.49 
+#14 37.53 Progress: resolved 204, reused 0, downloaded 166, added 166
+#14 38.53 Progress: resolved 204, reused 0, downloaded 178, added 178
+#14 39.15 [WARN] Tarball download average speed 3 KiB/s (size 15 KiB) is below 50 KiB/s: https://registry.npmjs.org/@types/babel__traverse/-/babel__traverse-7.28.0.tgz (GET)
+#14 39.53 Progress: resolved 204, reused 0, downloaded 191, added 191
+#14 39.68 [WARN] Tarball download average speed 0 KiB/s (size 4 KiB) is below 50 KiB/s: https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.7.0.tgz (GET)
+#14 40.53 Progress: resolved 204, reused 0, downloaded 192, added 192
+#14 41.54 Progress: resolved 204, reused 0, downloaded 194, added 194
+#14 42.23 [WARN] Tarball download average speed 47 KiB/s (size 503 KiB) is below 50 KiB/s: https://registry.npmjs.org/es-toolkit/-/es-toolkit-1.52.0.tgz (GET)
+#14 43.32 [WARN] Tarball download average speed 34 KiB/s (size 294 KiB) is below 50 KiB/s: https://registry.npmjs.org/@babel/types/-/types-7.29.8.tgz (GET)
+#14 43.52 Progress: resolved 204, reused 0, downloaded 195, added 194
+#14 44.52 Progress: resolved 204, reused 0, downloaded 197, added 196
+#14 45.52 Progress: resolved 204, reused 0, downloaded 198, added 198
+#14 46.72 [WARN] Tarball download average speed 15 KiB/s (size 251 KiB) is below 50 KiB/s: https://registry.npmjs.org/immer/-/immer-11.1.18.tgz (GET)
+#14 46.78 Progress: resolved 204, reused 0, downloaded 199, added 198
+#14 47.77 Progress: resolved 204, reused 0, downloaded 199, added 199
+#14 48.01 [WARN] Request took 12207ms: https://registry.npmjs.org/@types%2Fd3-time
+#14 ...
+
+#19 [backend  3/12] RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 && rm -rf /var/lib/apt/lists/*
+#19 5.203 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]
+#19 ...
+
+#14 [frontend 5/6] RUN corepack enable && corepack prepare pnpm@11.19.0 --activate && pnpm install --frozen-lockfile
+#14 50.98 [WARN] Request took 20025ms: https://registry.npmjs.org/@rollup%2Frollup-linux-ppc64-gnu
+#14 53.53 Progress: resolved 204, reused 0, downloaded 200, added 199
+#14 53.62 [WARN] Tarball download average speed 26 KiB/s (size 571 KiB) is below 50 KiB/s: https://registry.npmjs.org/rollup/-/rollup-4.63.5.tgz (GET)
+#14 54.53 Progress: resolved 204, reused 0, downloaded 201, added 201
+#14 54.94 [WARN] Tarball download average speed 46 KiB/s (size 1130 KiB) is below 50 KiB/s: https://registry.npmjs.org/react-dom/-/react-dom-19.1.0.tgz (GET)
+#14 55.53 Progress: resolved 204, reused 0, downloaded 203, added 203
+#14 55.76 [WARN] Tarball download average speed 46 KiB/s (size 924 KiB) is below 50 KiB/s: https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.63.5.tgz (GET)
+#14 55.98 Progress: resolved 204, reused 0, downloaded 204, added 204, done
+#14 56.89 [WARN] Request took 20932ms: https://registry.npmjs.org/@types%2Festree
+#14 57.60 ✓ Lockfile passes supply-chain policies (275 entries in 32.5s)
+#14 57.63 .../esbuild@0.25.12/node_modules/esbuild postinstall$ node install.js
+#14 57.93 .../esbuild@0.25.12/node_modules/esbuild postinstall: Done
+#14 58.26 
+#14 58.26 dependencies:
+#14 58.26 + react 19.1.0
+#14 58.26 + react-dom 19.1.0
+#14 58.26 + react-is 19.1.0
+#14 58.26 + recharts 3.10.1
+#14 58.26 
+#14 58.26 devDependencies:
+#14 58.26 + @tailwindcss/vite 4.1.5
+#14 58.26 + @testing-library/jest-dom 6.6.3
+#14 58.26 + @testing-library/react 16.3.0
+#14 58.26 + @vitejs/plugin-react 4.4.1
+#14 58.26 + jsdom 26.1.0
+#14 58.26 + tailwindcss 4.1.5
+#14 58.26 + vite 6.4.3
+#14 58.26 + vitest 4.1.11
+#14 58.26 
+#14 58.42 Done in 38.5s using pnpm v11.19.0
+#14 DONE 59.1s
+
+#19 [backend  3/12] RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 && rm -rf /var/lib/apt/lists/*
+#19 ...
+
+#20 [frontend 6/6] COPY . .
+#20 DONE 0.6s
+
+#19 [backend  3/12] RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 && rm -rf /var/lib/apt/lists/*
+#19 ...
+
+#21 [frontend] exporting to image
+#21 exporting layers
+#21 exporting layers 28.0s done
+#21 exporting manifest sha256:7984d0f0876ad1ece53b10ae951257e57d2c1a81b2bba9d76b0a72458151e96d 0.0s done
+#21 exporting config sha256:01ed5f73b2e2027093ee0be13c645bc501fd14b2835fc968634f6cbb03f863ef 0.0s done
+#21 exporting attestation manifest sha256:b7e4bc31c7991a8be776597bb6f6a28a14c66ed08597c8496f81491603f7272b
+#21 exporting attestation manifest sha256:b7e4bc31c7991a8be776597bb6f6a28a14c66ed08597c8496f81491603f7272b 0.0s done
+#21 exporting manifest list sha256:c2b7b0c40a7f3b2ae03abfdbd5db9a3437f5987b186a3d4693a244ded867163a 0.0s done
+#21 naming to docker.io/library/smartinventory-frontend:latest done
+#21 unpacking to docker.io/library/smartinventory-frontend:latest
+#21 ...
+
+#19 [backend  3/12] RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 && rm -rf /var/lib/apt/lists/*
+#19 59.73 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [4412 B]
+#19 59.93 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [267 kB]
+#19 62.42 Fetched 10.0 MB in 1min 2s (163 kB/s)
+#19 62.42 Reading package lists...
+#19 65.41 Reading package lists...
+#19 ...
+
+#21 [frontend] exporting to image
+#21 unpacking to docker.io/library/smartinventory-frontend:latest 22.5s done
+#21 DONE 50.9s
+
+#19 [backend  3/12] RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 && rm -rf /var/lib/apt/lists/*
+#19 65.41 Reading package lists...
+#19 67.74 Building dependency tree...
+#19 ...
+
+#22 [frontend] resolving provenance for metadata file
+#22 DONE 0.1s
+
+#19 [backend  3/12] RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 && rm -rf /var/lib/apt/lists/*
+#19 67.74 Building dependency tree...
+#19 68.39 Reading state information...
+#19 69.40 The following NEW packages will be installed:
+#19 69.40   libgomp1
+#19 69.89 0 upgraded, 1 newly installed, 0 to remove and 1 not upgraded.
+#19 69.89 Need to get 137 kB of archives.
+#19 69.89 After this operation, 377 kB of additional disk space will be used.
+#19 69.89 Get:1 http://deb.debian.org/debian trixie/main amd64 libgomp1 amd64 14.2.0-19 [137 kB]
+#19 70.76 debconf: unable to initialize frontend: Dialog
+#19 70.76 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#19 70.76 debconf: falling back to frontend: Readline
+#19 70.76 debconf: unable to initialize frontend: Readline
+#19 70.76 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 1.)
+#19 70.76 debconf: falling back to frontend: Teletype
+#19 70.78 debconf: unable to initialize frontend: Teletype
+#19 70.78 debconf: (This frontend requires a controlling tty.)
+#19 70.78 debconf: falling back to frontend: Noninteractive
+#19 72.69 Fetched 137 kB in 1s (154 kB/s)
+#19 72.76 Selecting previously unselected package libgomp1:amd64.
+#19 72.76 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 5660 files and directories currently installed.)
+#19 72.79 Preparing to unpack .../libgomp1_14.2.0-19_amd64.deb ...
+#19 72.80 Unpacking libgomp1:amd64 (14.2.0-19) ...
+#19 72.88 Setting up libgomp1:amd64 (14.2.0-19) ...
+#19 72.90 Processing triggers for libc-bin (2.41-12+deb13u4) ...
+#19 DONE 74.8s
+
+#23 [backend  4/12] COPY backend/requirements.txt backend/requirements-lock.txt /tmp/backend/
+#23 DONE 0.1s
+
+#24 [backend  5/12] COPY ml/requirements.txt /tmp/ml/requirements.txt
+#24 DONE 0.1s
+
+#25 [migrate  6/12] RUN pip install --no-cache-dir -r /tmp/backend/requirements.txt -r /tmp/ml/requirements.txt
+#25 5.968 Collecting fastapi==0.143.0 (from -r /tmp/backend/requirements.txt (line 2))
+#25 6.758   Downloading fastapi-0.143.0-py3-none-any.whl.metadata (26 kB)
+#25 7.089 Collecting uvicorn==0.34.2 (from -r /tmp/backend/requirements.txt (line 3))
+#25 7.288   Downloading uvicorn-0.34.2-py3-none-any.whl.metadata (6.5 kB)
+#25 9.595 Collecting SQLAlchemy==2.0.40 (from -r /tmp/backend/requirements.txt (line 4))
+#25 9.789   Downloading sqlalchemy-2.0.40-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.6 kB)
+#25 10.68 Collecting pydantic==2.11.4 (from -r /tmp/backend/requirements.txt (line 5))
+#25 10.88   Downloading pydantic-2.11.4-py3-none-any.whl.metadata (66 kB)
+#25 11.33 Collecting pydantic-settings==2.9.1 (from -r /tmp/backend/requirements.txt (line 6))
+#25 11.58   Downloading pydantic_settings-2.9.1-py3-none-any.whl.metadata (3.8 kB)
+#25 11.82 Collecting PyMySQL==1.1.1 (from -r /tmp/backend/requirements.txt (line 7))
+#25 12.03   Downloading PyMySQL-1.1.1-py3-none-any.whl.metadata (4.4 kB)
+#25 13.34 Collecting cryptography==50.0.2 (from -r /tmp/backend/requirements.txt (line 8))
+#25 13.54   Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+#25 13.87 Collecting alembic==1.15.2 (from -r /tmp/backend/requirements.txt (line 9))
+#25 14.13   Downloading alembic-1.15.2-py3-none-any.whl.metadata (7.3 kB)
+#25 14.44 Collecting argon2-cffi==23.1.0 (from -r /tmp/backend/requirements.txt (line 10))
+#25 14.64   Downloading argon2_cffi-23.1.0-py3-none-any.whl.metadata (5.2 kB)
+#25 16.28 Collecting numpy==2.2.6 (from -r /tmp/ml/requirements.txt (line 2))
+#25 16.48   Downloading numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+#25 17.56 Collecting pandas==2.2.3 (from -r /tmp/ml/requirements.txt (line 3))
+#25 17.75   Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+#25 18.68 Collecting scikit-learn==1.6.1 (from -r /tmp/ml/requirements.txt (line 4))
+#25 18.88   Downloading scikit_learn-1.6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (18 kB)
+#25 19.24 Collecting xgboost==3.0.2 (from -r /tmp/ml/requirements.txt (line 5))
+#25 19.45   Downloading xgboost-3.0.2-py3-none-manylinux_2_28_x86_64.whl.metadata (2.1 kB)
+#25 20.42 Collecting scipy==1.15.3 (from -r /tmp/ml/requirements.txt (line 6))
+#25 20.69   Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+#25 21.77 Collecting matplotlib==3.10.3 (from -r /tmp/ml/requirements.txt (line 7))
+#25 22.02   Downloading matplotlib-3.10.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+#25 22.41 Collecting openpyxl==3.1.5 (from -r /tmp/ml/requirements.txt (line 8))
+#25 22.63   Downloading openpyxl-3.1.5-py2.py3-none-any.whl.metadata (2.5 kB)
+#25 22.92 Collecting joblib==1.5.1 (from -r /tmp/ml/requirements.txt (line 9))
+#25 23.12   Downloading joblib-1.5.1-py3-none-any.whl.metadata (5.6 kB)
+#25 23.49 Collecting starlette>=0.46.0 (from fastapi==0.143.0->-r /tmp/backend/requirements.txt (line 2))
+#25 23.69   Downloading starlette-1.7.0-py3-none-any.whl.metadata (6.6 kB)
+#25 24.08 Collecting typing-extensions>=4.8.0 (from fastapi==0.143.0->-r /tmp/backend/requirements.txt (line 2))
+#25 24.29   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#25 24.52 Collecting typing-inspection>=0.4.2 (from fastapi==0.143.0->-r /tmp/backend/requirements.txt (line 2))
+#25 24.72   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+#25 24.93 Collecting annotated-doc>=0.0.2 (from fastapi==0.143.0->-r /tmp/backend/requirements.txt (line 2))
+#25 25.13   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+#25 25.39 Collecting opentelemetry-api>=1.44.0 (from fastapi==0.143.0->-r /tmp/backend/requirements.txt (line 2))
+#25 25.59   Downloading opentelemetry_api-1.45.1-py3-none-any.whl.metadata (1.4 kB)
+#25 25.89 Collecting click>=7.0 (from uvicorn==0.34.2->-r /tmp/backend/requirements.txt (line 3))
+#25 26.10   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+#25 26.33 Collecting h11>=0.8 (from uvicorn==0.34.2->-r /tmp/backend/requirements.txt (line 3))
+#25 26.63   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#25 29.19 Collecting greenlet>=1 (from SQLAlchemy==2.0.40->-r /tmp/backend/requirements.txt (line 4))
+#25 29.39   Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+#25 29.63 Collecting annotated-types>=0.6.0 (from pydantic==2.11.4->-r /tmp/backend/requirements.txt (line 5))
+#25 29.83   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#25 47.84 Collecting pydantic-core==2.33.2 (from pydantic==2.11.4->-r /tmp/backend/requirements.txt (line 5))
+#25 48.03   Downloading pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+#25 48.40 Collecting python-dotenv>=0.21.0 (from pydantic-settings==2.9.1->-r /tmp/backend/requirements.txt (line 6))
+#25 48.60   Downloading python_dotenv-1.2.3-py3-none-any.whl.metadata (29 kB)
+#25 50.87 Collecting cffi>=2.0.0 (from cryptography==50.0.2->-r /tmp/backend/requirements.txt (line 8))
+#25 51.06   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+#25 51.42 Collecting Mako (from alembic==1.15.2->-r /tmp/backend/requirements.txt (line 9))
+#25 51.62   Downloading mako-1.4.3-py3-none-any.whl.metadata (2.9 kB)
+#25 52.08 Collecting argon2-cffi-bindings (from argon2-cffi==23.1.0->-r /tmp/backend/requirements.txt (line 10))
+#25 52.28   Downloading argon2_cffi_bindings-26.1.0-cp310-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (7.5 kB)
+#25 52.58 Collecting python-dateutil>=2.8.2 (from pandas==2.2.3->-r /tmp/ml/requirements.txt (line 3))
+#25 52.78   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+#25 53.75 Collecting pytz>=2020.1 (from pandas==2.2.3->-r /tmp/ml/requirements.txt (line 3))
+#25 53.95   Downloading pytz-2026.5-py2.py3-none-any.whl.metadata (22 kB)
+#25 54.24 Collecting tzdata>=2022.7 (from pandas==2.2.3->-r /tmp/ml/requirements.txt (line 3))
+#25 54.44   Downloading tzdata-2026.5-py2.py3-none-any.whl.metadata (1.4 kB)
+#25 54.74 Collecting threadpoolctl>=3.1.0 (from scikit-learn==1.6.1->-r /tmp/ml/requirements.txt (line 4))
+#25 54.93   Downloading threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)
+#25 55.20 Collecting nvidia-nccl-cu12 (from xgboost==3.0.2->-r /tmp/ml/requirements.txt (line 5))
+#25 55.41   Downloading nvidia_nccl_cu12-2.32.3-py3-none-manylinux_2_27_x86_64.whl.metadata (2.1 kB)
+#25 57.05 Collecting contourpy>=1.0.1 (from matplotlib==3.10.3->-r /tmp/ml/requirements.txt (line 7))
+#25 57.25   Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+#25 57.50 Collecting cycler>=0.10 (from matplotlib==3.10.3->-r /tmp/ml/requirements.txt (line 7))
+#25 57.70   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+#25 61.34 Collecting fonttools>=4.22.0 (from matplotlib==3.10.3->-r /tmp/ml/requirements.txt (line 7))
+#25 61.64   Downloading fonttools-4.66.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (130 kB)
+#25 63.08 Collecting kiwisolver>=1.3.1 (from matplotlib==3.10.3->-r /tmp/ml/requirements.txt (line 7))
+#25 63.29   Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+#25 64.10 Collecting packaging>=20.0 (from matplotlib==3.10.3->-r /tmp/ml/requirements.txt (line 7))
+#25 64.30   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+#25 67.68 Collecting pillow>=8 (from matplotlib==3.10.3->-r /tmp/ml/requirements.txt (line 7))
+#25 68.09   Downloading pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+#25 68.67 Collecting pyparsing>=2.3.1 (from matplotlib==3.10.3->-r /tmp/ml/requirements.txt (line 7))
+#25 68.87   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+#25 69.10 Collecting et-xmlfile (from openpyxl==3.1.5->-r /tmp/ml/requirements.txt (line 8))
+#25 69.31   Downloading et_xmlfile-2.0.0-py3-none-any.whl.metadata (2.7 kB)
+#25 69.69 Collecting pycparser (from cffi>=2.0.0->cryptography==50.0.2->-r /tmp/backend/requirements.txt (line 8))
+#25 69.95   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+#25 70.33 Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas==2.2.3->-r /tmp/ml/requirements.txt (line 3))
+#25 70.53   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+#25 70.99 Collecting anyio<5,>=4.0.0 (from starlette>=0.46.0->fastapi==0.143.0->-r /tmp/backend/requirements.txt (line 2))
+#25 71.19   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+#25 72.13 Collecting MarkupSafe>=2.0 (from Mako->alembic==1.15.2->-r /tmp/backend/requirements.txt (line 9))
+#25 72.33   Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+#25 72.62 Collecting idna>=2.8 (from anyio<5,>=4.0.0->starlette>=0.46.0->fastapi==0.143.0->-r /tmp/backend/requirements.txt (line 2))
+#25 72.82   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#25 73.07 Downloading fastapi-0.143.0-py3-none-any.whl (144 kB)
+#25 73.45 Downloading uvicorn-0.34.2-py3-none-any.whl (62 kB)
+#25 73.70 Downloading sqlalchemy-2.0.40-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+#25 78.60    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 660.8 kB/s eta 0:00:00
+#25 78.80 Downloading pydantic-2.11.4-py3-none-any.whl (443 kB)
+#25 79.88 Downloading pydantic_settings-2.9.1-py3-none-any.whl (44 kB)
+#25 80.09 Downloading PyMySQL-1.1.1-py3-none-any.whl (44 kB)
+#25 80.37 Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+#25 87.74    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 651.4 kB/s eta 0:00:00
+#25 87.96 Downloading alembic-1.15.2-py3-none-any.whl (231 kB)
+#25 88.58 Downloading argon2_cffi-23.1.0-py3-none-any.whl (15 kB)
+#25 88.79 Downloading numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.5 MB)
+#25 158.6    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.5/16.5 MB 134.4 kB/s eta 0:00:00
+#25 158.9 Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+#25 192.6    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 358.5 kB/s eta 0:00:00
+#25 192.9 Downloading scikit_learn-1.6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+#25 246.5    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 253.3 kB/s eta 0:00:00
+#25 246.7 Downloading xgboost-3.0.2-py3-none-manylinux_2_28_x86_64.whl (253.9 MB)
+#25 804.2    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 253.9/253.9 MB 197.7 kB/s eta 0:00:00
+#25 804.5 Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.3 MB)
+#25 876.3    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.3/37.3 MB 475.5 kB/s eta 0:00:00
+#25 876.5 Downloading matplotlib-3.10.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (8.6 MB)
+#25 902.3    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.6/8.6 MB 332.0 kB/s eta 0:00:00
+#25 902.5 Downloading openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+#25 903.4 Downloading joblib-1.5.1-py3-none-any.whl (307 kB)
+#25 904.8 Downloading pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+#25 910.2    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 378.6 kB/s eta 0:00:00
+#25 910.4 Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+#25 910.6 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#25 910.8 Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+#25 911.5 Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#25 911.9 Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
+#25 912.8 Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+#25 913.0 Downloading fonttools-4.66.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+#25 920.6    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 717.1 kB/s eta 0:00:00
+#25 920.9 Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (621 kB)
+#25 921.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 621.4/621.4 kB 687.8 kB/s eta 0:00:00
+#25 922.0 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#25 922.3 Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+#25 925.1    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 506.9 kB/s eta 0:00:00
+#25 925.3 Downloading opentelemetry_api-1.45.1-py3-none-any.whl (60 kB)
+#25 925.5 Downloading packaging-26.3-py3-none-any.whl (129 kB)
+#25 926.0 Downloading pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+#25 936.6    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 655.4 kB/s eta 0:00:00
+#25 936.8 Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+#25 937.2 Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+#25 937.7 Downloading python_dotenv-1.2.3-py3-none-any.whl (22 kB)
+#25 938.0 Downloading pytz-2026.5-py2.py3-none-any.whl (506 kB)
+#25 938.9 Downloading starlette-1.7.0-py3-none-any.whl (78 kB)
+#25 939.2 Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+#25 939.4 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#25 939.6 Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+#25 939.8 Downloading tzdata-2026.5-py2.py3-none-any.whl (347 kB)
+#25 940.4 Downloading argon2_cffi_bindings-26.1.0-cp310-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (26 kB)
+#25 940.7 Downloading et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+#25 940.9 Downloading mako-1.4.3-py3-none-any.whl (80 kB)
+#25 941.1 Downloading nvidia_nccl_cu12-2.32.3-py3-none-manylinux_2_27_x86_64.whl (351.5 MB)
+#25 1481.4    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 351.5/351.5 MB 719.0 kB/s eta 0:00:00
+#25 1481.7 Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+#25 1481.9 Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#25 1482.2 Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+#25 1482.7 Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+#25 1482.9 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#25 1487.5 Installing collected packages: pytz, tzdata, typing-extensions, threadpoolctl, six, python-dotenv, pyparsing, PyMySQL, pycparser, pillow, packaging, nvidia-nccl-cu12, numpy, MarkupSafe, kiwisolver, joblib, idna, h11, greenlet, fonttools, et-xmlfile, cycler, click, annotated-types, annotated-doc, uvicorn, typing-inspection, SQLAlchemy, scipy, python-dateutil, pydantic-core, opentelemetry-api, openpyxl, Mako, contourpy, cffi, anyio, xgboost, starlette, scikit-learn, pydantic, pandas, matplotlib, cryptography, argon2-cffi-bindings, alembic, pydantic-settings, fastapi, argon2-cffi
+#25 1550.2 Successfully installed Mako-1.4.3 MarkupSafe-3.0.3 PyMySQL-1.1.1 SQLAlchemy-2.0.40 alembic-1.15.2 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 argon2-cffi-23.1.0 argon2-cffi-bindings-26.1.0 cffi-2.1.1 click-8.5.0 contourpy-1.4.0 cryptography-50.0.2 cycler-0.12.1 et-xmlfile-2.0.0 fastapi-0.143.0 fonttools-4.66.1 greenlet-3.5.6 h11-0.16.0 idna-3.20 joblib-1.5.1 kiwisolver-1.5.1 matplotlib-3.10.3 numpy-2.2.6 nvidia-nccl-cu12-2.32.3 openpyxl-3.1.5 opentelemetry-api-1.45.1 packaging-26.3 pandas-2.2.3 pillow-12.3.0 pycparser-3.0 pydantic-2.11.4 pydantic-core-2.33.2 pydantic-settings-2.9.1 pyparsing-3.3.3 python-dateutil-2.9.0.post0 python-dotenv-1.2.3 pytz-2026.5 scikit-learn-1.6.1 scipy-1.15.3 six-1.17.0 starlette-1.7.0 threadpoolctl-3.7.0 typing-extensions-4.16.0 typing-inspection-0.4.4 tzdata-2026.5 uvicorn-0.34.2 xgboost-3.0.2
+#25 1550.2 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#25 1551.2 
+#25 1551.2 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+#25 1551.2 [notice] To update, run: pip install --upgrade pip
+#25 DONE 1552.4s
+
+#26 [migrate  7/12] COPY backend ./backend
+#26 DONE 0.4s
+
+#27 [migrate  8/12] COPY ml/*.py ml/protocol.json ml/requirements.txt ./ml/
+#27 DONE 0.1s
+
+#28 [migrate  9/12] COPY ml/artifacts/uci-retail-v1-0cc2a83c3e40 ./ml/artifacts/uci-retail-v1-0cc2a83c3e40
+#28 DONE 0.1s
+
+#29 [backend 10/12] COPY docs/research/results/*.json ./docs/research/results/
+#29 DONE 0.1s
+
+#30 [migrate 11/12] COPY data/processed/phase4/development.csv ./data/processed/phase4/development.csv
+#30 DONE 0.1s
+
+#31 [backend 12/12] WORKDIR /opt/project/backend
+#31 DONE 0.1s
+
+#32 [backend] exporting to image
+#32 exporting layers
+#32 ...
+
+#33 [migrate] exporting to image
+#33 exporting layers 130.5s done
+#33 exporting manifest sha256:10472baee84168d0f9640b5660e923fcd1a9ebeffcbc7ae8fc9dedb3f8398541 0.1s done
+#33 exporting config sha256:407ef985db8f7c484846fccff1785f86238f1ccb423b09ca48cc28ad1d8b0960 0.1s done
+#33 ...
+
+#32 [backend] exporting to image
+#32 exporting layers 130.5s done
+#32 exporting manifest sha256:5bf2337b6fb904205a1759e66f0152932ef4b0ae2909bab4187799b7d8ab5088 0.0s done
+#32 exporting config sha256:c404bc65e4d1cc7a94879adf75f1fae9dd5eb07ead291a348fb481fd9369610d 0.1s done
+#32 exporting attestation manifest sha256:16fe728085ba2538af8db94060e0d34bb0e371142a1ceaccf1b55fcbfbc32731 0.1s done
+#32 exporting manifest list sha256:f68ad90f27177d3159cf238fc19d3d2f6a0de220dde5dc7389389e29c4856d3b 0.0s done
+#32 naming to docker.io/library/smartinventory-backend:latest
+#32 naming to docker.io/library/smartinventory-backend:latest 0.0s done
+#32 unpacking to docker.io/library/smartinventory-backend:latest
+#32 ...
+
+#33 [migrate] exporting to image
+#33 exporting attestation manifest sha256:96d6f11c126068b3acb5cb31806e1db09e2e96561fec2913eaf0165775b448c2 0.0s done
+#33 exporting manifest list sha256:4ad9d69be1bf53daf5c8e782318895f9d5c0fea56aa0860a716356834900d44f 0.0s done
+#33 naming to docker.io/library/smartinventory-migrate:latest done
+#33 unpacking to docker.io/library/smartinventory-migrate:latest
+#33 unpacking to docker.io/library/smartinventory-migrate:latest 40.3s done
+#33 DONE 171.2s
+
+#32 [backend] exporting to image
+#32 unpacking to docker.io/library/smartinventory-backend:latest 40.3s done
+#32 DONE 171.3s
+
+#34 [migrate] resolving provenance for metadata file
+#34 ...
+
+#35 [backend] resolving provenance for metadata file
+#35 DONE 0.1s
+
+#34 [migrate] resolving provenance for metadata file
+#34 DONE 0.5s
+ Image smartinventory-backend Built 
+ Image smartinventory-frontend Built 
+ Image smartinventory-migrate Built 
+ Container smartinventory-db-1 Running 
+ Container smartinventory-migrate-1 Recreate 
+ Container smartinventory-migrate-1 Recreated 
+ Container smartinventory-backend-1 Recreate 
+ Container smartinventory-backend-1 Recreated 
+ Container smartinventory-frontend-1 Recreate 
+ Container smartinventory-frontend-1 Recreated 
+ Container smartinventory-db-1 Waiting 
+ Container smartinventory-db-1 Healthy 
+ Container smartinventory-migrate-1 Starting 
+ Container smartinventory-migrate-1 Started 
+ Container smartinventory-migrate-1 Waiting 
+ Container smartinventory-migrate-1 Exited 
+ Container smartinventory-backend-1 Starting 
+ Container smartinventory-backend-1 Started 
+ Container smartinventory-frontend-1 Starting 
+ Container smartinventory-frontend-1 Started 

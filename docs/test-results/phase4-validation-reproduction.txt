@@ -1,0 +1,13 @@
+Refit validation reproducibility: seasonal_naive at 2011-09-15
+Refit validation reproducibility: seasonal_naive at 2011-10-13
+Refit validation reproducibility: mean_28 at 2011-09-15
+Refit validation reproducibility: mean_28 at 2011-10-13
+Refit validation reproducibility: rf_leaf5 at 2011-09-15
+Refit validation reproducibility: rf_leaf5 at 2011-10-13
+Refit validation reproducibility: rf_leaf15 at 2011-09-15
+Refit validation reproducibility: rf_leaf15 at 2011-10-13
+Refit validation reproducibility: xgb_depth3 at 2011-09-15
+Refit validation reproducibility: xgb_depth3 at 2011-10-13
+Refit validation reproducibility: xgb_depth5 at 2011-09-15
+Refit validation reproducibility: xgb_depth5 at 2011-10-13
+All frozen validation configurations reproduce numerically; selection unchanged

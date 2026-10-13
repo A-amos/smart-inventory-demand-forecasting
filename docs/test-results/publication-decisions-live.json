@@ -1,0 +1,506 @@
+{
+  "executed_at_utc": "2026-10-13T10:55:10.702024+00:00",
+  "synthetic_inventory": true,
+  "checks": [
+    {
+      "check": "All protected Phase 4 research files unchanged",
+      "passed": true,
+      "actual": 18
+    },
+    {
+      "check": "Actual MySQL 8.4 and Phase 6 decision regression migration",
+      "passed": true,
+      "actual": {
+        "mysql": "8.4.11",
+        "revision": "e52ad70491b2"
+      }
+    },
+    {
+      "check": "Eight database immutability triggers installed",
+      "passed": true,
+      "actual": [
+        "protect_forecasts_update",
+        "protect_forecasts_delete",
+        "protect_forecast_points_update",
+        "protect_forecast_points_delete",
+        "protect_recommendations_update",
+        "protect_recommendations_delete",
+        "protect_forecast_mappings_update",
+        "protect_forecast_mappings_delete"
+      ]
+    },
+    {
+      "check": "Microsecond evidence timestamps",
+      "passed": true,
+      "actual": 6
+    },
+    {
+      "check": "/health/live",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "/health/ready",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Frozen mean_28 selected; operational forecasts explicitly unavailable",
+      "passed": true,
+      "actual": {
+        "source_namespace": "uci-online-retail-ii",
+        "supported_series": [
+          "20700",
+          "20728",
+          "20803",
+          "20897",
+          "20982",
+          "20990",
+          "21004",
+          "21077",
+          "21096",
+          "21217",
+          "21329",
+          "21360",
+          "21378",
+          "21539",
+          "21541",
+          "21610",
+          "21765",
+          "21794",
+          "21870",
+          "21900",
+          "21972",
+          "21989",
+          "22061",
+          "22082",
+          "22115",
+          "22135",
+          "22190",
+          "22241",
+          "22270",
+          "22285",
+          "22308",
+          "22313",
+          "22316",
+          "22358",
+          "22440",
+          "22487",
+          "22529",
+          "22533",
+          "22595",
+          "22604",
+          "22690",
+          "22716",
+          "37327",
+          "40016",
+          "48188",
+          "71477",
+          "84031B",
+          "84581",
+          "84795B",
+          "84849A",
+          "84901",
+          "84913B",
+          "84944",
+          "85040B",
+          "85048",
+          "85061W",
+          "85065",
+          "85132A",
+          "85213",
+          "90214J"
+        ],
+        "available_origin": "2011-11-10",
+        "research_decision_as_of": "2011-11-11",
+        "maximum_horizon": 28,
+        "model_id": "uci-retail-v1-0cc2a83c3e40",
+        "model_version": "retail-demand-v1",
+        "artifact_version": "sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031",
+        "selected": "mean_28",
+        "operational_forecasts_available": false,
+        "limitation": "UK historical research demonstration only. No current compatible history; not validated for Kenyan retail."
+      }
+    },
+    {
+      "check": "Unsupported/unmapped product rejected safely",
+      "passed": true,
+      "actual": {
+        "detail": "Forecast unavailable \u2014 insufficient or unsupported historical series. Explicit manager mapping required."
+      }
+    },
+    {
+      "check": "Present-day history unavailable",
+      "passed": true,
+      "actual": {
+        "status": 409,
+        "detail": {
+          "detail": "Forecast unavailable \u2014 insufficient contiguous history at this origin. UK reference history ends 2011-11-10; dates are never shifted."
+        }
+      }
+    },
+    {
+      "check": "Operational context cannot use historical demo",
+      "passed": true,
+      "actual": {
+        "status": 409,
+        "detail": {
+          "detail": "UK reference mappings support acknowledged historical research demonstrations only; current operational history is unavailable"
+        }
+      }
+    },
+    {
+      "check": "Horizon above contract",
+      "passed": true,
+      "actual": {
+        "status": 422,
+        "detail": {
+          "detail": [
+            {
+              "type": "less_than_equal",
+              "loc": [
+                "body",
+                "horizon"
+              ],
+              "msg": "Input should be less than or equal to 28",
+              "input": 29,
+              "ctx": {
+                "le": 28
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "check": "Concurrent forecast retry produces exactly one immutable record",
+      "passed": true,
+      "actual": [
+        201,
+        201
+      ]
+    },
+    {
+      "check": "Actual frozen inference matches independently calculated last-28-day mean",
+      "passed": true,
+      "actual": {
+        "mean": 27.857142857142858,
+        "stored": "27.857142857",
+        "forecast_id": "19b363ab-3632-45c6-9033-d90e3c4c5037"
+      }
+    },
+    {
+      "check": "Forecast-v1 contract and versioned storage identity",
+      "passed": true,
+      "actual": {
+        "model": "uci-retail-v1-0cc2a83c3e40",
+        "version": "retail-demand-v1",
+        "artifact": "sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031"
+      }
+    },
+    {
+      "check": "Stale forecast rejected",
+      "passed": true,
+      "actual": 409
+    },
+    {
+      "check": "Missing forecast rejected",
+      "passed": true,
+      "actual": 404
+    },
+    {
+      "check": "Insufficient lead-time coverage rejected",
+      "passed": true,
+      "actual": 409
+    },
+    {
+      "check": "Actual position, multi-day target, safety, reorder and overstock equations",
+      "passed": true,
+      "actual": {
+        "predicted_lead_time_demand": "83.571428571",
+        "on_hand": "5.000",
+        "confirmed_in_transit": "3.000",
+        "allocated": "2.000",
+        "inventory_position": "6.000",
+        "safety_stock": "4.000",
+        "target_stock": "87.571428571",
+        "shortage": "81.571428571",
+        "overstock_multiplier": "2.000",
+        "overstock_threshold": "175.142857142000",
+        "suggested_reorder_raw": "81.571428571",
+        "suggested_reorder": "81.571428571",
+        "product_id": 25,
+        "product_sku": "P5-CB7359FF",
+        "unit": "unit",
+        "series_sku": "20728",
+        "mapping_id": "356697d3-c318-4bad-a87e-cd58104fe9c4",
+        "source_namespace": "uci-online-retail-ii",
+        "forecast_id": "19b363ab-3632-45c6-9033-d90e3c4c5037",
+        "forecast_origin": "2011-11-10",
+        "forecast_horizon": 28,
+        "model_id": "uci-retail-v1-0cc2a83c3e40",
+        "model_version": "retail-demand-v1",
+        "artifact_version": "sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031",
+        "feature_version": "features-v1",
+        "lead_time_days": 3,
+        "decision_as_of": "2011-11-11",
+        "inventory_version": 2,
+        "context": "research_demo",
+        "risk_status": "REPLENISH",
+        "assumptions_version": "inventory-rules-v1",
+        "assumptions": [
+          "All confirmed incoming stock assumed to arrive during lead time; no ETA is recorded.",
+          "Allocated stock is excluded from usable inventory.",
+          "Forecast dates must cover every lead-time day.",
+          "No pack-size or procurement rounding; raw shortage equals suggested quantity.",
+          "Stored daily predictions use nine decimal places; original forecast-v1 values are preserved.",
+          "Deterministic stock-risk rule, not a calibrated probability. Human review; no purchase execution.",
+          "UK historical forecasts and present test stock form a research scenario, not measured 2011 inventory or Kenyan performance."
+        ]
+      }
+    },
+    {
+      "check": "Forecasts and recommendations leave operational ledger unchanged",
+      "passed": true,
+      "actual": {
+        "products": {
+          "count": 25,
+          "sha256": "4395fac3fd217dbe570c802d59f3415778a2cf82a856618ae1f2118de69c7310"
+        },
+        "sales": {
+          "count": 98,
+          "sha256": "bbaab737c4bb0329f783de145901a8f8a383f3dcb62745553f669e2a47342245"
+        },
+        "inventory": {
+          "count": 25,
+          "sha256": "39926110323b00e09409d9f7020fff55a8b5d3a5c60202448773f026c0c61f0b"
+        },
+        "stock_movements": {
+          "count": 207,
+          "sha256": "3c73fe47ccb5041016fecd6384e844b3af763b509d463b7dc7f39631bf3d1284"
+        },
+        "sales_imports": {
+          "count": 12,
+          "sha256": "2db62c939af1262029c4ca0683e67842f221df8099192a18396bda0dd7e1850a"
+        }
+      }
+    },
+    {
+      "check": "MySQL blocks UPDATE on forecast_mappings",
+      "passed": true,
+      "actual": "SQLSTATE 45000 append-only"
+    },
+    {
+      "check": "MySQL blocks DELETE on forecast_mappings",
+      "passed": true,
+      "actual": "SQLSTATE 45000 append-only"
+    },
+    {
+      "check": "MySQL blocks UPDATE on forecasts",
+      "passed": true,
+      "actual": "SQLSTATE 45000 append-only"
+    },
+    {
+      "check": "MySQL blocks DELETE on forecasts",
+      "passed": true,
+      "actual": "SQLSTATE 45000 append-only"
+    },
+    {
+      "check": "MySQL blocks UPDATE on forecast_points",
+      "passed": true,
+      "actual": "SQLSTATE 45000 append-only"
+    },
+    {
+      "check": "MySQL blocks DELETE on forecast_points",
+      "passed": true,
+      "actual": "SQLSTATE 45000 append-only"
+    },
+    {
+      "check": "MySQL blocks UPDATE on recommendations",
+      "passed": true,
+      "actual": "SQLSTATE 45000 append-only"
+    },
+    {
+      "check": "MySQL blocks DELETE on recommendations",
+      "passed": true,
+      "actual": "SQLSTATE 45000 append-only"
+    },
+    {
+      "check": "Actual missing artifact returns clear 503 without ledger corruption",
+      "passed": true,
+      "actual": {
+        "response": {
+          "detail": "Forecast artifact or history missing; operational inventory remains available"
+        },
+        "unchanged_tables": [
+          "products",
+          "sales",
+          "inventory",
+          "stock_movements",
+          "sales_imports"
+        ]
+      }
+    },
+    {
+      "check": "Inventory API remains usable during real artifact failure",
+      "passed": true,
+      "actual": "products and readiness HTTP 200"
+    },
+    {
+      "check": "Artifact restored and verified after failure test",
+      "passed": true,
+      "actual": "HTTP 200"
+    },
+    {
+      "check": "Existing operational sale updates dashboard stock and invalidates old decision",
+      "passed": true,
+      "actual": {
+        "on_hand": "4.000",
+        "position": "5.000",
+        "status": "UNASSESSED"
+      }
+    },
+    {
+      "check": "Sale does not rewrite earlier recommendation evidence",
+      "passed": true,
+      "actual": "1a70ab54-5e28-489f-910b-c3815bfa34da"
+    },
+    {
+      "check": "Retry after stock change returns original snapshot without recalculation",
+      "passed": true,
+      "actual": "1a70ab54-5e28-489f-910b-c3815bfa34da"
+    },
+    {
+      "check": "Overstock uses strict configured threshold and zero reorder",
+      "passed": true,
+      "actual": {
+        "predicted_lead_time_demand": "83.571428571",
+        "on_hand": "999.000",
+        "confirmed_in_transit": "0.000",
+        "allocated": "0.000",
+        "inventory_position": "999.000",
+        "safety_stock": "4.000",
+        "target_stock": "87.571428571",
+        "shortage": "0",
+        "overstock_multiplier": "2.000",
+        "overstock_threshold": "175.142857142000",
+        "suggested_reorder_raw": "0",
+        "suggested_reorder": "0",
+        "product_id": 25,
+        "product_sku": "P5-CB7359FF",
+        "unit": "unit",
+        "series_sku": "20728",
+        "mapping_id": "356697d3-c318-4bad-a87e-cd58104fe9c4",
+        "source_namespace": "uci-online-retail-ii",
+        "forecast_id": "19b363ab-3632-45c6-9033-d90e3c4c5037",
+        "forecast_origin": "2011-11-10",
+        "forecast_horizon": 28,
+        "model_id": "uci-retail-v1-0cc2a83c3e40",
+        "model_version": "retail-demand-v1",
+        "artifact_version": "sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031",
+        "feature_version": "features-v1",
+        "lead_time_days": 3,
+        "decision_as_of": "2011-11-11",
+        "inventory_version": 4,
+        "context": "research_demo",
+        "risk_status": "OVERSTOCK",
+        "assumptions_version": "inventory-rules-v1",
+        "assumptions": [
+          "All confirmed incoming stock assumed to arrive during lead time; no ETA is recorded.",
+          "Allocated stock is excluded from usable inventory.",
+          "Forecast dates must cover every lead-time day.",
+          "No pack-size or procurement rounding; raw shortage equals suggested quantity.",
+          "Stored daily predictions use nine decimal places; original forecast-v1 values are preserved.",
+          "Deterministic stock-risk rule, not a calibrated probability. Human review; no purchase execution.",
+          "UK historical forecasts and present test stock form a research scenario, not measured 2011 inventory or Kenyan performance."
+        ]
+      }
+    },
+    {
+      "check": "Recommendation history remains immutable and chronologically ordered",
+      "passed": true,
+      "actual": [
+        "c5d4e743-b75b-4da5-a75f-0c3b0863f119",
+        "1a70ab54-5e28-489f-910b-c3815bfa34da"
+      ]
+    },
+    {
+      "check": "Dashboard distinguishes historical overstock from current unassessed",
+      "passed": true,
+      "actual": {
+        "research_status": "OVERSTOCK",
+        "operational": "UNASSESSED"
+      }
+    },
+    {
+      "check": "Live model comparison reproduces all preserved research metrics",
+      "passed": true,
+      "actual": "All six validation and four final-test rows match exactly"
+    },
+    {
+      "check": "Researcher reads /forecasts/25",
+      "passed": true,
+      "actual": "HTTP 200"
+    },
+    {
+      "check": "Researcher reads /recommendations/25",
+      "passed": true,
+      "actual": "HTTP 200"
+    },
+    {
+      "check": "Researcher reads /research/models",
+      "passed": true,
+      "actual": "HTTP 200"
+    },
+    {
+      "check": "Researcher reads /dashboard",
+      "passed": true,
+      "actual": "HTTP 200"
+    },
+    {
+      "check": "Researcher cannot modify /forecasts/25/generate",
+      "passed": true,
+      "actual": 403
+    },
+    {
+      "check": "Researcher cannot modify /recommendations/25/generate",
+      "passed": true,
+      "actual": 403
+    },
+    {
+      "check": "Researcher cannot modify /products/25/forecast-mappings",
+      "passed": true,
+      "actual": 403
+    },
+    {
+      "check": "Anonymous cannot modify /forecasts/25/generate",
+      "passed": true,
+      "actual": 401
+    },
+    {
+      "check": "Anonymous cannot modify /recommendations/25/generate",
+      "passed": true,
+      "actual": 401
+    },
+    {
+      "check": "Anonymous cannot modify /products/25/forecast-mappings",
+      "passed": true,
+      "actual": 401
+    },
+    {
+      "check": "Archived product retains forecast/recommendation evidence",
+      "passed": true,
+      "actual": "Two forecasts and two recommendations retained"
+    },
+    {
+      "check": "Vite proxy exposes real Phase 6 decision regression API",
+      "passed": true,
+      "actual": "HTTP 200"
+    },
+    {
+      "check": "Logout revokes forecast access",
+      "passed": true,
+      "actual": "HTTP 401"
+    }
+  ]
+}

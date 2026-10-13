@@ -1,0 +1,133 @@
+{
+  "executed_at_utc": "2026-10-01T07:54:30.378436+00:00",
+  "checks": [
+    {
+      "check": "Browser fixture is labelled synthetic and archived",
+      "passed": true,
+      "actual": 8
+    },
+    {
+      "check": "One real browser forecast and two immutable decisions persisted",
+      "passed": true,
+      "actual": {
+        "forecasts": 1,
+        "recommendations": 2
+      }
+    },
+    {
+      "check": "Original browser stock components and decision preserved",
+      "passed": true,
+      "actual": {
+        "unit": "unit",
+        "context": "research_demo",
+        "on_hand": "5.000",
+        "model_id": "uci-retail-v1-0cc2a83c3e40",
+        "shortage": "81.571428571",
+        "allocated": "2.000",
+        "mapping_id": "896f4f30-599c-4e09-a587-4ef69b0f02cd",
+        "product_id": 8,
+        "series_sku": "20728",
+        "assumptions": [
+          "All confirmed incoming stock assumed to arrive during lead time; no ETA is recorded.",
+          "Allocated stock is excluded from usable inventory.",
+          "Forecast dates must cover every lead-time day.",
+          "No pack-size or procurement rounding; raw shortage equals suggested quantity.",
+          "Stored daily predictions use nine decimal places; original forecast-v1 values are preserved.",
+          "Deterministic stock-risk rule, not a calibrated probability. Human review; no purchase execution.",
+          "UK historical forecasts and present test stock form a research scenario, not measured 2011 inventory or Kenyan performance."
+        ],
+        "forecast_id": "a5e166b2-3527-47d0-b70a-7d27d8644623",
+        "product_sku": "P5-BROWSER-20261001-01",
+        "risk_status": "REPLENISH",
+        "safety_stock": "4.000",
+        "target_stock": "87.571428571",
+        "model_version": "retail-demand-v1",
+        "decision_as_of": "2011-11-11",
+        "lead_time_days": 3,
+        "feature_version": "features-v1",
+        "forecast_origin": "2011-11-10",
+        "artifact_version": "sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031",
+        "forecast_horizon": 28,
+        "source_namespace": "uci-online-retail-ii",
+        "inventory_version": 2,
+        "suggested_reorder": "81.571428571",
+        "inventory_position": "6.000",
+        "assumptions_version": "inventory-rules-v1",
+        "overstock_threshold": "175.142857142000",
+        "confirmed_in_transit": "3.000",
+        "overstock_multiplier": "2.000",
+        "suggested_reorder_raw": "81.571428571",
+        "predicted_lead_time_demand": "83.571428571"
+      }
+    },
+    {
+      "check": "New browser decision references same forecast and new stock version",
+      "passed": true,
+      "actual": {
+        "unit": "unit",
+        "context": "research_demo",
+        "on_hand": "999.000",
+        "model_id": "uci-retail-v1-0cc2a83c3e40",
+        "shortage": "0",
+        "allocated": "0.000",
+        "mapping_id": "896f4f30-599c-4e09-a587-4ef69b0f02cd",
+        "product_id": 8,
+        "series_sku": "20728",
+        "assumptions": [
+          "All confirmed incoming stock assumed to arrive during lead time; no ETA is recorded.",
+          "Allocated stock is excluded from usable inventory.",
+          "Forecast dates must cover every lead-time day.",
+          "No pack-size or procurement rounding; raw shortage equals suggested quantity.",
+          "Stored daily predictions use nine decimal places; original forecast-v1 values are preserved.",
+          "Deterministic stock-risk rule, not a calibrated probability. Human review; no purchase execution.",
+          "UK historical forecasts and present test stock form a research scenario, not measured 2011 inventory or Kenyan performance."
+        ],
+        "forecast_id": "a5e166b2-3527-47d0-b70a-7d27d8644623",
+        "product_sku": "P5-BROWSER-20261001-01",
+        "risk_status": "OVERSTOCK",
+        "safety_stock": "4.000",
+        "target_stock": "87.571428571",
+        "model_version": "retail-demand-v1",
+        "decision_as_of": "2011-11-11",
+        "lead_time_days": 3,
+        "feature_version": "features-v1",
+        "forecast_origin": "2011-11-10",
+        "artifact_version": "sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031",
+        "forecast_horizon": 28,
+        "source_namespace": "uci-online-retail-ii",
+        "inventory_version": 3,
+        "suggested_reorder": "0",
+        "inventory_position": "999.000",
+        "assumptions_version": "inventory-rules-v1",
+        "overstock_threshold": "175.142857142000",
+        "confirmed_in_transit": "0.000",
+        "overstock_multiplier": "2.000",
+        "suggested_reorder_raw": "0",
+        "predicted_lead_time_demand": "83.571428571"
+      }
+    },
+    {
+      "check": "Generating browser evidence did not create sales or stock movements",
+      "passed": true,
+      "actual": "Only opening + two explicit adjustment movements, no sales"
+    },
+    {
+      "check": "Browser used explicit supported mapping and frozen digest",
+      "passed": true,
+      "actual": "Synthetic browser inventory test mapped to UK 20728; not Kenyan validation"
+    },
+    {
+      "check": "Partial-run fixture archived without deleting evidence",
+      "passed": true,
+      "actual": 6
+    },
+    {
+      "check": "All protected research evidence and ML source fingerprints remain unchanged",
+      "passed": true,
+      "actual": {
+        "evidence_files": 18,
+        "ML_source_files": 13
+      }
+    }
+  ]
+}

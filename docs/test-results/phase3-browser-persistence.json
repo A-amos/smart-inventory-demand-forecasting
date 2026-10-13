@@ -1,0 +1,24 @@
+{
+  "executed_at_utc": "2026-09-30T21:54:56.483578+00:00",
+  "passed": true,
+  "sku": "BROWSER-MUOMQKPA",
+  "archived": true,
+  "on_hand": "17.000",
+  "version": 2,
+  "sales": [
+    {
+      "id": 6,
+      "source": "operational",
+      "quantity": "3.000"
+    },
+    {
+      "id": 7,
+      "source": "historical",
+      "quantity": "50.000"
+    }
+  ],
+  "movement_kinds": [
+    "opening",
+    "sale"
+  ]
+}

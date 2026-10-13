@@ -1,0 +1,23 @@
+# Phased implementation roadmap
+
+Every phase ends with tests, actual evidence and a DEVELOPMENT_LOG.md update. The proposal remains authoritative. Phases0–5are implemented; Phase6software/evidence evaluation has executed. Participant evaluation is pending, Chrome compatibility is partial, Firefox was policy-blocked and dependency advisories remain unresolved. The project is not claimed fully evaluated. No further phase was started.
+
+| Phase | Work and dependencies | Exit gate |
+| --- | --- | --- |
+| 0 proposal and design | Inspect source, read all chapters/tables/diagrams; extract requirements and objectives; establish boundaries and outstanding confirmations | Requirements, design and roadmap trace to proposal |
+| 1 foundation | Modular structure, environment pins/locks, MySQL Compose, migrations, health API, authorized-account CLI, Argon2/server sessions, React login, automated auth tests | Running Docker services, live MySQL connectivity/migrations/health/account/session checks, complete backend suite and production frontend build all pass; user explicitly requires this gate before Phase 2 |
+| 2 catalog and inventory | Category and product CRUD, Pydantic constraints, unique SKU, manager authorization, current inventory, lead-time/safety/overstock parameters, UI forms | TC05–TC08, stock constraint/authorization tests, MySQL persistence verified |
+| 3 sales and history | Atomic sale/stock adjustment using locked inventory row; paginated history; schema-defined CSV import with size limits, preview, rejected-row report and duplicate policy; imports do not change current inventory | TC09–TC12 plus concurrent sale, rollback and repeat-import cases pass |
+| 4 research and forecasting | Confirm dataset/license/coverage and horizon; EDA; naïve baseline; RF and one gradient booster; time-safe features; tune on validation; freeze selection policy; one final holdout evaluation; persist run metadata/artifact/predictions | Objective 1/2 evidence; TC13–TC16; leakage tests; real results and versioned forecast interface; no assumed winning model |
+| 5 decision support and dashboard | Versioned forecast storage, dated horizon checks, inventory position, target/reorder rule, stockout/overstock thresholds, snapshots/explanations, Recharts trends and model comparison | TC17–TC22; stale/mismatched forecast rejection, failure isolation; objectives 3 and integration demonstrated |
+| 6 evaluation and academic evidence | Execute all 24 cases and supplements; normal/concurrent latency; browser compatibility; actual usability exercise after permission; finalize architecture/database/API/ML/testing documents | Objective 4 supported with actual evidence; unresolved defects and limitations explicit; reproducible local demonstration |
+
+## Proposed phase decisions
+
+Use a modular monolith with an offline training package and imported inference interface; Docker services are runtime containers, not domain microservices. Use one current inventory row per product (explicitly allowed in 3.12), with movement/audit history added in phase 2–3 for reproducibility. Category is normalized from the diagram's product attribute as requested by the user. Integer lead-time days and decimal quantities support packaged or measured goods. Phase 4 model-run records remain frozen versioned files; Phase 5 tables reference their model/version/artifact identity rather than creating a mutable duplicate. Explicit research-series mappings, per-day forecast points and immutable recommendation snapshots now implement the verified contracts.
+
+The executed Phase 4 candidates were: historical/seasonal naïve, Random Forest and one gradient booster (XGBoost if supported by the confirmed data). Model selection is evidence driven. Use validation for tuning/selection and reserve the test for a final unbiased report; if the proposal's phrase “held-out selection” is interpreted as choosing on final test scores, document that this would bias the estimate and use validation as the selection holdout instead.
+
+## Next executable increment
+
+Final status: backend163,ML59,frontend29 tests passed; build/Compose/MySQL/API and isolated reproduction passed. Phase6executed43sales,50decision,21security,11browserand7browser-persistence checks. The first load deadlock was fixed;440repeat requests succeeded. All31protected research/source hashes remain unchanged. Current inventory stays UNASSESSED without fresh compatible forecasts. Participant usefulness, completeChrome/Firefox checks and dependency remediation remain pending; see DEVELOPMENT_LOG.md and OBJECTIVE_TRACEABILITY.md.

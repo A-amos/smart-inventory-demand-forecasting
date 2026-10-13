@@ -1,0 +1,13 @@
+{
+  "derived_from_preserved_results": true,
+  "documents": [
+    "EDA.md",
+    "MODEL_COMPARISON.md",
+    "FINAL_MODEL.md"
+  ],
+  "figures": [
+    "model-comparison.png",
+    "representative-final-forecasts.png"
+  ],
+  "selected": "mean_28"
+}

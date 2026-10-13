@@ -1,0 +1,1 @@
+Evidence published:251 executed tests;23 proposal cases PASS,TC24 pending; actual performance/security/compatibility and academic documents. No full-evaluation claim.

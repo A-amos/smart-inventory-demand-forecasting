@@ -1,0 +1,21 @@
+{
+  "checks": [
+    "registered artifact hash and versions",
+    "same predictions after deserialization",
+    "metrics recalculated from saved actual/prediction pairs",
+    "versioned forecast contract"
+  ],
+  "model_id": "uci-retail-v1-0cc2a83c3e40",
+  "observations": 1680,
+  "passed": true,
+  "prediction_tolerance": 1e-10,
+  "recalculated_metrics": {
+    "mae": 5.335034013605443,
+    "mape": null,
+    "mape_policy": "omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset",
+    "observations": 1680,
+    "rmse": 17.944563987477665,
+    "zero_actual_count": 1169
+  },
+  "verified_at_utc": "2026-09-30T23:12:10.078943+00:00"
+}

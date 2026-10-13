@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "C:\Users\user\Projects\SmartInventory\scripts\verify_phase5.py", line 174, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "C:\Users\user\Projects\SmartInventory\scripts\verify_phase5.py", line 125, in main
+    subprocess.run([str(docker), 'compose', 'exec', '-T', 'backend', 'python', '-c', script], cwd=ROOT, check=True, capture_output=True); hidden = True
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\user\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied

@@ -1,0 +1,45 @@
+{
+  "categories_stores_events": "Not supplied; no invented category/store/promotion labels",
+  "common_panel_days": 420,
+  "common_panel_start": "2010-07-23",
+  "created_at_utc": "2026-09-30T22:51:52.480040+00:00",
+  "daily_observations": 37753,
+  "interpretation_limits": "Descriptive associations, not causal effects. Zero means no recorded purchase; stockout/nonavailability cannot be distinguished. Gift/wholesale/UK online case study; no Kenyan performance inference.",
+  "max_daily_purchase_quantity": 7008.0,
+  "median_average_demand_interval": 4.327482014388489,
+  "median_lag7_correlation": 0.04568974085093967,
+  "median_price_demand_spearman": -0.06901708656385751,
+  "median_sku_zero_fraction": 0.7689056905321716,
+  "period_end": "2011-09-15",
+  "period_start": "2009-12-01",
+  "representative_skus": [
+    "20728",
+    "21077",
+    "20700"
+  ],
+  "scope": "initial training only; no validation/test demand EDA",
+  "selected_skus": 60,
+  "skus_with_price_variation": 60,
+  "source_missing_counts": {
+    "Country": 0,
+    "Customer ID": 243007,
+    "Description": 4382,
+    "Invoice": 0,
+    "InvoiceDate": 0,
+    "Price": 0,
+    "Quantity": 0,
+    "StockCode": 0
+  },
+  "statistical_outlier_flags_retained": 4635,
+  "weekday_means": [
+    8.560833333333333,
+    5.631944444444445,
+    5.13,
+    6.348611111111111,
+    5.611944444444444,
+    0.0,
+    2.834722222222222
+  ],
+  "zero_fraction": 0.7122877652107117,
+  "zero_observations": 26891
+}

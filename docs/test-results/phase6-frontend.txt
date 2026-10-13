@@ -1,0 +1,2 @@
+$ vitest run "--reporter=junit" "--outputFile=../docs/test-results/phase6-frontend.xml"
+JUNIT report written to C:/Users/user/Projects/SmartInventory/docs/test-results/phase6-frontend.xml

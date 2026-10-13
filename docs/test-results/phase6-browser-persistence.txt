@@ -1,0 +1,1 @@
+7 read-only browser/MySQL persistence checks passed.

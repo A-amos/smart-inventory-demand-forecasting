@@ -1,0 +1,130 @@
+{
+  "executed_at_utc": "2026-10-01T10:30:35.970161+00:00",
+  "checks": [
+    {
+      "check": "Login returns a non-cacheable authorized manager session",
+      "passed": true,
+      "actual": "HTTP 200, no-store, manager"
+    },
+    {
+      "check": "Password is Argon2id; stored value differs from plaintext",
+      "passed": true,
+      "actual": "Argon2id prefix; plaintext not stored"
+    },
+    {
+      "check": "Session stores SHA256 digest only",
+      "passed": true,
+      "actual": "Digest key found; raw token key absent"
+    },
+    {
+      "check": "Anonymous dashboard denied",
+      "passed": true,
+      "actual": 401
+    },
+    {
+      "check": "SQL-like login denied with generic error",
+      "passed": true,
+      "actual": {
+        "detail": "Invalid credentials or account unavailable"
+      }
+    },
+    {
+      "check": "Script/SQL-like product text round-trips as data",
+      "passed": true,
+      "actual": {
+        "product_id": 12,
+        "payload": "<script>window.phase6Executed=true</script> ' OR 1=1 --"
+      }
+    },
+    {
+      "check": "Missing required product field rejected",
+      "passed": true,
+      "actual": 422
+    },
+    {
+      "check": "Duplicate SKU rejected",
+      "passed": true,
+      "actual": 409
+    },
+    {
+      "check": "Manager product update persisted",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Malformed CSV schema rejected",
+      "passed": true,
+      "actual": 422
+    },
+    {
+      "check": "CSV body beyond 1 MiB rejected",
+      "passed": true,
+      "actual": 413
+    },
+    {
+      "check": "Expired persistent session rejected",
+      "passed": true,
+      "actual": 401
+    },
+    {
+      "check": "Five failed logins trigger persistent lockout",
+      "passed": true,
+      "actual": [
+        401,
+        401,
+        401,
+        401,
+        401,
+        401
+      ]
+    },
+    {
+      "check": "Lockout expiry recorded 15 minutes ahead",
+      "passed": true,
+      "actual": "Future lockout timestamp"
+    },
+    {
+      "check": "Login works after simulated lockout expiry",
+      "passed": true,
+      "actual": "Actual request after controlled timestamp expiry"
+    },
+    {
+      "check": "Researcher server rejects /categories",
+      "passed": true,
+      "actual": 403
+    },
+    {
+      "check": "Researcher server rejects /products",
+      "passed": true,
+      "actual": 403
+    },
+    {
+      "check": "Researcher inventory write denied",
+      "passed": true,
+      "actual": 403
+    },
+    {
+      "check": "Logout revokes researcher access",
+      "passed": true,
+      "actual": "204 then 401"
+    },
+    {
+      "check": "Manager logout revokes protected access",
+      "passed": true,
+      "actual": "204 then 401"
+    },
+    {
+      "check": "Environment and local credentials ignored by Git",
+      "passed": true,
+      "actual": {
+        "ignored": [
+          ".env",
+          "backend/.env",
+          ".local/verification-account.json",
+          ".local/audit-venv"
+        ],
+        "tracked_file_count": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\user\Projects\SmartInventory\scripts\phase6_reproduce.py", line 64, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\user\Projects\SmartInventory\scripts\phase6_reproduce.py", line 55, in main
+    run(base+['exec','-T','backend','python','-c',inference])
+  File "C:\Users\user\Projects\SmartInventory\scripts\phase6_reproduce.py", line 26, in run
+    assert r.returncode==0, commands[-1]['command']
+           ^^^^^^^^^^^^^^^
+AssertionError: C:\Users\user\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe compose --env-file C:\Users\user\Projects\SmartInventory\.local\phase6-repro\.env -p smartinventory-phase6-repro -f C:\Users\user\Projects\SmartInventory\compose.yaml -f C:\Users\user\Projects\SmartInventory\.local\phase6-repro\compose.override.yaml exec -T backend python -c "from ml.artifacts import load_registered; from ml.data import load_daily; from ml.experiment import forecast_contract; m,r=load_registered(); o=forecast_contract(m,r,load_daily(),'20728','2011-11-10',28); assert o.horizon==28; print('Frozen historical inference passed: 28 days, no fitting or report mutation')"

@@ -1,0 +1,125 @@
+{
+  "actual_live_checks": 15,
+  "artifact_reproduction_passed": true,
+  "compose_verified": true,
+  "dataset": "UCI Online Retail II",
+  "dataset_reacquisition_passed": true,
+  "environment_lock_sha256": "fc2a00c22e21f739b737847492819a5e2197d216e4489e057cd84d93302ad27e",
+  "final_test_scores": {
+    "mean_28": {
+      "mae": 5.3350340136054415,
+      "mape": null,
+      "mape_policy": "omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset",
+      "observations": 1680,
+      "rmse": 17.944563987477665,
+      "zero_actual_count": 1169
+    },
+    "rf_leaf5": {
+      "mae": 6.545168748927346,
+      "mape": null,
+      "mape_policy": "omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset",
+      "observations": 1680,
+      "rmse": 18.516364750269418,
+      "zero_actual_count": 1169
+    },
+    "seasonal_naive": {
+      "mae": 4.939880952380952,
+      "mape": null,
+      "mape_policy": "omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset",
+      "observations": 1680,
+      "rmse": 17.00852377346079,
+      "zero_actual_count": 1169
+    },
+    "xgb_depth5": {
+      "mae": 5.6156688673585275,
+      "mape": null,
+      "mape_policy": "omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset",
+      "observations": 1680,
+      "rmse": 18.84631666771529,
+      "zero_actual_count": 1169
+    }
+  },
+  "frontend_build_passed": true,
+  "gate_passed": true,
+  "inference_boundary": "executed saved-artifact Python/CLI forecast-v1 contract",
+  "inference_endpoint_introduced": false,
+  "migration_head": "7cf0674f24d9",
+  "model_id": "uci-retail-v1-0cc2a83c3e40",
+  "next_phase_started": false,
+  "phase": 4,
+  "recorded_at_utc": "2026-09-30T23:10:28.357678+00:00",
+  "schema_changes": false,
+  "selected_by_validation": "mean_28",
+  "source_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+  "tests": {
+    "backend": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 112
+    },
+    "frontend": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 20
+    },
+    "ml": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 59
+    }
+  },
+  "validation_numerical_reproduction_passed": true,
+  "validation_scores": {
+    "mean_28": {
+      "mae": 4.7536352040816325,
+      "mape": null,
+      "mape_policy": "omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset",
+      "observations": 3360,
+      "rmse": 36.36001573222458,
+      "zero_actual_count": 2530
+    },
+    "rf_leaf15": {
+      "mae": 10.093937739419557,
+      "mape": null,
+      "mape_policy": "omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset",
+      "observations": 3360,
+      "rmse": 39.32070680636592,
+      "zero_actual_count": 2530
+    },
+    "rf_leaf5": {
+      "mae": 10.080747407811776,
+      "mape": null,
+      "mape_policy": "omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset",
+      "observations": 3360,
+      "rmse": 42.76173988169547,
+      "zero_actual_count": 2530
+    },
+    "seasonal_naive": {
+      "mae": 6.078273809523809,
+      "mape": null,
+      "mape_policy": "omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset",
+      "observations": 3360,
+      "rmse": 43.35290194603883,
+      "zero_actual_count": 2530
+    },
+    "xgb_depth3": {
+      "mae": 9.32739080278469,
+      "mape": null,
+      "mape_policy": "omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset",
+      "observations": 3360,
+      "rmse": 43.94253515584441,
+      "zero_actual_count": 2530
+    },
+    "xgb_depth5": {
+      "mae": 9.193967756283625,
+      "mape": null,
+      "mape_policy": "omitted: zero/intermittent demand; no epsilon substitution or unstated positive-only subset",
+      "observations": 3360,
+      "rmse": 46.835324639338566,
+      "zero_actual_count": 2530
+    }
+  }
+}

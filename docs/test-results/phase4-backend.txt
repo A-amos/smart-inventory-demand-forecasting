@@ -1,0 +1,21 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.14, pytest-8.3.5, pluggy-1.6.0
+rootdir: C:\Users\user\Projects\SmartInventory\backend
+configfile: pytest.ini
+plugins: anyio-4.15.1
+collected 112 items
+
+backend\tests\test_catalog.py .....................................      [ 33%]
+backend\tests\test_foundation.py ...............                         [ 46%]
+backend\tests\test_migration.py .                                        [ 47%]
+backend\tests\test_sales.py ............................................ [ 86%]
+...............                                                          [100%]
+
+============================== warnings summary ===============================
+.venv\Lib\site-packages\starlette\testclient.py:37
+  C:\Users\user\Projects\SmartInventory\.venv\Lib\site-packages\starlette\testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: C:\Users\user\Projects\SmartInventory\docs\test-results\phase4-backend.xml -
+======================= 112 passed, 1 warning in 47.95s =======================

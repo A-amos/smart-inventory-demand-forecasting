@@ -1,0 +1,8 @@
+# Preserve frozen research/source SHA256 fingerprints across Windows/Linux clones.
+# Existing files were hashed as bytes; newline normalization would invalidate them.
+* -text
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.docx binary
+*.joblib binary

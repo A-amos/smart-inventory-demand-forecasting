@@ -1,0 +1,14 @@
+✓ Lockfile passes supply-chain policies (verified 5m ago)
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 12, reused 9, downloaded 0, added 0
+Progress: resolved 80, reused 26, downloaded 0, added 0
+Progress: resolved 135, reused 60, downloaded 0, added 0
+Progress: resolved 209, reused 80, downloaded 0, added 0
+Progress: resolved 263, reused 191, downloaded 0, added 0
+Progress: resolved 263, reused 192, downloaded 0, added 0
+Progress: resolved 271, reused 198, downloaded 0, added 0
+[WARN] 1 deprecated subdependencies found: whatwg-encoding@3.1.1
+Already up to date
+Progress: resolved 275, reused 204, downloaded 0, added 0, done
+
+Done in 10.5s using pnpm v11.25.0

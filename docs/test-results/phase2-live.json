@@ -1,0 +1,173 @@
+{
+  "executed_at_utc": "2026-09-30T21:03:01.342552+00:00",
+  "checks": [
+    {
+      "check": "Phase 2 migration applied",
+      "passed": true,
+      "actual": "4ceb0a570e41"
+    },
+    {
+      "check": "Anonymous catalog rejected",
+      "passed": true,
+      "actual": 401
+    },
+    {
+      "check": "Category create",
+      "passed": true,
+      "actual": 201
+    },
+    {
+      "check": "Category read",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Category update",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Duplicate category",
+      "passed": true,
+      "actual": 409
+    },
+    {
+      "check": "Product create",
+      "passed": true,
+      "actual": 201
+    },
+    {
+      "check": "Opening stock exact",
+      "passed": true,
+      "actual": "12.500"
+    },
+    {
+      "check": "Duplicate SKU case normalization",
+      "passed": true,
+      "actual": 409
+    },
+    {
+      "check": "Missing required product field",
+      "passed": true,
+      "actual": 422
+    },
+    {
+      "check": "Invalid category rejected",
+      "passed": true,
+      "actual": 422
+    },
+    {
+      "check": "Product configuration update",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Product read",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Referenced category cannot archive",
+      "passed": true,
+      "actual": 409
+    },
+    {
+      "check": "Inventory update",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Stale update rejected",
+      "passed": true,
+      "actual": 409
+    },
+    {
+      "check": "Invalid allocations rejected",
+      "passed": true,
+      "actual": 422
+    },
+    {
+      "check": "Concurrent editors cannot overwrite same version",
+      "passed": true,
+      "actual": [
+        200,
+        409
+      ]
+    },
+    {
+      "check": "Opening and successful adjustments audited only",
+      "passed": true,
+      "actual": 3
+    },
+    {
+      "check": "Audit captures reason and actor",
+      "passed": true,
+      "actual": "actor and reason present"
+    },
+    {
+      "check": "Real MySQL persistence and stock version",
+      "passed": true,
+      "actual": 3
+    },
+    {
+      "check": "One inventory row per product",
+      "passed": true,
+      "actual": 1
+    },
+    {
+      "check": "Researcher reads catalog",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Researcher cannot create product",
+      "passed": true,
+      "actual": 403
+    },
+    {
+      "check": "Researcher cannot adjust stock",
+      "passed": true,
+      "actual": 403
+    },
+    {
+      "check": "Researcher logout",
+      "passed": true,
+      "actual": 204
+    },
+    {
+      "check": "Product archive",
+      "passed": true,
+      "actual": 204
+    },
+    {
+      "check": "Archived product hidden",
+      "passed": true,
+      "actual": 404
+    },
+    {
+      "check": "Archive retains audit",
+      "passed": true,
+      "actual": 3
+    },
+    {
+      "check": "Category archive",
+      "passed": true,
+      "actual": 204
+    },
+    {
+      "check": "Category restore",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Product restore",
+      "passed": true,
+      "actual": 200
+    },
+    {
+      "check": "Manager logout",
+      "passed": true,
+      "actual": 204
+    }
+  ]
+}

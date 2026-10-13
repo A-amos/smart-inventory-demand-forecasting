@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\user\Projects\SmartInventory\scripts\phase6_reproduce.py", line 62, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\user\Projects\SmartInventory\scripts\phase6_reproduce.py", line 46, in main
+    r=client.post('/auth/login',json={'email':email,'password':password});r.raise_for_status()
+                                                                          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Projects\SmartInventory\.venv\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'http://localhost:8001/api/v1/auth/login'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401

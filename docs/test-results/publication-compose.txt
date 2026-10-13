@@ -1,0 +1,268 @@
+ Image smartinventory-backend Building 
+ Image smartinventory-frontend Building 
+ Image smartinventory-migrate Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.53kB 0.0s done
+#1 DONE 0.0s
+
+#2 [frontend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 276B 0.0s done
+#2 DONE 0.1s
+
+#3 [backend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 872B 0.0s done
+#3 DONE 0.1s
+
+#4 [migrate internal] load metadata for docker.io/library/python:3.12-slim
+#4 ...
+
+#5 [auth] library/python:pull token for registry-1.docker.io
+#5 DONE 0.0s
+
+#6 [frontend internal] load metadata for docker.io/library/node:22-alpine
+#6 ...
+
+#7 [auth] library/node:pull token for registry-1.docker.io
+#7 DONE 0.0s
+
+#4 [migrate internal] load metadata for docker.io/library/python:3.12-slim
+#4 DONE 1.7s
+
+#8 [migrate internal] load .dockerignore
+#8 transferring context: 361B 0.0s done
+#8 DONE 0.0s
+
+#9 [migrate internal] load build context
+#9 DONE 0.0s
+
+#10 [migrate  1/12] FROM docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+#10 resolve docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1 0.1s done
+#10 resolve docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1 0.1s done
+#10 DONE 0.1s
+
+#9 [backend internal] load build context
+#9 transferring context: 4.54kB 0.0s done
+#9 DONE 0.1s
+
+#11 [backend  3/12] RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 && rm -rf /var/lib/apt/lists/*
+#11 CACHED
+
+#12 [backend  2/12] WORKDIR /opt/project
+#12 CACHED
+
+#13 [backend  5/12] COPY ml/requirements.txt /tmp/ml/requirements.txt
+#13 CACHED
+
+#14 [backend 11/12] COPY data/processed/phase4/development.csv ./data/processed/phase4/development.csv
+#14 CACHED
+
+#15 [backend  6/12] RUN pip install --no-cache-dir -r /tmp/backend/requirements.txt -r /tmp/ml/requirements.txt
+#15 CACHED
+
+#16 [backend  4/12] COPY backend/requirements.txt backend/requirements-lock.txt /tmp/backend/
+#16 CACHED
+
+#17 [backend 10/12] COPY docs/research/results/*.json ./docs/research/results/
+#17 CACHED
+
+#18 [backend  7/12] COPY backend ./backend
+#18 CACHED
+
+#19 [backend  8/12] COPY ml/*.py ml/protocol.json ml/requirements.txt ./ml/
+#19 CACHED
+
+#20 [backend  9/12] COPY ml/artifacts/uci-retail-v1-0cc2a83c3e40 ./ml/artifacts/uci-retail-v1-0cc2a83c3e40
+#20 CACHED
+
+#21 [backend 12/12] WORKDIR /opt/project/backend
+#21 CACHED
+
+#22 [backend] exporting to image
+#22 exporting layers 0.0s done
+#22 ...
+
+#6 [frontend internal] load metadata for docker.io/library/node:22-alpine
+#6 DONE 2.0s
+
+#23 [frontend internal] load .dockerignore
+#23 transferring context: 63B 0.0s done
+#23 DONE 0.0s
+
+#24 [frontend internal] load build context
+#24 transferring context: 83.68kB 0.0s done
+#24 DONE 0.0s
+
+#22 [backend] exporting to image
+#22 exporting manifest sha256:5bf2337b6fb904205a1759e66f0152932ef4b0ae2909bab4187799b7d8ab5088 done
+#22 exporting config sha256:c404bc65e4d1cc7a94879adf75f1fae9dd5eb07ead291a348fb481fd9369610d done
+#22 exporting attestation manifest sha256:3a8ca4f7f87b43dc95270d4a36af6540d08fc7ada838b68369ecde8162d61638
+#22 ...
+
+#25 [frontend 1/6] FROM docker.io/library/node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402
+#25 resolve docker.io/library/node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402 0.1s done
+#25 DONE 0.1s
+
+#26 [frontend 2/6] WORKDIR /app
+#26 CACHED
+
+#27 [frontend 3/6] COPY package*.json ./
+#27 CACHED
+
+#22 [backend] exporting to image
+#22 exporting attestation manifest sha256:3a8ca4f7f87b43dc95270d4a36af6540d08fc7ada838b68369ecde8162d61638 0.1s done
+#22 exporting manifest list sha256:fc474b2aa70a631074c2d433fe6eb48cefb2350bdea07d8032a5d18e8be6910f 0.0s done
+#22 naming to docker.io/library/smartinventory-backend:latest 0.0s done
+#22 unpacking to docker.io/library/smartinventory-backend:latest 0.0s done
+#22 DONE 0.4s
+
+#28 [frontend 4/6] COPY pnpm-lock.yaml pnpm-workspace.yaml ./
+#28 DONE 0.1s
+
+#29 [migrate] exporting to image
+#29 exporting layers 0.0s done
+#29 exporting manifest sha256:10472baee84168d0f9640b5660e923fcd1a9ebeffcbc7ae8fc9dedb3f8398541 0.0s done
+#29 exporting config sha256:407ef985db8f7c484846fccff1785f86238f1ccb423b09ca48cc28ad1d8b0960 done
+#29 exporting attestation manifest sha256:f332d7b0d0724f315ee17a060bf68d3e5075675b93f2239a599686e29b207a18 0.1s done
+#29 exporting manifest list sha256:38c38263536ef2a908cb5125a2f67b8b3dc1a94b30c1295c3478579553028261 0.0s done
+#29 naming to docker.io/library/smartinventory-migrate:latest done
+#29 unpacking to docker.io/library/smartinventory-migrate:latest 0.0s done
+#29 DONE 0.4s
+
+#30 [frontend 5/6] RUN corepack enable && corepack prepare pnpm@11.19.0 --activate && pnpm install --frozen-lockfile
+#30 ...
+
+#31 [migrate] resolving provenance for metadata file
+#31 DONE 0.1s
+
+#32 [backend] resolving provenance for metadata file
+#32 DONE 0.1s
+
+#30 [frontend 5/6] RUN corepack enable && corepack prepare pnpm@11.19.0 --activate && pnpm install --frozen-lockfile
+#30 1.774 Preparing pnpm@11.19.0 for immediate activation...
+#30 20.49 ? Verifying lockfile against supply-chain policies (275 entries)...
+#30 20.56 Lockfile is up to date, resolution step is skipped
+#30 21.30 Progress: resolved 1, reused 0, downloaded 0, added 0
+#30 21.60 Packages: +204
+#30 21.60 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#30 22.38 Progress: resolved 204, reused 0, downloaded 0, added 0
+#30 24.17 Progress: resolved 204, reused 0, downloaded 1, added 0
+#30 24.28 Packages are hard linked from the content-addressable store to the virtual store.
+#30 24.28   Content-addressable store is at: /root/.local/share/pnpm/store/v11
+#30 24.28   Virtual store is at:             node_modules/.pnpm
+#30 25.20 Progress: resolved 204, reused 0, downloaded 14, added 13
+#30 26.00 [WARN] Tarball download average speed 29 KiB/s (size 30 KiB) is below 50 KiB/s: https://registry.npmjs.org/cssstyle/-/cssstyle-4.6.0.tgz (GET)
+#30 26.14 [WARN] Tarball download average speed 9 KiB/s (size 17 KiB) is below 50 KiB/s: https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-4.4.1.tgz (GET)
+#30 26.26 Progress: resolved 204, reused 0, downloaded 39, added 36
+#30 26.37 [WARN] Tarball download average speed 2 KiB/s (size 3 KiB) is below 50 KiB/s: https://registry.npmjs.org/html-encoding-sniffer/-/html-encoding-sniffer-4.0.0.tgz (GET)
+#30 27.20 
+#30 27.20    ╭───────────────────────────────────────────────╮
+#30 27.20    │                                               │
+#30 27.20    │     Update available! 11.19.0 → 12.11.2.      │
+#30 27.20    │     Changelog: https://pnpm.io/v/12.11.2      │
+#30 27.20    │   To update, run: corepack use pnpm@12.11.2   │
+#30 27.20    │                                               │
+#30 27.20    ╰───────────────────────────────────────────────╯
+#30 27.20 
+#30 27.29 Progress: resolved 204, reused 0, downloaded 56, added 56
+#30 27.47 [WARN] Tarball download average speed 6 KiB/s (size 23 KiB) is below 50 KiB/s: https://registry.npmjs.org/react/-/react-19.1.0.tgz (GET)
+#30 28.31 Progress: resolved 204, reused 0, downloaded 67, added 66
+#30 29.32 Progress: resolved 204, reused 0, downloaded 82, added 81
+#30 29.54 [WARN] Tarball download average speed 24 KiB/s (size 47 KiB) is below 50 KiB/s: https://registry.npmjs.org/@vitest/runner/-/runner-4.1.11.tgz (GET)
+#30 30.31 Progress: resolved 204, reused 0, downloaded 108, added 106
+#30 31.31 Progress: resolved 204, reused 0, downloaded 115, added 115
+#30 31.66 [WARN] Tarball download average speed 48 KiB/s (size 57 KiB) is below 50 KiB/s: https://registry.npmjs.org/dom-accessibility-api/-/dom-accessibility-api-0.5.16.tgz (GET)
+#30 32.31 Progress: resolved 204, reused 0, downloaded 119, added 119
+#30 32.32 [WARN] Tarball download average speed 31 KiB/s (size 49 KiB) is below 50 KiB/s: https://registry.npmjs.org/json5/-/json5-2.2.3.tgz (GET)
+#30 32.46 [WARN] Tarball download average speed 28 KiB/s (size 36 KiB) is below 50 KiB/s: https://registry.npmjs.org/@babel/helper-module-transforms/-/helper-module-transforms-7.29.7.tgz (GET)
+#30 32.56 [WARN] Tarball download average speed 47 KiB/s (size 121 KiB) is below 50 KiB/s: https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.26.0.tgz (GET)
+#30 32.59 [WARN] Tarball download average speed 5 KiB/s (size 42 KiB) is below 50 KiB/s: https://registry.npmjs.org/@adobe/css-tools/-/css-tools-4.5.0.tgz (GET)
+#30 32.82 [WARN] Tarball download average speed 11 KiB/s (size 11 KiB) is below 50 KiB/s: https://registry.npmjs.org/xmlchars/-/xmlchars-2.2.0.tgz (GET)
+#30 33.28 Progress: resolved 204, reused 0, downloaded 152, added 152
+#30 33.34 [WARN] Tarball download average speed 20 KiB/s (size 187 KiB) is below 50 KiB/s: https://registry.npmjs.org/react-redux/-/react-redux-9.3.0.tgz (GET)
+#30 34.28 Progress: resolved 204, reused 0, downloaded 172, added 172
+#30 35.28 Progress: resolved 204, reused 0, downloaded 188, added 188
+#30 36.29 Progress: resolved 204, reused 0, downloaded 192, added 192
+#30 37.29 Progress: resolved 204, reused 0, downloaded 193, added 193
+#30 38.68 [WARN] Tarball download average speed 9 KiB/s (size 40 KiB) is below 50 KiB/s: https://registry.npmjs.org/baseline-browser-mapping/-/baseline-browser-mapping-2.11.26.tgz (GET)
+#30 38.69 Progress: resolved 204, reused 0, downloaded 194, added 193
+#30 38.92 [WARN] Tarball download average speed 36 KiB/s (size 176 KiB) is below 50 KiB/s: https://registry.npmjs.org/lru-cache/-/lru-cache-10.4.3.tgz (GET)
+#30 39.69 Progress: resolved 204, reused 0, downloaded 195, added 195
+#30 40.72 Progress: resolved 204, reused 0, downloaded 196, added 196
+#30 41.90 [WARN] Request took 18681ms: https://registry.npmjs.org/@rollup%2Frollup-freebsd-x64
+#30 41.90 Progress: resolved 204, reused 0, downloaded 197, added 196
+#30 42.90 Progress: resolved 204, reused 0, downloaded 197, added 197
+#30 43.90 Progress: resolved 204, reused 0, downloaded 200, added 200
+#30 44.59 [WARN] Request took 20886ms: https://registry.npmjs.org/@rollup%2Frollup-linux-loong64-musl
+#30 44.79 [WARN] Request took 11746ms: https://registry.npmjs.org/electron-to-chromium
+#30 45.52 [WARN] Request took 10136ms: https://registry.npmjs.org/react
+#30 45.55 Progress: resolved 204, reused 0, downloaded 201, added 200
+#30 45.70 [WARN] Request took 10328ms: https://registry.npmjs.org/react-refresh
+#30 46.32 [WARN] Request took 10631ms: https://registry.npmjs.org/scheduler
+#30 46.56 Progress: resolved 204, reused 0, downloaded 201, added 201
+#30 46.68 [WARN] Request took 11126ms: https://registry.npmjs.org/rollup
+#30 48.63 Progress: resolved 204, reused 0, downloaded 202, added 201
+#30 48.77 [WARN] Request took 13543ms: https://registry.npmjs.org/react-dom
+#30 49.83 Progress: resolved 204, reused 0, downloaded 203, added 203
+#30 49.98 [WARN] Request took 13556ms: https://registry.npmjs.org/use-sync-external-store
+#30 51.71 [WARN] Request took 16376ms: https://registry.npmjs.org/react-is
+#30 53.09 [WARN] Request took 32370ms: https://registry.npmjs.org/@babel%2Fparser
+#30 53.43 [WARN] Request took 32430ms: https://registry.npmjs.org/@esbuild%2Fopenbsd-arm64
+#30 54.33 ✓ Lockfile passes supply-chain policies (275 entries in 33.8s)
+#30 81.96 [WARN] GET https://registry.npmjs.org/recharts/-/recharts-3.10.1.tgz error (23). Will retry in 10 seconds. 2 retries left.
+#30 93.09 Progress: resolved 204, reused 0, downloaded 204, added 203
+#30 93.22 Progress: resolved 204, reused 0, downloaded 204, added 204, done
+#30 93.59 .../esbuild@0.25.12/node_modules/esbuild postinstall$ node install.js
+#30 93.82 .../esbuild@0.25.12/node_modules/esbuild postinstall: Done
+#30 94.11 
+#30 94.11 dependencies:
+#30 94.11 + react 19.1.0
+#30 94.11 + react-dom 19.1.0
+#30 94.11 + react-is 19.1.0
+#30 94.11 + recharts 3.10.1
+#30 94.11 
+#30 94.11 devDependencies:
+#30 94.11 + @tailwindcss/vite 4.1.5
+#30 94.11 + @testing-library/jest-dom 6.6.3
+#30 94.11 + @testing-library/react 16.3.0
+#30 94.11 + @vitejs/plugin-react 4.4.1
+#30 94.11 + jsdom 26.1.0
+#30 94.11 + tailwindcss 4.1.5
+#30 94.11 + vite 6.4.3
+#30 94.11 + vitest 4.1.11
+#30 94.11 
+#30 94.24 Done in 1m 16.2s using pnpm v11.19.0
+#30 DONE 94.5s
+
+#33 [frontend 6/6] COPY . .
+#33 DONE 0.6s
+
+#34 [frontend] exporting to image
+#34 exporting layers
+#34 exporting layers 20.0s done
+#34 exporting manifest sha256:bdc7dd029bc580ff05c514fe090d6b6dda6c2a6470a8efee343857087d14d555 0.0s done
+#34 exporting config sha256:993aa4d00540e2f86735a873fe784b5ea4576099461a67fbbad2df51a671923f 0.0s done
+#34 exporting attestation manifest sha256:2540d084a24c9614228ac7e4e7a828d1b2ed13fe5218438113828092d759c37d 0.0s done
+#34 exporting manifest list sha256:55a3947df96ca3319572e19568f3e99afe1ce2d0face276a3a85e1a49b34f9a1
+#34 exporting manifest list sha256:55a3947df96ca3319572e19568f3e99afe1ce2d0face276a3a85e1a49b34f9a1 0.0s done
+#34 naming to docker.io/library/smartinventory-frontend:latest 0.0s done
+#34 unpacking to docker.io/library/smartinventory-frontend:latest
+#34 unpacking to docker.io/library/smartinventory-frontend:latest 17.0s done
+#34 DONE 37.2s
+
+#35 [frontend] resolving provenance for metadata file
+#35 DONE 0.0s
+ Image smartinventory-migrate Built 
+ Image smartinventory-backend Built 
+ Image smartinventory-frontend Built 
+ Container smartinventory-db-1 Running 
+ Container smartinventory-backend-1 Running 
+ Container smartinventory-frontend-1 Recreate 
+ Container smartinventory-frontend-1 Recreated 
+ Container smartinventory-db-1 Waiting 
+ Container smartinventory-db-1 Healthy 
+ Container smartinventory-migrate-1 Starting 
+ Container smartinventory-migrate-1 Started 
+ Container smartinventory-migrate-1 Waiting 
+ Container smartinventory-migrate-1 Exited 
+ Container smartinventory-frontend-1 Starting 
+ Container smartinventory-frontend-1 Started 

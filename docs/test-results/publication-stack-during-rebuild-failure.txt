@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\user\Projects\SmartInventory\scripts\phase6_stack_checks.py", line 23, in <module>
+    assert states['db']['Health']=='healthy' and states['backend']['State']=='running' and states['frontend']['State']=='running' and states['migrate']['ExitCode']==0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

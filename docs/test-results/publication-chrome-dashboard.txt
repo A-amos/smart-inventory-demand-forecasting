@@ -1,0 +1,103 @@
+Browser tab: 633680339, Title: "Smart Inventory", URL: "http://localhost:5173/".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
++				206 text Forecast snapshot
+~				189 pop up button (collapsed, settable) Forecast snapshot, Value: 01/10/2026, 13:49:18 · origin 2011-11-10 · 28 days · 4a1f9161-32f8-4559-b724-62f80907e944, Secondary Actions: Expand
+~						191 (selected) 01/10/2026, 13:49:18 · origin 2011-11-10 · 28 days · 4a1f9161-32f8-4559-b724-62f80907e944
++			207 container
++				208 text research_demo  · UK series  20728  ·  uci-retail-v1-0cc2a83c3e40  /  retail-demand-v1  ·  sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031 .
++			209 container Historical UK demand and stored forecast chart
++				210 container
++					211 content list
++						212 container
++							213 image Historical UK demand (units) legend icon
++							214 text Historical UK demand (units)
++						215 container
++							216 image Stored mean_28 forecast (units) legend icon
++							217 text Stored mean_28 forecast (units)
++					218 container
++						219 text 2011-09-25
++						220 text 2011-10-07
++						221 text 2011-10-19
++						222 text 2011-10-31
++						223 text 2011-11-12
++						224 text 2011-11-24
++						225 text 2011-12-08
++						226 text 0
++						227 text 35
++						228 text 70
++						229 text 105
++						230 text 140
+~			194 button (collapsed) Daily forecast quantities (accessible table), Secondary Actions: Expand
++				231 text Daily forecast quantities (accessible table)
++				232 text Recommendation snapshot
+~				199 pop up button (collapsed, settable) Recommendation snapshot, Value: 01/10/2026, 13:50:34 · Replenishment risk · af82e6f7-3339-4455-bc8b-45d51b85c509, Secondary Actions: Expand
+~						201 (selected) 01/10/2026, 13:50:34 · Replenishment risk · af82e6f7-3339-4455-bc8b-45d51b85c509
+~				205 heading Replenishment risk · immutable decision snapshot, Value: 4
++					233 text Replenishment risk  · immutable decision snapshot
++				234 text Historical snapshot: the current overview does not consider this decision applicable. Review context, stock and configuration before generating a new snapshot.
++				235 container
++					236 text P6-BROWSER-20261001  ·  unit  · as of  2011-11-11  · inventory version  3 . Created  01/10/2026, 13:50:34  (Nairobi).
++				237 definition list
++					238 container Predicted lead-time demand
++						239 text Predicted lead-time demand
++					240 text 83.571428571
++					241 container Lead time (days)
++						242 text Lead time (days)
++					243 text 3
++					244 container Safety stock
++						245 text Safety stock
++					246 text 4
++					247 container On hand
++						248 text On hand
++					249 text 17
++					250 container Confirmed incoming
++						251 text Confirmed incoming
++					252 text 3
++					253 container Allocated
++						254 text Allocated
++					255 text 2
++					256 container Inventory position
++						257 text Inventory position
++					258 text 18
++					259 container Target stock
++						260 text Target stock
++					261 text 87.571428571
++					262 container Shortage / raw reorder
++						263 text Shortage / raw reorder
++					264 text 69.571428571
++					265 container Suggested reorder
++						266 text Suggested reorder
++					267 text 69.571428571
++					268 container Overstock multiplier
++						269 text Overstock multiplier
++					270 text 2
++					271 container Overstock threshold
++						272 text Overstock threshold
++					273 text 175.142857142
++				274 text Position = on hand + confirmed incoming − allocated. Target = sum of daily demand over lead time + safety stock. Reorder = max(0, target − position). Overstock only if position > target × multiplier.
++				275 container
++					276 text Forecast  4a1f9161-32f8-4559-b724-62f80907e944  · origin  2011-11-10  ·  28  days ·  uci-retail-v1-0cc2a83c3e40  /  retail-demand-v1  ·  sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031  ·  inventory-rules-v1 . Snapshot  af82e6f7-3339-4455-bc8b-45d51b85c509 .
++				277 content list
++					278 container
++						279 AXListMarker • 
++						280 text All confirmed incoming stock assumed to arrive during lead time; no ETA is recorded.
++					281 container
++						282 AXListMarker • 
++						283 text Allocated stock is excluded from usable inventory.
++					284 container
++						285 AXListMarker • 
++						286 text Forecast dates must cover every lead-time day.
++					287 container
++						288 AXListMarker • 
++						289 text No pack-size or procurement rounding; raw shortage equals suggested quantity.
++					290 container
++						291 AXListMarker • 
++						292 text Stored daily predictions use nine decimal places; original forecast-v1 values are preserved.
++					293 container
++						294 AXListMarker • 
++						295 text Deterministic stock-risk rule, not a calibrated probability. Human review; no purchase execution.
++					296 container
++						297 AXListMarker • 
++						298 text UK historical forecasts and present test stock form a research scenario, not measured 2011 inventory or Kenyan performance.
++				299 text Human review required. These are deterministic risk rules, not probabilities. Recommendations do not execute purchases. Old snapshots retain the stock and configuration used when created.
+The focused UI element is 73 pop up button (collapsed, settable) Decision product, Value: Phase 6 demonstration product · P6-BROWSER-20261001, Secondary Actions: Expand

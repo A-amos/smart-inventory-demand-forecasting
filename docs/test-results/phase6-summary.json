@@ -1,0 +1,76 @@
+{
+  "generated_at_utc": "2026-10-01T11:42:35.029507+00:00",
+  "status": "Software/evidence activities completed; external evaluation and partial compatibility remain pending",
+  "automated_suites": [
+    {
+      "suite": "backend",
+      "tests": 163,
+      "passed": 163,
+      "failed": 0,
+      "skipped": 0,
+      "reported_warnings": 1,
+      "seconds": 85.32,
+      "evidence": "phase6-backend.xml"
+    },
+    {
+      "suite": "ml",
+      "tests": 59,
+      "passed": 59,
+      "failed": 0,
+      "skipped": 0,
+      "reported_warnings": 0,
+      "seconds": 14.164,
+      "evidence": "phase6-ml.xml"
+    },
+    {
+      "suite": "frontend",
+      "tests": 29,
+      "passed": 29,
+      "failed": 0,
+      "skipped": 0,
+      "reported_warnings": 0,
+      "seconds": 7.0941276,
+      "evidence": "phase6-frontend.xml"
+    }
+  ],
+  "automated_total": 251,
+  "proposal_cases": {
+    "total": 24,
+    "pass": 23,
+    "fail": 0,
+    "pending": 1
+  },
+  "live_checks": {
+    "sales": 43,
+    "decisions": 50,
+    "security": 21,
+    "browser": 11,
+    "browser_mysql_persistence": 7
+  },
+  "performance_requests": 440,
+  "performance_errors": 0,
+  "production_build": "PASS",
+  "compose_mysql_api": "PASS",
+  "isolated_reproduction": "PASS",
+  "protected_hashes": 31,
+  "participants": 0,
+  "compatibility": {
+    "Edge": "bounded PASS",
+    "Chrome": "PARTIAL",
+    "Firefox": "NOT EXECUTED: tool URL policy"
+  },
+  "unresolved": [
+    "Participant usability and field requirements evaluation",
+    "Complete Chrome/Firefox compatibility",
+    "Python/frontend dependency advisories",
+    "Starlette/AnyIO deprecation",
+    "2011 UK data cannot provide valid2026/Kenyan forecasts"
+  ],
+  "no_retraining": true,
+  "documentation_checks": {
+    "passed": 88,
+    "failed": 0,
+    "evidence": "phase6-documentation.json"
+  },
+  "frozen_verification": "2026-10-01T11:45:53.571013+00:00"
+}

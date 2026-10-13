@@ -1,0 +1,94 @@
+{
+  "absolute_tolerance": 1e-10,
+  "executed_at_utc": "2026-09-30T23:03:02.759021+00:00",
+  "final_labels_opened": false,
+  "maximum_absolute_prediction_difference": 5.684341886080802e-14,
+  "passed": true,
+  "records": [
+    {
+      "candidate": "seasonal_naive",
+      "maximum_absolute_prediction_difference": 0.0,
+      "observations": 1680,
+      "origin": "2011-09-15",
+      "passed": true
+    },
+    {
+      "candidate": "seasonal_naive",
+      "maximum_absolute_prediction_difference": 0.0,
+      "observations": 1680,
+      "origin": "2011-10-13",
+      "passed": true
+    },
+    {
+      "candidate": "mean_28",
+      "maximum_absolute_prediction_difference": 4.440892098500626e-16,
+      "observations": 1680,
+      "origin": "2011-09-15",
+      "passed": true
+    },
+    {
+      "candidate": "mean_28",
+      "maximum_absolute_prediction_difference": 4.440892098500626e-16,
+      "observations": 1680,
+      "origin": "2011-10-13",
+      "passed": true
+    },
+    {
+      "candidate": "rf_leaf5",
+      "maximum_absolute_prediction_difference": 5.684341886080802e-14,
+      "observations": 1680,
+      "origin": "2011-09-15",
+      "passed": true
+    },
+    {
+      "candidate": "rf_leaf5",
+      "maximum_absolute_prediction_difference": 1.4210854715202004e-14,
+      "observations": 1680,
+      "origin": "2011-10-13",
+      "passed": true
+    },
+    {
+      "candidate": "rf_leaf15",
+      "maximum_absolute_prediction_difference": 5.684341886080802e-14,
+      "observations": 1680,
+      "origin": "2011-09-15",
+      "passed": true
+    },
+    {
+      "candidate": "rf_leaf15",
+      "maximum_absolute_prediction_difference": 2.1316282072803006e-14,
+      "observations": 1680,
+      "origin": "2011-10-13",
+      "passed": true
+    },
+    {
+      "candidate": "xgb_depth3",
+      "maximum_absolute_prediction_difference": 5.684341886080802e-14,
+      "observations": 1680,
+      "origin": "2011-09-15",
+      "passed": true
+    },
+    {
+      "candidate": "xgb_depth3",
+      "maximum_absolute_prediction_difference": 1.4210854715202004e-14,
+      "observations": 1680,
+      "origin": "2011-10-13",
+      "passed": true
+    },
+    {
+      "candidate": "xgb_depth5",
+      "maximum_absolute_prediction_difference": 2.842170943040401e-14,
+      "observations": 1680,
+      "origin": "2011-09-15",
+      "passed": true
+    },
+    {
+      "candidate": "xgb_depth5",
+      "maximum_absolute_prediction_difference": 2.842170943040401e-14,
+      "observations": 1680,
+      "origin": "2011-10-13",
+      "passed": true
+    }
+  ],
+  "selection_unchanged_sha256": "0cc2a83c3e405f006c172c5082fa7a249f7ccbc0fc1a0a64f5f187ec56971bf6"
+}

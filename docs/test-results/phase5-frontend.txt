@@ -1,0 +1,19 @@
+$ vitest run "--reporter=default" "--reporter=junit" "--outputFile.junit=../docs/test-results/phase5-frontend.xml"
+
+ RUN  v3.1.3 C:/Users/user/Projects/SmartInventory/frontend
+
+ ✓ src/App.test.jsx (2 tests) 437ms
+   ✓ signs in and revokes the server session when signing out  366ms
+ ✓ src/SalesPages.test.jsx (11 tests) 1084ms
+   ✓ sale sends version, timezone, optional price and request key; reloads inventory  347ms
+ ✓ src/Workspace.test.jsx (7 tests) 1475ms
+   ✓ manager creates a category and sees refreshed data  388ms
+ ✓ src/Dashboard.test.jsx (9 tests) 1462ms
+   ✓ empty dashboard shows limitation and genuine separately labelled validation/final metrics  379ms
+
+ Test Files  4 passed (4)
+      Tests  29 passed (29)
+   Start at  10:48:58
+   Duration  5.27s (transform 701ms, setup 1.25s, collect 3.41s, tests 4.46s, environment 4.83s, prepare 947ms)
+
+JUNIT report written to C:/Users/user/Projects/SmartInventory/docs/test-results/phase5-frontend.xml

@@ -1,0 +1,465 @@
+Window: "Smart Inventory - Personal - Microsoft​ Edge", App: msedge.exe.
+	0 window Smart Inventory - Personal - Microsoft​ Edge Secondary Actions: Raise
+		1 pane (disabled)
+		2 region Smart Inventory - Microsoft Edge
+			3 region
+				4 region
+					5 region
+						6 button Minimize ID: view_2
+						169 button Maximize ID: view_3
+						8 button Close ID: view_7
+					9 region
+						10 region
+							11 tool bar App bar ID: view_1000
+								12 button Back ID: view_1001
+								13 button Refresh ID: view_1003
+								14 group
+									15 button View site information ID: view_1015
+									16 edit (settable, string) Address and search bar Description: Search or enter web address Value: localhost:5173 ID: view_1017
+									17 region
+										18 button Manage your passwords
+									19 region
+										20 button Add this page to favorites (Ctrl+D) ID: view_1006
+								21 region
+									22 button Favorites ID: view_1007
+								23 button Personal Profile ID: view_1009
+								24 button Settings and more (Alt+F) ID: view_1011
+								25 button Chat ID: view_1078
+						26 region
+							27 region
+								28 region
+									29 group Infobar Container ID: view_1063
+										30 alert Infobar Secondary Actions: Raise
+											31 region
+												32 text Microsoft Edge isn't your default browser
+												33 text Use Microsoft recommended settings for a smarter way to browse
+												34 button Confirm
+												35 button Not now
+											36 button Close
+									37 region
+										38 region
+											39 region
+											40 document Smart Inventory Value: http://localhost:5173/ ID: RootWebArea
+												41 group ID: root
+													42 main
+														43 section header
+															44 text RETAIL DECISION SUPPORT
+															45 heading Smart Inventory
+															46 text Demand forecasting and replenishment planning
+														47 heading Welcome, Local Verification Manager
+														48 button Sign out
+														49 navigation Workspace pages
+															50 button Dashboard
+															51 button Products
+															52 button Categories
+															53 button Inventory
+															54 button Sales entry
+															55 button Sales history
+															56 button CSV import
+														57 check box (settable, string) Show archived records
+														58 button Reload records
+														59 heading Inventory decision dashboard
+														60 text UCI Online Retail II forecasts use UK retail data and have not been validated for Kenyan businesses. The frozen 28-day mean baseline is selected on validation. Compatible research history ends 2011-11-10; current forecasts are unavailable.
+														61 text Decision context
+														62 combo box (settable, string) Decision context Value: Current inventory
+														63 button Refresh dashboard
+														64 region Inventory overview
+															65 text Current inventory. Historical UK forecasts cannot establish present-day stock risk; unassessed is not safe.
+															66 text Decision date:
+															67 text 2026-10-01
+															68 text .
+															69 text Active products
+															70 text 1
+															71 text Adequate
+															72 text 0
+															73 text Replenishment risk
+															74 text 0
+															75 text Overstock
+															76 text 0
+															77 text Unassessed
+															78 text 1
+															79 table
+																80 row
+																	81 column header Product
+																	82 column header On hand
+																	83 column header Incoming
+																	84 column header Allocated
+																	85 column header Position
+																	86 column header Current scenario status
+																87 row
+																	88 item Phase 6 demonstration product P6-BROWSER-20261001 · unit
+																	89 item 17
+																	90 item 3
+																	91 item 2
+																	92 item 18
+																	93 item Unassessed Mapped UK research series
+															94 text Unassessed means no valid snapshot for this context and stock/configuration version. It does not mean adequate stock.
+														95 region Product forecasts and decisions
+															96 text Decision product
+															97 combo box (settable, string) Decision product Value: Phase 6 demonstration product · P6-BROWSER-20261001
+															170 text Documented UK research series: 20728. Reason: Synthetic Phase 6 stock paired explicitly with UK series 20728; historical research only
+															171 heading Stored forecasts
+															179 text Forecast snapshot
+															180 combo box (settable, string) Forecast snapshot Value: 01/10/2026, 13:49:18 · origin 2011-11-10 · 28 days · 4a1f9161-32f8-4559-b724-62f80907e944
+															173 button (disabled) Previous forecasts
+															174 button (disabled) Next forecasts
+															181 text research_demo
+															182 text · UK series
+															183 text 20728
+															184 text ·
+															185 text uci-retail-v1-0cc2a83c3e40
+															186 text /
+															187 text retail-demand-v1
+															188 text ·
+															189 text sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031
+															190 text .
+															274 group Historical UK demand and stored forecast chart
+																275 group
+																	276 list
+																		277 list item Historical UK demand (units)
+																			278 graphic Historical UK demand (units) legend icon
+																		279 list item Stored mean_28 forecast (units)
+																			280 graphic Stored mean_28 forecast (units) legend icon
+																	281 application
+																		282 group
+																		283 group
+																		284 group
+																		285 group
+																		286 group
+																		287 group
+																		288 group
+																		289 group
+																		290 group
+																		291 group
+																		292 group
+																		293 group
+																			294 text 2011-09-30
+																			295 text 2011-10-22
+																			296 text 2011-11-13
+																			297 text 2011-12-08
+																			298 text 0
+																			299 text 35
+																			300 text 70
+																			301 text 105
+																			302 text 140
+															191 details
+																192 disclosure triangle Daily forecast quantities (accessible table)
+																	193 text Daily forecast quantities (accessible table)
+															194 button (disabled) Generate recommendation snapshot
+															175 heading Stored recommendations
+															195 text Recommendation snapshot
+															196 combo box (settable, string) Recommendation snapshot Value: 01/10/2026, 13:50:34 · Replenishment risk · af82e6f7-3339-4455-bc8b-45d51b85c509
+															177 button (disabled) Previous recommendations
+															178 button (disabled) Next recommendations
+															197 region Decision snapshot
+																198 heading Replenishment risk · immutable decision snapshot
+																199 text Historical snapshot: the current overview does not consider this decision applicable. Review context, stock and configuration before generating a new snapshot.
+																200 text P6-BROWSER-20261001
+																201 text ·
+																202 text unit
+																203 text · as of
+																204 text 2011-11-11
+																205 text · inventory version
+																206 text 3
+																207 text . Created
+																208 text 01/10/2026, 13:50:34
+																209 text (Nairobi).
+																210 list
+																	211 term Predicted lead-time demand
+																		212 text Predicted lead-time demand
+																	213 text 83.571428571
+																	214 term Lead time (days)
+																		215 text Lead time (days)
+																	216 text 3
+																	217 term Safety stock
+																		218 text Safety stock
+																	219 text 4
+																	220 term On hand
+																		221 text On hand
+																	222 text 17
+																	223 term Confirmed incoming
+																		224 text Confirmed incoming
+																	225 text 3
+																	226 term Allocated
+																		227 text Allocated
+																	228 text 2
+																	229 term Inventory position
+																		230 text Inventory position
+																	231 text 18
+																	232 term Target stock
+																		233 text Target stock
+																	234 text 87.571428571
+																	235 term Shortage / raw reorder
+																		236 text Shortage / raw reorder
+																	237 text 69.571428571
+																	238 term Suggested reorder
+																		239 text Suggested reorder
+																	240 text 69.571428571
+																	241 term Overstock multiplier
+																		242 text Overstock multiplier
+																	243 text 2
+																	244 term Overstock threshold
+																		245 text Overstock threshold
+																	246 text 175.142857142
+																247 text Position = on hand + confirmed incoming − allocated. Target = sum of daily demand over lead time + safety stock. Reorder = max(0, target − position). Overstock only if position > target × multiplier.
+																248 text Forecast
+																249 text 4a1f9161-32f8-4559-b724-62f80907e944
+																250 text · origin
+																251 text 2011-11-10
+																252 text ·
+																253 text 28
+																254 text days ·
+																255 text uci-retail-v1-0cc2a83c3e40
+																256 text /
+																257 text retail-demand-v1
+																258 text ·
+																259 text sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031
+																260 text ·
+																261 text inventory-rules-v1
+																262 text . Snapshot
+																263 text af82e6f7-3339-4455-bc8b-45d51b85c509
+																264 text .
+																265 list
+																	266 list item All confirmed incoming stock assumed to arrive during lead time; no ETA is recorded.
+																	267 list item Allocated stock is excluded from usable inventory.
+																	268 list item Forecast dates must cover every lead-time day.
+																	269 list item No pack-size or procurement rounding; raw shortage equals suggested quantity.
+																	270 list item Stored daily predictions use nine decimal places; original forecast-v1 values are preserved.
+																	271 list item Deterministic stock-risk rule, not a calibrated probability. Human review; no purchase execution.
+																	272 list item UK historical forecasts and present test stock form a research scenario, not measured 2011 inventory or Kenyan performance.
+																273 text Human review required. These are deterministic risk rules, not probabilities. Recommendations do not execute purchases. Old snapshots retain the stock and configuration used when created.
+														98 region Research model comparison
+															99 heading Research model comparison
+															100 text 28-day mean baseline (mean_28) selected on validation. Final-test results do not change that selection.
+															101 text UK retail research demonstration; not validated for Kenyan retail businesses.
+															102 text Validation:
+															103 text 2011-09-16 to 2011-10-13; 2011-10-14 to 2011-11-10
+															104 text . Final test:
+															105 text 2011-11-11 to 2011-12-08
+															106 text . MAE and RMSE are quantities in units.
+															107 text Omitted for zero/intermittent demand
+															108 text .
+															109 table
+																110 row
+																	111 column header Model
+																	112 column header Validation MAE
+																	113 column header Validation RMSE
+																	114 column header Final-test MAE
+																	115 column header Final-test RMSE
+																116 row
+																	117 item mean_28Selected on validation
+																	118 item 4.753635204
+																	119 item 36.360015732
+																	120 item 5.335034014
+																	121 item 17.944563987
+																122 row
+																	123 item seasonal_naive
+																	124 item 6.07827381
+																	125 item 43.352901946
+																	126 item 4.939880952
+																	127 item 17.008523773
+																128 row
+																	129 item xgb_depth5
+																	130 item 9.193967756
+																	131 item 46.835324639
+																	132 item 5.615668867
+																	133 item 18.846316668
+																134 row
+																	135 item xgb_depth3
+																	136 item 9.327390803
+																	137 item 43.942535156
+																	138 item Not final-tested
+																	139 item Not final-tested
+																140 row
+																	141 item rf_leaf5
+																	142 item 10.080747408
+																	143 item 42.761739882
+																	144 item 6.545168749
+																	145 item 18.51636475
+																146 row
+																	147 item rf_leaf15
+																	148 item 10.093937739
+																	149 item 39.320706806
+																	150 item Not final-tested
+																	151 item Not final-tested
+														152 section footer
+															153 text Maseno University · Computer Science research prototype
+									154 edit
+						155 tab Tab bar
+							156 button Search tabs ID: view_1052
+							157 region ID: view_25
+								158 tab
+									159 tab item (selectable) Smart Inventory - Memory usage - 30.0 MB ID: view_24
+										160 button Close tab ID: view_27
+									161 region
+										162 region
+											163 region
+										164 region
+								165 region
+							166 button New Tab ID: view_28
+							167 region
+				168 region
+
+Document text: ```
+RETAIL DECISION SUPPORT
+Smart Inventory
+Demand forecasting and replenishment planning
+Welcome, Local Verification Manager
+Sign out
+Dashboard
+Products
+Categories
+Inventory
+Sales entry
+Sales history
+CSV import
+￼
+Reload records
+Inventory decision dashboard
+UCI Online Retail II forecasts use UK retail data and have not been validated for Kenyan businesses. The frozen 28-day mean baseline is selected on validation. Compatible research history ends 2011-11-10; current forecasts are unavailable.
+Decision context
+￼
+Refresh dashboard
+Current inventory. Historical UK forecasts cannot establish present-day stock risk; unassessed is not safe. Decision date: 2026-10-01.
+Active products
+1
+Adequate
+0
+Replenishment risk
+0
+Overstock
+0
+Unassessed
+1
+Product
+On hand
+Incoming
+Allocated
+Position
+Current scenario status
+Phase 6 demonstration product
+P6-BROWSER-20261001 · unit
+17
+3
+2
+18
+Unassessed
+Mapped UK research series
+Unassessed means no valid snapshot for this context and stock/configuration version. It does not mean adequate stock.
+Decision product
+￼
+Documented UK research series: 20728. Reason: Synthetic Phase 6 stock paired explicitly with UK series 20728; historical research only
+Stored forecasts
+Forecast snapshot
+￼
+Previous forecasts
+Next forecasts
+research_demo · UK series 20728 · uci-retail-v1-0cc2a83c3e40 / retail-demand-v1 · sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031.
+￼
+Historical UK demand (units)
+￼
+Stored mean_28 forecast (units)
+￼
+￼
+￼
+￼
+￼
+￼
+￼
+￼
+￼
+￼
+￼
+2011-09-30
+2011-10-22
+2011-11-13
+2011-12-08
+0
+35
+70
+105
+140
+Daily forecast quantities (accessible table)
+Generate recommendation snapshot
+Stored recommendations
+Recommendation snapshot
+￼
+Previous recommendations
+Next recommendations
+Replenishment risk · immutable decision snapshot
+Historical snapshot: the current overview does not consider this decision applicable. Review context, stock and configuration before generating a new snapshot.
+P6-BROWSER-20261001 · unit · as of 2011-11-11 · inventory version 3. Created 01/10/2026, 13:50:34 (Nairobi).
+Predicted lead-time demand
+83.571428571
+Lead time (days)
+3
+Safety stock
+4
+On hand
+17
+Confirmed incoming
+3
+Allocated
+2
+Inventory position
+18
+Target stock
+87.571428571
+Shortage / raw reorder
+69.571428571
+Suggested reorder
+69.571428571
+Overstock multiplier
+2
+Overstock threshold
+175.142857142
+Position = on hand + confirmed incoming − allocated. Target = sum of daily demand over lead time + safety stock. Reorder = max(0, target − position). Overstock only if position > target × multiplier.
+Forecast 4a1f9161-32f8-4559-b724-62f80907e944 · origin 2011-11-10 · 28 days · uci-retail-v1-0cc2a83c3e40 / retail-demand-v1 · sha256:840837c7333d8a928fc170a7ef3245299bb2dfcd0750c6eb45b0f696a8f41031 · inventory-rules-v1. Snapshot af82e6f7-3339-4455-bc8b-45d51b85c509.
+• All confirmed incoming stock assumed to arrive during lead time; no ETA is recorded.
+• Allocated stock is excluded from usable inventory.
+• Forecast dates must cover every lead-time day.
+• No pack-size or procurement rounding; raw shortage equals suggested quantity.
+• Stored daily predictions use nine decimal places; original forecast-v1 values are preserved.
+• Deterministic stock-risk rule, not a calibrated probability. Human review; no purchase execution.
+• UK historical forecasts and present test stock form a research scenario, not measured 2011 inventory or Kenyan performance.
+Human review required. These are deterministic risk rules, not probabilities. Recommendations do not execute purchases. Old snapshots retain the stock and configuration used when created.
+Research model comparison
+28-day mean baseline (mean_28) selected on validation. Final-test results do not change that selection. UK retail research demonstration; not validated for Kenyan retail businesses.
+Validation: 2011-09-16 to 2011-10-13; 2011-10-14 to 2011-11-10. Final test: 2011-11-11 to 2011-12-08. MAE and RMSE are quantities in units. Omitted for zero/intermittent demand.
+Model
+Validation MAE
+Validation RMSE
+Final-test MAE
+Final-test RMSE
+mean_28Selected on validation
+4.753635204
+36.360015732
+5.335034014
+17.944563987
+seasonal_naive
+6.07827381
+43.352901946
+4.939880952
+17.008523773
+xgb_depth5
+9.193967756
+46.835324639
+5.615668867
+18.846316668
+xgb_depth3
+9.327390803
+43.942535156
+Not final-tested
+Not final-tested
+rf_leaf5
+10.080747408
+42.761739882
+6.545168749
+18.51636475
+rf_leaf15
+10.093937739
+39.320706806
+Not final-tested
+Not final-tested
+Maseno University · Computer Science research prototype
+```
